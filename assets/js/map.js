@@ -23,9 +23,9 @@ const MAP_CONFIG = {
       id: "amenroad",
       lat: 37.27581843337589,
       lon: 49.59070186234632,
-      label: "AmenRoad",
+      label: "مسیر امن | AmenRoad",
       popup: `
-        <strong>AmenRoad</strong>
+        <strong>مسیر امن | AmenRoad</strong>
         <p class="rasht-popup-address">
           رشت، خیابان انقلاب (حاجی‌آباد) — بن‌بست رز — ساختمان سبز، طبقه سوم
         </p>

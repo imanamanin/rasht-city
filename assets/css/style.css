@@ -666,6 +666,13 @@ a {
   font-family: var(--font);
   font-size: 0.92rem;
   line-height: 1.65;
+  text-align: right;
+  direction: rtl;
+}
+
+.rasht-popup {
+  direction: rtl;
+  text-align: right;
 }
 
 .rasht-popup strong {
@@ -673,6 +680,7 @@ a {
   margin-bottom: 0.35rem;
   color: var(--accent);
   font-size: 1.05rem;
+  text-align: right;
 }
 
 .rasht-popup-address {
@@ -680,11 +688,13 @@ a {
   color: var(--ink-soft);
   font-size: 0.88rem;
   line-height: 1.7;
+  text-align: right;
 }
 
 .rasht-popup-link {
   display: inline-flex;
   align-items: center;
+  justify-content: flex-start;
   gap: 0.35rem;
   color: var(--accent);
   font-weight: 700;
