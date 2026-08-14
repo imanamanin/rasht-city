@@ -27,7 +27,7 @@ const MAP_CONFIG = {
       popup: `
         <strong>مسیر امن | AmenRoad</strong>
         <p class="rasht-popup-address">
-          رشت، خیابان انقلاب (حاجی‌آباد) — بن‌بست رز — ساختمان سبز، طبقه سوم
+          رشت، خیابان انقلاب (حاجی‌آباد) بن‌بست رز، ساختمان سبز، طبقه سوم
         </p>
         <a class="rasht-popup-link" href="https://AmenRoad.com" target="_blank" rel="noopener noreferrer">AmenRoad.com</a>
       `,
