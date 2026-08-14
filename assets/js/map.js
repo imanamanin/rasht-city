@@ -24,7 +24,13 @@ const MAP_CONFIG = {
       lat: 37.27581843337589,
       lon: 49.59070186234632,
       label: "AmenRoad",
-      popup: "<strong>AmenRoad</strong>",
+      popup: `
+        <strong>AmenRoad</strong>
+        <p class="rasht-popup-address">
+          رشت، خیابان انقلاب (حاجی‌آباد) — بن‌بست رز — ساختمان سبز، طبقه سوم
+        </p>
+        <a class="rasht-popup-link" href="https://AmenRoad.com" target="_blank" rel="noopener noreferrer">AmenRoad.com</a>
+      `,
       primary: true,
     },
     {
@@ -146,7 +152,7 @@ function initRashtMap() {
         `<div class="rasht-popup" dir="rtl">${place.popup}</div>`,
         {
           className: "rasht-popup-wrap",
-          maxWidth: 260,
+          maxWidth: 300,
           autoPanPadding: [24, 24],
         }
       );
