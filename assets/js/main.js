@@ -7,6 +7,7 @@
  * - Prayer times: Aladhan (no key required, Tehran method)
  * - Images: Unsplash API (optional key) + curated fallbacks
  * - Events: local JSON at assets/data/events.json
+ * - Map: Leaflet + OpenStreetMap tiles (free, no key) via assets/js/map.js
  */
 
 /* =========================================================
@@ -514,6 +515,10 @@ function init() {
   loadWeather();
   loadPrayerTimes();
   loadEvents();
+
+  if (typeof initRashtMap === "function") {
+    initRashtMap();
+  }
 }
 
 if (document.readyState === "loading") {

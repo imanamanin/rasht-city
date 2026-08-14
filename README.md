@@ -11,6 +11,7 @@ rasht-city/
 ├── assets/
 │   ├── css/style.css
 │   ├── js/main.js
+│   ├── js/map.js
 │   └── data/events.json
 └── README.md
 ```
@@ -22,6 +23,7 @@ rasht-city/
 | آب‌وهوای رشت | [Open-Meteo](https://open-meteo.com/) (default, **no API key**) |
 | اوقات شرعی رشت | [Aladhan](https://aladhan.com/prayer-times-api) method 7 (Tehran University) |
 | رویدادها | `assets/data/events.json` |
+| نقشه رشت | [Leaflet](https://leafletjs.com/) + [OpenStreetMap](https://www.openstreetmap.org/copyright) (**no API key**) |
 | Hero / section photos | Unsplash API (optional key) + curated fallbacks |
 
 ## API keys (optional)

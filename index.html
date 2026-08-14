@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
@@ -21,6 +22,7 @@
       <a href="#weather">آب‌وهوا</a>
       <a href="#prayer">اوقات شرعی</a>
       <a href="#events">رویدادها</a>
+      <a href="#map">نقشه</a>
     </nav>
   </header>
 
@@ -86,6 +88,41 @@
         </div>
       </article>
     </section>
+
+    <!-- Interactive map · Leaflet + OpenStreetMap (free, no API key) -->
+    <section class="map-section" id="map" aria-labelledby="map-title">
+      <article class="panel map-panel">
+        <div class="panel-body map-panel-body">
+          <header class="panel-head map-head">
+            <div class="map-head-text">
+              <h2 id="map-title">نقشه رشت</h2>
+              <p class="panel-sub">OpenStreetMap · کاوش تعاملی شهر</p>
+            </div>
+            <div class="map-chips" id="map-chips" role="group" aria-label="نقاط مهم"></div>
+          </header>
+
+          <div class="map-frame">
+            <div class="map-glow" aria-hidden="true"></div>
+            <div
+              id="rasht-map"
+              class="map-canvas"
+              role="application"
+              aria-label="نقشه تعاملی شهر رشت"
+            ></div>
+            <p id="map-status" class="map-status state loading" role="status">در حال آماده‌سازی نقشه…</p>
+          </div>
+
+          <p class="map-note">
+            نقشه رایگان با
+            <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a>
+            و
+            <a href="https://leafletjs.com/" target="_blank" rel="noopener noreferrer">Leaflet</a>
+            — بدون کلید API.
+            برای جابه‌جایی بکشید؛ برای بزرگ‌نمایی اسکرول یا دکمه‌ها را بزنید.
+          </p>
+        </div>
+      </article>
+    </section>
   </main>
 
   <footer class="site-footer">
@@ -96,6 +133,8 @@
     <p class="credit" id="photo-credit"></p>
   </footer>
 
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="" defer></script>
+  <script src="assets/js/map.js" defer></script>
   <script src="assets/js/main.js" defer></script>
 </body>
 </html>
