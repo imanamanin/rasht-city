@@ -145,7 +145,7 @@ a {
   z-index: -1;
   background:
     linear-gradient(180deg, rgba(8, 18, 15, 0.35) 0%, rgba(8, 18, 15, 0.55) 40%, rgba(8, 18, 15, 0.92) 100%),
-    linear-gradient(90deg, rgba(8, 18, 15, 0.55), transparent 55%);
+    linear-gradient(to inline-start, rgba(8, 18, 15, 0.55), transparent 55%);
 }
 
 .hero-inner {

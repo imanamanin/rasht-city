@@ -305,7 +305,7 @@ async function loadPrayerTimes() {
       return `
         <tr>
           <th scope="row">${escapeHtml(fa)} <span style="opacity:.55;font-weight:500">(${escapeHtml(key)})</span></th>
-          <td>${escapeHtml(raw)}</td>
+          <td dir="ltr">${escapeHtml(raw)}</td>
         </tr>
       `;
     }).join("");
