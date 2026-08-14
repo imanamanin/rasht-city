@@ -7,8 +7,8 @@
 
 /* Reusable map config — edit markers/zoom here */
 const MAP_CONFIG = {
-  center: [37.2808, 49.5832], // Rasht, Iran
-  zoom: 13,
+  center: [37.27581843337589, 49.59070186234632], // AmenRoad
+  zoom: 17,
   minZoom: 11,
   maxZoom: 18,
   /* Standard OSM raster tiles — free, attribution required */
@@ -20,12 +20,11 @@ const MAP_CONFIG = {
   },
   markers: [
     {
-      id: "center",
-      lat: 37.2809,
-      lon: 49.5832,
-      label: "مرکز شهر",
-      popup:
-        "<strong>مرکز رشت</strong><br>قلب سبز گیلان — حوالی میدان شهرداری و بافت مرکزی شهر.",
+      id: "amenroad",
+      lat: 37.27581843337589,
+      lon: 49.59070186234632,
+      label: "AmenRoad",
+      popup: "<strong>AmenRoad</strong>",
       primary: true,
     },
     {
@@ -156,17 +155,23 @@ function initRashtMap() {
     });
 
     const primary = MAP_CONFIG.markers.find((m) => m.primary) || MAP_CONFIG.markers[0];
-    if (primary) {
-      markerById.get(primary.id)?.marker.openPopup();
-    }
+    const openPrimaryPopup = () => {
+      if (primary) markerById.get(primary.id)?.marker.openPopup();
+    };
+    openPrimaryPopup();
 
     renderMapChips(map, markerById);
 
     // Leaflet needs a size recalc after layout / fonts / responsive panels
-    const refreshSize = () => map.invalidateSize({ animate: false });
+    const refreshSize = () => {
+      map.invalidateSize({ animate: false });
+      openPrimaryPopup();
+    };
     requestAnimationFrame(refreshSize);
     setTimeout(refreshSize, 250);
-    window.addEventListener("resize", refreshSize, { passive: true });
+    window.addEventListener("resize", () => map.invalidateSize({ animate: false }), {
+      passive: true,
+    });
 
     rashtMapInstance = map;
     setMapStatus("");
