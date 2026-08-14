@@ -1,52 +1,101 @@
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<html lang="fa" dir="ltr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>rasht.city — شهر باران</title>
-  <meta name="description" content="rasht.city — دروازه‌ای ساده به شهر رشت، شهر باران و سبز شمال ایران." />
+  <title>rasht.city — دروازه رشت و گیلان</title>
+  <meta name="description" content="rasht.city — آب‌وهوا، اوقات شرعی و رویدادهای رشت و استان گیلان." />
+  <meta name="theme-color" content="#0b1a16" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
+  <div class="page-bg" id="page-bg" aria-hidden="true"></div>
+  <div class="page-overlay" aria-hidden="true"></div>
+
   <header class="site-header">
-    <a class="brand" href="/">rasht.city</a>
+    <a class="brand" href="./">rasht.city</a>
+    <nav class="nav" aria-label="Primary">
+      <a href="#weather">آب‌وهوا</a>
+      <a href="#prayer">اوقات شرعی</a>
+      <a href="#events">رویدادها</a>
+    </nav>
   </header>
 
   <main>
-    <section class="hero" aria-label="معرفی">
-      <div class="hero-media" aria-hidden="true"></div>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-bg" id="hero-bg" aria-hidden="true"></div>
       <div class="hero-veil" aria-hidden="true"></div>
-      <div class="hero-content">
-        <p class="brand-mark">rasht.city</p>
-        <h1>شهر باران</h1>
-        <p class="lede">رشت؛ سبز، مرطوب و زنده — نقطه‌ای برای شروع یک وب‌سایت ساده و اتصال آن به گیت‌هاب.</p>
-        <div class="cta-row">
-          <a class="cta primary" href="#about">بیشتر بدانید</a>
-          <a class="cta ghost" href="https://github.com" target="_blank" rel="noopener noreferrer">گیت‌هاب</a>
+      <div class="hero-inner">
+        <p class="eyebrow">Gilan · Caspian North</p>
+        <h1 id="hero-title"><span class="brand-line">rasht.city</span> شهر باران</h1>
+        <p class="lede">
+          رشت، مرکز سبز و مرطوب گیلان — جایی میان مه، باران و دریای خزر.
+          اینجا آب‌وهوای زنده، اوقات شرعی امروز و رویدادهای محلی را یک‌جا می‌بینید.
+        </p>
+        <div class="hero-meta" id="hero-meta">
+          <span id="local-date">—</span>
+          <span class="dot" aria-hidden="true"></span>
+          <span id="local-time">—</span>
         </div>
       </div>
     </section>
 
-    <section id="about" class="about">
-      <h2>درباره این پروژه</h2>
-      <p>
-        این یک پروژهٔ آزمایشی است برای ساخت یک وب‌سایت ساده روی دامنه
-        <strong>rasht.city</strong>
-        و انتشار آن از طریق GitHub Pages.
-      </p>
-      <p>
-        فایل‌ها استاتیک هستند؛ کافی است مخزن را به گیت‌هاب پوش کنید و Pages را فعال کنید.
-      </p>
+    <section class="panels" aria-label="City information">
+      <!-- Weather -->
+      <article class="panel weather-panel" id="weather">
+        <div class="panel-bg" data-bg-slot="weather" aria-hidden="true"></div>
+        <div class="panel-body">
+          <header class="panel-head">
+            <h2>آب‌وهوای رشت</h2>
+            <p class="panel-sub">Live weather · Rasht</p>
+          </header>
+          <div id="weather-content" class="weather-content" role="status" aria-live="polite">
+            <p class="state loading">در حال دریافت آب‌وهوا…</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Prayer times -->
+      <article class="panel prayer-panel" id="prayer">
+        <div class="panel-bg" data-bg-slot="prayer" aria-hidden="true"></div>
+        <div class="panel-body">
+          <header class="panel-head">
+            <h2>اوقات شرعی رشت</h2>
+            <p class="panel-sub">Asia/Tehran · امروز</p>
+          </header>
+          <div id="prayer-content" class="prayer-content" role="status" aria-live="polite">
+            <p class="state loading">در حال دریافت اوقات شرعی…</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Events -->
+      <article class="panel events-panel" id="events">
+        <div class="panel-bg" data-bg-slot="events" aria-hidden="true"></div>
+        <div class="panel-body">
+          <header class="panel-head">
+            <h2>رویدادها و مناسبت‌های رشت و گیلان</h2>
+            <p class="panel-sub">Upcoming occasions</p>
+          </header>
+          <div id="events-content" class="events-content" role="status" aria-live="polite">
+            <p class="state loading">در حال بارگذاری رویدادها…</p>
+          </div>
+        </div>
+      </article>
     </section>
   </main>
 
   <footer class="site-footer">
-    <p>© <span id="year"></span> rasht.city — پروژه تست</p>
+    <p>
+      © <span id="year"></span> <strong>rasht.city</strong> —
+      دروازه‌ای سبک برای رشت و گیلان · ساخته‌شده برای GitHub Pages
+    </p>
+    <p class="credit" id="photo-credit"></p>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="assets/js/main.js" defer></script>
 </body>
 </html>

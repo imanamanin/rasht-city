@@ -1,66 +1,77 @@
 # rasht.city
 
-سایت ساده و استاتیک برای دامنه **rasht.city** — پروژه تست اتصال به GitHub Pages.
+Dynamic single-page city portal for **Rasht & Gilan** — weather, prayer times, events, and photo backgrounds. Pure frontend for **GitHub Pages** (no build step, no backend).
 
-## فایل‌ها
+## Structure
 
-- `index.html` — صفحه اصلی
-- `styles.css` — استایل
-- `script.js` — اسکریپت کوتاه
-- `CNAME` — اتصال دامنه سفارشی به GitHub Pages
-
-## انتشار روی GitHub Pages
-
-### ۱) ساخت مخزن و پوش
-
-در پوشه پروژه:
-
-```bash
-git add .
-git commit -m "Initial rasht.city site"
-gh repo create rasht-city --public --source=. --remote=origin --push
+```
+rasht-city/
+├── index.html
+├── CNAME
+├── assets/
+│   ├── css/style.css
+│   ├── js/main.js
+│   └── data/events.json
+└── README.md
 ```
 
-یا از GitHub وب‌سایت یک مخزن خالی بسازید و:
+## Features
 
-```bash
-git remote add origin https://github.com/USERNAME/rasht-city.git
-git branch -M main
-git push -u origin main
+| Section | Source |
+|--------|--------|
+| آب‌وهوای رشت | [Open-Meteo](https://open-meteo.com/) (default, **no API key**) |
+| اوقات شرعی رشت | [Aladhan](https://aladhan.com/prayer-times-api) method 7 (Tehran University) |
+| رویدادها | `assets/data/events.json` |
+| Hero / section photos | Unsplash API (optional key) + curated fallbacks |
+
+## API keys (optional)
+
+Open `assets/js/main.js` and edit the config block at the top:
+
+```js
+const UNSPLASH_ACCESS_KEY = "";      // https://unsplash.com/developers
+const OPENWEATHER_API_KEY = "";      // only if you switch provider
+const WEATHER_PROVIDER = "open-meteo"; // or "openweathermap"
 ```
 
-### ۲) فعال‌سازی Pages
+- **Weather works without any key** via Open-Meteo.
+- **Prayer times work without any key** via Aladhan.
+- **Images work without a key** using fallback Unsplash URLs; add `UNSPLASH_ACCESS_KEY` for live search (`Rasht`, `Gilan`, etc.).
 
-1. مخزن → **Settings** → **Pages**
-2. Source: **Deploy from a branch**
-3. Branch: `main` / پوشه `/ (root)`
-4. Save
+## Local preview
 
-سایت معمولاً روی آدرسی شبیه این بالا می‌آید:
-
-`https://USERNAME.github.io/rasht-city/`
-
-### ۳) اتصال دامنه rasht.city
-
-1. در DNS دامنه این رکوردها را بگذارید (نزد ثبت‌کننده دامنه):
-
-| Type | Name | Value |
-|------|------|--------|
-| A | `@` | `185.199.108.153` |
-| A | `@` | `185.199.109.153` |
-| A | `@` | `185.199.110.153` |
-| A | `@` | `185.199.111.153` |
-| CNAME | `www` | `USERNAME.github.io` |
-
-2. در GitHub Pages → **Custom domain** مقدار `rasht.city` را وارد کنید.
-3. گزینه **Enforce HTTPS** را بعد از تأیید دامنه روشن کنید.
-
-فایل `CNAME` همین مخزن قبلاً شامل `rasht.city` است.
-
-## پیش‌نمایش محلی
-
-فایل `index.html` را در مرورگر باز کنید، یا:
+`events.json` needs HTTP (not `file://`):
 
 ```bash
 npx serve .
+```
+
+Then open the printed local URL.
+
+## GitHub Pages
+
+```bash
+git add .
+git commit -m "Dynamic rasht.city portal"
+gh repo create rasht-city --public --source=. --remote=origin --push
+```
+
+Then: **Settings → Pages → Deploy from branch → `main` / root**.
+
+### Custom domain `rasht.city`
+
+DNS A records to GitHub Pages IPs + `CNAME` file (already set to `rasht.city`). See GitHub docs for custom domains.
+
+## Extending events
+
+Edit `assets/data/events.json`:
+
+```json
+{
+  "title": "...",
+  "date": "YYYY-MM-DD",
+  "location": "...",
+  "type": "festival|exhibition|nature|culture|market",
+  "description": "..."
+}
 ```
