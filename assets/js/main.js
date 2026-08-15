@@ -516,6 +516,10 @@ function init() {
   loadPrayerTimes();
   loadEvents();
 
+  if (typeof initCalendarDashboard === "function") {
+    initCalendarDashboard();
+  }
+
   if (typeof initRashtMap === "function") {
     initRashtMap();
   }

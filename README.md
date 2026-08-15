@@ -10,7 +10,10 @@ rasht-city/
 ├── CNAME
 ├── assets/
 │   ├── css/style.css
+│   ├── css/calendar.css
 │   ├── js/main.js
+│   ├── js/jalali.js
+│   ├── js/calendar.js
 │   ├── js/map.js
 │   └── data/events.json
 └── README.md
@@ -23,6 +26,7 @@ rasht-city/
 | آب‌وهوای رشت | [Open-Meteo](https://open-meteo.com/) (default, **no API key**) |
 | اوقات شرعی رشت | [Aladhan](https://aladhan.com/prayer-times-api) method 7 (Tehran University) |
 | رویدادها | `assets/data/events.json` |
+| ساعت و تقویم ایران | Jalali utility + live clock (`assets/js/calendar.js`) |
 | نقشه رشت | [Leaflet](https://leafletjs.com/) + [OpenStreetMap](https://www.openstreetmap.org/copyright) (**no API key**) |
 | Hero / section photos | Unsplash API (optional key) + curated fallbacks |
 
