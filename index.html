@@ -20,78 +20,16 @@
   <header class="site-header">
     <a class="brand" href="./">rasht.city</a>
     <nav class="nav" aria-label="Primary">
+      <a href="#calendar">تقویم</a>
       <a href="#weather">آب‌وهوا</a>
       <a href="#prayer">اوقات شرعی</a>
       <a href="#events">رویدادها</a>
-      <a href="#calendar">تقویم</a>
       <a href="#map">نقشه</a>
     </nav>
   </header>
 
   <main>
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-bg" id="hero-bg" aria-hidden="true"></div>
-      <div class="hero-veil" aria-hidden="true"></div>
-      <div class="hero-inner">
-        <p class="eyebrow">Gilan · Caspian North</p>
-        <h1 id="hero-title"><span class="brand-line">rasht.city</span> شهر باران</h1>
-        <p class="lede">
-          رشت، مرکز سبز و مرطوب گیلان — جایی میان مه، باران و دریای خزر.
-          اینجا آب‌وهوای زنده، اوقات شرعی امروز و رویدادهای محلی را یک‌جا می‌بینید.
-        </p>
-        <div class="hero-meta" id="hero-meta">
-          <span id="local-date">—</span>
-          <span class="dot" aria-hidden="true"></span>
-          <span id="local-time">—</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="panels" aria-label="City information">
-      <!-- Weather -->
-      <article class="panel weather-panel" id="weather">
-        <div class="panel-bg" data-bg-slot="weather" aria-hidden="true"></div>
-        <div class="panel-body">
-          <header class="panel-head">
-            <h2>آب‌وهوای رشت</h2>
-            <p class="panel-sub">Live weather · Rasht</p>
-          </header>
-          <div id="weather-content" class="weather-content" role="status" aria-live="polite">
-            <p class="state loading">در حال دریافت آب‌وهوا…</p>
-          </div>
-        </div>
-      </article>
-
-      <!-- Prayer times -->
-      <article class="panel prayer-panel" id="prayer">
-        <div class="panel-bg" data-bg-slot="prayer" aria-hidden="true"></div>
-        <div class="panel-body">
-          <header class="panel-head">
-            <h2>اوقات شرعی رشت</h2>
-            <p class="panel-sub">Asia/Tehran · امروز</p>
-          </header>
-          <div id="prayer-content" class="prayer-content" role="status" aria-live="polite">
-            <p class="state loading">در حال دریافت اوقات شرعی…</p>
-          </div>
-        </div>
-      </article>
-
-      <!-- Events -->
-      <article class="panel events-panel" id="events">
-        <div class="panel-bg" data-bg-slot="events" aria-hidden="true"></div>
-        <div class="panel-body">
-          <header class="panel-head">
-            <h2>رویدادها و مناسبت‌های رشت و گیلان</h2>
-            <p class="panel-sub">Upcoming occasions</p>
-          </header>
-          <div id="events-content" class="events-content" role="status" aria-live="polite">
-            <p class="state loading">در حال بارگذاری رویدادها…</p>
-          </div>
-        </div>
-      </article>
-    </section>
-
-    <!-- Persian calendar & time dashboard (before map) -->
+    <!-- Persian calendar & time dashboard — top section -->
     <section class="calendar-section" id="calendar" aria-labelledby="cal-section-title">
       <div class="cal-stack">
         <article class="cal-card cal-hero-card">
@@ -159,6 +97,68 @@
           </article>
         </div>
       </div>
+    </section>
+
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-bg" id="hero-bg" aria-hidden="true"></div>
+      <div class="hero-veil" aria-hidden="true"></div>
+      <div class="hero-inner">
+        <p class="eyebrow">Gilan · Caspian North</p>
+        <h1 id="hero-title"><span class="brand-line">rasht.city</span> شهر باران</h1>
+        <p class="lede">
+          رشت، مرکز سبز و مرطوب گیلان — جایی میان مه، باران و دریای خزر.
+          اینجا آب‌وهوای زنده، اوقات شرعی امروز و رویدادهای محلی را یک‌جا می‌بینید.
+        </p>
+        <div class="hero-meta" id="hero-meta">
+          <span id="local-date">—</span>
+          <span class="dot" aria-hidden="true"></span>
+          <span id="local-time">—</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="panels" aria-label="City information">
+      <!-- Weather -->
+      <article class="panel weather-panel" id="weather">
+        <div class="panel-bg" data-bg-slot="weather" aria-hidden="true"></div>
+        <div class="panel-body">
+          <header class="panel-head">
+            <h2>آب‌وهوای رشت</h2>
+            <p class="panel-sub">Live weather · Rasht</p>
+          </header>
+          <div id="weather-content" class="weather-content" role="status" aria-live="polite">
+            <p class="state loading">در حال دریافت آب‌وهوا…</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Prayer times -->
+      <article class="panel prayer-panel" id="prayer">
+        <div class="panel-bg" data-bg-slot="prayer" aria-hidden="true"></div>
+        <div class="panel-body">
+          <header class="panel-head">
+            <h2>اوقات شرعی رشت</h2>
+            <p class="panel-sub">Asia/Tehran · امروز</p>
+          </header>
+          <div id="prayer-content" class="prayer-content" role="status" aria-live="polite">
+            <p class="state loading">در حال دریافت اوقات شرعی…</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Events -->
+      <article class="panel events-panel" id="events">
+        <div class="panel-bg" data-bg-slot="events" aria-hidden="true"></div>
+        <div class="panel-body">
+          <header class="panel-head">
+            <h2>رویدادها و مناسبت‌های رشت و گیلان</h2>
+            <p class="panel-sub">Upcoming occasions</p>
+          </header>
+          <div id="events-content" class="events-content" role="status" aria-live="polite">
+            <p class="state loading">در حال بارگذاری رویدادها…</p>
+          </div>
+        </div>
+      </article>
     </section>
 
     <!-- Interactive map · Leaflet + OpenStreetMap (free, no API key) -->
