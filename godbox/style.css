@@ -1,0 +1,184 @@
+/* GodBox — Rasht Municipality Square 3D */
+
+:root {
+  --bg: #050807;
+  --panel: rgba(10, 22, 19, 0.88);
+  --ink: #f2f7f4;
+  --muted: rgba(242, 247, 244, 0.7);
+  --accent: #c9a56a;
+  --neon: #39ff14;
+  --line: rgba(200, 230, 216, 0.2);
+  --font: "Vazirmatn", system-ui, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font);
+}
+
+#c {
+  display: block;
+  width: 100%;
+  height: 100%;
+  touch-action: none;
+}
+
+#blocker {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(ellipse at 50% 20%, rgba(57, 255, 20, 0.08), transparent 50%),
+    rgba(5, 8, 7, 0.82);
+  backdrop-filter: blur(6px);
+}
+
+#start-panel {
+  width: min(92vw, 420px);
+  padding: 2rem 1.5rem 1.5rem;
+  text-align: center;
+  border-radius: 1rem;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+}
+
+.eyebrow {
+  margin: 0 0 0.5rem;
+  color: var(--accent);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+#start-panel h1 {
+  margin: 0 0 0.5rem;
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  font-weight: 800;
+}
+
+.lead {
+  margin: 0 0 1.25rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+#start-btn {
+  appearance: none;
+  border: 0;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+  padding: 0.85rem 1.4rem;
+  border-radius: 0.65rem;
+  background: linear-gradient(135deg, #39ff14, #1fb86a);
+  color: #06210f;
+  box-shadow: 0 0 24px rgba(57, 255, 20, 0.25);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+#start-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 32px rgba(57, 255, 20, 0.4);
+}
+
+.hint {
+  margin: 0.9rem 0 0;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 1rem;
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 0.88rem;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+#hud {
+  position: fixed;
+  inset-inline-start: 0.85rem;
+  top: 0.85rem;
+  z-index: 10;
+  max-width: min(92vw, 280px);
+  padding: 0.85rem 1rem;
+  border-radius: 0.85rem;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  backdrop-filter: blur(8px);
+  pointer-events: none;
+  font-size: 0.82rem;
+  line-height: 1.55;
+}
+
+.hud-brand {
+  font-weight: 800;
+  margin-bottom: 0.45rem;
+  color: var(--ink);
+}
+
+.hud-brand span {
+  color: var(--neon);
+  text-shadow: 0 0 10px rgba(57, 255, 20, 0.45);
+}
+
+.hud-controls {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: var(--muted);
+}
+
+.hud-controls li {
+  margin: 0.15rem 0;
+}
+
+kbd {
+  display: inline-block;
+  min-width: 1.5rem;
+  padding: 0.05rem 0.35rem;
+  margin-inline-end: 0.25rem;
+  border-radius: 0.3rem;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-family: inherit;
+  text-align: center;
+}
+
+.hud-mode {
+  margin-top: 0.55rem;
+  padding-top: 0.45rem;
+  border-top: 1px solid var(--line);
+  color: var(--neon);
+  font-weight: 600;
+}
+
+@media (max-width: 520px) {
+  #hud {
+    font-size: 0.75rem;
+    inset-inline-start: 0.5rem;
+    top: 0.5rem;
+    padding: 0.65rem 0.75rem;
+  }
+}

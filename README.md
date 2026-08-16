@@ -27,6 +27,7 @@ rasht-city/
 | اوقات شرعی رشت | [Aladhan](https://aladhan.com/prayer-times-api) method 7 (Tehran University) |
 | رویدادها | `assets/data/events.json` |
 | ساعت و تقویم ایران | Jalali utility + live clock (`assets/js/calendar.js`) |
+| میدان شهرداری ۳بعدی | `/godbox/` — Three.js r160 walkthrough (static) |
 | نقشه رشت | [Leaflet](https://leafletjs.com/) + [OpenStreetMap](https://www.openstreetmap.org/copyright) (**no API key**) |
 | Hero / section photos | Unsplash API (optional key) + curated fallbacks |
 

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>میدان شهرداری رشت — GodBox 3D</title>
+  <meta name="description" content="تجربه سه‌بعدی پیاده‌راه فرهنگی و میدان شهرداری رشت — WASD برای حرکت." />
+  <meta name="theme-color" content="#000000" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./style.css" />
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+    }
+  }
+  </script>
+</head>
+<body>
+  <div id="blocker">
+    <div id="start-panel">
+      <p class="eyebrow">rasht.city · GodBox</p>
+      <h1>میدان شهرداری رشت</h1>
+      <p class="lead">پیاده‌راه فرهنگی — تجربهٔ اول‌شخص سه‌بعدی</p>
+      <button id="start-btn" type="button">برای شروع کلیک کنید</button>
+      <p class="hint">ماوس را قفل می‌کند · Esc برای خروج از قفل</p>
+      <a class="back-link" href="../">← بازگشت به rasht.city</a>
+    </div>
+  </div>
+
+  <div id="hud" hidden>
+    <div class="hud-brand">میدان شهرداری · <span>AMENROAD</span></div>
+    <ul class="hud-controls">
+      <li><kbd>WASD</kbd> حرکت</li>
+      <li><kbd>Mouse</kbd> نگاه</li>
+      <li><kbd>Space</kbd> پرش</li>
+      <li><kbd>Shift</kbd> دویدن</li>
+      <li><kbd>N</kbd> روز / شب</li>
+      <li><kbd>C</kbd> اول / سوم شخص</li>
+      <li><kbd>R</kbd> ریست موقعیت</li>
+    </ul>
+    <div id="hud-mode" class="hud-mode">روز · اول‌شخص</div>
+  </div>
+
+  <canvas id="c"></canvas>
+
+  <script type="module" src="./main.js"></script>
+</body>
+</html>
