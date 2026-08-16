@@ -4,11 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>میدان شهرداری رشت — تجربه سه‌بعدی</title>
-  <meta name="description" content="تجربه سه‌بعدی پیاده‌راه فرهنگی و میدان شهرداری رشت با تابلوهای واقعی اطراف میدان." />
+  <meta name="description" content="پیاده‌راه سه‌بعدی میدان شهرداری و مسیرساز دوچرخه استراوا برای رشت." />
   <meta name="theme-color" content="#000000" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
   <link rel="stylesheet" href="./style.css" />
   <script type="importmap">
   {
@@ -20,7 +21,21 @@
   </script>
 </head>
 <body>
-  <div id="blocker">
+  <!-- Mode switcher -->
+  <nav id="mode-bar" aria-label="حالت نمایش">
+    <a class="brand-mini" href="../">rasht.city</a>
+    <div class="mode-switch" role="tablist">
+      <button type="button" class="mode-btn is-active" data-mode="walk" role="tab" aria-selected="true">
+        🏛️ میدان شهرداری
+      </button>
+      <button type="button" class="mode-btn" data-mode="route" role="tab" aria-selected="false">
+        🚴 مسیرساز سه‌بعدی استراوا
+      </button>
+    </div>
+  </nav>
+
+  <!-- Walkthrough start overlay -->
+  <div id="blocker" class="mode-panel" data-for="walk">
     <div id="start-panel">
       <p class="eyebrow">rasht.city</p>
       <h1>میدان شهرداری رشت</h1>
@@ -31,7 +46,7 @@
     </div>
   </div>
 
-  <div id="hud" hidden>
+  <div id="hud" class="mode-panel" data-for="walk" hidden>
     <div class="hud-brand">میدان شهرداری رشت</div>
     <ul class="hud-controls">
       <li><kbd>WASD</kbd> حرکت</li>
@@ -45,8 +60,45 @@
     <div id="hud-mode" class="hud-mode">روز · اول‌شخص</div>
   </div>
 
+  <!-- Route planner overlay -->
+  <div id="route-shell" class="mode-panel" data-for="route" hidden>
+    <div id="route-map" aria-label="نقشه انتخاب مسیر رشت"></div>
+
+    <div id="route-prompt" class="route-card">
+      <p id="route-prompt-text">نقطه شروع را انتخاب کنید</p>
+      <p class="route-hint">روی نقشه کلیک کنید · محدود به محدوده رشت</p>
+    </div>
+
+    <div id="route-metrics" class="route-card metrics" hidden>
+      <div class="metric"><span>فاصله</span><strong id="m-dist">—</strong></div>
+      <div class="metric"><span>زمان تقریبی</span><strong id="m-time">—</strong></div>
+      <div class="metric"><span>ارتفاع (تقریبی)</span><strong id="m-elev">—</strong></div>
+      <button type="button" id="btn-flyover" class="btn-primary">شروع پرواز سه‌بعدی</button>
+      <button type="button" id="btn-reset-route" class="btn-ghost">ریست مسیر (R)</button>
+    </div>
+
+    <div id="flyover-controls" class="route-card fly-controls" hidden>
+      <div class="fly-row">
+        <button type="button" id="btn-play" class="btn-primary" aria-label="پخش/توقف">▶ پخش</button>
+        <button type="button" id="btn-rewind" class="btn-ghost" aria-label="بازگشت">⏪</button>
+        <label class="speed-label">
+          سرعت
+          <select id="fly-speed" aria-label="سرعت پخش">
+            <option value="1">1x</option>
+            <option value="2" selected>2x</option>
+            <option value="5">5x</option>
+          </select>
+        </label>
+        <button type="button" id="btn-back-map" class="btn-ghost">↩ نقشه (Esc)</button>
+      </div>
+      <input type="range" id="fly-scrub" min="0" max="1000" value="0" aria-label="پیشرفت مسیر" />
+      <p id="fly-status" class="fly-status">آماده پرواز</p>
+    </div>
+  </div>
+
   <canvas id="c"></canvas>
 
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   <script type="module" src="./main.js"></script>
 </body>
 </html>

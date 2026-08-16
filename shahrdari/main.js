@@ -5,6 +5,7 @@
 
 import * as THREE from "three";
 import { PointerLockControls } from "three/addons/controls/PointerLockControls.js";
+import { createRouteMode } from "./routeMode.js";
 
 /* =========================================================
    DOM
@@ -14,6 +15,10 @@ const blocker = document.getElementById("blocker");
 const startBtn = document.getElementById("start-btn");
 const hud = document.getElementById("hud");
 const hudMode = document.getElementById("hud-mode");
+
+/** @type {'walk' | 'route'} */
+let appMode = "walk";
+document.body.classList.add("is-walk");
 
 /* =========================================================
    Renderer / Scene / Camera
@@ -835,6 +840,7 @@ controls.addEventListener("unlock", () => {
 });
 
 document.addEventListener("keydown", (e) => {
+  if (appMode !== "walk") return;
   switch (e.code) {
     case "KeyW":
     case "ArrowUp":
@@ -879,6 +885,7 @@ document.addEventListener("keydown", (e) => {
 });
 
 document.addEventListener("keyup", (e) => {
+  if (appMode !== "walk") return;
   switch (e.code) {
     case "KeyW":
     case "ArrowUp":
@@ -913,12 +920,42 @@ window.addEventListener("resize", () => {
   camera.updateProjectionMatrix();
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
   renderer.setSize(window.innerWidth, window.innerHeight);
+  routeMode.resize();
 });
 
 /* =========================================================
    Loop
    ========================================================= */
 const clock = new THREE.Clock();
+const routeMode = createRouteMode(renderer);
+
+function setAppMode(mode) {
+  if (mode === appMode) return;
+  appMode = mode;
+  document.body.classList.toggle("is-walk", mode === "walk");
+  document.body.classList.toggle("is-route", mode === "route");
+
+  document.querySelectorAll(".mode-btn").forEach((btn) => {
+    const on = btn.getAttribute("data-mode") === mode;
+    btn.classList.toggle("is-active", on);
+    btn.setAttribute("aria-selected", on ? "true" : "false");
+  });
+
+  if (mode === "route") {
+    if (controls.isLocked) controls.unlock();
+    hud.hidden = true;
+    blocker.style.display = "none";
+    routeMode.setActive(true);
+  } else {
+    routeMode.setActive(false);
+    blocker.style.display = "grid";
+    hud.hidden = true;
+  }
+}
+
+document.querySelectorAll(".mode-btn").forEach((btn) => {
+  btn.addEventListener("click", () => setAppMode(btn.getAttribute("data-mode")));
+});
 
 function updatePlayer(delta) {
   const obj = controls.getObject();
@@ -960,10 +997,19 @@ function animate() {
   const delta = Math.min(clock.getDelta(), 0.05);
   const t = clock.elapsedTime;
 
+  if (appMode === "route") {
+    routeMode.update(delta);
+    if (!routeMode.render()) {
+      // Map picking phase — still clear canvas under leaflet
+      renderer.setClearColor(0x050c10, 1);
+      renderer.clear();
+    }
+    return;
+  }
+
   if (controls.isLocked) updatePlayer(delta);
   updateClockHands();
   animateFountain(t);
-
   renderer.render(scene, camera);
 }
 
@@ -975,4 +1021,5 @@ resetPlayer();
 setNight(false);
 setThirdPerson(false);
 updateHudMode();
+routeMode.setActive(false);
 animate();
