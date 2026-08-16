@@ -119,12 +119,12 @@ export function estimateElevation(coords) {
 export function buildRoutePath(coords, elevProfile = null) {
   const points = coords.map((c, i) => {
     const elev = elevProfile ? elevProfile[i] * 0.35 : 0.4;
-    return latLonToWorld(c.lat, c.lon, 0.5 + elev * 0.02);
+    return latLonToWorld(c.lat, c.lon, 1.2 + elev * 0.015);
   });
 
   const curve = new THREE.CatmullRomCurve3(points, false, "catmullrom", 0.15);
   const tubularSegments = Math.min(800, Math.max(100, points.length * 4));
-  const geometry = new THREE.TubeGeometry(curve, tubularSegments, 1.8, 8, false);
+  const geometry = new THREE.TubeGeometry(curve, tubularSegments, 0.9, 8, false);
 
   const material = new THREE.MeshStandardMaterial({
     color: 0x00ffcc,
@@ -139,7 +139,7 @@ export function buildRoutePath(coords, elevProfile = null) {
   const tube = new THREE.Mesh(geometry, material);
 
   // Soft outer glow shell
-  const glowGeo = new THREE.TubeGeometry(curve, tubularSegments, 3.2, 8, false);
+  const glowGeo = new THREE.TubeGeometry(curve, tubularSegments, 1.8, 8, false);
   const glowMat = new THREE.MeshBasicMaterial({
     color: 0x00ffcc,
     transparent: true,

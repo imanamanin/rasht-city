@@ -14,7 +14,7 @@ import {
   formatElevation,
 } from "./routePlanner.js";
 import { createRider, createFlyoverController } from "./flyoverCamera.js";
-import { fetchPoisAlongRoute, placeRoadsideSigns } from "./pois.js";
+import { fetchPoisAlongRoute, placeRoadsideSigns, updateSignBillboards } from "./pois.js";
 
 const BOUNDS = {
   south: 37.22,
@@ -87,6 +87,7 @@ export function createRouteMode(renderer) {
   let poiMarkers = [];
   let flyover = null;
   let rider = null;
+  let signGroup = null;
   let flying = false;
   let active = false;
 
@@ -267,18 +268,20 @@ export function createRouteMode(renderer) {
     const { group, curve } = buildRoutePath(routeData.coords, routeData.elev?.profile);
     routeRoot.add(group);
     buildCityContext(curve);
-    placeRoadsideSigns(curve, routePois, routeRoot);
+    signGroup = placeRoadsideSigns(curve, routePois, routeRoot);
 
     rider = createRider();
     routeRoot.add(rider);
     flyover = createFlyoverController(camera, curve);
     flyover.state.speed = Number(flySpeed.value) || 2;
+    flyover.resetLook();
     flyover.rewind();
     flyover.applyToRider(rider, 0, 0.016, false);
     flyover.applyCamera(0);
+    flyover.enableMouseLook(true);
     flyover.state.playing = true;
     btnPlay.textContent = "⏸ توقف";
-    flyStatus.textContent = "دوچرخه‌سوار در مسیر — Space برای توقف";
+    flyStatus.textContent = "ماوس را حرکت دهید تا مغازه‌ها را ببینید · Space توقف";
     flyScrub.value = "0";
   }
 
@@ -286,7 +289,11 @@ export function createRouteMode(renderer) {
     flying = false;
     shell.classList.remove("is-flying");
     flyControls.hidden = true;
-    if (flyover) flyover.state.playing = false;
+    if (flyover) {
+      flyover.state.playing = false;
+      flyover.enableMouseLook(false);
+    }
+    signGroup = null;
     setTimeout(() => map?.invalidateSize(), 80);
   }
 
@@ -327,7 +334,9 @@ export function createRouteMode(renderer) {
       flyover.state.playing = true;
     }
     btnPlay.textContent = flyover.state.playing ? "⏸ توقف" : "▶ پخش";
-    flyStatus.textContent = flyover.state.playing ? "دوچرخه‌سوار در حال حرکت…" : "متوقف";
+    flyStatus.textContent = flyover.state.playing
+      ? "دوچرخه در حرکت — ماوس را برای دیدن مغازه‌ها حرکت دهید"
+      : "متوقف — با ماوس اطراف را نگاه کنید";
   });
   flySpeed?.addEventListener("change", () => {
     if (flyover) flyover.state.speed = Number(flySpeed.value) || 1;
@@ -377,10 +386,11 @@ export function createRouteMode(renderer) {
   function update(delta) {
     if (!active || !flying || !flyover) return;
     const st = flyover.update(delta, rider);
+    updateSignBillboards(signGroup, camera);
     flyScrub.value = String(Math.round(st.t * 1000));
     if (!st.playing && st.t >= 1) {
       btnPlay.textContent = "▶ پخش";
-      flyStatus.textContent = "پایان مسیر";
+      flyStatus.textContent = "پایان مسیر — ماوس را حرکت دهید یا Rewind بزنید";
     }
   }
 

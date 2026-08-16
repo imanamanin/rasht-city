@@ -129,32 +129,40 @@ function pickFallbackNearRoute(coords) {
 
 function makeSignTexture(text, accent = "#00ffcc") {
   const cnv = document.createElement("canvas");
-  cnv.width = 768;
-  cnv.height = 192;
+  cnv.width = 1024;
+  cnv.height = 256;
   const ctx = cnv.getContext("2d");
-  ctx.fillStyle = "#101a16";
+  ctx.fillStyle = "#0c1814";
   ctx.fillRect(0, 0, cnv.width, cnv.height);
+  ctx.fillStyle = accent;
+  ctx.fillRect(0, 0, cnv.width, 18);
+  ctx.fillRect(0, cnv.height - 18, cnv.width, 18);
   ctx.strokeStyle = accent;
-  ctx.lineWidth = 8;
-  ctx.strokeRect(10, 10, cnv.width - 20, cnv.height - 20);
-  ctx.fillStyle = "#f2f7f4";
-  ctx.font = "bold 56px Vazirmatn, Tahoma, Arial, sans-serif";
+  ctx.lineWidth = 10;
+  ctx.strokeRect(14, 14, cnv.width - 28, cnv.height - 28);
+  ctx.fillStyle = "#ffffff";
+  ctx.font = "bold 72px Vazirmatn, Tahoma, Arial, sans-serif";
   ctx.textAlign = "center";
   ctx.textBaseline = "middle";
   ctx.direction = "rtl";
-  ctx.fillText(text, cnv.width / 2, cnv.height / 2);
+  ctx.shadowColor = "rgba(0,0,0,0.65)";
+  ctx.shadowBlur = 8;
+  ctx.fillText(text, cnv.width / 2, cnv.height / 2 + 4);
   const tex = new THREE.CanvasTexture(cnv);
   tex.colorSpace = THREE.SRGBColorSpace;
+  tex.anisotropy = 8;
   return tex;
 }
 
 /**
  * Place shop signs on BOTH sides of the road along the curve,
  * using real POI names (projected beside the path).
+ * Boards are stored for camera-facing billboard updates.
  */
 export function placeRoadsideSigns(curve, pois, parent) {
   const group = new THREE.Group();
   parent.add(group);
+  group.userData.boards = [];
   if (!pois?.length) return group;
 
   const count = Math.min(28, Math.max(8, pois.length));
@@ -166,50 +174,48 @@ export function placeRoadsideSigns(curve, pois, parent) {
     const poi = pois[i % pois.length];
     const sideSign = i % 2 === 0 ? 1 : -1;
 
-    // Prefer real POI world position if close to this sample; else offset from path
     let world = latLonToWorld(poi.lat, poi.lon, 0);
     const distToPath = world.clone().setY(0).distanceTo(pos.clone().setY(0));
     if (distToPath > 180) {
-      world = pos.clone().addScaledVector(side, sideSign * (22 + (i % 3) * 6));
+      world = pos.clone().addScaledVector(side, sideSign * (18 + (i % 3) * 5));
     } else {
-      // Push slightly off the road center
       const fromPath = world.clone().sub(pos);
       fromPath.y = 0;
       if (fromPath.lengthSq() < 4) {
-        world.copy(pos).addScaledVector(side, sideSign * 24);
+        world.copy(pos).addScaledVector(side, sideSign * 20);
       } else {
-        world.addScaledVector(fromPath.normalize(), 4);
+        world.addScaledVector(fromPath.normalize(), 6);
       }
     }
 
     const accents = ["#00ffcc", "#c9a56a", "#7dcb9e", "#e08a7a", "#8ab4e0"];
     const tex = makeSignTexture(poi.name, accents[i % accents.length]);
-    const w = Math.min(18, Math.max(8, poi.name.length * 0.55));
+    const w = Math.min(28, Math.max(12, poi.name.length * 0.85));
     const board = new THREE.Mesh(
-      new THREE.PlaneGeometry(w, 3.2),
+      new THREE.PlaneGeometry(w, 5.2),
       new THREE.MeshStandardMaterial({
         map: tex,
         emissiveMap: tex,
-        emissive: new THREE.Color(0x00ffcc),
-        emissiveIntensity: 0.55,
-        roughness: 0.5,
+        emissive: new THREE.Color(0xffffff),
+        emissiveIntensity: 0.75,
+        roughness: 0.45,
         metalness: 0.05,
         side: THREE.DoubleSide,
+        transparent: false,
       })
     );
-    board.position.set(world.x, 6.5, world.z);
-    // Face toward the road
-    board.lookAt(pos.x, 6.5, pos.z);
+    const signY = 9.5;
+    board.position.set(world.x, signY, world.z);
+    board.userData.isShopSign = true;
 
     const post = new THREE.Mesh(
-      new THREE.CylinderGeometry(0.25, 0.3, 6.5, 6),
+      new THREE.CylinderGeometry(0.28, 0.35, signY, 6),
       new THREE.MeshStandardMaterial({ color: 0x333333 })
     );
-    post.position.set(world.x, 3.25, world.z);
+    post.position.set(world.x, signY / 2, world.z);
 
-    // Small shopfront block behind sign
     const shop = new THREE.Mesh(
-      new THREE.BoxGeometry(14 + (i % 3) * 4, 10 + (i % 4) * 3, 10),
+      new THREE.BoxGeometry(16 + (i % 3) * 4, 12 + (i % 4) * 3, 12),
       new THREE.MeshStandardMaterial({
         color: 0x15241f,
         roughness: 0.9,
@@ -217,13 +223,23 @@ export function placeRoadsideSigns(curve, pois, parent) {
         emissiveIntensity: 0.25,
       })
     );
-    const shopPos = world.clone().addScaledVector(side, sideSign * 8);
+    const shopPos = world.clone().addScaledVector(side, sideSign * 10);
     shop.position.set(shopPos.x, shop.geometry.parameters.height / 2, shopPos.z);
 
     group.add(shop);
     group.add(post);
     group.add(board);
+    group.userData.boards.push(board);
   }
 
   return group;
+}
+
+/** Make shop sign boards face the camera so names stay readable while looking around */
+export function updateSignBillboards(signGroup, camera) {
+  const boards = signGroup?.userData?.boards;
+  if (!boards) return;
+  boards.forEach((b) => {
+    b.lookAt(camera.position.x, b.position.y, camera.position.z);
+  });
 }
