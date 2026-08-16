@@ -1,4 +1,4 @@
-/* GodBox — Rasht Municipality Square 3D */
+/* میدان شهرداری رشت — تجربه سه‌بعدی */
 
 :root {
   --bg: #050807;
@@ -6,7 +6,6 @@
   --ink: #f2f7f4;
   --muted: rgba(242, 247, 244, 0.7);
   --accent: #c9a56a;
-  --neon: #39ff14;
   --line: rgba(200, 230, 216, 0.2);
   --font: "Vazirmatn", system-ui, sans-serif;
 }
@@ -41,7 +40,7 @@ body {
   display: grid;
   place-items: center;
   background:
-    radial-gradient(ellipse at 50% 20%, rgba(57, 255, 20, 0.08), transparent 50%),
+    radial-gradient(ellipse at 50% 20%, rgba(125, 203, 158, 0.12), transparent 50%),
     rgba(5, 8, 7, 0.82);
   backdrop-filter: blur(6px);
 }
@@ -85,15 +84,15 @@ body {
   font-weight: 700;
   padding: 0.85rem 1.4rem;
   border-radius: 0.65rem;
-  background: linear-gradient(135deg, #39ff14, #1fb86a);
-  color: #06210f;
-  box-shadow: 0 0 24px rgba(57, 255, 20, 0.25);
+  background: linear-gradient(135deg, #c9a56a, #7dcb9e);
+  color: #0b1a16;
+  box-shadow: 0 0 24px rgba(201, 165, 106, 0.25);
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 #start-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 0 32px rgba(57, 255, 20, 0.4);
+  box-shadow: 0 0 32px rgba(201, 165, 106, 0.4);
 }
 
 .hint {
@@ -136,11 +135,6 @@ body {
   color: var(--ink);
 }
 
-.hud-brand span {
-  color: var(--neon);
-  text-shadow: 0 0 10px rgba(57, 255, 20, 0.45);
-}
-
 .hud-controls {
   margin: 0;
   padding: 0;
@@ -170,7 +164,7 @@ kbd {
   margin-top: 0.55rem;
   padding-top: 0.45rem;
   border-top: 1px solid var(--line);
-  color: var(--neon);
+  color: var(--accent);
   font-weight: 600;
 }
 

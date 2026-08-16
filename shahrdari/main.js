@@ -1,5 +1,5 @@
 /**
- * GodBox — Rasht Municipality Square (میدان شهرداری رشت)
+ * میدان شهرداری رشت — تجربه سه‌بعدی
  * Vanilla ES module + Three.js r160 · GitHub Pages ready
  */
 
@@ -457,62 +457,166 @@ function makePedestrian(x, z, hue = 0x2c2c2c) {
   return g;
 }
 
-function makeAmenRoadBillboard() {
+/**
+ * Shop / landmark signboard with procedural Persian text
+ * Names based on well-known places around Shahrdari Square (Maps / local guides).
+ */
+function makeShopSign(text, x, y, z, rotY = 0, opts = {}) {
+  const width = opts.width ?? Math.min(7.5, Math.max(3.2, text.length * 0.42));
+  const height = opts.height ?? 1.15;
+  const bg = opts.bg ?? "#1a241e";
+  const fg = opts.fg ?? "#f2f7f4";
+  const accent = opts.accent ?? "#c9a56a";
+  const emissiveHex = opts.emissive ?? 0xc9a56a;
+
   const g = new THREE.Group();
-  g.position.set(18, 0, -16);
+  g.position.set(x, y, z);
+  g.rotation.y = rotY;
 
-  const post = addShadow(new THREE.Mesh(new THREE.CylinderGeometry(0.12, 0.15, 4.5, 8), mat(0x333333)));
-  post.position.y = 2.25;
-  g.add(post);
-
-  // Procedural canvas text texture (allowed)
   const cnv = document.createElement("canvas");
-  cnv.width = 512;
-  cnv.height = 160;
+  cnv.width = 1024;
+  cnv.height = 256;
   const ctx = cnv.getContext("2d");
-  ctx.fillStyle = "#0a1a12";
+  ctx.fillStyle = bg;
   ctx.fillRect(0, 0, cnv.width, cnv.height);
-  ctx.strokeStyle = "#39ff14";
-  ctx.lineWidth = 8;
-  ctx.strokeRect(8, 8, cnv.width - 16, cnv.height - 16);
-  ctx.fillStyle = "#39ff14";
-  ctx.font = "bold 64px Vazirmatn, Arial, sans-serif";
+  ctx.strokeStyle = accent;
+  ctx.lineWidth = 10;
+  ctx.strokeRect(14, 14, cnv.width - 28, cnv.height - 28);
+  ctx.fillStyle = fg;
+  ctx.font = `bold ${opts.fontSize ?? 72}px Vazirmatn, Tahoma, Arial, sans-serif`;
   ctx.textAlign = "center";
   ctx.textBaseline = "middle";
-  ctx.shadowColor = "#39ff14";
-  ctx.shadowBlur = 18;
-  ctx.fillText("AMENROAD.IR", cnv.width / 2, cnv.height / 2);
+  ctx.direction = "rtl";
+  ctx.fillText(text, cnv.width / 2, cnv.height / 2);
 
   const tex = new THREE.CanvasTexture(cnv);
   tex.colorSpace = THREE.SRGBColorSpace;
+  tex.anisotropy = 4;
 
   const board = new THREE.Mesh(
-    new THREE.PlaneGeometry(6.5, 2.0),
+    new THREE.PlaneGeometry(width, height),
     new THREE.MeshStandardMaterial({
       map: tex,
       emissiveMap: tex,
-      emissive: new THREE.Color(0x39ff14),
-      emissiveIntensity: 0.15,
-      roughness: 0.5,
-      metalness: 0.1,
+      emissive: new THREE.Color(emissiveHex),
+      emissiveIntensity: 0.12,
+      roughness: 0.55,
+      metalness: 0.05,
     })
   );
-  board.position.set(0, 4.2, 0);
   board.castShadow = true;
   g.add(board);
-  neonMeshes.push(board);
 
-  // Neon frame accent
-  const frame = new THREE.Mesh(
-    new THREE.BoxGeometry(6.7, 2.2, 0.08),
-    mat(0x111111, { emissive: 0x39ff14, emissiveIntensity: 0.2 })
+  // Thin backing plate
+  const back = new THREE.Mesh(
+    new THREE.BoxGeometry(width + 0.08, height + 0.08, 0.08),
+    mat(0x222222)
   );
-  frame.position.set(0, 4.2, -0.05);
-  g.add(frame);
-  neonMeshes.push(frame);
+  back.position.z = -0.05;
+  g.add(back);
 
+  neonMeshes.push(board);
   scene.add(g);
   return g;
+}
+
+/** Place named signs around the square (real / well-known nearby places) */
+function placeSquareSigns() {
+  // Historic complex labels on building faces facing the square
+  makeShopSign("هتل ایران", 8, 6.2, -23.9, 0, {
+    width: 8,
+    bg: "#3a2218",
+    accent: "#e8b87a",
+    emissive: 0xe8b87a,
+  });
+  makeShopSign("موزه پست و تلگراف", 22.9, 6.5, 0, -Math.PI / 2, {
+    width: 9,
+    bg: "#1e2430",
+    accent: "#9eb6d4",
+    emissive: 0x9eb6d4,
+  });
+  makeShopSign("کتابخانه ملی رشت", 6, 5.8, 23.9, Math.PI, {
+    width: 9,
+    bg: "#1a2a22",
+    accent: "#7dcb9e",
+    emissive: 0x7dcb9e,
+  });
+  makeShopSign("شهرداری رشت", -15.8, 8.2, 0, Math.PI / 2, {
+    width: 8.5,
+    height: 1.3,
+    bg: "#f5f5f0",
+    fg: "#1a1a1a",
+    accent: "#8c2f2f",
+    emissive: 0x8c2f2f,
+    fontSize: 68,
+  });
+
+  // Pedestrian street / commercial strip signs
+  makeShopSign("پیاده‌راه علم‌الهدی", 14, 3.4, -12, -0.5, {
+    width: 7.5,
+    bg: "#14241c",
+    accent: "#c9a56a",
+  });
+  makeShopSign("سینما سپیدرود", 16, 3.2, -6, -Math.PI / 2, {
+    width: 6.5,
+    bg: "#2a1520",
+    accent: "#e08a7a",
+    emissive: 0xe08a7a,
+  });
+  makeShopSign("سینما ۲۲ بهمن", 16, 3.2, 6, -Math.PI / 2, {
+    width: 6.2,
+    bg: "#1a2030",
+    accent: "#8ab4e0",
+    emissive: 0x8ab4e0,
+  });
+  makeShopSign("بازار بزرگ رشت", 10, 3.1, 14, Math.PI * 0.85, {
+    width: 6.8,
+    bg: "#2a2418",
+    accent: "#e0b35a",
+    emissive: 0xe0b35a,
+  });
+  makeShopSign("سبزه میدان", 4, 3.0, 16, Math.PI, {
+    width: 5.5,
+    bg: "#16301f",
+    accent: "#7dcb9e",
+    emissive: 0x7dcb9e,
+  });
+  makeShopSign("پاساژ پاسارگاد", 18, 3.15, -2, -Math.PI / 2, {
+    width: 6.5,
+    bg: "#241a28",
+    accent: "#d4a0c8",
+    emissive: 0xd4a0c8,
+  });
+  makeShopSign("مرکز خرید رز", 12, 3.05, -16, 0.35, {
+    width: 5.8,
+    bg: "#301820",
+    accent: "#e08aa8",
+    emissive: 0xe08aa8,
+  });
+  makeShopSign("کافه فوتون", 15, 3.0, 10, -Math.PI / 2, {
+    width: 5.2,
+    bg: "#1c1810",
+    accent: "#e8b87a",
+    emissive: 0xe8b87a,
+  });
+  makeShopSign("مسیر امن | AmenRoad", 19, 3.2, 14, -Math.PI / 2, {
+    width: 7.2,
+    bg: "#0c1f1a",
+    accent: "#7dcb9e",
+    emissive: 0x7dcb9e,
+    fontSize: 58,
+  });
+  makeShopSign("کافه رستوران گیلان", -6, 2.9, -14, 0.2, {
+    width: 6.5,
+    bg: "#201810",
+    accent: "#c9a56a",
+  });
+  makeShopSign("شیرینی‌فروشی سنتی", -4, 2.85, 14, Math.PI, {
+    width: 6.2,
+    bg: "#281818",
+    accent: "#e0a070",
+    emissive: 0xe0a070,
+  });
 }
 
 function makeSquareGround() {
@@ -538,13 +642,17 @@ function buildScene() {
   makeSquareGround();
   makeMunicipalityBuilding();
 
-  // Surrounding context
-  makeSurroundBuilding(8, -28, 22, 8, 9, 0, 0x6e3a2a); // south — Hotel-ish
-  makeSurroundBuilding(28, 0, 10, 24, 10, Math.PI / 2, 0x4a4a4a); // east — post office
-  makeSurroundBuilding(6, 28, 24, 8, 8.5, Math.PI, 0x8c2f2f); // north — library
+  // Surrounding context — named landmarks around the square
+  makeSurroundBuilding(8, -28, 22, 8, 9, 0, 0x6e3a2a); // south — هتل ایران
+  makeSurroundBuilding(28, 0, 10, 24, 10, Math.PI / 2, 0x4a4a4a); // east — موزه پست
+  makeSurroundBuilding(6, 28, 24, 8, 8.5, Math.PI, 0x8c2f2f); // north — کتابخانه ملی
+
+  // Extra low shopfronts along pedestrian edges
+  makeSurroundBuilding(20, -14, 8, 6, 5.5, -Math.PI / 2, 0x5a3a2a);
+  makeSurroundBuilding(20, 14, 8, 6, 5.5, -Math.PI / 2, 0x4a4a3a);
 
   makeFountain();
-  makeAmenRoadBillboard();
+  placeSquareSigns();
 
   // Trees along edges
   const treeSpots = [
@@ -637,7 +745,7 @@ function setNight(night) {
     neonMeshes.forEach((m) => {
       if (m.material && m.material.emissive) {
         if (m.material.map) {
-          m.material.emissiveIntensity = 1.1;
+          m.material.emissiveIntensity = 0.85;
         } else if (m.material.color && m.material.color.getHex() === 0x2a7faa) {
           m.material.emissive.setHex(0x124a66);
           m.material.emissiveIntensity = 0.45;
@@ -645,7 +753,7 @@ function setNight(night) {
           m.material.emissive.setHex(0xffd27a);
           m.material.emissiveIntensity = 1.2;
         } else {
-          m.material.emissiveIntensity = Math.max(m.material.emissiveIntensity, 0.8);
+          m.material.emissiveIntensity = Math.max(m.material.emissiveIntensity, 0.6);
         }
       }
     });
