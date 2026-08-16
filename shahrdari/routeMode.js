@@ -14,6 +14,7 @@ import {
   formatElevation,
 } from "./routePlanner.js";
 import { createRider, createFlyoverController } from "./flyoverCamera.js";
+import { fetchPoisAlongRoute, placeRoadsideSigns } from "./pois.js";
 
 const BOUNDS = {
   south: 37.22,
@@ -82,6 +83,8 @@ export function createRouteMode(renderer) {
   let startLL = null;
   let endLL = null;
   let routeData = null;
+  let routePois = [];
+  let poiMarkers = [];
   let flyover = null;
   let rider = null;
   let flying = false;
@@ -168,15 +171,34 @@ export function createRouteMode(renderer) {
     ).addTo(map);
     map.fitBounds(routeLine.getBounds(), { padding: [40, 40] });
 
+    promptText.textContent = "در حال یافتن مغازه‌ها و ساختمان‌های اطراف مسیر…";
+    routePois = await fetchPoisAlongRoute(routeData.coords);
+    clearPoiMarkers();
+    routePois.slice(0, 30).forEach((p) => {
+      const m = L.circleMarker([p.lat, p.lon], {
+        radius: 5,
+        color: "#c9a56a",
+        fillColor: "#00ffcc",
+        fillOpacity: 0.85,
+        weight: 1,
+      })
+        .bindTooltip(p.name, { direction: "top", opacity: 0.95 })
+        .addTo(map);
+      poiMarkers.push(m);
+    });
+
     mDist.textContent = formatDistance(routeData.distanceM);
     mTime.textContent = formatDuration(routeData.durationS);
     mElev.textContent = formatElevation(elev.gain, elev.loss);
     metricsEl.hidden = false;
     pickStep = "ready";
-    promptText.textContent =
-      routeData.source === "osrm"
-        ? "مسیر آماده است — پرواز سه‌بعدی را شروع کنید"
-        : "مسیر تقریبی (آفلاین) — پرواز سه‌بعدی را شروع کنید";
+    const src = routeData.source === "osrm" ? "مسیر OSRM" : "مسیر تقریبی";
+    promptText.textContent = `${src} آماده · ${routePois.length} مکان اطراف مسیر پیدا شد`;
+  }
+
+  function clearPoiMarkers() {
+    poiMarkers.forEach((m) => map?.removeLayer(m));
+    poiMarkers = [];
   }
 
   function buildCityContext(curve) {
@@ -245,17 +267,18 @@ export function createRouteMode(renderer) {
     const { group, curve } = buildRoutePath(routeData.coords, routeData.elev?.profile);
     routeRoot.add(group);
     buildCityContext(curve);
+    placeRoadsideSigns(curve, routePois, routeRoot);
 
     rider = createRider();
     routeRoot.add(rider);
     flyover = createFlyoverController(camera, curve);
     flyover.state.speed = Number(flySpeed.value) || 2;
     flyover.rewind();
-    flyover.applyToRider(rider, 0);
+    flyover.applyToRider(rider, 0, 0.016, false);
     flyover.applyCamera(0);
     flyover.state.playing = true;
     btnPlay.textContent = "⏸ توقف";
-    flyStatus.textContent = "پرواز فعال — Space برای توقف";
+    flyStatus.textContent = "دوچرخه‌سوار در مسیر — Space برای توقف";
     flyScrub.value = "0";
   }
 
@@ -272,8 +295,10 @@ export function createRouteMode(renderer) {
     if (startMarker) map.removeLayer(startMarker);
     if (endMarker) map.removeLayer(endMarker);
     if (routeLine) map.removeLayer(routeLine);
+    clearPoiMarkers();
     startMarker = endMarker = routeLine = null;
     startLL = endLL = routeData = null;
+    routePois = [];
     pickStep = "start";
     metricsEl.hidden = true;
     if (clearPrompt) promptText.textContent = "نقطه شروع را انتخاب کنید";
@@ -288,7 +313,7 @@ export function createRouteMode(renderer) {
   btnRewind?.addEventListener("click", () => {
     if (!flyover) return;
     flyover.rewind();
-    if (rider) flyover.applyToRider(rider, 0);
+    if (rider)     flyover.applyToRider(rider, 0, 0.016, false);
     flyover.applyCamera(0);
     flyScrub.value = "0";
     btnPlay.textContent = "▶ پخش";
@@ -302,7 +327,7 @@ export function createRouteMode(renderer) {
       flyover.state.playing = true;
     }
     btnPlay.textContent = flyover.state.playing ? "⏸ توقف" : "▶ پخش";
-    flyStatus.textContent = flyover.state.playing ? "در حال پخش…" : "متوقف";
+    flyStatus.textContent = flyover.state.playing ? "دوچرخه‌سوار در حال حرکت…" : "متوقف";
   });
   flySpeed?.addEventListener("change", () => {
     if (flyover) flyover.state.speed = Number(flySpeed.value) || 1;
@@ -312,7 +337,7 @@ export function createRouteMode(renderer) {
     const t = Number(flyScrub.value) / 1000;
     flyover.setProgress(t);
     flyover.state.playing = false;
-    if (rider) flyover.applyToRider(rider, t);
+    if (rider) flyover.applyToRider(rider, t, 0.016, false);
     flyover.applyCamera(t);
     btnPlay.textContent = "▶ پخش";
   });
