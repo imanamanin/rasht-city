@@ -6,8 +6,10 @@
   --ink: #f2f7f4;
   --muted: rgba(242, 247, 244, 0.7);
   --accent: #c9a56a;
+  --neon: #00ffcc;
   --line: rgba(200, 230, 216, 0.2);
   --font: "Vazirmatn", system-ui, sans-serif;
+  --mode-h: 3.25rem;
 }
 
 *,
@@ -35,7 +37,7 @@ body {
 
 #blocker {
   position: fixed;
-  inset: 0;
+  inset: var(--mode-h) 0 0;
   z-index: 20;
   display: grid;
   place-items: center;
@@ -116,7 +118,7 @@ body {
 #hud {
   position: fixed;
   inset-inline-start: 0.85rem;
-  top: 0.85rem;
+  top: calc(var(--mode-h) + 0.75rem);
   z-index: 10;
   max-width: min(92vw, 280px);
   padding: 0.85rem 1rem;
@@ -172,7 +174,265 @@ kbd {
   #hud {
     font-size: 0.75rem;
     inset-inline-start: 0.5rem;
-    top: 0.5rem;
+    top: calc(var(--mode-h) + 0.45rem);
     padding: 0.65rem 0.75rem;
   }
+
+  .mode-btn {
+    font-size: 0.72rem;
+    padding: 0.4rem 0.55rem;
+  }
+}
+
+/* =========================================================
+   Mode bar
+   ========================================================= */
+#mode-bar {
+  position: fixed;
+  inset-inline: 0;
+  top: 0;
+  z-index: 40;
+  height: var(--mode-h);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0 0.85rem;
+  background: rgba(6, 12, 10, 0.78);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(12px);
+}
+
+.brand-mini {
+  color: var(--accent);
+  font-weight: 800;
+  text-decoration: none;
+  font-size: 0.92rem;
+  white-space: nowrap;
+}
+
+.mode-switch {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.mode-btn {
+  appearance: none;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--muted);
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 0.45rem 0.75rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+}
+
+.mode-btn:hover,
+.mode-btn:focus-visible {
+  color: var(--ink);
+  border-color: rgba(201, 165, 106, 0.5);
+  outline: none;
+}
+
+.mode-btn.is-active {
+  color: #04140f;
+  background: linear-gradient(135deg, var(--neon), #7dcb9e);
+  border-color: transparent;
+  box-shadow: 0 0 18px rgba(0, 255, 204, 0.25);
+}
+
+body.is-route #blocker,
+body.is-route #hud {
+  display: none !important;
+}
+
+body.is-walk #route-shell {
+  display: none !important;
+}
+
+/* =========================================================
+   Route planner / flyover UI
+   ========================================================= */
+#route-shell {
+  position: fixed;
+  inset: var(--mode-h) 0 0;
+  z-index: 15;
+}
+
+#route-map {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: #0b1512;
+}
+
+#route-shell.is-flying #route-map,
+#route-shell.is-flying #route-prompt,
+#route-shell.is-flying #route-metrics {
+  display: none !important;
+}
+
+#route-shell.is-flying {
+  pointer-events: none;
+}
+
+#route-shell.is-flying #flyover-controls {
+  pointer-events: auto;
+}
+
+.route-card {
+  position: absolute;
+  z-index: 5;
+  border: 1px solid var(--line);
+  border-radius: 0.9rem;
+  background: var(--panel);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+  padding: 0.9rem 1rem;
+}
+
+#route-prompt {
+  left: 50%;
+  right: auto;
+  top: 1rem;
+  transform: translateX(-50%);
+  max-width: min(92vw, 360px);
+  text-align: center;
+}
+
+#route-prompt-text {
+  margin: 0;
+  font-weight: 800;
+  font-size: 1.05rem;
+}
+
+.route-hint {
+  margin: 0.35rem 0 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+#route-metrics {
+  inset-inline-end: 1rem;
+  bottom: 1rem;
+  width: min(92vw, 280px);
+  display: grid;
+  gap: 0.65rem;
+}
+
+#route-metrics .metric {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  align-items: baseline;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+#route-metrics .metric strong {
+  color: var(--neon);
+  font-size: 1rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.btn-primary,
+.btn-ghost {
+  appearance: none;
+  border: 0;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+  border-radius: 0.55rem;
+  padding: 0.65rem 0.85rem;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--neon), #7dcb9e);
+  color: #04140f;
+}
+
+.btn-ghost {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--line);
+  color: var(--ink);
+}
+
+#flyover-controls {
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 1rem;
+  width: min(94vw, 520px);
+  pointer-events: auto;
+}
+
+.fly-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  align-items: center;
+  margin-bottom: 0.55rem;
+}
+
+.speed-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+#fly-speed {
+  font: inherit;
+  border-radius: 0.4rem;
+  border: 1px solid var(--line);
+  background: #0d1814;
+  color: var(--ink);
+  padding: 0.25rem 0.4rem;
+}
+
+#fly-scrub {
+  width: 100%;
+  accent-color: var(--neon);
+}
+
+.fly-status {
+  margin: 0.4rem 0 0;
+  color: var(--muted);
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+/* Leaflet dark tweak */
+.leaflet-container {
+  background: #0b1512;
+  font-family: var(--font);
+}
+
+.leaflet-control-attribution {
+  background: rgba(8, 18, 15, 0.75) !important;
+  color: var(--muted) !important;
+  font-size: 10px !important;
+}
+
+.pin-start,
+.pin-end {
+  width: 18px;
+  height: 18px;
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+  border: 2px solid #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.pin-start {
+  background: #22c55e;
+}
+
+.pin-end {
+  background: #ef4444;
 }

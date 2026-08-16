@@ -4,13 +4,22 @@
 
 A static Three.js first-person walkthrough. No build step, no backend, no npm.
 
-## باز کردن محلی
+## حالت‌ها
+
+1. **میدان شهرداری** — قدم‌زدن اول‌شخص میان میدان و تابلوها  
+2. **مسیرساز سه‌بعدی استراوا** — انتخاب نقطه A/B روی نقشه، مسیر OSRM دوچرخه، پرواز سینمایی سه‌بعدی
+
+### مسیرساز
+
+- کلیک روی نقشه تیره Leaflet برای شروع و مقصد  
+- مسیر از OSRM عمومی (`router.project-osrm.org`) با fallback تقریبی  
+- پرواز با مسیر نئونی، دوربین chase، کنترل پخش (Space / R / Esc)
 
 ```bash
 npx serve .
 ```
 
-سپس بروید به `/shahrdari/`
+سپس `/shahrdari/`
 
 ## کنترل‌ها
 
