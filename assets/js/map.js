@@ -9,6 +9,7 @@
 const MAP_CONFIG = {
   center: [37.27581843337589, 49.59070186234632], // AmenRoad
   zoom: 17,
+  mobileZoom: 16,
   minZoom: 11,
   maxZoom: 18,
   /* Standard OSM raster tiles — free, attribution required */
@@ -54,6 +55,27 @@ const MAP_CONFIG = {
 
 let rashtMapInstance = null;
 
+function isMobileMap() {
+  return window.matchMedia("(max-width: 640px)").matches;
+}
+
+function mapZoomLevel() {
+  return isMobileMap() ? MAP_CONFIG.mobileZoom : MAP_CONFIG.zoom;
+}
+
+function popupOptions() {
+  const mobile = isMobileMap();
+  return {
+    className: "rasht-popup-wrap",
+    maxWidth: mobile ? 260 : 300,
+    minWidth: mobile ? 180 : 200,
+    autoPan: true,
+    keepInView: true,
+    autoPanPaddingTopLeft: mobile ? [16, 48] : [24, 24],
+    autoPanPaddingBottomRight: mobile ? [16, 72] : [24, 48],
+  };
+}
+
 function setMapStatus(message, kind) {
   const el = document.getElementById("map-status");
   if (!el) return;
@@ -81,6 +103,27 @@ function createAccentIcon(isPrimary) {
   });
 }
 
+function focusMarker(map, entry, zoom) {
+  if (!map || !entry) return;
+  const z = zoom ?? Math.max(map.getZoom(), mapZoomLevel());
+  map.setView(entry.latLng, z, { animate: false });
+  entry.marker.openPopup();
+
+  // After popup layout, pan so marker + popup stay inside the phone viewport
+  requestAnimationFrame(() => {
+    try {
+      const mobile = isMobileMap();
+      map.panInside(L.latLng(entry.latLng[0], entry.latLng[1]), {
+        paddingTopLeft: mobile ? [12, 70] : [24, 40],
+        paddingBottomRight: mobile ? [12, 40] : [24, 40],
+        animate: false,
+      });
+    } catch (_) {
+      /* panInside may be unavailable on very old Leaflet — setView is enough */
+    }
+  });
+}
+
 function renderMapChips(map, markerById) {
   const host = document.getElementById("map-chips");
   if (!host) return;
@@ -101,8 +144,7 @@ function renderMapChips(map, markerById) {
     const entry = markerById.get(id);
     if (!entry) return;
 
-    map.flyTo(entry.latLng, Math.max(map.getZoom(), 15), { duration: 0.85 });
-    entry.marker.openPopup();
+    focusMarker(map, entry, Math.max(mapZoomLevel(), 15));
 
     host.querySelectorAll(".map-chip").forEach((chip) => {
       chip.classList.toggle("is-active", chip === btn);
@@ -126,7 +168,7 @@ function initRashtMap() {
   try {
     const map = L.map(canvas, {
       center: MAP_CONFIG.center,
-      zoom: MAP_CONFIG.zoom,
+      zoom: mapZoomLevel(),
       minZoom: MAP_CONFIG.minZoom,
       maxZoom: MAP_CONFIG.maxZoom,
       scrollWheelZoom: true,
@@ -150,34 +192,52 @@ function initRashtMap() {
 
       marker.bindPopup(
         `<div class="rasht-popup" dir="rtl">${place.popup}</div>`,
-        {
-          className: "rasht-popup-wrap",
-          maxWidth: 300,
-          autoPanPadding: [24, 24],
-        }
+        popupOptions()
       );
 
       markerById.set(place.id, { marker, latLng });
     });
 
     const primary = MAP_CONFIG.markers.find((m) => m.primary) || MAP_CONFIG.markers[0];
-    const openPrimaryPopup = () => {
-      if (primary) markerById.get(primary.id)?.marker.openPopup();
+    const primaryEntry = primary ? markerById.get(primary.id) : null;
+
+    const focusPrimary = () => {
+      if (primaryEntry) focusMarker(map, primaryEntry, mapZoomLevel());
     };
-    openPrimaryPopup();
 
     renderMapChips(map, markerById);
 
-    // Leaflet needs a size recalc after layout / fonts / responsive panels
+    // Leaflet needs a size recalc after layout / when scrolled into view on phones
     const refreshSize = () => {
       map.invalidateSize({ animate: false });
-      openPrimaryPopup();
+      focusPrimary();
     };
+
     requestAnimationFrame(refreshSize);
-    setTimeout(refreshSize, 250);
-    window.addEventListener("resize", () => map.invalidateSize({ animate: false }), {
-      passive: true,
-    });
+    setTimeout(refreshSize, 200);
+    setTimeout(refreshSize, 600);
+
+    window.addEventListener(
+      "resize",
+      () => {
+        map.invalidateSize({ animate: false });
+      },
+      { passive: true }
+    );
+
+    const section = document.getElementById("map");
+    if (section && "IntersectionObserver" in window) {
+      const io = new IntersectionObserver(
+        (entries) => {
+          if (entries.some((e) => e.isIntersecting)) {
+            map.invalidateSize({ animate: false });
+            focusPrimary();
+          }
+        },
+        { threshold: 0.25 }
+      );
+      io.observe(section);
+    }
 
     rashtMapInstance = map;
     setMapStatus("");

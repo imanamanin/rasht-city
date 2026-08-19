@@ -616,7 +616,8 @@ a {
   position: relative;
   margin-top: 0.25rem;
   border-radius: calc(var(--radius) - 0.15rem);
-  overflow: hidden;
+  /* visible so Leaflet popups are not clipped on mobile */
+  overflow: visible;
   border: 1px solid var(--line);
   background: #10241e;
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.03);
@@ -630,16 +631,19 @@ a {
   border-radius: 50%;
   background: radial-gradient(circle, rgba(201, 165, 106, 0.18), transparent 70%);
   pointer-events: none;
-  z-index: 1;
+  z-index: 0;
 }
 
 .map-canvas {
+  position: relative;
   width: 100%;
   height: clamp(320px, 58vh, 520px);
   min-height: 320px;
-  z-index: 0;
+  z-index: 1;
   background: #10241e;
-  filter: saturate(0.92) contrast(1.02);
+  border-radius: calc(var(--radius) - 0.15rem);
+  /* Do NOT use CSS filter here — it clips Leaflet popups on mobile */
+  overflow: hidden;
 }
 
 .map-status {
@@ -824,8 +828,26 @@ a {
   }
 
   .map-canvas {
-    height: 360px;
-    min-height: 320px;
+    height: 420px;
+    min-height: 380px;
+    overflow: visible; /* allow AmenRoad popup to show fully on phones */
+  }
+
+  .map-frame {
+    overflow: visible;
+  }
+
+  .rasht-popup-wrap .leaflet-popup-content-wrapper {
+    max-width: min(88vw, 280px);
+  }
+
+  .rasht-popup-wrap .leaflet-popup-content {
+    margin: 0.7rem 0.85rem;
+    font-size: 0.86rem;
+  }
+
+  .rasht-popup-address {
+    font-size: 0.8rem;
   }
 }
 
