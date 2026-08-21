@@ -448,8 +448,63 @@
   display: grid;
   grid-template-columns: repeat(7, minmax(0, 1fr));
   gap: 0.35rem;
-  flex: 1;
+  flex: 0 0 auto;
   align-content: start;
+}
+
+.cal-amenroad-fill {
+  flex: 1 1 auto;
+  min-height: 4.5rem;
+  margin-top: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 0.85rem;
+  border: 1px dashed rgba(201, 165, 106, 0.35);
+  background:
+    radial-gradient(ellipse at 50% 30%, rgba(201, 165, 106, 0.14), transparent 62%),
+    rgba(8, 18, 15, 0.35);
+  color: var(--cal-gold-soft);
+  transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+}
+
+.cal-amenroad-fill:hover,
+.cal-amenroad-fill:focus-visible {
+  border-color: rgba(201, 165, 106, 0.65);
+  background:
+    radial-gradient(ellipse at 50% 30%, rgba(201, 165, 106, 0.22), transparent 65%),
+    rgba(8, 18, 15, 0.45);
+  outline: none;
+  transform: translateY(-1px);
+}
+
+.cal-amenroad-kicker {
+  font-size: clamp(0.72rem, 1.4vw, 0.85rem);
+  letter-spacing: 0.08em;
+  color: var(--cal-ink-muted);
+  font-weight: 600;
+}
+
+.cal-amenroad-brand {
+  font-family: var(--display, "Instrument Serif", Georgia, serif);
+  font-size: clamp(1.55rem, 3.8vw, 2.35rem);
+  line-height: 1.05;
+  font-weight: 400;
+  color: var(--cal-gold-soft);
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+.cal-amenroad-tag {
+  font-size: clamp(0.7rem, 1.3vw, 0.8rem);
+  color: var(--cal-ink-soft);
+  letter-spacing: 0.04em;
+  direction: ltr;
+  unicode-bidi: isolate;
 }
 
 .cal-cell {
@@ -645,6 +700,11 @@
     flex: 0 0 auto;
     max-height: none;
     overflow: visible;
+  }
+
+  .cal-amenroad-fill {
+    min-height: 5.5rem;
+    margin-top: 0.75rem;
   }
 }
 

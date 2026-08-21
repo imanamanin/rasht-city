@@ -2,12 +2,17 @@
  * rasht.city — Persian calendar & time dashboard
  * Vanilla JS, no backend. Depends on assets/js/jalali.js
  *
- * Occasions & holidays: free pnldev Jalali Calendar API
+ * Occasions & holidays from pnldev Jalali Calendar API:
  * https://pnldev.com/fa/api-doc/calender
+ *
+ * Strategy: local bundled year JSON first (always works on GitHub Pages),
+ * then refresh from live API when reachable.
  */
 
 const CAL_TZ = "Asia/Tehran";
 const PNLDEV_CALENDER_API = "https://pnldev.com/api/calender";
+const LOCAL_YEAR_JSON = (jy) => `assets/data/jalali-calendar-${jy}.json`;
+const LS_PREFIX = "rasht.cal.pnldev.";
 
 const ZODIAC_FA = [
   { name: "حمل", from: [3, 21], to: [4, 20] },
@@ -30,8 +35,11 @@ const CITY_QUOTES = [
   "در رشت، هر کوچه بوی تازگی می‌دهد؛ از بازار بزرگ تا مه‌آلود جنگل‌های سراوان.",
 ];
 
-/** Cache: "jy-jm" → day map from API */
+/** Cache: "jy-jm" → day map */
 const monthCalendarCache = new Map();
+/** Cache: jy → full year map { "1": { "1": day, ... }, ... } */
+const yearCalendarCache = new Map();
+
 let calView = { jy: 0, jm: 0 };
 let calClockTimer = null;
 let occasionsRequestId = 0;
@@ -59,7 +67,15 @@ function calNow() {
   const hour = Number(get("hour"));
   const minute = Number(get("minute"));
   const second = Number(get("second"));
-  return { year, month, day, hour, minute, second, date: new Date(year, month - 1, day, hour, minute, second) };
+  return {
+    year,
+    month,
+    day,
+    hour,
+    minute,
+    second,
+    date: new Date(year, month - 1, day, hour, minute, second),
+  };
 }
 
 function getZodiacFa(month, day) {
@@ -112,36 +128,49 @@ function monthCacheKey(jy, jm) {
   return `${jy}-${jm}`;
 }
 
+function isTruthyStatus(status) {
+  return status === true || status === 1 || status === "true" || status === "1";
+}
+
 /**
- * Fetch one Jalali month from pnldev (free, no API key, CORS *).
- * result is keyed by day number as string: { "1": { holiday, event, solar, ... }, ... }
+ * Normalize pnldev payloads:
+ * - day:   { solar, event, holiday }
+ * - month: { "1": day, "2": day, ... }
+ * - year:  { "1": { "1": day, ... }, "2": {...}, ... }
  */
-async function fetchMonthCalendar(jy, jm) {
-  const key = monthCacheKey(jy, jm);
-  if (monthCalendarCache.has(key)) {
-    return monthCalendarCache.get(key);
+function normalizeYearMap(result) {
+  if (!result || typeof result !== "object") return null;
+
+  // Single day
+  if (result.solar && result.event !== undefined) {
+    const m = String(result.solar.month);
+    const d = String(result.solar.day);
+    return { [m]: { [d]: result } };
   }
 
-  const url = `${PNLDEV_CALENDER_API}?year=${encodeURIComponent(jy)}&month=${encodeURIComponent(jm)}`;
-  const res = await fetch(url, { headers: { Accept: "application/json" } });
-  if (!res.ok) throw new Error(`pnldev calendar HTTP ${res.status}`);
+  const keys = Object.keys(result);
+  if (!keys.length) return null;
 
-  const data = await res.json();
-  if (!data || data.status !== true || !data.result || typeof data.result !== "object") {
-    throw new Error("pnldev calendar: unexpected response");
+  const first = result[keys[0]];
+  // Month map: first child is a day object
+  if (first && first.solar && first.event !== undefined) {
+    const m = String(first.solar.month || keys[0]);
+    // If keys look like days 1..31, wrap as one month. Prefer solar.month.
+    return { [m]: result };
   }
 
-  // Day query returns a single object; month query returns day-keyed map
-  const result = data.result;
-  let dayMap;
-  if (result.solar && Array.isArray(result.event)) {
-    dayMap = { [String(result.solar.day)]: result };
-  } else {
-    dayMap = result;
+  // Year map: first child is a month map
+  if (first && typeof first === "object") {
+    return result;
   }
 
-  monthCalendarCache.set(key, dayMap);
-  return dayMap;
+  return null;
+}
+
+function dayMapFromYear(yearMap, jm) {
+  if (!yearMap) return null;
+  const month = yearMap[String(jm)] || yearMap[jm];
+  return month && typeof month === "object" ? month : null;
 }
 
 function occasionsFromMonth(dayMap) {
@@ -153,7 +182,7 @@ function occasionsFromMonth(dayMap) {
     .filter((n) => Number.isFinite(n) && n > 0)
     .sort((a, b) => a - b)
     .forEach((dayNum) => {
-      const entry = dayMap[String(dayNum)];
+      const entry = dayMap[String(dayNum)] || dayMap[dayNum];
       if (!entry) return;
       const events = Array.isArray(entry.event) ? entry.event : [];
       const holiday = Boolean(entry.holiday);
@@ -169,6 +198,150 @@ function occasionsFromMonth(dayMap) {
     });
 
   return items;
+}
+
+function readLocalStorageYear(jy) {
+  try {
+    const raw = localStorage.getItem(LS_PREFIX + jy);
+    if (!raw) return null;
+    const parsed = JSON.parse(raw);
+    if (!parsed || !parsed.result || Date.now() - (parsed.savedAt || 0) > 1000 * 60 * 60 * 24 * 7) {
+      return null;
+    }
+    return normalizeYearMap(parsed.result);
+  } catch (_) {
+    return null;
+  }
+}
+
+function writeLocalStorageYear(jy, yearMap) {
+  try {
+    localStorage.setItem(
+      LS_PREFIX + jy,
+      JSON.stringify({ savedAt: Date.now(), result: yearMap })
+    );
+  } catch (_) {
+    /* quota / private mode */
+  }
+}
+
+async function fetchJson(url) {
+  const res = await fetch(url, {
+    method: "GET",
+    mode: "cors",
+    credentials: "omit",
+    cache: "no-store",
+  });
+  if (!res.ok) throw new Error(`HTTP ${res.status} for ${url}`);
+  return res.json();
+}
+
+async function loadBundledYear(jy) {
+  try {
+    const data = await fetchJson(LOCAL_YEAR_JSON(jy));
+    if (!isTruthyStatus(data.status)) return null;
+    return normalizeYearMap(data.result);
+  } catch (_) {
+    return null;
+  }
+}
+
+async function loadLiveYear(jy) {
+  const data = await fetchJson(
+    `${PNLDEV_CALENDER_API}?year=${encodeURIComponent(jy)}`
+  );
+  if (!isTruthyStatus(data.status)) throw new Error("pnldev status false");
+  const yearMap = normalizeYearMap(data.result);
+  if (!yearMap) throw new Error("pnldev unexpected year shape");
+  return yearMap;
+}
+
+async function loadLiveMonth(jy, jm) {
+  const data = await fetchJson(
+    `${PNLDEV_CALENDER_API}?year=${encodeURIComponent(jy)}&month=${encodeURIComponent(jm)}`
+  );
+  if (!isTruthyStatus(data.status)) throw new Error("pnldev status false");
+  const yearMap = normalizeYearMap(data.result);
+  return dayMapFromYear(yearMap, jm);
+}
+
+/**
+ * Resolve one month: memory → localStorage → bundled JSON → live API.
+ */
+async function fetchMonthCalendar(jy, jm) {
+  const key = monthCacheKey(jy, jm);
+  if (monthCalendarCache.has(key)) {
+    return monthCalendarCache.get(key);
+  }
+
+  if (yearCalendarCache.has(jy)) {
+    const fromYear = dayMapFromYear(yearCalendarCache.get(jy), jm);
+    if (fromYear) {
+      monthCalendarCache.set(key, fromYear);
+      return fromYear;
+    }
+  }
+
+  const fromLs = readLocalStorageYear(jy);
+  if (fromLs) {
+    yearCalendarCache.set(jy, fromLs);
+    const month = dayMapFromYear(fromLs, jm);
+    if (month) {
+      monthCalendarCache.set(key, month);
+      // Refresh in background
+      refreshYearFromApi(jy).catch(() => {});
+      return month;
+    }
+  }
+
+  const bundled = await loadBundledYear(jy);
+  if (bundled) {
+    yearCalendarCache.set(jy, bundled);
+    writeLocalStorageYear(jy, bundled);
+    const month = dayMapFromYear(bundled, jm);
+    if (month) {
+      monthCalendarCache.set(key, month);
+      refreshYearFromApi(jy).catch(() => {});
+      return month;
+    }
+  }
+
+  // Live: prefer year (docs item-2), fall back to month
+  try {
+    const yearMap = await loadLiveYear(jy);
+    yearCalendarCache.set(jy, yearMap);
+    writeLocalStorageYear(jy, yearMap);
+    const month = dayMapFromYear(yearMap, jm);
+    if (month) {
+      monthCalendarCache.set(key, month);
+      return month;
+    }
+  } catch (yearErr) {
+    console.warn("pnldev year fetch failed, trying month:", yearErr);
+  }
+
+  const monthOnly = await loadLiveMonth(jy, jm);
+  if (!monthOnly) throw new Error("no month data");
+  monthCalendarCache.set(key, monthOnly);
+  return monthOnly;
+}
+
+async function refreshYearFromApi(jy) {
+  const yearMap = await loadLiveYear(jy);
+  yearCalendarCache.set(jy, yearMap);
+  writeLocalStorageYear(jy, yearMap);
+  Object.keys(yearMap).forEach((m) => {
+    const month = yearMap[m];
+    if (month) monthCalendarCache.set(monthCacheKey(jy, Number(m)), month);
+  });
+  // If user is still viewing this year, re-render quietly
+  if (calView.jy === jy) {
+    const dayMap = dayMapFromYear(yearMap, calView.jm);
+    if (dayMap) {
+      renderMonthGrid(dayMap);
+      renderOccasionsList(calView.jm, occasionsFromMonth(dayMap), "ok");
+    }
+  }
 }
 
 function updateAnalogClock(h, m, s) {
@@ -352,8 +525,9 @@ function renderMonthGrid(dayMap) {
   for (let d = 1; d <= daysInMonth; d += 1) {
     const isToday = today.jy === jy && today.jm === jm && today.jd === d;
     const isFriday = Jalali.jalaliWeekdayIndex(jy, jm, d) === 6;
-    const dayInfo = dayMap ? dayMap[String(d)] : null;
+    const dayInfo = dayMap ? dayMap[String(d)] || dayMap[d] : null;
     const isHoliday = Boolean(dayInfo?.holiday) || isFriday;
+
     const events = Array.isArray(dayInfo?.event)
       ? dayInfo.event.map((e) => String(e || "").trim()).filter(Boolean)
       : [];
@@ -365,6 +539,7 @@ function renderMonthGrid(dayMap) {
     }${hasEvent ? " has-event" : ""}" data-day="${d}"${
       hasEvent ? ` role="button" tabindex="0" aria-label="مناسبت‌های روز ${Jalali.toFaDigits(d)}"` : ""
     }${tip ? ` title="${tip}"` : ""}>${Jalali.toFaDigits(d)}</div>`;
+
   }
 
   grid.innerHTML = html;
