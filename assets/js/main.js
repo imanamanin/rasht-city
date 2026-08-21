@@ -403,9 +403,10 @@ async function loadGilanTeaser() {
     const res = await fetch("assets/data/gilan-figures.json", { cache: "no-store" });
     if (!res.ok) throw new Error(`gilan-figures.json HTTP ${res.status}`);
     const data = await res.json();
-    const figures = (data.figures || []).filter(
-      (f) => f && f.status === "published" && f.isBornInGilan === true
-    );
+    const figures = (data.figures || []).filter((f) => {
+      if (!f || f.status !== "published") return false;
+      return f.isBornInGilan === true || f.isBornInGilan === "true";
+    });
     if (!figures.length) {
       setState(root, "هنوز یادبودی منتشر نشده است.", "");
       return;
@@ -413,8 +414,9 @@ async function loadGilanTeaser() {
 
     const f = figures[0];
     const href = `mafakher/#${encodeURIComponent(f.slug)}`;
-    const img = f.image?.url
-      ? `<div class="maf-teaser-photo" style="background-image:url('${escapeHtml(f.image.url)}')" role="img" aria-label="${escapeHtml(f.image.alt || f.fullName)}"></div>`
+    const rawImg = f.image && f.image.url ? String(f.image.url).split("?")[0] : "";
+    const img = rawImg
+      ? `<img class="maf-teaser-photo" src="${escapeHtml(rawImg)}" alt="${escapeHtml(f.image.alt || f.fullName)}" loading="lazy" />`
       : `<div class="maf-teaser-photo is-empty" aria-hidden="true"></div>`;
 
     root.innerHTML = `
