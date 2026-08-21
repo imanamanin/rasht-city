@@ -7,17 +7,27 @@ Dynamic single-page city portal for **Rasht & Gilan** — weather, prayer times,
 ```
 rasht-city/
 ├── index.html
-├── CNAME
-├── assets/
-│   ├── css/style.css
-│   ├── css/calendar.css
-│   ├── js/main.js
-│   ├── js/jalali.js
-│   ├── js/calendar.js
-│   ├── js/map.js
-│   └── data/events.json
-└── README.md
+├── mafakher/                 # مفاخر گیلان (memorial pages)
+├── scripts/fetch-gilan-figure.mjs
+├── assets/data/gilan-figures.json
+├── assets/data/gilan-figures-log.json
+└── .github/workflows/gilan-figure.yml
 ```
+
+## مفاخر گیلان
+
+Periodic memorial posts for people **born in Gilan**, sourced from **Wikidata + Persian Wikipedia API** (no HTML scraping).
+
+```bash
+node scripts/fetch-gilan-figure.mjs
+# optional: --dry-run
+```
+
+- Validates birth place via Wikidata `P19` under Gilan province `Q928828`
+- Skips duplicates already in `gilan-figures.json`
+- Writes an independent memorial text (not a verbatim Wikipedia copy) + source link
+- Logs success/failure to `gilan-figures-log.json` (see `/mafakher/log.html`)
+- GitHub Action runs weekly and commits when a new figure is published
 
 ## Features
 

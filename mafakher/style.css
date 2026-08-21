@@ -1,0 +1,352 @@
+/* مفاخر گیلان — memorial gallery */
+
+.maf-body {
+  min-height: 100vh;
+}
+
+.maf-main {
+  width: min(100% - 2rem, var(--max));
+  margin: 1.25rem auto 3rem;
+  position: relative;
+  z-index: 1;
+}
+
+.maf-hero {
+  animation: rise 0.85s ease-out both;
+}
+
+.maf-kicker {
+  margin: 0 0 0.55rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.maf-brand {
+  margin: 0 0 0.75rem;
+  font-family: var(--display);
+  font-size: clamp(2.4rem, 7vw, 4rem);
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--accent-strong);
+}
+
+.maf-brand-sm {
+  font-size: clamp(1.8rem, 5vw, 2.6rem);
+}
+
+.maf-lede {
+  margin: 0 0 1.75rem;
+  max-width: 40rem;
+  color: var(--ink-soft);
+  line-height: 1.85;
+  font-size: 1.02rem;
+}
+
+.maf-section-title {
+  margin: 2rem 0 1rem;
+  font-size: 1.15rem;
+  color: var(--accent-strong);
+}
+
+.maf-featured {
+  min-height: 12rem;
+}
+
+.maf-featured-card {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  gap: 0;
+  border-radius: calc(var(--radius) + 0.15rem);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--bg-panel);
+  box-shadow: var(--shadow);
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.2s ease, transform 0.25s ease;
+}
+
+.maf-featured-card:hover {
+  border-color: rgba(201, 165, 106, 0.45);
+  transform: translateY(-2px);
+}
+
+.maf-featured-media {
+  min-height: 280px;
+  background:
+    linear-gradient(160deg, rgba(11, 26, 22, 0.2), rgba(11, 26, 22, 0.75)),
+    var(--bg-elevated);
+  background-size: cover;
+  background-position: center;
+}
+
+.maf-featured-body {
+  padding: 1.5rem 1.6rem 1.7rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.65rem;
+}
+
+.maf-chip {
+  display: inline-flex;
+  align-self: flex-start;
+  padding: 0.2rem 0.55rem;
+  border-radius: 0.45rem;
+  border: 1px solid rgba(201, 165, 106, 0.35);
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.maf-featured-body h2 {
+  margin: 0;
+  font-size: clamp(1.5rem, 3.5vw, 2rem);
+  font-family: var(--display);
+  font-weight: 400;
+  color: var(--ink);
+}
+
+.maf-featured-body p {
+  margin: 0;
+  color: var(--ink-soft);
+  line-height: 1.7;
+}
+
+.maf-meta-line {
+  font-size: 0.86rem;
+  color: var(--ink-muted);
+}
+
+.maf-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.maf-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background: var(--bg-panel);
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.maf-card:hover {
+  border-color: rgba(201, 165, 106, 0.4);
+  transform: translateY(-2px);
+}
+
+.maf-card-media {
+  aspect-ratio: 4 / 3;
+  background: rgba(16, 36, 30, 0.9);
+  background-size: cover;
+  background-position: center top;
+}
+
+.maf-card-body {
+  padding: 0.95rem 1rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.maf-card-body h3 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.maf-card-body p {
+  margin: 0;
+  font-size: 0.84rem;
+  color: var(--ink-muted);
+  line-height: 1.55;
+}
+
+.maf-empty {
+  color: var(--ink-muted);
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.maf-back {
+  appearance: none;
+  margin: 0 0 1rem;
+  padding: 0.45rem 0.75rem;
+  border-radius: 0.55rem;
+  border: 1px solid var(--line);
+  background: rgba(16, 36, 30, 0.8);
+  color: var(--accent-strong);
+  cursor: pointer;
+  font: inherit;
+}
+
+.maf-back:hover {
+  border-color: rgba(201, 165, 106, 0.45);
+}
+
+.maf-memorial {
+  border-radius: calc(var(--radius) + 0.1rem);
+  border: 1px solid var(--line);
+  background: var(--bg-panel);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  animation: rise 0.7s ease-out both;
+}
+
+.maf-memorial-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 0;
+  min-height: 320px;
+}
+
+.maf-memorial-photo {
+  min-height: 320px;
+  background: #10241e;
+  background-size: cover;
+  background-position: center top;
+}
+
+.maf-memorial-intro {
+  padding: 1.6rem 1.5rem 1.7rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.55rem;
+}
+
+.maf-memorial-intro h1 {
+  margin: 0;
+  font-family: var(--display);
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.maf-memorial-content {
+  padding: 1.4rem 1.5rem 1.8rem;
+  display: grid;
+  gap: 1.25rem;
+}
+
+.maf-memorial-content h2 {
+  margin: 0 0 0.55rem;
+  font-size: 1.05rem;
+  color: var(--accent-strong);
+}
+
+.maf-bio {
+  margin: 0;
+  white-space: pre-line;
+  line-height: 1.9;
+  color: var(--ink-soft);
+}
+
+.maf-achievements {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.maf-achievements li {
+  padding: 0.55rem 0.7rem;
+  border-radius: 0.55rem;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.02);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.maf-source-box {
+  padding: 0.9rem 1rem;
+  border-radius: 0.7rem;
+  border: 1px dashed rgba(201, 165, 106, 0.35);
+  background: rgba(201, 165, 106, 0.06);
+  font-size: 0.86rem;
+  line-height: 1.7;
+  color: var(--ink-soft);
+}
+
+.maf-source-box a {
+  color: var(--accent-strong);
+}
+
+.maf-notes {
+  margin: 0.5rem 0 0;
+  padding-inline-start: 1.1rem;
+  color: var(--ink-muted);
+  font-size: 0.8rem;
+}
+
+.maf-log-main {
+  max-width: 720px;
+}
+
+.maf-log {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.maf-log-item {
+  padding: 0.9rem 1rem;
+  border-radius: 0.75rem;
+  border: 1px solid var(--line);
+  background: var(--bg-panel);
+}
+
+.maf-log-item header {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.4rem;
+  font-size: 0.8rem;
+  color: var(--ink-muted);
+}
+
+.maf-log-level {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.maf-log-item.level-success .maf-log-level { color: var(--good); }
+.maf-log-item.level-warn .maf-log-level { color: var(--warn); }
+.maf-log-item.level-error .maf-log-level { color: var(--danger); }
+
+.maf-log-item p {
+  margin: 0;
+  line-height: 1.65;
+}
+
+.maf-log-pre {
+  margin: 0.55rem 0 0;
+  padding: 0.65rem 0.75rem;
+  border-radius: 0.5rem;
+  background: rgba(0, 0, 0, 0.28);
+  overflow: auto;
+  font-size: 0.75rem;
+  direction: ltr;
+  text-align: left;
+}
+
+@media (max-width: 800px) {
+  .maf-featured-card,
+  .maf-memorial-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .maf-featured-media,
+  .maf-memorial-photo {
+    min-height: 220px;
+  }
+}
