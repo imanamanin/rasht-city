@@ -961,6 +961,24 @@ a {
   font-weight: 600;
 }
 
+.footer-owner {
+  margin: 0.45rem 0 0;
+  font-size: 0.82rem;
+  color: var(--ink-muted);
+  letter-spacing: 0.01em;
+}
+
+.footer-owner a {
+  color: var(--accent-strong);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+.footer-owner a:hover,
+.footer-owner a:focus-visible {
+  border-bottom-color: currentColor;
+}
+
 .credit {
   margin-top: 0.35rem;
   font-size: 0.8rem;
