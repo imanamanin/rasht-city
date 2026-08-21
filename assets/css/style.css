@@ -555,8 +555,8 @@ a {
 
 .maf-teaser-section {
   width: min(100% - 2rem, var(--max));
-  margin: 0 auto 3.5rem;
-  animation: rise 0.9s ease-out 0.34s both;
+  margin: 0 auto 1.75rem;
+  animation: rise 0.9s ease-out 0.18s both;
 }
 
 .maf-teaser-card {
@@ -578,8 +578,14 @@ a {
 }
 
 .maf-teaser-photo {
+  display: block;
+  width: 100%;
   min-height: 8.5rem;
-  background: #10241e center top / cover no-repeat;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  background: #10241e;
+  border: 0;
 }
 
 .maf-teaser-photo.is-empty {

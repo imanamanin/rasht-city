@@ -40,6 +40,11 @@ function publishedFigures(data) {
   return (data.figures || []).filter((f) => f && f.status === "published" && f.isBornInGilan === true);
 }
 
+function imageUrl(figure) {
+  const raw = figure?.image?.url ? String(figure.image.url).split("?")[0] : "";
+  return raw;
+}
+
 function renderList(figures) {
   const featured = document.getElementById("maf-featured");
   const grid = document.getElementById("maf-grid");
@@ -55,8 +60,9 @@ function renderList(figures) {
 
   empty.hidden = true;
   const top = figures[0];
-  const photo = top.image?.url
-    ? `style="background-image:url('${escapeHtml(top.image.url)}')"`
+  const topImg = imageUrl(top);
+  const photo = topImg
+    ? `style="background-image:url('${escapeHtml(topImg)}')"`
     : "";
 
   featured.innerHTML = `
@@ -72,9 +78,8 @@ function renderList(figures) {
 
   grid.innerHTML = figures
     .map((f) => {
-      const bg = f.image?.url
-        ? `style="background-image:url('${escapeHtml(f.image.url)}')"`
-        : "";
+      const src = imageUrl(f);
+      const bg = src ? `style="background-image:url('${escapeHtml(src)}')"` : "";
       return `
         <a class="maf-card" href="#${encodeURIComponent(f.slug)}" role="listitem">
           <div class="maf-card-media" ${bg}></div>
@@ -92,8 +97,9 @@ function renderDetail(figure) {
   const host = document.getElementById("maf-memorial");
   if (!host || !figure) return;
 
-  const photo = figure.image?.url
-    ? `style="background-image:url('${escapeHtml(figure.image.url)}')"`
+  const photoSrc = imageUrl(figure);
+  const photo = photoSrc
+    ? `style="background-image:url('${escapeHtml(photoSrc)}')"`
     : "";
 
   const achievements = (figure.achievements || [])
