@@ -1,9 +1,13 @@
 /**
  * rasht.city — Persian calendar & time dashboard
  * Vanilla JS, no backend. Depends on assets/js/jalali.js
+ *
+ * Occasions & holidays: free pnldev Jalali Calendar API
+ * https://pnldev.com/fa/api-doc/calender
  */
 
 const CAL_TZ = "Asia/Tehran";
+const PNLDEV_CALENDER_API = "https://pnldev.com/api/calender";
 
 const ZODIAC_FA = [
   { name: "حمل", from: [3, 21], to: [4, 20] },
@@ -20,74 +24,19 @@ const ZODIAC_FA = [
   { name: "حوت", from: [2, 20], to: [3, 20] },
 ];
 
-/** Sample occasions keyed by Jalali month (1–12) */
-const MONTH_OCCASIONS = {
-  1: [
-    { day: 1, title: "آغاز نوروز" },
-    { day: 2, title: "عیدنوروز" },
-    { day: 13, title: "سیزده‌به‌در" },
-  ],
-  2: [
-    { day: 2, title: "روز زمین پاک" },
-    { day: 10, title: "روز ملی خلیج فارس" },
-    { day: 25, title: "روز بزرگداشت فردوسی" },
-  ],
-  3: [
-    { day: 14, title: "رحلت امام خمینی" },
-    { day: 15, title: "قیام ۱۵ خرداد" },
-  ],
-  4: [
-    { day: 7, title: "روز قوه قضاییه" },
-    { day: 8, title: "روز مبارزه با سلاح‌های شیمیایی" },
-  ],
-  5: [
-    { day: 14, title: "روز حقوق بشر اسلامی" },
-    { day: 15, title: "روز خبرنگار" },
-  ],
-  6: [
-    { day: 1, title: "روز پزشک" },
-    { day: 8, title: "روز مبارزه با تروریسم" },
-    { day: 27, title: "روز شعر و ادب فارسی" },
-  ],
-  7: [
-    { day: 8, title: "روز آتش‌نشانی" },
-    { day: 13, title: "روز نیروی انتظامی" },
-    { day: 20, title: "روز بزرگداشت حافظ" },
-  ],
-  8: [
-    { day: 8, title: "روز دانش‌آموز" },
-    { day: 13, title: "روز دانشجو" },
-    { day: 24, title: "روز کتاب و کتاب‌خوانی" },
-  ],
-  9: [
-    { day: 16, title: "روز دانشجو" },
-    { day: 30, title: "شب یلدا" },
-  ],
-  10: [
-    { day: 12, title: "آغاز هفته وحدت" },
-    { day: 20, title: "روز ملی فناوری اطلاعات" },
-  ],
-  11: [
-    { day: 12, title: "بازگشت امام خمینی به ایران" },
-    { day: 22, title: "پیروزی انقلاب اسلامی" },
-  ],
-  12: [
-    { day: 15, title: "روز درختکاری" },
-    { day: 29, title: "روز ملی شدن صنعت نفت" },
-  ],
-};
-
 const CITY_QUOTES = [
   "رشت شهر باران است؛ جایی که مه، چای و مهربانی در یک فنجان جا می‌گیرند.",
   "گیلان، سرزمین سبز شمال؛ رشت قلب تپنده‌اش در میان باران و بادهای خزر.",
   "در رشت، هر کوچه بوی تازگی می‌دهد؛ از بازار بزرگ تا مه‌آلود جنگل‌های سراوان.",
 ];
 
+/** Cache: "jy-jm" → day map from API */
+const monthCalendarCache = new Map();
 let calView = { jy: 0, jm: 0 };
 let calClockTimer = null;
+let occasionsRequestId = 0;
 
 function calNow() {
-  // Wall-clock in Tehran via Intl parts for accuracy across locales
   const parts = new Intl.DateTimeFormat("en-GB", {
     timeZone: CAL_TZ,
     year: "numeric",
@@ -118,11 +67,8 @@ function getZodiacFa(month, day) {
       if ((month === fm && day >= fd) || (month === tm && day <= td) || (month > fm && month < tm)) {
         return z.name;
       }
-    } else {
-      // Capricorn wraps year
-      if ((month === fm && day >= fd) || (month === tm && day <= td) || month > fm || month < tm) {
-        return z.name;
-      }
+    } else if ((month === fm && day >= fd) || (month === tm && day <= td) || month > fm || month < tm) {
+      return z.name;
     }
   }
   return "—";
@@ -148,6 +94,78 @@ function formatIslamicDate(date) {
       return "—";
     }
   }
+}
+
+function escapeHtml(str) {
+  return String(str)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
+function monthCacheKey(jy, jm) {
+  return `${jy}-${jm}`;
+}
+
+/**
+ * Fetch one Jalali month from pnldev (free, no API key, CORS *).
+ * result is keyed by day number as string: { "1": { holiday, event, solar, ... }, ... }
+ */
+async function fetchMonthCalendar(jy, jm) {
+  const key = monthCacheKey(jy, jm);
+  if (monthCalendarCache.has(key)) {
+    return monthCalendarCache.get(key);
+  }
+
+  const url = `${PNLDEV_CALENDER_API}?year=${encodeURIComponent(jy)}&month=${encodeURIComponent(jm)}`;
+  const res = await fetch(url, { headers: { Accept: "application/json" } });
+  if (!res.ok) throw new Error(`pnldev calendar HTTP ${res.status}`);
+
+  const data = await res.json();
+  if (!data || data.status !== true || !data.result || typeof data.result !== "object") {
+    throw new Error("pnldev calendar: unexpected response");
+  }
+
+  // Day query returns a single object; month query returns day-keyed map
+  const result = data.result;
+  let dayMap;
+  if (result.solar && Array.isArray(result.event)) {
+    dayMap = { [String(result.solar.day)]: result };
+  } else {
+    dayMap = result;
+  }
+
+  monthCalendarCache.set(key, dayMap);
+  return dayMap;
+}
+
+function occasionsFromMonth(dayMap) {
+  const items = [];
+  if (!dayMap) return items;
+
+  Object.keys(dayMap)
+    .map(Number)
+    .filter((n) => Number.isFinite(n) && n > 0)
+    .sort((a, b) => a - b)
+    .forEach((dayNum) => {
+      const entry = dayMap[String(dayNum)];
+      if (!entry) return;
+      const events = Array.isArray(entry.event) ? entry.event : [];
+      const holiday = Boolean(entry.holiday);
+      events.forEach((title) => {
+        const text = String(title || "").trim();
+        if (!text) return;
+        items.push({
+          day: Number(entry.solar?.day) || dayNum,
+          title: text,
+          holiday,
+        });
+      });
+    });
+
+  return items;
 }
 
 function updateAnalogClock(h, m, s) {
@@ -184,9 +202,7 @@ function updateDateCards() {
   const weekdayEl = document.getElementById("cal-weekday");
 
   if (jalaliEl) {
-    jalaliEl.textContent = Jalali.toFaDigits(
-      `${jd} ${Jalali.months[jm - 1]} ${jy}`
-    );
+    jalaliEl.textContent = Jalali.toFaDigits(`${jd} ${Jalali.months[jm - 1]} ${jy}`);
   }
   if (weekdayEl) weekdayEl.textContent = Jalali.weekdaysFull[wd];
 
@@ -205,14 +221,21 @@ function updateDateCards() {
   return { jy, jm, jd, now };
 }
 
-function renderOccasions(jm) {
+function renderOccasionsList(jm, items, state) {
   const list = document.getElementById("cal-occasions-list");
   const title = document.getElementById("cal-occasions-month");
   if (!list) return;
 
   if (title) title.textContent = Jalali.months[jm - 1];
 
-  const items = MONTH_OCCASIONS[jm] || [];
+  if (state === "loading") {
+    list.innerHTML = `<li class="cal-occasion empty">در حال بارگذاری مناسبت‌ها…</li>`;
+    return;
+  }
+  if (state === "error") {
+    list.innerHTML = `<li class="cal-occasion empty">بارگذاری مناسبت‌ها ممکن نشد. اتصال اینترنت را بررسی کنید.</li>`;
+    return;
+  }
   if (!items.length) {
     list.innerHTML = `<li class="cal-occasion empty">مناسبت ثبت‌شده‌ای برای این ماه نیست.</li>`;
     return;
@@ -221,26 +244,25 @@ function renderOccasions(jm) {
   list.innerHTML = items
     .map(
       (item) => `
-      <li class="cal-occasion">
+      <li class="cal-occasion${item.holiday ? " is-holiday" : ""}">
         <span class="cal-occasion-day">${Jalali.toFaDigits(item.day)}</span>
-        <span class="cal-occasion-title">${item.title}</span>
+        <span class="cal-occasion-body">
+          <span class="cal-occasion-title">${escapeHtml(item.title)}</span>
+          ${item.holiday ? `<span class="cal-occasion-badge">تعطیل</span>` : ""}
+        </span>
       </li>`
     )
     .join("");
 }
 
-function renderMonthGrid() {
+function renderMonthGrid(dayMap) {
   const grid = document.getElementById("cal-grid");
   const titleEl = document.getElementById("cal-month-title");
   const subEl = document.getElementById("cal-month-sub");
   if (!grid) return;
 
   const { jy, jm } = calView;
-  const today = Jalali.gregorianToJalali(
-    calNow().year,
-    calNow().month,
-    calNow().day
-  );
+  const today = Jalali.gregorianToJalali(calNow().year, calNow().month, calNow().day);
 
   if (titleEl) {
     titleEl.textContent = `${Jalali.months[jm - 1]} ${Jalali.toFaDigits(jy)}`;
@@ -269,13 +291,39 @@ function renderMonthGrid() {
   for (let d = 1; d <= daysInMonth; d += 1) {
     const isToday = today.jy === jy && today.jm === jm && today.jd === d;
     const isFriday = Jalali.jalaliWeekdayIndex(jy, jm, d) === 6;
+    const dayInfo = dayMap ? dayMap[String(d)] : null;
+    const isHoliday = Boolean(dayInfo?.holiday) || isFriday;
+    const hasEvent = Array.isArray(dayInfo?.event) && dayInfo.event.some((e) => String(e || "").trim());
+
     html += `<div class="cal-cell cal-day${isToday ? " is-today" : ""}${
-      isFriday ? " is-friday" : ""
-    }">${Jalali.toFaDigits(d)}</div>`;
+      isHoliday ? " is-holiday" : ""
+    }${hasEvent ? " has-event" : ""}" title="${hasEvent ? escapeHtml(dayInfo.event.filter(Boolean).join(" · ")) : ""}">${Jalali.toFaDigits(d)}</div>`;
   }
 
   grid.innerHTML = html;
-  renderOccasions(jm);
+}
+
+async function loadMonthView() {
+  const { jy, jm } = calView;
+  const reqId = ++occasionsRequestId;
+  const cached = monthCalendarCache.get(monthCacheKey(jy, jm));
+
+  renderMonthGrid(cached || null);
+  renderOccasionsList(jm, cached ? occasionsFromMonth(cached) : [], cached ? "ok" : "loading");
+
+  try {
+    const dayMap = await fetchMonthCalendar(jy, jm);
+    if (reqId !== occasionsRequestId) return;
+    renderMonthGrid(dayMap);
+    renderOccasionsList(jm, occasionsFromMonth(dayMap), "ok");
+  } catch (err) {
+    console.error("Calendar occasions error:", err);
+    if (reqId !== occasionsRequestId) return;
+    if (!cached) {
+      renderMonthGrid(null);
+      renderOccasionsList(jm, [], "error");
+    }
+  }
 }
 
 function shiftMonth(delta) {
@@ -289,7 +337,7 @@ function shiftMonth(delta) {
     jy += 1;
   }
   calView = { jy, jm };
-  renderMonthGrid();
+  loadMonthView();
 }
 
 function tickClock() {
@@ -335,17 +383,16 @@ function initCalendarDashboard() {
   calView = { jy, jm };
 
   pickQuote();
-  renderMonthGrid();
+  loadMonthView();
   bindCalendarControls();
   tickClock();
 
   if (calClockTimer) clearInterval(calClockTimer);
   calClockTimer = setInterval(() => {
     tickClock();
-    // Refresh date cards around midnight
     if (calNow().hour === 0 && calNow().minute === 0 && calNow().second < 2) {
       const t = updateDateCards();
-      if (calView.jy === t.jy && calView.jm === t.jm) renderMonthGrid();
+      if (calView.jy === t.jy && calView.jm === t.jm) loadMonthView();
     }
   }, 1000);
 }
