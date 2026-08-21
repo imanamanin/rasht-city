@@ -253,11 +253,11 @@
   display: grid;
   grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
   gap: 1rem;
-  align-items: stretch;
+  align-items: start;
 }
 
 .cal-bottom .cal-card {
-  min-height: 320px;
+  min-height: 0;
   display: flex;
   flex-direction: column;
 }
@@ -290,10 +290,9 @@
   display: flex;
   flex-direction: column;
   gap: 0.65rem;
-  flex: 1;
-  max-height: 22rem;
-  overflow-y: auto;
-  padding-inline-end: 0.15rem;
+  /* Grow with content — no inner scrollbar */
+  flex: 0 0 auto;
+  overflow: visible;
 }
 
 .cal-occasions-credit {
@@ -512,7 +511,7 @@
   }
 
   .cal-bottom .cal-card {
-    min-height: 280px;
+    min-height: 0;
   }
 }
 
