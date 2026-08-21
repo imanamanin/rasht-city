@@ -257,9 +257,16 @@
 }
 
 .cal-bottom .cal-card {
-  min-height: 320px;
+  min-height: 0;
+  height: 100%;
   display: flex;
   flex-direction: column;
+}
+
+.cal-occasions-card {
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
 }
 
 .cal-occasions-head,
@@ -268,18 +275,19 @@
   align-items: baseline;
   justify-content: space-between;
   gap: 0.75rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
+  flex: 0 0 auto;
 }
 
 .cal-occasions-head h3,
 .cal-month-head h3 {
   margin: 0;
-  font-size: 1.1rem;
+  font-size: 0.98rem;
   color: var(--cal-gold-soft);
 }
 
 .cal-occasions-month {
-  font-size: 0.85rem;
+  font-size: 0.78rem;
   color: var(--cal-ink-muted);
 }
 
@@ -289,17 +297,19 @@
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.65rem;
-  flex: 1;
-  max-height: 22rem;
+  gap: 0.35rem;
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-x: hidden;
   overflow-y: auto;
   padding-inline-end: 0.15rem;
 }
 
 .cal-occasions-credit {
-  margin: 0.85rem 0 0;
-  font-size: 0.75rem;
+  margin: 0.55rem 0 0;
+  font-size: 0.68rem;
   color: var(--cal-ink-muted);
+  flex: 0 0 auto;
 }
 
 .cal-occasions-credit a {
@@ -316,10 +326,10 @@
 .cal-occasion {
   display: grid;
   grid-template-columns: auto 1fr;
-  gap: 0.85rem;
+  gap: 0.5rem;
   align-items: center;
-  padding: 0.75rem 0.85rem;
-  border-radius: 0.8rem;
+  padding: 0.4rem 0.5rem;
+  border-radius: 0.55rem;
   border: 1px solid var(--cal-border);
   background: rgba(255, 255, 255, 0.02);
 }
@@ -328,43 +338,44 @@
   display: block;
   color: var(--cal-ink-muted);
   text-align: center;
+  font-size: 0.8rem;
 }
 
 .cal-occasion-day {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 2.4rem;
-  height: 2.4rem;
-  border-radius: 0.65rem;
+  min-width: 1.7rem;
+  height: 1.7rem;
+  border-radius: 0.45rem;
   background: var(--cal-gold-dim);
   border: 1px solid var(--cal-border-strong);
   color: var(--cal-gold-soft);
   font-weight: 800;
-  font-size: 0.95rem;
+  font-size: 0.75rem;
 }
 
 .cal-occasion-body {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 0.35rem;
+  gap: 0.15rem;
   min-width: 0;
 }
 
 .cal-occasion-title {
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 0.78rem;
   color: var(--cal-ink);
-  line-height: 1.45;
+  line-height: 1.35;
 }
 
 .cal-occasion-badge {
   display: inline-flex;
   align-items: center;
-  padding: 0.12rem 0.45rem;
-  border-radius: 0.4rem;
-  font-size: 0.72rem;
+  padding: 0.08rem 0.35rem;
+  border-radius: 0.35rem;
+  font-size: 0.62rem;
   font-weight: 700;
   letter-spacing: 0.02em;
   color: #9ed4b4;
@@ -472,6 +483,14 @@
 
 .cal-day.has-event {
   box-shadow: inset 0 -2px 0 rgba(201, 165, 106, 0.55);
+  cursor: pointer;
+}
+
+.cal-day.has-event:hover,
+.cal-day.has-event:focus-visible {
+  background: rgba(201, 165, 106, 0.14);
+  border-color: rgba(201, 165, 106, 0.45);
+  outline: none;
 }
 
 .cal-day.is-today {
@@ -486,6 +505,107 @@
   box-shadow:
     inset 0 0 0 1px rgba(201, 165, 106, 0.25),
     inset 0 -2px 0 rgba(201, 165, 106, 0.7);
+}
+
+/* Day occasions popup */
+.cal-day-popup {
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+}
+
+.cal-day-popup[hidden] {
+  display: none !important;
+}
+
+.cal-day-popup-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(4, 12, 10, 0.72);
+  backdrop-filter: blur(4px);
+}
+
+.cal-day-popup-dialog {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 22rem);
+  max-height: min(80vh, 28rem);
+  overflow: auto;
+  padding: 1.15rem 1.2rem 1.25rem;
+  border-radius: var(--cal-radius);
+  border: 1px solid var(--cal-border-strong);
+  background:
+    linear-gradient(165deg, rgba(125, 203, 158, 0.08), transparent 45%),
+    var(--cal-panel-2);
+  box-shadow: var(--cal-shadow);
+  color: var(--cal-ink);
+}
+
+.cal-day-popup-close {
+  appearance: none;
+  position: absolute;
+  /* physical left (سمت چپ) in both LTR/RTL */
+  left: 0.7rem;
+  right: auto;
+  top: 0.65rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--cal-border);
+  background: transparent;
+  color: var(--cal-gold-soft);
+  font-size: 1.25rem;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.cal-day-popup-close:hover,
+.cal-day-popup-close:focus-visible {
+  border-color: var(--cal-border-strong);
+  background: rgba(201, 165, 106, 0.12);
+  outline: none;
+}
+
+.cal-day-popup-title {
+  margin: 0 0 0.85rem;
+  padding-left: 2.5rem;
+  padding-right: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--cal-gold-soft);
+}
+
+.cal-day-popup-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.cal-day-popup-item {
+  margin: 0;
+  padding: 0.55rem 0.7rem;
+  border-radius: 0.6rem;
+  border: 1px solid var(--cal-border);
+  background: rgba(255, 255, 255, 0.03);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.cal-day-popup-item.is-holiday {
+  border-color: rgba(158, 212, 180, 0.35);
+  background: rgba(46, 125, 90, 0.1);
+}
+
+.cal-day-popup-item .cal-occasion-badge {
+  margin-inline-start: 0.35rem;
+  vertical-align: middle;
 }
 
 @media (max-width: 900px) {
@@ -511,8 +631,16 @@
     grid-template-columns: 1fr;
   }
 
-  .cal-bottom .cal-card {
-    min-height: 280px;
+  .cal-bottom .cal-card,
+  .cal-occasions-card {
+    height: auto;
+    min-height: 0;
+  }
+
+  .cal-occasions-list {
+    flex: 1 1 auto;
+    max-height: min(55vh, 28rem);
+    overflow-y: auto;
   }
 }
 

@@ -43,6 +43,9 @@ const yearCalendarCache = new Map();
 let calView = { jy: 0, jm: 0 };
 let calClockTimer = null;
 let occasionsRequestId = 0;
+/** Currently rendered month day map (for day click popups) */
+let currentMonthDayMap = null;
+let calPopupKeyHandler = null;
 
 function calNow() {
   const parts = new Intl.DateTimeFormat("en-GB", {
@@ -428,11 +431,65 @@ function renderOccasionsList(jm, items, state) {
     .join("");
 }
 
+function closeDayPopup() {
+  const popup = document.getElementById("cal-day-popup");
+  if (!popup) return;
+  popup.hidden = true;
+  document.body.style.overflow = "";
+  if (calPopupKeyHandler) {
+    document.removeEventListener("keydown", calPopupKeyHandler);
+    calPopupKeyHandler = null;
+  }
+}
+
+function openDayPopup(dayNum) {
+  const popup = document.getElementById("cal-day-popup");
+  const titleEl = document.getElementById("cal-day-popup-title");
+  const listEl = document.getElementById("cal-day-popup-list");
+  if (!popup || !listEl || !currentMonthDayMap) return;
+
+  const entry = currentMonthDayMap[String(dayNum)];
+  const events = Array.isArray(entry?.event)
+    ? entry.event.map((t) => String(t || "").trim()).filter(Boolean)
+    : [];
+  if (!events.length) return;
+
+  const { jy, jm } = calView;
+  const holiday = Boolean(entry?.holiday);
+  if (titleEl) {
+    titleEl.textContent = `${Jalali.toFaDigits(dayNum)} ${Jalali.months[jm - 1]} ${Jalali.toFaDigits(jy)}`;
+  }
+
+  listEl.innerHTML = events
+    .map(
+      (title) => `
+      <li class="cal-day-popup-item${holiday ? " is-holiday" : ""}">
+        ${escapeHtml(title)}
+        ${holiday ? `<span class="cal-occasion-badge">تعطیل</span>` : ""}
+      </li>`
+    )
+    .join("");
+
+  popup.hidden = false;
+  document.body.style.overflow = "hidden";
+
+  if (calPopupKeyHandler) document.removeEventListener("keydown", calPopupKeyHandler);
+  calPopupKeyHandler = (event) => {
+    if (event.key === "Escape") closeDayPopup();
+  };
+  document.addEventListener("keydown", calPopupKeyHandler);
+
+  const closeBtn = popup.querySelector(".cal-day-popup-close");
+  if (closeBtn) closeBtn.focus();
+}
+
 function renderMonthGrid(dayMap) {
   const grid = document.getElementById("cal-grid");
   const titleEl = document.getElementById("cal-month-title");
   const subEl = document.getElementById("cal-month-sub");
   if (!grid) return;
+
+  currentMonthDayMap = dayMap || null;
 
   const { jy, jm } = calView;
   const today = Jalali.gregorianToJalali(calNow().year, calNow().month, calNow().day);
@@ -466,16 +523,34 @@ function renderMonthGrid(dayMap) {
     const isFriday = Jalali.jalaliWeekdayIndex(jy, jm, d) === 6;
     const dayInfo = dayMap ? dayMap[String(d)] || dayMap[d] : null;
     const isHoliday = Boolean(dayInfo?.holiday) || isFriday;
-    const hasEvent =
-      Array.isArray(dayInfo?.event) && dayInfo.event.some((e) => String(e || "").trim());
-    const tip = hasEvent ? escapeHtml(dayInfo.event.filter(Boolean).join(" · ")) : "";
+
+    const events = Array.isArray(dayInfo?.event)
+      ? dayInfo.event.map((e) => String(e || "").trim()).filter(Boolean)
+      : [];
+    const hasEvent = events.length > 0;
+    const tip = hasEvent ? escapeHtml(events.join(" · ")) : "";
 
     html += `<div class="cal-cell cal-day${isToday ? " is-today" : ""}${
       isHoliday ? " is-holiday" : ""
-    }${hasEvent ? " has-event" : ""}"${tip ? ` title="${tip}"` : ""}">${Jalali.toFaDigits(d)}</div>`;
+    }${hasEvent ? " has-event" : ""}" data-day="${d}"${
+      hasEvent ? ` role="button" tabindex="0" aria-label="مناسبت‌های روز ${Jalali.toFaDigits(d)}"` : ""
+    }${tip ? ` title="${tip}"` : ""}>${Jalali.toFaDigits(d)}</div>`;
+
   }
 
   grid.innerHTML = html;
+}
+
+function onCalendarGridActivate(event) {
+  const cell = event.target.closest(".cal-day.has-event[data-day]");
+  if (!cell || !event.currentTarget.contains(cell)) return;
+
+  if (event.type === "keydown" && event.key !== "Enter" && event.key !== " ") return;
+  if (event.type === "keydown") event.preventDefault();
+
+  const day = Number(cell.getAttribute("data-day"));
+  if (!Number.isFinite(day)) return;
+  openDayPopup(day);
 }
 
 async function loadMonthView() {
@@ -502,6 +577,7 @@ async function loadMonthView() {
 }
 
 function shiftMonth(delta) {
+  closeDayPopup();
   let { jy, jm } = calView;
   jm += delta;
   if (jm < 1) {
@@ -533,6 +609,21 @@ function bindCalendarControls() {
   const next = document.getElementById("cal-next");
   if (prev) prev.addEventListener("click", () => shiftMonth(-1));
   if (next) next.addEventListener("click", () => shiftMonth(1));
+
+  const grid = document.getElementById("cal-grid");
+  if (grid && !grid.dataset.boundDayPopup) {
+    grid.dataset.boundDayPopup = "1";
+    grid.addEventListener("click", onCalendarGridActivate);
+    grid.addEventListener("keydown", onCalendarGridActivate);
+  }
+
+  const popup = document.getElementById("cal-day-popup");
+  if (popup && !popup.dataset.boundClose) {
+    popup.dataset.boundClose = "1";
+    popup.addEventListener("click", (event) => {
+      if (event.target.closest("[data-cal-popup-close]")) closeDayPopup();
+    });
+  }
 }
 
 function buildClockTicks() {

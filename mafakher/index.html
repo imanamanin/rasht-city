@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>مفاخر گیلان — rasht.city</title>
+  <meta name="description" content="یادبود مفاخر زاده‌شده در استان گیلان؛ برگرفته از منابع عمومی ویکی‌پدیای فارسی و ویکی‌داده." />
+  <meta name="theme-color" content="#0b1a16" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="style.css?v=1" />
+</head>
+<body class="maf-body">
+  <div class="page-bg" aria-hidden="true"></div>
+  <div class="page-overlay" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="brand" href="../">rasht.city</a>
+    <nav class="nav" aria-label="Primary">
+      <a href="../">خانه</a>
+      <a href="./" aria-current="page">مفاخر گیلان</a>
+      <a href="./log.html">گزارش اجرا</a>
+      <a href="../shahrdari/" class="nav-square">میدان ۳بعدی</a>
+    </nav>
+  </header>
+
+  <main class="maf-main">
+    <section class="maf-hero" id="maf-list-view">
+      <p class="maf-kicker">یادبود مستند · زادگان استان گیلان</p>
+      <h1 class="maf-brand">مفاخر گیلان</h1>
+      <p class="maf-lede">
+        هر یادبود از مقالهٔ ویکی‌پدیای فارسی و داده‌های ویکی‌داده ساخته می‌شود؛
+        فقط کسانی منتشر می‌شوند که <strong>محل تولدشان در گیلان</strong> با منبع معتبر تأیید شده باشد.
+      </p>
+      <div id="maf-featured" class="maf-featured" aria-live="polite"></div>
+      <h2 class="maf-section-title">همهٔ یادبودها</h2>
+      <div id="maf-grid" class="maf-grid" role="list"></div>
+      <p id="maf-empty" class="maf-empty" hidden>هنوز یادبودی منتشر نشده است.</p>
+    </section>
+
+    <section class="maf-detail" id="maf-detail-view" hidden>
+      <button type="button" class="maf-back" id="maf-back">→ بازگشت به فهرست</button>
+      <article class="maf-memorial" id="maf-memorial"></article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>
+      © <span id="year"></span> <strong>rasht.city</strong> —
+      مفاخر گیلان · منبع: ویکی‌پدیای فارسی و ویکی‌داده
+    </p>
+  </footer>
+
+  <script src="app.js?v=2" type="module"></script>
+</body>
+</html>

@@ -8,6 +8,7 @@
  * - Images: Unsplash API (optional key) + curated fallbacks
  * - Events: local JSON at assets/data/events.json
  * - Map: Leaflet + OpenStreetMap tiles (free, no key) via assets/js/map.js
+ * - مفاخر گیلان: assets/data/gilan-figures.json (Wikidata + fa.wikipedia)
  */
 
 /* =========================================================
@@ -391,6 +392,50 @@ async function loadEvents() {
 }
 
 /* =========================================================
+   مفاخر گیلان teaser
+   ========================================================= */
+
+async function loadGilanTeaser() {
+  const root = $("maf-teaser");
+  if (!root) return;
+
+  try {
+    const res = await fetch("assets/data/gilan-figures.json", { cache: "no-store" });
+    if (!res.ok) throw new Error(`gilan-figures.json HTTP ${res.status}`);
+    const data = await res.json();
+    const figures = (data.figures || []).filter((f) => {
+      if (!f || f.status !== "published") return false;
+      return f.isBornInGilan === true || f.isBornInGilan === "true";
+    });
+    if (!figures.length) {
+      setState(root, "هنوز یادبودی منتشر نشده است.", "");
+      return;
+    }
+
+    const f = figures[0];
+    const href = `mafakher/#${encodeURIComponent(f.slug)}`;
+    const rawImg = f.image && f.image.url ? String(f.image.url).split("?")[0] : "";
+    const img = rawImg
+      ? `<img class="maf-teaser-photo" src="${escapeHtml(rawImg)}" alt="${escapeHtml(f.image.alt || f.fullName)}" loading="lazy" />`
+      : `<div class="maf-teaser-photo is-empty" aria-hidden="true"></div>`;
+
+    root.innerHTML = `
+      <a class="maf-teaser-card" href="${href}">
+        ${img}
+        <div class="maf-teaser-body">
+          <span class="maf-teaser-chip">${escapeHtml(f.category || "مفاخر")}</span>
+          <h3>${escapeHtml(f.fullName)}</h3>
+          <p>${escapeHtml(f.shortDescription || "")}</p>
+          <p class="maf-teaser-meta">${escapeHtml(f.birthPlace || "گیلان")}</p>
+        </div>
+      </a>`;
+  } catch (err) {
+    console.error("Gilan teaser error:", err);
+    setState(root, "یادبود مفاخر بارگذاری نشد.", "error");
+  }
+}
+
+/* =========================================================
    Background images (Unsplash + fallbacks)
    ========================================================= */
 
@@ -515,6 +560,7 @@ function init() {
   loadWeather();
   loadPrayerTimes();
   loadEvents();
+  loadGilanTeaser();
 
   if (typeof initCalendarDashboard === "function") {
     initCalendarDashboard();
