@@ -1,0 +1,14 @@
+{
+  "entries": [
+    {
+      "at": "2026-08-21T17:15:30.710Z",
+      "level": "success",
+      "message": "یادبود جدید منتشر شد: بهمن محصص",
+      "detail": {
+        "slug": "بهمن-محصص-q800248",
+        "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D8%A8%D9%87%D9%85%D9%86_%D9%85%D8%AD%D8%B5%D8%B5",
+        "skippedTried": 0
+      }
+    }
+  ]
+}

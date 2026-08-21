@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>گزارش اجرای مفاخر گیلان — rasht.city</title>
+  <meta name="theme-color" content="#0b1a16" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="style.css?v=1" />
+</head>
+<body class="maf-body">
+  <div class="page-bg" aria-hidden="true"></div>
+  <div class="page-overlay" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="brand" href="../">rasht.city</a>
+    <nav class="nav" aria-label="Primary">
+      <a href="./">مفاخر گیلان</a>
+      <a href="./log.html" aria-current="page">گزارش اجرا</a>
+    </nav>
+  </header>
+
+  <main class="maf-main maf-log-main">
+    <h1 class="maf-brand maf-brand-sm">گزارش اجرا</h1>
+    <p class="maf-lede">
+      اگر دادهٔ قابل‌اتکا پیدا نشود، چیزی منتشر نمی‌شود و دلیل آن اینجا ثبت می‌گردد.
+    </p>
+    <div id="maf-log" class="maf-log" role="status"></div>
+  </main>
+
+  <script type="module">
+    const el = document.getElementById("maf-log");
+    try {
+      const res = await fetch("../assets/data/gilan-figures-log.json", { cache: "no-store" });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const data = await res.json();
+      const entries = Array.isArray(data.entries) ? data.entries : [];
+      if (!entries.length) {
+        el.innerHTML = `<p class="maf-empty">گزارشی ثبت نشده است.</p>`;
+      } else {
+        el.innerHTML = entries
+          .map((e) => {
+            const detail =
+              typeof e.detail === "string"
+                ? e.detail
+                : e.detail
+                  ? `<pre class="maf-log-pre">${escapeHtml(JSON.stringify(e.detail, null, 2))}</pre>`
+                  : "";
+            return `
+              <article class="maf-log-item level-${escapeHtml(e.level || "info")}">
+                <header>
+                  <span class="maf-log-level">${escapeHtml(e.level || "info")}</span>
+                  <time datetime="${escapeHtml(e.at || "")}">${escapeHtml(formatFa(e.at))}</time>
+                </header>
+                <p>${escapeHtml(e.message || "")}</p>
+                ${detail}
+              </article>`;
+          })
+          .join("");
+      }
+    } catch (err) {
+      el.innerHTML = `<p class="maf-empty">خواندن گزارش ممکن نشد: ${escapeHtml(String(err.message || err))}</p>`;
+    }
+
+    function escapeHtml(str) {
+      return String(str)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;");
+    }
+
+    function formatFa(iso) {
+      if (!iso) return "—";
+      try {
+        return new Intl.DateTimeFormat("fa-IR", {
+          dateStyle: "medium",
+          timeStyle: "short",
+          timeZone: "Asia/Tehran",
+        }).format(new Date(iso));
+      } catch {
+        return iso;
+      }
+    }
+  </script>
+</body>
+</html>
