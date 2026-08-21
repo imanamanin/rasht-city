@@ -258,8 +258,15 @@
 
 .cal-bottom .cal-card {
   min-height: 0;
+  height: auto;
   display: flex;
   flex-direction: column;
+}
+
+.cal-occasions-card {
+  height: auto;
+  max-height: none;
+  overflow: visible;
 }
 
 .cal-occasions-head,
@@ -269,6 +276,7 @@
   justify-content: space-between;
   gap: 0.75rem;
   margin-bottom: 1rem;
+  flex: 0 0 auto;
 }
 
 .cal-occasions-head h3,
@@ -290,8 +298,9 @@
   display: flex;
   flex-direction: column;
   gap: 0.65rem;
-  /* Grow with content — no inner scrollbar */
   flex: 0 0 auto;
+  height: auto;
+  max-height: none;
   overflow: visible;
 }
 
@@ -299,6 +308,7 @@
   margin: 0.85rem 0 0;
   font-size: 0.75rem;
   color: var(--cal-ink-muted);
+  flex: 0 0 auto;
 }
 
 .cal-occasions-credit a {
@@ -510,8 +520,13 @@
     grid-template-columns: 1fr;
   }
 
-  .cal-bottom .cal-card {
+  .cal-bottom .cal-card,
+  .cal-occasions-card,
+  .cal-occasions-list {
     min-height: 0;
+    max-height: none;
+    height: auto;
+    overflow: visible;
   }
 }
 
