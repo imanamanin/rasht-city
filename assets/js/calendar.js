@@ -233,14 +233,17 @@ function renderOccasionsList(jm, items, state) {
 
   if (state === "loading") {
     list.innerHTML = `<li class="cal-occasion empty">در حال بارگذاری مناسبت‌ها…</li>`;
+    syncOccasionsPanelHeight();
     return;
   }
   if (state === "error") {
     list.innerHTML = `<li class="cal-occasion empty">بارگذاری مناسبت‌ها ممکن نشد. اتصال اینترنت را بررسی کنید.</li>`;
+    syncOccasionsPanelHeight();
     return;
   }
   if (!items.length) {
     list.innerHTML = `<li class="cal-occasion empty">مناسبت ثبت‌شده‌ای برای این ماه نیست.</li>`;
+    syncOccasionsPanelHeight();
     return;
   }
 
@@ -256,6 +259,7 @@ function renderOccasionsList(jm, items, state) {
       </li>`
     )
     .join("");
+  syncOccasionsPanelHeight();
 }
 
 function closeDayPopup() {
@@ -364,6 +368,31 @@ function renderMonthGrid(dayMap) {
   }
 
   grid.innerHTML = html;
+  syncOccasionsPanelHeight();
+}
+
+function syncOccasionsPanelHeight() {
+  const month = document.querySelector(".cal-month-card");
+  const occasions = document.querySelector(".cal-occasions-card");
+  if (!month || !occasions) return;
+
+  // Stacked layout on small screens — let each panel size naturally
+  if (window.matchMedia("(max-width: 900px)").matches) {
+    occasions.style.height = "";
+    occasions.style.maxHeight = "";
+    return;
+  }
+
+  // Measure calendar first with occasions unconstrained, then lock occasions to that height
+  occasions.style.height = "auto";
+  occasions.style.maxHeight = "none";
+
+  requestAnimationFrame(() => {
+    const h = Math.round(month.getBoundingClientRect().height);
+    if (h < 120) return;
+    occasions.style.height = `${h}px`;
+    occasions.style.maxHeight = `${h}px`;
+  });
 }
 
 function onCalendarGridActivate(event) {
@@ -391,6 +420,7 @@ async function loadMonthView() {
     if (reqId !== occasionsRequestId) return;
     renderMonthGrid(dayMap);
     renderOccasionsList(jm, occasionsFromMonth(dayMap), "ok");
+    syncOccasionsPanelHeight();
   } catch (err) {
     console.error("Calendar occasions error:", err);
     if (reqId !== occasionsRequestId) return;
@@ -398,6 +428,7 @@ async function loadMonthView() {
       renderMonthGrid(null);
       renderOccasionsList(jm, [], "error");
     }
+    syncOccasionsPanelHeight();
   }
 }
 
@@ -448,6 +479,19 @@ function bindCalendarControls() {
     popup.addEventListener("click", (event) => {
       if (event.target.closest("[data-cal-popup-close]")) closeDayPopup();
     });
+  }
+
+  if (!window.__calPanelHeightBound) {
+    window.__calPanelHeightBound = true;
+    let resizeTimer = null;
+    window.addEventListener(
+      "resize",
+      () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(syncOccasionsPanelHeight, 120);
+      },
+      { passive: true }
+    );
   }
 }
 
