@@ -21,8 +21,8 @@ jobs:
         with:
           node-version: "22"
 
-      - name: Discover one Gilan-born figure
-        run: node scripts/fetch-gilan-figure.mjs
+      - name: Discover Gilan-born figures
+        run: node scripts/fetch-gilan-figure.mjs --count 5
 
       - name: Commit if data changed
         run: |
