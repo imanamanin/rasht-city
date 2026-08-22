@@ -354,9 +354,10 @@ function updateAnalogClock(h, m, s) {
   const minDeg = m * 6 + s * 0.1;
   const hourDeg = (h % 12) * 30 + m * 0.5 + s * (0.5 / 60);
 
-  hourEl.style.transform = `rotate(${hourDeg}deg)`;
-  minEl.style.transform = `rotate(${minDeg}deg)`;
-  secEl.style.transform = `rotate(${secDeg}deg)`;
+  // translateX keeps the hand centered; avoid half-pixel margin-left jitter on mobile
+  hourEl.style.transform = `translateX(-50%) rotate(${hourDeg}deg)`;
+  minEl.style.transform = `translateX(-50%) rotate(${minDeg}deg)`;
+  secEl.style.transform = `translateX(-50%) rotate(${secDeg}deg)`;
 }
 
 function updateDigitalTime(h, m, s) {
