@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="rasht.city">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#12352c"/>
+      <stop offset="55%" stop-color="#0b1a16"/>
+      <stop offset="100%" stop-color="#081410"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="980" cy="90" r="180" fill="#7dcb9e" fill-opacity="0.12"/>
+  <circle cx="160" cy="520" r="220" fill="#c9a56a" fill-opacity="0.1"/>
+  <text x="80" y="250" fill="#7dcb9e" font-family="Georgia, 'Times New Roman', serif" font-size="96" font-weight="700">rasht.city</text>
+  <text x="80" y="340" fill="#f2f7f4" font-family="Tahoma, Arial, sans-serif" font-size="52" font-weight="700">/1H'2G 14* H ¯ÌD'F</text>
+  <text x="80" y="420" fill="rgba(242,247,244,0.78)" font-family="Tahoma, Arial, sans-serif" font-size="32">'.('1 · *BHÌE · "(HGH' · EA'.1 · FB4G</text>
+  <text x="80" y="540" fill="#c9a56a" font-family="Georgia, 'Times New Roman', serif" font-size="28">AmenRoad Co.</text>
+</svg>
