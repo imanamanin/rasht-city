@@ -1,7 +1,9 @@
 /**
- * rasht.city — Discover one Gilan-born figure via Wikidata + Persian Wikipedia APIs.
- * Usage: node scripts/fetch-gilan-figure.mjs
- * Optional: node scripts/fetch-gilan-figure.mjs --dry-run
+ * rasht.city — Discover Gilan-born figures via Wikidata + Persian Wikipedia APIs.
+ * Usage:
+ *   node scripts/fetch-gilan-figure.mjs
+ *   node scripts/fetch-gilan-figure.mjs --count 40
+ *   node scripts/fetch-gilan-figure.mjs --dry-run
  */
 
 import fs from "node:fs";
@@ -90,6 +92,16 @@ const OCCUPATION_CATEGORY = [
 ];
 
 const dryRun = process.argv.includes("--dry-run");
+
+function parseCountArg() {
+  const idx = process.argv.indexOf("--count");
+  if (idx === -1) return 1;
+  const n = Number(process.argv[idx + 1]);
+  if (!Number.isFinite(n) || n < 1) return 1;
+  return Math.min(Math.floor(n), 80);
+}
+
+const publishCount = parseCountArg();
 
 async function fetchJson(url, init = {}) {
   const res = await fetch(url, {
@@ -474,9 +486,10 @@ async function main() {
     (store.figures || []).flatMap((f) => [f.slug, f.wikidataId, f.wikipediaFaUrl, f.id].filter(Boolean))
   );
 
+  const candidateLimit = Math.max(120, publishCount * 8);
   let candidates;
   try {
-    candidates = await queryGilanBornCandidates(100);
+    candidates = await queryGilanBornCandidates(candidateLimit);
   } catch (err) {
     appendLog({
       level: "error",
@@ -502,24 +515,30 @@ async function main() {
     return;
   }
 
-  let published = null;
+  const published = [];
   const skipped = [];
+  const tryLimit = Math.min(fresh.length, Math.max(publishCount * 6, 40));
 
-  for (const candidate of fresh.slice(0, 25)) {
+  for (const candidate of fresh.slice(0, tryLimit)) {
+    if (published.length >= publishCount) break;
     try {
       const result = await buildFigure(candidate);
       if (result.skip) {
         skipped.push({ name: candidate.name, reason: result.reason });
         continue;
       }
-      published = result.figure;
-      break;
+      published.push(result.figure);
+      existing.add(result.figure.wikidataId);
+      existing.add(result.figure.slug);
+      if (result.figure.wikipediaFaUrl) existing.add(result.figure.wikipediaFaUrl);
+      existing.add(result.figure.id);
+      console.log(`Ready: ${result.figure.fullName} → ${result.figure.slug}`);
     } catch (err) {
       skipped.push({ name: candidate.name, reason: String(err.message || err) });
     }
   }
 
-  if (!published) {
+  if (!published.length) {
     appendLog({
       level: "warn",
       message: "فرد واجد شرایط قابل‌اتکا برای انتشار پیدا نشد؛ چیزی منتشر نشد",
@@ -532,27 +551,29 @@ async function main() {
     console.log(JSON.stringify(published, null, 2));
     appendLog({
       level: "info",
-      message: `dry-run: ${published.fullName}`,
-      detail: { slug: published.slug },
+      message: `dry-run: ${published.length} figure(s)`,
+      detail: published.map((f) => f.slug),
     });
     return;
   }
 
-  store.figures = [published, ...(store.figures || [])];
+  store.figures = [...published, ...(store.figures || [])];
   store.updatedAt = new Date().toISOString();
   writeJson(FIGURES_PATH, store);
 
-  appendLog({
-    level: "success",
-    message: `یادبود جدید منتشر شد: ${published.fullName}`,
-    detail: {
-      slug: published.slug,
-      wikipediaFaUrl: published.wikipediaFaUrl,
-      skippedTried: skipped.length,
-    },
-  });
+  for (const figure of published) {
+    appendLog({
+      level: "success",
+      message: `یادبود جدید منتشر شد: ${figure.fullName}`,
+      detail: {
+        slug: figure.slug,
+        wikipediaFaUrl: figure.wikipediaFaUrl,
+      },
+    });
+    console.log(`Published: ${figure.fullName} → ${figure.slug}`);
+  }
 
-  console.log(`Published: ${published.fullName} → ${published.slug}`);
+  console.log(`Done: published ${published.length}/${publishCount} (skipped ${skipped.length})`);
 }
 
 main().catch((err) => {

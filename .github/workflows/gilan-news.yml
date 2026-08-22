@@ -1,16 +1,16 @@
-name: Fetch Gilan figure
+name: Fetch Gilan news
 
 on:
   schedule:
-    # Weekly — Sundays ~07:30 Tehran-ish (04:00 UTC)
-    - cron: "0 4 * * 0"
+    # Hourly
+    - cron: "0 * * * *"
   workflow_dispatch:
 
 permissions:
   contents: write
 
 jobs:
-  fetch-figure:
+  fetch-news:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -21,17 +21,17 @@ jobs:
         with:
           node-version: "22"
 
-      - name: Discover Gilan-born figures
-        run: node scripts/fetch-gilan-figure.mjs --count 5
+      - name: Aggregate Rasht/Gilan news RSS
+        run: node scripts/fetch-gilan-news.mjs
 
       - name: Commit if data changed
         run: |
-          if git diff --quiet -- assets/data/gilan-figures.json assets/data/gilan-figures-log.json; then
+          if git diff --quiet -- assets/data/gilan-news.json; then
             echo "No data changes"
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/data/gilan-figures.json assets/data/gilan-figures-log.json
-          git commit -m "Add weekly Gilan memorial figure from Wikipedia/Wikidata."
+          git add assets/data/gilan-news.json
+          git commit -m "Update hourly Rasht and Gilan news aggregate."
           git push

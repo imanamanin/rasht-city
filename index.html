@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>rasht.city — دروازه رشت و گیلان</title>
-  <meta name="description" content="rasht.city — آب‌وهوا، اوقات شرعی و رویدادهای رشت و استان گیلان." />
+  <meta name="description" content="rasht.city — آب‌وهوا، اخبار، اوقات شرعی و رویدادهای رشت و استان گیلان." />
   <meta name="theme-color" content="#0b1a16" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
-  <link rel="stylesheet" href="assets/css/style.css?v=20260822b" />
+  <link rel="stylesheet" href="assets/css/style.css?v=20260822c" />
   <link rel="stylesheet" href="assets/css/calendar.css?v=20260822b" />
 </head>
 <body>
@@ -21,6 +21,7 @@
     <a class="brand" href="./">rasht.city</a>
     <nav class="nav" aria-label="Primary">
       <a href="#calendar">تقویم</a>
+      <a href="#news">اخبار</a>
       <a href="#weather">آب‌وهوا</a>
       <a href="#prayer">اوقات شرعی</a>
       <a href="#events">رویدادها</a>
@@ -149,6 +150,49 @@
       </article>
     </section>
 
+    <!-- اخبار رشت و گیلان — hourly RSS aggregate -->
+    <section class="news-section" id="news" aria-labelledby="news-title">
+      <article class="panel news-panel">
+        <div class="panel-body">
+          <header class="panel-head news-head">
+            <div>
+              <h2 id="news-title">اخبار رشت و گیلان</h2>
+              <p class="panel-sub">به‌روز هر ساعت · منابع خبری عمومی</p>
+            </div>
+            <p class="news-updated" id="news-updated" hidden></p>
+          </header>
+          <div id="news-list" class="news-list" role="list">
+            <p class="state loading">در حال بارگذاری اخبار…</p>
+          </div>
+          <p class="map-note">
+            تیترها از فیدهای عمومی خبری گردآوری می‌شوند؛ برای متن کامل خبر، منبع اصلی را باز کنید.
+          </p>
+        </div>
+      </article>
+
+      <div id="news-popup" class="news-popup" hidden>
+        <div class="news-popup-backdrop" data-news-popup-close tabindex="-1" aria-hidden="true"></div>
+        <div
+          class="news-popup-dialog"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="news-popup-title"
+        >
+          <button type="button" class="news-popup-close" data-news-popup-close aria-label="بستن">×</button>
+          <p class="news-popup-meta" id="news-popup-meta"></p>
+          <h3 class="news-popup-title" id="news-popup-title">خبر</h3>
+          <div class="news-popup-body" id="news-popup-body"></div>
+          <a
+            class="news-popup-source"
+            id="news-popup-source"
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+          >مشاهده در منبع</a>
+        </div>
+      </div>
+    </section>
+
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-bg" id="hero-bg" aria-hidden="true"></div>
       <div class="hero-veil" aria-hidden="true"></div>
@@ -270,6 +314,6 @@
   <script src="assets/js/jalali.js" defer></script>
   <script src="assets/js/calendar.js?v=20260822a" defer></script>
   <script src="assets/js/map.js" defer></script>
-  <script src="assets/js/main.js?v=20260822b" defer></script>
+  <script src="assets/js/main.js?v=20260822c" defer></script>
 </body>
 </html>

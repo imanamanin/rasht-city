@@ -7,6 +7,7 @@
  * - Prayer times: Aladhan (no key required, Tehran method)
  * - Images: Unsplash API (optional key) + curated fallbacks
  * - Events: local JSON at assets/data/events.json
+ * - News: assets/data/gilan-news.json (hourly GitHub Action RSS aggregate)
  * - Map: Leaflet + OpenStreetMap tiles (free, no key) via assets/js/map.js
  * - مفاخر گیلان: assets/data/gilan-figures.json (Wikidata + fa.wikipedia)
  */
@@ -392,6 +393,139 @@ async function loadEvents() {
 }
 
 /* =========================================================
+   News (hourly RSS aggregate → assets/data/gilan-news.json)
+   ========================================================= */
+
+let newsItemsById = new Map();
+
+function formatRelativeFa(iso) {
+  if (!iso) return "";
+  const then = new Date(iso).getTime();
+  if (Number.isNaN(then)) return "";
+  const diffSec = Math.round((Date.now() - then) / 1000);
+  const rtf = new Intl.RelativeTimeFormat("fa-IR", { numeric: "auto" });
+  const abs = Math.abs(diffSec);
+  if (abs < 60) return rtf.format(-diffSec, "second");
+  if (abs < 3600) return rtf.format(-Math.round(diffSec / 60), "minute");
+  if (abs < 86400) return rtf.format(-Math.round(diffSec / 3600), "hour");
+  if (abs < 86400 * 14) return rtf.format(-Math.round(diffSec / 86400), "day");
+  try {
+    return new Intl.DateTimeFormat("fa-IR", {
+      dateStyle: "medium",
+      timeStyle: "short",
+      timeZone: RASHT.timezone,
+    }).format(new Date(iso));
+  } catch {
+    return String(iso);
+  }
+}
+
+function excerptText(text, max = 140) {
+  const clean = String(text || "").replace(/\s+/g, " ").trim();
+  if (clean.length <= max) return clean;
+  return `${clean.slice(0, max - 1).trim()}…`;
+}
+
+function closeNewsPopup() {
+  const popup = $("news-popup");
+  if (!popup || popup.hidden) return;
+  popup.hidden = true;
+  document.body.style.overflow = "";
+}
+
+function openNewsPopup(item) {
+  const popup = $("news-popup");
+  const titleEl = $("news-popup-title");
+  const metaEl = $("news-popup-meta");
+  const bodyEl = $("news-popup-body");
+  const sourceEl = $("news-popup-source");
+  if (!popup || !titleEl || !metaEl || !bodyEl || !sourceEl || !item) return;
+
+  titleEl.textContent = item.title || "خبر";
+  const when = formatRelativeFa(item.publishedAt) || formatRelativeFa(item.fetchedAt);
+  metaEl.textContent = [item.source, when].filter(Boolean).join(" · ");
+  bodyEl.textContent = item.summary || item.title || "خلاصه‌ای برای این خبر در فید موجود نبود.";
+  sourceEl.href = item.url || "#";
+  sourceEl.hidden = !item.url;
+
+  popup.hidden = false;
+  document.body.style.overflow = "hidden";
+  const closeBtn = popup.querySelector(".news-popup-close");
+  if (closeBtn) closeBtn.focus();
+}
+
+function bindNewsPopup() {
+  const popup = $("news-popup");
+  if (!popup || popup.dataset.bound) return;
+  popup.dataset.bound = "1";
+  popup.addEventListener("click", (event) => {
+    if (event.target.closest("[data-news-popup-close]")) closeNewsPopup();
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") closeNewsPopup();
+  });
+}
+
+async function loadGilanNews() {
+  const root = $("news-list");
+  const updatedEl = $("news-updated");
+  if (!root) return;
+  bindNewsPopup();
+
+  try {
+    const res = await fetch("assets/data/gilan-news.json", { cache: "no-store" });
+    if (!res.ok) throw new Error(`gilan-news.json HTTP ${res.status}`);
+    const data = await res.json();
+    const items = Array.isArray(data.items) ? data.items : [];
+    newsItemsById = new Map(items.map((item) => [String(item.id), item]));
+
+    if (updatedEl) {
+      const stamp = formatRelativeFa(data.updatedAt);
+      if (stamp) {
+        updatedEl.hidden = false;
+        updatedEl.textContent = `به‌روزرسانی: ${stamp}`;
+      }
+    }
+
+    if (!items.length) {
+      setState(root, "هنوز خبری ثبت نشده است. به‌زودی از منابع خبری پر می‌شود.", "");
+      return;
+    }
+
+    root.innerHTML = items
+      .map((item) => {
+        const when = formatRelativeFa(item.publishedAt) || formatRelativeFa(item.fetchedAt) || "";
+        const excerpt = excerptText(item.summary || "", 150);
+        return `
+          <button type="button" class="news-card" role="listitem" data-news-id="${escapeHtml(item.id)}">
+            <div class="news-card-top">
+              <span class="news-card-source">${escapeHtml(item.source || "خبر")}</span>
+              ${when ? `<span class="news-card-time">${escapeHtml(when)}</span>` : ""}
+            </div>
+            <h3 class="news-card-title">${escapeHtml(item.title || "بدون عنوان")}</h3>
+            ${excerpt ? `<p class="news-card-excerpt">${escapeHtml(excerpt)}</p>` : ""}
+          </button>
+        `;
+      })
+      .join("");
+
+    root.querySelectorAll("[data-news-id]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const item = newsItemsById.get(btn.getAttribute("data-news-id"));
+        openNewsPopup(item);
+      });
+    });
+  } catch (err) {
+    console.error("News error:", err);
+    setState(
+      root,
+      "اخبار بارگذاری نشدند. برای پیش‌نمایش محلی از یک سرور ساده مثل npx serve استفاده کنید.",
+      "error"
+    );
+  }
+}
+
+/* =========================================================
    مفاخر گیلان teaser
    ========================================================= */
 
@@ -560,6 +694,7 @@ function init() {
   loadWeather();
   loadPrayerTimes();
   loadEvents();
+  loadGilanNews();
   loadGilanTeaser();
 
   if (typeof initCalendarDashboard === "function") {
