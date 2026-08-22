@@ -20,7 +20,7 @@ const MAX_ITEMS = 36;
 const dryRun = process.argv.includes("--dry-run");
 
 const REGION_RE =
-  /رشت|گیلان|انزلی|لاهیجان|فومن|تالش|آستارا|لنگرود|رودسر|صومعه‌?سرا|ماسال|شفت|سیاهکل|املش|رضوانشهر|رودبار|منجیل|خمام|گیلانی|Rasht|Gilan/i;
+  /رشت|گیلان|انزلی|لاهیجان|فومن|تالش|آستارا|لنگرود|رودسر|صومعه‌?سرا|ماسال|شفت|سیاهکل|املش|رضوانشهر|رودبار|منجیل|خمام|گیلانی/;
 
 const FEEDS = [
   {
@@ -54,18 +54,6 @@ const FEEDS = [
     requireRegion: true,
   },
   {
-    id: "google-rasht",
-    source: "اخبار رشت",
-    url: "https://news.google.com/rss/search?q=%D8%B1%D8%B4%D8%AA&hl=fa&gl=IR&ceid=IR:fa",
-    requireRegion: true,
-  },
-  {
-    id: "google-gilan",
-    source: "اخبار گیلان",
-    url: "https://news.google.com/rss/search?q=%DA%AF%DB%8C%D9%84%D8%A7%D9%86&hl=fa&gl=IR&ceid=IR:fa",
-    requireRegion: true,
-  },
-  {
     id: "khabaronline",
     source: "خبرآنلاین",
     url: "https://www.khabaronline.ir/rss",
@@ -73,14 +61,18 @@ const FEEDS = [
   },
 ];
 
+function isPersianHeadline(title) {
+  const t = String(title || "");
+  const persian = (t.match(/[\u0600-\u06FF]/g) || []).length;
+  const latin = (t.match(/[A-Za-z]/g) || []).length;
+  // Keep Persian news only — drop English / bilingual-latin headlines
+  return persian >= 8 && persian >= latin * 2;
+}
+
 function looksRelevant(title, summary) {
-  const text = `${title}\n${summary}`;
   if (String(title).trim().length < 12) return false;
-  // Drop obvious non-news stubs
-  if (/^(Rasht|Gilan)(\s*[|,].*)?$/i.test(title.trim())) return false;
-  if (/Transfermarkt|AccuWeather|YouTube|UNESCO\s*$/i.test(title)) return false;
+  if (!isPersianHeadline(title)) return false;
   if (/عرق سگی/i.test(title)) return false;
-  // Keep provincial feed items even if keyword is only in summary
   return true;
 }
 

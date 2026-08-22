@@ -476,7 +476,12 @@ async function loadGilanNews() {
     const res = await fetch("assets/data/gilan-news.json", { cache: "no-store" });
     if (!res.ok) throw new Error(`gilan-news.json HTTP ${res.status}`);
     const data = await res.json();
-    const items = Array.isArray(data.items) ? data.items : [];
+    const items = (Array.isArray(data.items) ? data.items : []).filter((item) => {
+      const title = String(item?.title || "");
+      const persian = (title.match(/[\u0600-\u06FF]/g) || []).length;
+      const latin = (title.match(/[A-Za-z]/g) || []).length;
+      return persian >= 8 && persian >= latin * 2;
+    });
     newsItemsById = new Map(items.map((item) => [String(item.id), item]));
 
     if (updatedEl) {
