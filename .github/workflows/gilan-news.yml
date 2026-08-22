@@ -1,0 +1,37 @@
+name: Fetch Gilan news
+
+on:
+  schedule:
+    # Hourly
+    - cron: "0 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch-news:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Aggregate Rasht/Gilan news RSS
+        run: node scripts/fetch-gilan-news.mjs
+
+      - name: Commit if data changed
+        run: |
+          if git diff --quiet -- assets/data/gilan-news.json; then
+            echo "No data changes"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/data/gilan-news.json
+          git commit -m "Update hourly Rasht and Gilan news aggregate."
+          git push
