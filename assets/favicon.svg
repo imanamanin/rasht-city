@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="rasht.city">
+  <!-- Transparent background; green geometric R -->
+  <path
+    fill="#7dcb9e"
+    d="M14 10h22.5c9.2 0 15.5 5.4 15.5 13.6 0 6.4-3.6 11.1-9.4 12.8L54 54h-9.8L33.4 37.2H23.2V54H14V10zm9.2 7.4v12.4h12.6c4.9 0 7.8-2.5 7.8-6.2s-2.9-6.2-7.8-6.2H23.2z"
+  />
+</svg>
