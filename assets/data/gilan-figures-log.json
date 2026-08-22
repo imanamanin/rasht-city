@@ -1,6 +1,56 @@
 {
   "entries": [
     {
+      "at": "2026-08-22T15:22:17.529Z",
+      "level": "success",
+      "message": "یادبود جدید منتشر شد: مجتبی اصغری",
+      "detail": {
+        "slug": "مجتبی-اصغری-q125127233",
+        "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D9%85%D8%AC%D8%AA%D8%A8%DB%8C_%D8%A7%D8%B5%D8%BA%D8%B1%DB%8C",
+        "skippedTried": 0
+      }
+    },
+    {
+      "at": "2026-08-22T15:21:53.998Z",
+      "level": "success",
+      "message": "یادبود جدید منتشر شد: ناصر مسعودی",
+      "detail": {
+        "slug": "ناصر-مسعودی-q6400090",
+        "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D9%86%D8%A7%D8%B5%D8%B1_%D9%85%D8%B3%D8%B9%D9%88%D8%AF%DB%8C",
+        "skippedTried": 0
+      }
+    },
+    {
+      "at": "2026-08-22T15:21:51.083Z",
+      "level": "success",
+      "message": "یادبود جدید منتشر شد: هوشنگ ابتهاج",
+      "detail": {
+        "slug": "هوشنگ-ابتهاج-q1638933",
+        "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D9%87%D9%88%D8%B4%D9%86%DA%AF_%D8%A7%D8%A8%D8%AA%D9%87%D8%A7%D8%AC",
+        "skippedTried": 0
+      }
+    },
+    {
+      "at": "2026-08-22T15:21:48.099Z",
+      "level": "success",
+      "message": "یادبود جدید منتشر شد: عمادالدوله علی",
+      "detail": {
+        "slug": "عمادالدوله-علی-q912259",
+        "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D8%B9%D9%85%D8%A7%D8%AF%D8%A7%D9%84%D8%AF%D9%88%D9%84%D9%87_%D8%AF%DB%8C%D9%84%D9%85%DB%8C",
+        "skippedTried": 0
+      }
+    },
+    {
+      "at": "2026-08-22T15:21:45.336Z",
+      "level": "success",
+      "message": "یادبود جدید منتشر شد: خسرو گلسرخی",
+      "detail": {
+        "slug": "خسرو-گلسرخی-q455770",
+        "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D8%AE%D8%B3%D8%B1%D9%88_%DA%AF%D9%84%D8%B3%D8%B1%D8%AE%DB%8C",
+        "skippedTried": 0
+      }
+    },
+    {
       "at": "2026-08-21T17:15:30.710Z",
       "level": "success",
       "message": "یادبود جدید منتشر شد: بهمن محصص",
