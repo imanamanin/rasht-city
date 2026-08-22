@@ -24,12 +24,15 @@
   margin: 1.25rem auto 1.5rem;
   color: var(--cal-ink);
   animation: rise 0.9s ease-out both;
-  overflow-x: clip;
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 .cal-stack {
   display: grid;
   gap: 1rem;
+  min-width: 0;
+  max-width: 100%;
 }
 
 .cal-card {
@@ -38,6 +41,9 @@
     var(--cal-panel);
   border: 1px solid var(--cal-border);
   border-radius: var(--cal-radius);
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
   box-shadow: var(--cal-shadow);
   backdrop-filter: blur(10px);
   padding: 1.25rem 1.35rem 1.4rem;
@@ -264,6 +270,8 @@
   grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
   gap: 1rem;
   align-items: start;
+  min-width: 0;
+  max-width: 100%;
 }
 
 .cal-bottom .cal-card {
@@ -384,6 +392,8 @@
   font-size: 0.78rem;
   color: var(--cal-ink);
   line-height: 1.35;
+  overflow-wrap: anywhere;
+  max-width: 100%;
 }
 
 .cal-occasion-badge {
@@ -725,12 +735,18 @@
   .cal-occasions-list {
     flex: 0 0 auto;
     max-height: none;
-    overflow: visible;
+    overflow-x: hidden;
+    overflow-y: visible;
   }
 
   .cal-amenroad-fill {
     min-height: 5.5rem;
     margin-top: 0.75rem;
+  }
+
+  .cal-amenroad-brand {
+    font-size: clamp(1.35rem, 8vw, 2rem);
+    overflow-wrap: anywhere;
   }
 }
 

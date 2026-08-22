@@ -412,7 +412,7 @@ async function loadGilanTeaser() {
       return;
     }
 
-    const f = figures[0];
+    const f = figures[Math.floor(Math.random() * figures.length)];
     const href = `mafakher/#${encodeURIComponent(f.slug)}`;
     const rawImg = f.image && f.image.url ? String(f.image.url).split("?")[0] : "";
     const img = rawImg

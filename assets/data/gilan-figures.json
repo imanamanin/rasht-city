@@ -1,6 +1,180 @@
 {
-  "updatedAt": "2026-08-21T17:15:30.708Z",
+  "updatedAt": "2026-08-22T15:22:17.528Z",
   "figures": [
+    {
+      "id": "f2f1fb3fc433",
+      "slug": "مجتبی-اصغری-q125127233",
+      "wikidataId": "Q125127233",
+      "fullName": "مجتبی اصغری",
+      "title": "کشتی گیر ایرانی",
+      "shortDescription": "کشتی گیر ایرانی",
+      "category": "ورزش",
+      "birthDate": "1998-01-15",
+      "birthPlace": "شفت",
+      "isBornInGilan": true,
+      "city": "شفت",
+      "biography": "مجتبی اصغری (زادهٔ 1998-01-15)، کشتی گیر ایرانی، از چهره‌های شناخته‌شدهٔ مرتبط با استان گیلان است.\n\nبر پایهٔ داده‌های ویکی‌داده و مقالهٔ ویکی‌پدیای فارسی، محل تولد او شفت (در محدودهٔ استان گیلان) گزارش شده است.\n\nحوزهٔ فعالیت او در این یادبود زیر عنوان «ورزش» آمده است.\n\nمنابع عمومی به جزئیات زادگاه و زمینهٔ زندگی او اشاره کرده‌اند.\n\nاین صفحه یک یادبود خلاصه‌شده است و جایگزین مطالعهٔ مقالهٔ کامل منبع نیست.",
+      "achievements": [
+        "شناخته‌شده به‌عنوان: کشتی گیر ایرانی",
+        "ثبت در حوزهٔ «ورزش» در یادبود مفاخر گیلان",
+        "وجود مقالهٔ مستقل در ویکی‌پدیای فارسی"
+      ],
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/c/cd/Mojtaba_Yousefali_Asghari_Osmavandani.jpg?utm_source=fa.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+        "alt": "تصویر مجتبی اصغری",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mojtaba_Yousefali_Asghari_Osmavandani.jpg",
+        "license": "CC BY-SA 4.0"
+      },
+      "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D9%85%D8%AC%D8%AA%D8%A8%DB%8C_%D8%A7%D8%B5%D8%BA%D8%B1%DB%8C",
+      "fetchedAt": "2026-08-22T15:22:17.527Z",
+      "publishedAt": "2026-08-22T15:22:17.527Z",
+      "status": "published",
+      "sourceNotes": [
+        "محل تولد از طریق Wikidata P19 و سلسله‌مراتب P131 استان گیلان تأیید شد.",
+        "متن یادبود بازنویسی مستقل بر اساس فکت‌های ساختاریافته است؛ متن ویکی‌پدیا عیناً کپی نشده.",
+        "مقاله منبع: https://fa.wikipedia.org/wiki/%D9%85%D8%AC%D8%AA%D8%A8%DB%8C_%D8%A7%D8%B5%D8%BA%D8%B1%DB%8C"
+      ]
+    },
+    {
+      "id": "9169e64c7883",
+      "slug": "ناصر-مسعودی-q6400090",
+      "wikidataId": "Q6400090",
+      "fullName": "ناصر مسعودی",
+      "title": "خواننده ایرانی (۱۳۱۴–۱۴۰۴)",
+      "shortDescription": "خواننده ایرانی (۱۳۱۴–۱۴۰۴)",
+      "category": "موسیقی",
+      "birthDate": "1935-03-27",
+      "deathDate": "2025-11-27",
+      "birthPlace": "رشت",
+      "isBornInGilan": true,
+      "city": "رشت",
+      "biography": "ناصر مسعودی (زادهٔ 1935-03-27 — درگذشتهٔ 2025-11-27)، خواننده ایرانی (۱۳۱۴–۱۴۰۴)، از چهره‌های شناخته‌شدهٔ مرتبط با استان گیلان است.\n\nبر پایهٔ داده‌های ویکی‌داده و مقالهٔ ویکی‌پدیای فارسی، محل تولد او رشت (در محدودهٔ استان گیلان) گزارش شده است.\n\nحوزهٔ فعالیت او در این یادبود زیر عنوان «موسیقی» آمده است.\n\nاین صفحه یک یادبود خلاصه‌شده است و جایگزین مطالعهٔ مقالهٔ کامل منبع نیست.",
+      "achievements": [
+        "شناخته‌شده به‌عنوان: خواننده ایرانی (۱۳۱۴–۱۴۰۴)",
+        "ثبت در حوزهٔ «موسیقی» در یادبود مفاخر گیلان",
+        "وجود مقالهٔ مستقل در ویکی‌پدیای فارسی"
+      ],
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/fa/2/2c/%D9%86%D8%A7%D8%B5%D8%B1_%D9%85%D8%B3%D8%B9%D9%88%D8%AF%DB%8C.jpg?utm_source=fa.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+        "alt": "تصویر ناصر مسعودی",
+        "sourceUrl": "https://fa.wikipedia.org/wiki/%D9%BE%D8%B1%D9%88%D9%86%D8%AF%D9%87:%D9%86%D8%A7%D8%B5%D8%B1_%D9%85%D8%B3%D8%B9%D9%88%D8%AF%DB%8C.jpg",
+        "license": "Cc-by-sa-3.0"
+      },
+      "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D9%86%D8%A7%D8%B5%D8%B1_%D9%85%D8%B3%D8%B9%D9%88%D8%AF%DB%8C",
+      "fetchedAt": "2026-08-22T15:21:53.996Z",
+      "publishedAt": "2026-08-22T15:21:53.996Z",
+      "status": "published",
+      "sourceNotes": [
+        "محل تولد از طریق Wikidata P19 و سلسله‌مراتب P131 استان گیلان تأیید شد.",
+        "متن یادبود بازنویسی مستقل بر اساس فکت‌های ساختاریافته است؛ متن ویکی‌پدیا عیناً کپی نشده.",
+        "مقاله منبع: https://fa.wikipedia.org/wiki/%D9%86%D8%A7%D8%B5%D8%B1_%D9%85%D8%B3%D8%B9%D9%88%D8%AF%DB%8C"
+      ]
+    },
+    {
+      "id": "4ff3c5f8a38f",
+      "slug": "هوشنگ-ابتهاج-q1638933",
+      "wikidataId": "Q1638933",
+      "fullName": "هوشنگ ابتهاج",
+      "title": "شاعر و پژوهشگر ایرانی (۱۳۰۶–۱۴۰۱)",
+      "shortDescription": "شاعر و پژوهشگر ایرانی (۱۳۰۶–۱۴۰۱)",
+      "category": "موسیقی",
+      "birthDate": "1928-02-25",
+      "deathDate": "2022-08-10",
+      "birthPlace": "رشت",
+      "isBornInGilan": true,
+      "city": "رشت",
+      "biography": "هوشنگ ابتهاج (زادهٔ 1928-02-25 — درگذشتهٔ 2022-08-10)، شاعر و پژوهشگر ایرانی (۱۳۰۶–۱۴۰۱)، از چهره‌های شناخته‌شدهٔ مرتبط با استان گیلان است.\n\nبر پایهٔ داده‌های ویکی‌داده و مقالهٔ ویکی‌پدیای فارسی، محل تولد او رشت (در محدودهٔ استان گیلان) گزارش شده است.\n\nحوزهٔ فعالیت او در این یادبود زیر عنوان «موسیقی» آمده است.\n\nاین صفحه یک یادبود خلاصه‌شده است و جایگزین مطالعهٔ مقالهٔ کامل منبع نیست.",
+      "achievements": [
+        "شناخته‌شده به‌عنوان: شاعر و پژوهشگر ایرانی (۱۳۰۶–۱۴۰۱)",
+        "ثبت در حوزهٔ «موسیقی» در یادبود مفاخر گیلان",
+        "وجود مقالهٔ مستقل در ویکی‌پدیای فارسی"
+      ],
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Hushang_Ebtehaj_-_%D9%87%D9%88%D8%B4%D9%86%DA%AF_%D8%A7%D8%A8%D8%AA%D9%87%D8%A7%D8%AC.jpg?utm_source=fa.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+        "alt": "تصویر هوشنگ ابتهاج",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hushang_Ebtehaj_-_%D9%87%D9%88%D8%B4%D9%86%DA%AF_%D8%A7%D8%A8%D8%AA%D9%87%D8%A7%D8%AC.jpg",
+        "license": "CC BY-SA 4.0"
+      },
+      "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D9%87%D9%88%D8%B4%D9%86%DA%AF_%D8%A7%D8%A8%D8%AA%D9%87%D8%A7%D8%AC",
+      "fetchedAt": "2026-08-22T15:21:51.081Z",
+      "publishedAt": "2026-08-22T15:21:51.081Z",
+      "status": "published",
+      "sourceNotes": [
+        "محل تولد از طریق Wikidata P19 و سلسله‌مراتب P131 استان گیلان تأیید شد.",
+        "متن یادبود بازنویسی مستقل بر اساس فکت‌های ساختاریافته است؛ متن ویکی‌پدیا عیناً کپی نشده.",
+        "مقاله منبع: https://fa.wikipedia.org/wiki/%D9%87%D9%88%D8%B4%D9%86%DA%AF_%D8%A7%D8%A8%D8%AA%D9%87%D8%A7%D8%AC"
+      ]
+    },
+    {
+      "id": "e787b7d9c0dc",
+      "slug": "عمادالدوله-علی-q912259",
+      "wikidataId": "Q912259",
+      "fullName": "عمادالدوله علی",
+      "title": "سیاست‌مدار ایرانی",
+      "shortDescription": "سیاست‌مدار ایرانی",
+      "category": "سیاست",
+      "birthDate": "892-01-01",
+      "deathDate": "949-12-11",
+      "birthPlace": "لاهیجان",
+      "isBornInGilan": true,
+      "city": "لاهیجان",
+      "biography": "عمادالدوله علی (زادهٔ 892-01-01 — درگذشتهٔ 949-12-11)، سیاست‌مدار ایرانی، از چهره‌های شناخته‌شدهٔ مرتبط با استان گیلان است.\n\nبر پایهٔ داده‌های ویکی‌داده و مقالهٔ ویکی‌پدیای فارسی، محل تولد او لاهیجان (در محدودهٔ استان گیلان) گزارش شده است.\n\nحوزهٔ فعالیت او در این یادبود زیر عنوان «سیاست» آمده است.\n\nاین صفحه یک یادبود خلاصه‌شده است و جایگزین مطالعهٔ مقالهٔ کامل منبع نیست.",
+      "achievements": [
+        "شناخته‌شده به‌عنوان: سیاست‌مدار ایرانی",
+        "ثبت در حوزهٔ «سیاست» در یادبود مفاخر گیلان",
+        "وجود مقالهٔ مستقل در ویکی‌پدیای فارسی"
+      ],
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/1/1f/Imad_al-Dawla_coin.jpg?utm_source=fa.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+        "alt": "تصویر عمادالدوله علی",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Imad_al-Dawla_coin.jpg",
+        "license": "CC BY-SA 3.0"
+      },
+      "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D8%B9%D9%85%D8%A7%D8%AF%D8%A7%D9%84%D8%AF%D9%88%D9%84%D9%87_%D8%AF%DB%8C%D9%84%D9%85%DB%8C",
+      "fetchedAt": "2026-08-22T15:21:48.097Z",
+      "publishedAt": "2026-08-22T15:21:48.097Z",
+      "status": "published",
+      "sourceNotes": [
+        "محل تولد از طریق Wikidata P19 و سلسله‌مراتب P131 استان گیلان تأیید شد.",
+        "متن یادبود بازنویسی مستقل بر اساس فکت‌های ساختاریافته است؛ متن ویکی‌پدیا عیناً کپی نشده.",
+        "مقاله منبع: https://fa.wikipedia.org/wiki/%D8%B9%D9%85%D8%A7%D8%AF%D8%A7%D9%84%D8%AF%D9%88%D9%84%D9%87_%D8%AF%DB%8C%D9%84%D9%85%DB%8C"
+      ]
+    },
+    {
+      "id": "981378fc2e5f",
+      "slug": "خسرو-گلسرخی-q455770",
+      "wikidataId": "Q455770",
+      "fullName": "خسرو گلسرخی",
+      "title": "شاعر، نویسنده و مترجم ایرانی",
+      "shortDescription": "شاعر، نویسنده و مترجم ایرانی",
+      "category": "ادبیات",
+      "birthDate": "1944-01-22",
+      "deathDate": "1974-02-18",
+      "birthPlace": "رشت",
+      "isBornInGilan": true,
+      "city": "رشت",
+      "biography": "خسرو گلسرخی (زادهٔ 1944-01-22 — درگذشتهٔ 1974-02-18)، شاعر، نویسنده و مترجم ایرانی، از چهره‌های شناخته‌شدهٔ مرتبط با استان گیلان است.\n\nبر پایهٔ داده‌های ویکی‌داده و مقالهٔ ویکی‌پدیای فارسی، محل تولد او رشت (در محدودهٔ استان گیلان) گزارش شده است.\n\nحوزهٔ فعالیت او در این یادبود زیر عنوان «ادبیات» آمده است.\n\nاین صفحه یک یادبود خلاصه‌شده است و جایگزین مطالعهٔ مقالهٔ کامل منبع نیست.",
+      "achievements": [
+        "شناخته‌شده به‌عنوان: شاعر، نویسنده و مترجم ایرانی",
+        "ثبت در حوزهٔ «ادبیات» در یادبود مفاخر گیلان",
+        "وجود مقالهٔ مستقل در ویکی‌پدیای فارسی"
+      ],
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Akharin_Defa%27_06.jpg?utm_source=fa.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+        "alt": "تصویر خسرو گلسرخی",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Akharin_Defa%27_06.jpg",
+        "license": "Public domain"
+      },
+      "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D8%AE%D8%B3%D8%B1%D9%88_%DA%AF%D9%84%D8%B3%D8%B1%D8%AE%DB%8C",
+      "fetchedAt": "2026-08-22T15:21:45.322Z",
+      "publishedAt": "2026-08-22T15:21:45.322Z",
+      "status": "published",
+      "sourceNotes": [
+        "محل تولد از طریق Wikidata P19 و سلسله‌مراتب P131 استان گیلان تأیید شد.",
+        "متن یادبود بازنویسی مستقل بر اساس فکت‌های ساختاریافته است؛ متن ویکی‌پدیا عیناً کپی نشده.",
+        "مقاله منبع: https://fa.wikipedia.org/wiki/%D8%AE%D8%B3%D8%B1%D9%88_%DA%AF%D9%84%D8%B3%D8%B1%D8%AE%DB%8C"
+      ]
+    },
     {
       "id": "ecb99c0dd9df",
       "slug": "بهمن-محصص-q800248",

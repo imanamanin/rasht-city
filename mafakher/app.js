@@ -37,7 +37,10 @@ function formatLife(birth, death) {
 }
 
 function publishedFigures(data) {
-  return (data.figures || []).filter((f) => f && f.status === "published" && f.isBornInGilan === true);
+  return (data.figures || []).filter((f) => {
+    if (!f || f.status !== "published") return false;
+    return f.isBornInGilan === true || f.isBornInGilan === "true";
+  });
 }
 
 function imageUrl(figure) {
@@ -59,7 +62,7 @@ function renderList(figures) {
   }
 
   empty.hidden = true;
-  const top = figures[0];
+  const top = figures[Math.floor(Math.random() * figures.length)];
   const topImg = imageUrl(top);
   const photo = topImg
     ? `style="background-image:url('${escapeHtml(topImg)}')"`
