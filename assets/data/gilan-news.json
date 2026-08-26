@@ -1,10 +1,10 @@
 {
-  "updatedAt": "2026-08-26T04:32:05.003Z",
+  "updatedAt": "2026-08-26T05:26:07.262Z",
   "sourceNote": "Aggregated from public RSS (Google News + available agency feeds). Summaries come from feed descriptions; open the source for the full article.",
   "errors": [
     {
       "feed": "yjc-gilan",
-      "error": "HTTP 403 for https://www.yjc.ir/fa/rss/41"
+      "error": "fetch failed"
     }
   ],
   "items": []
