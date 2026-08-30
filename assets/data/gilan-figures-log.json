@@ -1,6 +1,51 @@
 {
   "entries": [
     {
+      "at": "2026-08-30T09:45:54.702Z",
+      "level": "success",
+      "message": "یادبود جدید منتشر شد: امین اولیایی",
+      "detail": {
+        "slug": "امین-اولیایی-q5937777",
+        "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D8%A7%D9%85%DB%8C%D9%86_%D8%A7%D9%88%D9%84%DB%8C%D8%A7%DB%8C%DB%8C"
+      }
+    },
+    {
+      "at": "2026-08-30T09:45:54.701Z",
+      "level": "success",
+      "message": "یادبود جدید منتشر شد: ناهید سالیانی",
+      "detail": {
+        "slug": "ناهید-سالیانی-q31068035",
+        "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D9%86%D8%A7%D9%87%DB%8C%D8%AF_%D8%B3%D8%A7%D9%84%DB%8C%D8%A7%D9%86%DB%8C"
+      }
+    },
+    {
+      "at": "2026-08-30T09:45:54.700Z",
+      "level": "success",
+      "message": "یادبود جدید منتشر شد: اردشیر کاظمی",
+      "detail": {
+        "slug": "اردشیر-کاظمی-q5922883",
+        "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D8%A7%D8%B1%D8%AF%D8%B4%DB%8C%D8%B1_%DA%A9%D8%A7%D8%B8%D9%85%DB%8C"
+      }
+    },
+    {
+      "at": "2026-08-30T09:45:54.700Z",
+      "level": "success",
+      "message": "یادبود جدید منتشر شد: نگار مقدم",
+      "detail": {
+        "slug": "نگار-مقدم-q56366152",
+        "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D9%86%DA%AF%D8%A7%D8%B1_%D9%85%D9%82%D8%AF%D9%85"
+      }
+    },
+    {
+      "at": "2026-08-30T09:45:54.699Z",
+      "level": "success",
+      "message": "یادبود جدید منتشر شد: شهپر",
+      "detail": {
+        "slug": "شهپر-q5945321",
+        "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D8%B4%D9%87%D9%BE%D8%B1_(%D8%AE%D9%88%D8%A7%D9%86%D9%86%D8%AF%D9%87)"
+      }
+    },
+    {
       "at": "2026-08-23T04:35:31.259Z",
       "level": "success",
       "message": "یادبود جدید منتشر شد: زاهد گیلانی",
