@@ -33,6 +33,8 @@
   <link rel="stylesheet" href="assets/css/calendar.css?v=20260822b" />
   <link rel="stylesheet" href="assets/css/gileh-khorak.css?v=20260831a" />
   <link rel="stylesheet" href="assets/timeline/rasht-timeline.css?v=20260831d" />
+  <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" crossorigin="anonymous" />
+  <link rel="stylesheet" href="assets/css/rasht-3d-city.css?v=20260831e" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -96,10 +98,11 @@
       <a href="#prayer">اوقات شرعی</a>
       <a href="#events">رویدادها</a>
       <a href="#history">خط زمان</a>
+      <a href="#city3d">میدان ۳بعدی</a>
       <a href="#map">نقشه</a>
       <a href="gilaki/">واژگان گیلکی</a>
       <a href="mafakher/">مفاخر گیلان</a>
-      <a href="shahrdari/" class="nav-square">میدان ۳بعدی</a>
+      <a href="shahrdari/" class="nav-square">تمام‌صفحه ۳بعدی</a>
     </nav>
   </header>
 
@@ -280,11 +283,11 @@
           <span class="dot" aria-hidden="true"></span>
           <span id="local-time">—</span>
         </div>
-        <a class="square-cta" href="shahrdari/">
+        <a class="square-cta" href="#city3d">
           <span class="square-cta-glow" aria-hidden="true"></span>
-          <span class="square-cta-kicker">تجربه سه‌بعدی</span>
-          <span class="square-cta-title">ورود به میدان شهرداری رشت</span>
-          <span class="square-cta-sub">پیاده‌راه فرهنگی و تابلوهای اطراف میدان</span>
+          <span class="square-cta-kicker">نقشه سه‌بعدی مدرن</span>
+          <span class="square-cta-title">کاوش رشت از میدان شهرداری تا کمربندی</span>
+          <span class="square-cta-sub">ساختمان‌های سه‌بعدی · نور شب · مغازه‌ها و نقاط دیدنی</span>
         </a>
       </div>
     </section>
@@ -375,6 +378,45 @@
       <div id="rasht-timeline-root"></div>
     </section>
 
+    <!-- 3D city map · MapLibre + OpenFreeMap buildings -->
+    <section class="city3d-section" id="city3d" aria-labelledby="city3d-title">
+      <article class="city3d-panel" id="rasht-3d-city">
+        <div class="city3d-panel-body">
+          <header class="city3d-head panel-head">
+            <div>
+              <h2 id="city3d-title">میدان سه‌بعدی رشت</h2>
+              <p class="panel-sub">MapLibre · ساختمان‌های اکسترودشده · از میدان تا کمربندی</p>
+            </div>
+            <div class="city3d-filters" id="city3d-filters" role="group" aria-label="فیلتر مکان‌ها"></div>
+          </header>
+
+          <div class="city3d-toolbar">
+            <button type="button" class="city3d-btn" data-city3d-view="square">دید میدان شهرداری</button>
+            <button type="button" class="city3d-btn" data-city3d-view="city">دید پانورامای کمربندی</button>
+            <button type="button" class="city3d-btn is-on" data-city3d-rotate aria-pressed="true">چرخش خودکار: روشن</button>
+          </div>
+
+          <div class="city3d-stage">
+            <div id="city3d-map" class="city3d-map" role="application" aria-label="نقشه سه‌بعدی شهر رشت"></div>
+            <p id="city3d-status" class="city3d-status state loading" role="status">در حال آماده‌سازی نقشه سه‌بعدی…</p>
+            <div id="city3d-modal" class="city3d-modal" hidden>
+              <div id="city3d-modal-card" class="city3d-modal-card" role="dialog" aria-modal="true" aria-label="جزئیات مکان"></div>
+            </div>
+          </div>
+
+          <p class="city3d-note">
+            سبک تیره
+            <a href="https://openfreemap.org/" target="_blank" rel="noopener noreferrer">OpenFreeMap</a>
+            با
+            <a href="https://maplibre.org/" target="_blank" rel="noopener noreferrer">MapLibre GL</a>
+            — دو انگشتی برای چرخش/زاویه، اسکرول برای زوم.
+            نسخهٔ تمام‌صفحه:
+            <a href="shahrdari/">shahrdari/</a>
+          </p>
+        </div>
+      </article>
+    </section>
+
     <section class="map-section" id="map" aria-labelledby="map-title">
       <article class="panel map-panel">
         <div class="panel-body map-panel-body">
@@ -436,6 +478,8 @@
   <script src="assets/js/map.js?v=20260831c" defer></script>
   <script src="assets/js/WeatherAmbient.js?v=20260831a" defer></script>
   <script src="assets/js/gileh-khorak.js?v=20260831a" defer></script>
+  <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js" crossorigin="anonymous" defer></script>
+  <script src="assets/js/rasht-3d-city.js?v=20260831e" defer></script>
   <script src="assets/timeline/rasht-timeline.js?v=20260831d" defer></script>
   <script src="assets/js/main.js?v=20260831b" defer></script>
 </body>

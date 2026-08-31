@@ -37,7 +37,7 @@ node scripts/fetch-gilan-figure.mjs
 | اوقات شرعی رشت | [Aladhan](https://aladhan.com/prayer-times-api) method 7 (Tehran University) |
 | رویدادها | `assets/data/events.json` |
 | ساعت و تقویم ایران | Jalali utility + live clock (`assets/js/calendar.js`) |
-| میدان شهرداری ۳بعدی | `/shahrdari/` — Three.js walkthrough + تابلوهای اطراف میدان |
+| میدان شهرداری ۳بعدی | MapLibre + OpenFreeMap (`/#city3d` و `/shahrdari/`) — اکستروژن ساختمان، POI، چرخش خودکار |
 | نقشه رشت | [Leaflet](https://leafletjs.com/) + تایل مینیمال [CARTO](https://carto.com/attributions) + مسیریابی پیاده OSRM (**بدون کلید API**) |
 | خط زمان تاریخ | React + [Framer Motion](https://www.framer.com/motion/) — باندل از `timeline-app/` در `assets/timeline/` |
 | Hero / section photos | Unsplash API (optional key) + curated fallbacks |

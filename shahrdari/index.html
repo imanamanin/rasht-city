@@ -3,129 +3,83 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>میدان شهرداری رشت — تجربه سه‌بعدی | rasht.city</title>
-  <meta name="description" content="پیاده‌راه سه‌بعدی میدان شهرداری رشت و مسیرساز دوچرخه؛ بخشی از rasht.city برای کاوش میدان و تابلوهای اطراف." />
-  <meta name="keywords" content="میدان شهرداری رشت, پیاده‌راه رشت, تجربه سه بعدی, rasht.city" />
+  <title>نقشه سه‌بعدی رشت — میدان شهرداری تا کمربندی | rasht.city</title>
+  <meta name="description" content="نقشه سه‌بعدی تعاملی رشت با MapLibre: ساختمان‌های اکسترودشده، نورپردازی شب، و مارکرهای مغازه‌ها و نقاط دیدنی از میدان شهرداری تا کمربندی." />
+  <meta name="keywords" content="نقشه سه بعدی رشت, میدان شهرداری رشت, MapLibre, rasht.city" />
   <meta name="author" content="AmenRoad Co." />
   <meta name="robots" content="index, follow" />
-  <meta name="theme-color" content="#000000" />
+  <meta name="theme-color" content="#070b12" />
   <link rel="canonical" href="https://rasht.city/shahrdari/" />
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="fa_IR" />
   <meta property="og:site_name" content="rasht.city" />
   <meta property="og:url" content="https://rasht.city/shahrdari/" />
-  <meta property="og:title" content="میدان شهرداری رشت — تجربه سه‌بعدی" />
-  <meta property="og:description" content="پیاده‌راه سه‌بعدی میدان شهرداری رشت و مسیرساز دوچرخه." />
+  <meta property="og:title" content="نقشه سه‌بعدی رشت — میدان شهرداری تا کمربندی" />
+  <meta property="og:description" content="ساختمان‌های سه‌بعدی، نور شب، و نقاط دیدنی تعاملی روی MapLibre." />
   <meta property="og:image" content="https://rasht.city/assets/og-image.png" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="میدان شهرداری رشت — تجربه سه‌بعدی" />
-  <meta name="twitter:description" content="پیاده‌راه سه‌بعدی میدان شهرداری رشت و مسیرساز دوچرخه." />
+  <meta name="twitter:title" content="نقشه سه‌بعدی رشت" />
+  <meta name="twitter:description" content="کاوش سه‌بعدی رشت از میدان شهرداری تا کمربندی." />
   <meta name="twitter:image" content="https://rasht.city/assets/og-image.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
-  <link rel="stylesheet" href="./style.css" />
-  <script type="importmap">
-  {
-    "imports": {
-      "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
-      "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
-    }
-  }
-  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" crossorigin="anonymous" />
+  <link rel="stylesheet" href="../assets/css/rasht-3d-city.css?v=20260831e" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": "میدان شهرداری رشت — تجربه سه‌بعدی",
+    "name": "نقشه سه‌بعدی رشت",
     "url": "https://rasht.city/shahrdari/",
-    "description": "پیاده‌راه سه‌بعدی میدان شهرداری رشت.",
+    "description": "نقشه سه‌بعدی تعاملی رشت با تمرکز بر میدان شهرداری.",
     "isPartOf": { "@type": "WebSite", "name": "rasht.city", "url": "https://rasht.city/" },
     "inLanguage": "fa-IR"
   }
   </script>
 </head>
-<body>
-  <!-- Mode switcher -->
-  <nav id="mode-bar" aria-label="حالت نمایش">
-    <a class="brand-mini" href="../">rasht.city</a>
-    <div class="mode-switch" role="tablist">
-      <button type="button" class="mode-btn is-active" data-mode="walk" role="tab" aria-selected="true">
-        🏛️ میدان شهرداری
-      </button>
-      <button type="button" class="mode-btn" data-mode="route" role="tab" aria-selected="false">
-        🚴 مسیرساز سه‌بعدی استراوا
-      </button>
-    </div>
-  </nav>
+<body class="city3d-page">
+  <section class="city3d-section" id="city3d" aria-labelledby="city3d-title">
+    <article class="city3d-panel" id="rasht-3d-city" data-pois-url="../assets/data/rasht-pois.json">
+      <div class="city3d-panel-body">
+        <div class="city3d-page-top">
+          <a class="brand" href="../">rasht.city</a>
+          <a class="city3d-btn" href="../#city3d">نسخه داخل صفحه اصلی</a>
+        </div>
 
-  <!-- Walkthrough start overlay -->
-  <div id="blocker" class="mode-panel" data-for="walk">
-    <div id="start-panel">
-      <p class="eyebrow">rasht.city</p>
-      <h1>میدان شهرداری رشت</h1>
-      <p class="lead">پیاده‌راه فرهنگی — قدم‌زدن سه‌بعدی میان ساختمان‌ها و تابلوهای اطراف میدان</p>
-      <button id="start-btn" type="button">برای شروع کلیک کنید</button>
-      <p class="hint">ماوس را قفل می‌کند · Esc برای خروج از قفل</p>
-      <a class="back-link" href="../">← بازگشت به rasht.city</a>
-    </div>
-  </div>
+        <header class="city3d-head panel-head">
+          <div>
+            <h2 id="city3d-title">نقشه سه‌بعدی رشت</h2>
+            <p class="panel-sub" style="margin:0.35rem 0 0;color:rgba(186,210,198,0.72);font-size:0.9rem">
+              میدان شهرداری · پیاده‌راه · بازار · تا محدوده کمربندی
+            </p>
+          </div>
+          <div class="city3d-filters" id="city3d-filters" role="group" aria-label="فیلتر مکان‌ها"></div>
+        </header>
 
-  <div id="hud" class="mode-panel" data-for="walk" hidden>
-    <div class="hud-brand">میدان شهرداری رشت</div>
-    <ul class="hud-controls">
-      <li><kbd>WASD</kbd> حرکت</li>
-      <li><kbd>Mouse</kbd> نگاه</li>
-      <li><kbd>Space</kbd> پرش</li>
-      <li><kbd>Shift</kbd> دویدن</li>
-      <li><kbd>N</kbd> روز / شب</li>
-      <li><kbd>C</kbd> اول / سوم شخص</li>
-      <li><kbd>R</kbd> ریست موقعیت</li>
-    </ul>
-    <div id="hud-mode" class="hud-mode">روز · اول‌شخص</div>
-  </div>
+        <div class="city3d-toolbar">
+          <button type="button" class="city3d-btn" data-city3d-view="square">دید میدان شهرداری</button>
+          <button type="button" class="city3d-btn" data-city3d-view="city">دید پانورامای کمربندی</button>
+          <button type="button" class="city3d-btn is-on" data-city3d-rotate aria-pressed="true">چرخش خودکار: روشن</button>
+        </div>
 
-  <!-- Route planner overlay -->
-  <div id="route-shell" class="mode-panel" data-for="route" hidden>
-    <div id="route-map" aria-label="نقشه انتخاب مسیر رشت"></div>
+        <div class="city3d-stage">
+          <div id="city3d-map" class="city3d-map" role="application" aria-label="نقشه سه‌بعدی شهر رشت"></div>
+          <p id="city3d-status" class="city3d-status state loading" role="status">در حال آماده‌سازی نقشه سه‌بعدی…</p>
+          <div id="city3d-modal" class="city3d-modal" hidden>
+            <div id="city3d-modal-card" class="city3d-modal-card" role="dialog" aria-modal="true" aria-label="جزئیات مکان"></div>
+          </div>
+        </div>
 
-    <div id="route-prompt" class="route-card">
-      <p id="route-prompt-text">نقطه شروع را انتخاب کنید</p>
-      <p class="route-hint">روی نقشه کلیک کنید · محدود به محدوده رشت</p>
-    </div>
-
-    <div id="route-metrics" class="route-card metrics" hidden>
-      <div class="metric"><span>فاصله</span><strong id="m-dist">—</strong></div>
-      <div class="metric"><span>زمان تقریبی</span><strong id="m-time">—</strong></div>
-      <div class="metric"><span>ارتفاع (تقریبی)</span><strong id="m-elev">—</strong></div>
-      <button type="button" id="btn-flyover" class="btn-primary">شروع پرواز سه‌بعدی</button>
-      <button type="button" id="btn-reset-route" class="btn-ghost">ریست مسیر (R)</button>
-    </div>
-
-    <div id="flyover-controls" class="route-card fly-controls" hidden>
-      <div class="fly-row">
-        <button type="button" id="btn-play" class="btn-primary" aria-label="پخش/توقف">▶ پخش</button>
-        <button type="button" id="btn-rewind" class="btn-ghost" aria-label="بازگشت">⏪</button>
-        <label class="speed-label">
-          سرعت
-          <select id="fly-speed" aria-label="سرعت پخش">
-            <option value="1">1x</option>
-            <option value="2" selected>2x</option>
-            <option value="5">5x</option>
-          </select>
-        </label>
-        <button type="button" id="btn-back-map" class="btn-ghost">↩ نقشه (Esc)</button>
+        <p class="city3d-note">
+          OpenFreeMap + MapLibre · لمس دو انگشتی برای زاویه سه‌بعدی · بدون کلید API
+        </p>
       </div>
-      <input type="range" id="fly-scrub" min="0" max="1000" value="0" aria-label="پیشرفت مسیر" />
-      <p id="fly-status" class="fly-status">آماده پرواز</p>
-    </div>
-  </div>
+    </article>
+  </section>
 
-  <canvas id="c"></canvas>
-
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-  <script type="module" src="./main.js"></script>
+  <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js" crossorigin="anonymous" defer></script>
+  <script src="../assets/js/rasht-3d-city.js?v=20260831e" defer></script>
 </body>
 </html>

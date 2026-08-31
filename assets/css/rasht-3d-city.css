@@ -1,0 +1,447 @@
+/* rasht.city — MapLibre 3D city section */
+
+.city3d-section {
+  --c3d-ink: #f2f7f4;
+  --c3d-soft: rgba(242, 247, 244, 0.78);
+  --c3d-muted: rgba(186, 210, 198, 0.72);
+  --c3d-line: rgba(200, 230, 216, 0.16);
+  --c3d-accent: #c9a56a;
+  --c3d-accent-strong: #e8b87a;
+  --c3d-good: #7dcb9e;
+  --c3d-panel: rgba(8, 16, 22, 0.72);
+  --c3d-glass: rgba(12, 22, 34, 0.55);
+  width: min(100% - 2rem, var(--max, 1120px));
+  max-width: 100%;
+  margin: 0 auto 3rem;
+  box-sizing: border-box;
+}
+
+.city3d-panel {
+  overflow: hidden;
+  border: 1px solid var(--c3d-line);
+  border-radius: calc(var(--radius, 1rem) + 0.15rem);
+  background:
+    linear-gradient(160deg, rgba(30, 41, 59, 0.35), transparent 50%),
+    var(--bg-panel, rgba(10, 22, 19, 0.78));
+  box-shadow: var(--shadow, 0 18px 50px rgba(0, 0, 0, 0.35));
+}
+
+.city3d-panel-body {
+  padding: 1.15rem 1.15rem 1.25rem;
+}
+
+.city3d-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 0.85rem 1rem;
+  margin-bottom: 0.85rem;
+}
+
+.city3d-head h2 {
+  margin: 0;
+  font-size: clamp(1.25rem, 2.5vw, 1.55rem);
+}
+
+.city3d-head .panel-sub {
+  margin: 0.35rem 0 0;
+}
+
+.city3d-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  justify-content: flex-end;
+}
+
+.city3d-chip {
+  appearance: none;
+  border: 1px solid var(--c3d-line);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--c3d-soft);
+  font: inherit;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.38rem 0.72rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.city3d-chip:hover,
+.city3d-chip:focus-visible {
+  border-color: color-mix(in srgb, var(--chip-accent, var(--c3d-accent)) 55%, transparent);
+  color: var(--c3d-ink);
+  outline: none;
+}
+
+.city3d-chip.is-active {
+  background: color-mix(in srgb, var(--chip-accent, var(--c3d-accent)) 18%, transparent);
+  border-color: color-mix(in srgb, var(--chip-accent, var(--c3d-accent)) 65%, transparent);
+  color: var(--c3d-ink);
+}
+
+.city3d-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-bottom: 0.75rem;
+}
+
+.city3d-btn {
+  appearance: none;
+  border: 1px solid var(--c3d-line);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--c3d-soft);
+  font: inherit;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.45rem 0.8rem;
+  border-radius: 0.65rem;
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+}
+
+.city3d-btn:hover,
+.city3d-btn:focus-visible {
+  border-color: rgba(201, 165, 106, 0.55);
+  color: var(--c3d-accent-strong);
+  outline: none;
+}
+
+.city3d-btn.is-on {
+  background: rgba(125, 203, 158, 0.14);
+  border-color: rgba(125, 203, 158, 0.5);
+  color: #9ed4b4;
+}
+
+.city3d-stage {
+  position: relative;
+  border-radius: 0.9rem;
+  overflow: hidden;
+  border: 1px solid var(--c3d-line);
+  background: #070b12;
+  min-height: clamp(360px, 62vh, 560px);
+  height: clamp(360px, 62vh, 560px);
+}
+
+.city3d-map {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.city3d-map .maplibregl-ctrl-attrib {
+  background: rgba(8, 12, 18, 0.75);
+  color: var(--c3d-muted);
+  font-size: 10px;
+  max-width: min(100%, 16rem);
+}
+
+.city3d-map .maplibregl-ctrl-attrib a {
+  color: var(--c3d-accent);
+}
+
+.city3d-map .maplibregl-ctrl-group {
+  background: rgba(10, 18, 28, 0.88);
+  border: 1px solid var(--c3d-line);
+  box-shadow: none;
+}
+
+.city3d-map .maplibregl-ctrl-group button {
+  background: transparent;
+  border-color: var(--c3d-line);
+  width: 32px;
+  height: 32px;
+}
+
+.city3d-map .maplibregl-ctrl-group button + button {
+  border-top-color: var(--c3d-line);
+}
+
+.city3d-map .maplibregl-ctrl-group button:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.city3d-map .maplibregl-ctrl-icon {
+  filter: invert(0.9);
+}
+
+.city3d-status {
+  position: absolute;
+  inset-inline: 0.85rem;
+  bottom: 0.85rem;
+  z-index: 3;
+  margin: 0;
+  padding: 0.65rem 0.85rem;
+  border-radius: 0.65rem;
+  background: rgba(8, 12, 18, 0.82);
+  border: 1px solid var(--c3d-line);
+  backdrop-filter: blur(10px);
+  color: var(--c3d-soft);
+  font-size: 0.86rem;
+}
+
+.city3d-status[hidden] {
+  display: none !important;
+}
+
+.city3d-note {
+  margin: 0.85rem 0 0;
+  color: var(--c3d-muted);
+  font-size: 0.82rem;
+  line-height: 1.65;
+}
+
+.city3d-note a {
+  color: var(--c3d-accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* Glass markers */
+.city3d-marker {
+  display: grid;
+  place-items: center;
+  width: 2.35rem;
+  height: 2.35rem;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.22), rgba(15, 23, 42, 0.45));
+  box-shadow:
+    0 8px 22px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  transform: translateY(-4px);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.city3d-marker::after {
+  content: "";
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 50%;
+  background: var(--poi-color, var(--c3d-accent));
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--poi-color, var(--c3d-accent)) 28%, transparent);
+}
+
+.city3d-marker:hover,
+.city3d-marker:focus-visible,
+.city3d-marker.is-active {
+  transform: translateY(-8px) scale(1.06);
+  outline: none;
+  box-shadow:
+    0 14px 28px rgba(0, 0, 0, 0.4),
+    0 0 0 2px color-mix(in srgb, var(--poi-color, var(--c3d-accent)) 55%, transparent);
+}
+
+/* Modal */
+.city3d-modal[hidden] {
+  display: none !important;
+}
+
+.city3d-modal {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  display: grid;
+  place-items: end center;
+  padding: 0.85rem;
+  background: rgba(4, 8, 14, 0.45);
+  backdrop-filter: blur(2px);
+}
+
+.city3d-modal-card {
+  width: min(100%, 22rem);
+  max-height: min(78%, 28rem);
+  overflow: auto;
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: linear-gradient(165deg, rgba(30, 41, 59, 0.72), rgba(8, 14, 22, 0.92));
+  box-shadow: 0 22px 50px rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(16px);
+  color: var(--c3d-ink);
+  direction: rtl;
+  text-align: right;
+}
+
+.city3d-modal-media {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 30% 20%, color-mix(in srgb, var(--poi-color, var(--c3d-accent)) 35%, transparent), transparent 55%),
+    #0f172a;
+}
+
+.city3d-modal-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.city3d-modal-close {
+  position: absolute;
+  top: 0.55rem;
+  inset-inline-start: 0.55rem;
+  appearance: none;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(8, 12, 18, 0.65);
+  color: var(--c3d-ink);
+  font-size: 1.1rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.city3d-modal-body {
+  padding: 0.95rem 1rem 1.1rem;
+}
+
+.city3d-modal-cat {
+  display: inline-block;
+  margin-bottom: 0.4rem;
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: color-mix(in srgb, var(--poi-color, var(--c3d-accent)) 90%, white);
+  background: color-mix(in srgb, var(--poi-color, var(--c3d-accent)) 18%, transparent);
+  border: 1px solid color-mix(in srgb, var(--poi-color, var(--c3d-accent)) 40%, transparent);
+}
+
+.city3d-modal-title {
+  margin: 0;
+  font-size: 1.12rem;
+  line-height: 1.4;
+}
+
+.city3d-modal-address,
+.city3d-modal-blurb {
+  margin: 0.45rem 0 0;
+  color: var(--c3d-soft);
+  font-size: 0.88rem;
+  line-height: 1.7;
+}
+
+.city3d-modal-blurb {
+  color: var(--c3d-muted);
+  font-size: 0.84rem;
+}
+
+.city3d-modal-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.9rem;
+}
+
+.city3d-modal-actions a,
+.city3d-modal-actions button {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  border: 1px solid rgba(125, 203, 158, 0.45);
+  background: rgba(125, 203, 158, 0.12);
+  color: #9ed4b4;
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 0.45rem 0.75rem;
+  border-radius: 0.55rem;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.city3d-modal-actions .is-ghost {
+  border-color: var(--c3d-line);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--c3d-soft);
+}
+
+/* Fullscreen page shell (/shahrdari/) */
+.city3d-page {
+  margin: 0;
+  min-height: 100vh;
+  background: #070b12;
+  color: var(--c3d-ink, #f2f7f4);
+  font-family: "Vazirmatn", system-ui, sans-serif;
+}
+
+.city3d-page .city3d-section {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  min-height: 100vh;
+}
+
+.city3d-page .city3d-panel {
+  border: 0;
+  border-radius: 0;
+  min-height: 100vh;
+  box-shadow: none;
+}
+
+.city3d-page .city3d-panel-body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 0.85rem;
+  box-sizing: border-box;
+}
+
+.city3d-page .city3d-stage {
+  flex: 1;
+  min-height: 0;
+  height: auto;
+}
+
+.city3d-page-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.65rem;
+  margin-bottom: 0.65rem;
+}
+
+.city3d-page-top a.brand {
+  color: var(--c3d-accent, #c9a56a);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+@media (max-width: 720px) {
+  .city3d-filters,
+  .city3d-toolbar {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .city3d-stage {
+    min-height: 420px;
+    height: 68vh;
+  }
+
+  .city3d-modal {
+    place-items: end stretch;
+  }
+
+  .city3d-modal-card {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .city3d-marker {
+    transition: none;
+  }
+}
