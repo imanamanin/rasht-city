@@ -26,7 +26,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" crossorigin="anonymous" />
-  <link rel="stylesheet" href="../assets/css/rasht-3d-city.css?v=20260831e" />
+  <link rel="stylesheet" href="../assets/css/rasht-3d-city.css?v=20260831f" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -59,6 +59,7 @@
         </header>
 
         <div class="city3d-toolbar">
+          <button type="button" class="city3d-btn" data-city3d-view="amen">AmenRoad</button>
           <button type="button" class="city3d-btn" data-city3d-view="square">دید میدان شهرداری</button>
           <button type="button" class="city3d-btn" data-city3d-view="city">دید پانورامای کمربندی</button>
           <button type="button" class="city3d-btn is-on" data-city3d-rotate aria-pressed="true">چرخش خودکار: روشن</button>
@@ -66,6 +67,10 @@
 
         <div class="city3d-stage">
           <div id="city3d-map" class="city3d-map" role="application" aria-label="نقشه سه‌بعدی شهر رشت"></div>
+          <div id="city3d-intro-overlay" class="city3d-intro-overlay" hidden>
+            <button type="button" class="city3d-intro-skip" data-city3d-skip-intro>رد کردن پرواز</button>
+            <p id="city3d-intro-caption" class="city3d-intro-caption" aria-live="polite"></p>
+          </div>
           <p id="city3d-status" class="city3d-status state loading" role="status">در حال آماده‌سازی نقشه سه‌بعدی…</p>
           <div id="city3d-modal" class="city3d-modal" hidden>
             <div id="city3d-modal-card" class="city3d-modal-card" role="dialog" aria-modal="true" aria-label="جزئیات مکان"></div>
@@ -80,6 +85,6 @@
   </section>
 
   <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js" crossorigin="anonymous" defer></script>
-  <script src="../assets/js/rasht-3d-city.js?v=20260831e" defer></script>
+  <script src="../assets/js/rasht-3d-city.js?v=20260831f" defer></script>
 </body>
 </html>

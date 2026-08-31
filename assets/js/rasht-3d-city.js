@@ -1,15 +1,25 @@
 /**
  * rasht.city — MapLibre 3D city map
- * Buildings extrusion · glass POI markers · idle orbit · category filters
+ * Buildings extrusion · glass POI markers · cinematic Earth→AmenRoad intro
  */
 (function () {
   "use strict";
+
+  const AMEN_LNG = 49.59070186234632;
+  const AMEN_LAT = 37.27581843337589;
 
   const CONFIG = {
     styleUrl: "https://tiles.openfreemap.org/styles/dark",
     poisUrl: "assets/data/rasht-pois.json",
     buildingSource: "openmaptiles",
     buildingSourceLayer: "building",
+    introStorageKey: "rasht.city3d.intro.v1",
+    amenView: {
+      center: [AMEN_LNG, AMEN_LAT],
+      zoom: 17.35,
+      pitch: 60,
+      bearing: -28,
+    },
     squareView: {
       center: [49.5832, 37.2808],
       zoom: 16.5,
@@ -25,8 +35,8 @@
     minZoom: 12,
     maxZoom: 18.5,
     maxBounds: [
-      [49.48, 37.20],
-      [49.70, 37.36],
+      [49.48, 37.2],
+      [49.7, 37.36],
     ],
     idleRotateSpeed: 0.018,
     idleResumeMs: 9000,
@@ -38,6 +48,66 @@
     { id: "historical", label: "تاریخی" },
     { id: "shopping", label: "بازار و خرید" },
     { id: "culture", label: "فرهنگ و دیدنی" },
+  ];
+
+  /** Cinematic beats: deep space → Earth orbit → Iran → Gilan → Rasht → AmenRoad */
+  const INTRO_BEATS = [
+    {
+      center: [-30, 8],
+      zoom: 0.85,
+      pitch: 0,
+      bearing: -120,
+      duration: 0,
+      caption: "خروج از مدار…",
+    },
+    {
+      center: [10, 18],
+      zoom: 1.35,
+      pitch: 12,
+      bearing: 40,
+      duration: 5200,
+      caption: "چرخش نرم دور زمین",
+    },
+    {
+      center: [45, 28],
+      zoom: 2.6,
+      pitch: 20,
+      bearing: 95,
+      duration: 4200,
+      caption: "نزدیک‌شدن به خاورمیانه",
+    },
+    {
+      center: [53.2, 32.4],
+      zoom: 4.6,
+      pitch: 32,
+      bearing: 18,
+      duration: 4800,
+      caption: "ایران",
+    },
+    {
+      center: [49.7, 37.15],
+      zoom: 8.4,
+      pitch: 46,
+      bearing: -8,
+      duration: 3800,
+      caption: "گیلان · سواحل خزر",
+    },
+    {
+      center: [49.586, 37.278],
+      zoom: 13.4,
+      pitch: 55,
+      bearing: -18,
+      duration: 3200,
+      caption: "رشت",
+    },
+    {
+      center: [AMEN_LNG, AMEN_LAT],
+      zoom: 17.35,
+      pitch: 60,
+      bearing: -28,
+      duration: 3000,
+      caption: "AmenRoad",
+    },
   ];
 
   let map = null;
@@ -88,6 +158,30 @@
     return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   }
 
+  function introAlreadyPlayed() {
+    try {
+      return sessionStorage.getItem(CONFIG.introStorageKey) === "1";
+    } catch (_) {
+      return false;
+    }
+  }
+
+  function markIntroPlayed() {
+    try {
+      sessionStorage.setItem(CONFIG.introStorageKey, "1");
+    } catch (_) {
+      /* ignore */
+    }
+  }
+
+  function getAmenPoi() {
+    return (
+      runtime?.pois.find((p) => p.id === "amenroad" || p.primary) ||
+      runtime?.pois.find((p) => /amenroad/i.test(p.name)) ||
+      null
+    );
+  }
+
   function stopIdleRotate() {
     if (!runtime) return;
     runtime.idleActive = false;
@@ -98,31 +192,45 @@
   }
 
   function scheduleIdleResume() {
-    if (!runtime) return;
+    if (!runtime || runtime.introPlaying) return;
     clearTimeout(runtime.idleTimer);
     runtime.idleTimer = setTimeout(() => {
-      if (runtime?.autoRotateEnabled) startIdleRotate();
+      if (runtime?.autoRotateEnabled && !runtime.introPlaying) startIdleRotate();
     }, CONFIG.idleResumeMs);
   }
 
   function startIdleRotate() {
-    if (!map || !runtime || !runtime.autoRotateEnabled) return;
+    if (!map || !runtime || !runtime.autoRotateEnabled || runtime.introPlaying) return;
     if (prefersReducedMotion()) return;
     if (runtime.idleActive) return;
     runtime.idleActive = true;
 
     const tick = () => {
-      if (!runtime?.idleActive || !map) return;
-      const bearing = map.getBearing() + CONFIG.idleRotateSpeed;
-      map.setBearing(bearing);
+      if (!runtime?.idleActive || !map || runtime.introPlaying) return;
+      map.setBearing(map.getBearing() + CONFIG.idleRotateSpeed);
       runtime.rafId = requestAnimationFrame(tick);
     };
     runtime.rafId = requestAnimationFrame(tick);
   }
 
   function pauseInteraction() {
+    if (runtime?.introPlaying) return;
     stopIdleRotate();
     scheduleIdleResume();
+  }
+
+  function lockCityBounds() {
+    if (!map) return;
+    map.setMinZoom(CONFIG.minZoom);
+    map.setMaxZoom(CONFIG.maxZoom);
+    map.setMaxBounds(CONFIG.maxBounds);
+  }
+
+  function unlockWorldView() {
+    if (!map) return;
+    map.setMaxBounds(null);
+    map.setMinZoom(0);
+    map.setMaxZoom(CONFIG.maxZoom);
   }
 
   function flyToView(view, duration) {
@@ -136,6 +244,30 @@
       duration: duration ?? 1600,
       essential: true,
     });
+  }
+
+  function easeToPromise(opts) {
+    return new Promise((resolve) => {
+      if (!map || runtime?.introAbort) {
+        resolve(false);
+        return;
+      }
+      const onEnd = () => resolve(true);
+      map.once("moveend", onEnd);
+      map.easeTo({ ...opts, essential: true });
+    });
+  }
+
+  function setIntroCaption(text) {
+    const el = document.getElementById("city3d-intro-caption");
+    if (el) el.textContent = text || "";
+  }
+
+  function setIntroUi(playing) {
+    const stage = document.querySelector(".city3d-stage");
+    const overlay = document.getElementById("city3d-intro-overlay");
+    if (stage) stage.classList.toggle("is-intro-playing", playing);
+    if (overlay) overlay.hidden = !playing;
   }
 
   function closeModal() {
@@ -158,7 +290,7 @@
     const routeUrl =
       `https://www.openstreetmap.org/directions?engine=fossgis_osrm_foot&route=` +
       `${CONFIG.squareView.center[1]}%2C${CONFIG.squareView.center[0]}%3B${poi.lat}%2C${poi.lng}`;
-    const shareText = `${poi.name} — rasht.city`;
+    const shareText = `${poi.name} — ${poi.address || ""} — rasht.city`.trim();
     const shareUrl = `${window.location.origin}${window.location.pathname}#city3d`;
 
     card.innerHTML = `
@@ -215,7 +347,7 @@
   }
 
   function focusPoi(poi) {
-    if (!map || !runtime) return;
+    if (!map || !runtime || runtime.introPlaying) return;
     const cat = categoryMeta(runtime.categories, poi.category);
     pauseInteraction();
     map.flyTo({
@@ -232,10 +364,18 @@
   function createMarkerElement(poi, cat) {
     const el = document.createElement("button");
     el.type = "button";
-    el.className = "city3d-marker";
+    el.className = `city3d-marker${poi.primary ? " is-primary" : ""}`;
     el.style.setProperty("--poi-color", cat.color);
-    el.setAttribute("aria-label", poi.name);
-    el.title = poi.name;
+    el.setAttribute("aria-label", `${poi.name}${poi.address ? ` — ${poi.address}` : ""}`);
+    el.title = poi.address ? `${poi.name}\n${poi.address}` : poi.name;
+
+    if (poi.primary) {
+      const label = document.createElement("span");
+      label.className = "city3d-marker-label";
+      label.innerHTML = `<strong>${escapeHtml(poi.name)}</strong><small>${escapeHtml(poi.address || "")}</small>`;
+      el.appendChild(label);
+    }
+
     el.addEventListener("click", (event) => {
       event.stopPropagation();
       focusPoi(poi);
@@ -256,10 +396,15 @@
     runtime.activeFilter = active;
 
     runtime.pois.forEach((poi) => {
-      if (active !== "all" && poi.category !== active) return;
+      const isPrimary = Boolean(poi.primary);
+      if (active !== "all" && poi.category !== active && !isPrimary) return;
       const cat = categoryMeta(runtime.categories, poi.category);
       const el = createMarkerElement(poi, cat);
-      const marker = new maplibregl.Marker({ element: el, anchor: "bottom" })
+      const marker = new maplibregl.Marker({
+        element: el,
+        anchor: "bottom",
+        offset: isPrimary ? [0, -4] : [0, 0],
+      })
         .setLngLat([poi.lng, poi.lat])
         .addTo(map);
       runtime.markers.set(poi.id, { marker, el, poi });
@@ -268,6 +413,105 @@
     document.querySelectorAll("[data-city3d-filter]").forEach((btn) => {
       btn.classList.toggle("is-active", btn.getAttribute("data-city3d-filter") === active);
     });
+  }
+
+  function finishIntro({ skipped } = {}) {
+    if (!runtime) return;
+    runtime.introPlaying = false;
+    runtime.introAbort = false;
+    setIntroUi(false);
+    setIntroCaption("");
+    lockCityBounds();
+    markIntroPlayed();
+    renderMarkers(runtime.activeFilter || "all");
+
+    const amen = getAmenPoi();
+    if (amen) {
+      const cat = categoryMeta(runtime.categories, amen.category);
+      map.jumpTo({
+        center: [amen.lng, amen.lat],
+        zoom: CONFIG.amenView.zoom,
+        pitch: CONFIG.amenView.pitch,
+        bearing: CONFIG.amenView.bearing,
+      });
+      openModal(amen, cat);
+      setStatus(
+        skipped
+          ? "رسیدیم به AmenRoad."
+          : "فرود در AmenRoad — رشت، خیابان انقلاب (حاجی‌آباد) بن‌بست رز، ساختمان سبز، طبقه سوم",
+        ""
+      );
+      setTimeout(() => setStatus(""), 4200);
+    } else {
+      flyToView(CONFIG.amenView, 1200);
+    }
+
+    if (runtime.autoRotateEnabled) {
+      setTimeout(() => startIdleRotate(), 1600);
+    }
+  }
+
+  async function playCinematicIntro() {
+    if (!map || !runtime || runtime.introPlaying) return;
+    if (prefersReducedMotion()) {
+      markIntroPlayed();
+      lockCityBounds();
+      flyToView(CONFIG.amenView, 1200);
+      const amen = getAmenPoi();
+      if (amen) openModal(amen, categoryMeta(runtime.categories, amen.category));
+      return;
+    }
+
+    runtime.introPlaying = true;
+    runtime.introAbort = false;
+    stopIdleRotate();
+    closeModal();
+    unlockWorldView();
+    setIntroUi(true);
+    setStatus("");
+
+    // Hide cluttered markers during deep-space approach
+    clearMarkers();
+
+    for (let i = 0; i < INTRO_BEATS.length; i += 1) {
+      if (runtime.introAbort) break;
+      const beat = INTRO_BEATS[i];
+      setIntroCaption(beat.caption || "");
+      const ok = await easeToPromise({
+        center: beat.center,
+        zoom: beat.zoom,
+        pitch: beat.pitch,
+        bearing: beat.bearing,
+        duration: beat.duration,
+        easing: (t) => 1 - Math.pow(1 - t, 3),
+      });
+      if (!ok || runtime.introAbort) break;
+
+      // Extra orbital glide between first world beats
+      if (i === 1 && !runtime.introAbort) {
+        setIntroCaption("ادامهٔ چرخش سینمایی…");
+        await easeToPromise({
+          center: [28, 22],
+          zoom: 1.85,
+          pitch: 16,
+          bearing: 150,
+          duration: 3600,
+          easing: (t) => t * (2 - t),
+        });
+      }
+    }
+
+    finishIntro({ skipped: runtime.introAbort });
+  }
+
+  function skipIntro() {
+    if (!runtime?.introPlaying) return;
+    runtime.introAbort = true;
+    try {
+      map.stop();
+    } catch (_) {
+      /* ignore */
+    }
   }
 
   function addBuildingsLayer() {
@@ -290,7 +534,6 @@
       }
     }
 
-    // Soften flat building fills if present, so extrusion reads cleaner
     layers.forEach((layer) => {
       if (
         layer.type === "fill" &&
@@ -336,11 +579,7 @@
             14.5,
             ["coalesce", ["get", "render_height"], 10],
           ],
-          "fill-extrusion-base": [
-            "coalesce",
-            ["get", "render_min_height"],
-            0,
-          ],
+          "fill-extrusion-base": ["coalesce", ["get", "render_min_height"], 0],
           "fill-extrusion-opacity": 0.92,
           "fill-extrusion-vertical-gradient": true,
         },
@@ -382,6 +621,13 @@
     root.dataset.bound = "1";
 
     root.addEventListener("click", (event) => {
+      if (event.target.closest("[data-city3d-skip-intro]")) {
+        skipIntro();
+        return;
+      }
+
+      if (runtime?.introPlaying) return;
+
       const filterBtn = event.target.closest("[data-city3d-filter]");
       if (filterBtn) {
         renderMarkers(filterBtn.getAttribute("data-city3d-filter") || "all");
@@ -396,6 +642,14 @@
       const shareBtn = event.target.closest("[data-city3d-share]");
       if (shareBtn) {
         sharePoi(shareBtn);
+        return;
+      }
+
+      if (event.target.closest("[data-city3d-view='amen']")) {
+        closeModal();
+        const amen = getAmenPoi();
+        if (amen) focusPoi(amen);
+        else flyToView(CONFIG.amenView);
         return;
       }
 
@@ -432,7 +686,10 @@
     }
 
     document.addEventListener("keydown", (event) => {
-      if (event.key === "Escape") closeModal();
+      if (event.key === "Escape") {
+        if (runtime?.introPlaying) skipIntro();
+        else closeModal();
+      }
     });
   }
 
@@ -463,6 +720,8 @@
       return null;
     }
 
+    const shouldIntro = !introAlreadyPlayed() && !prefersReducedMotion();
+
     runtime = {
       categories: data.categories || [],
       pois: data.pois || [],
@@ -473,6 +732,10 @@
       idleActive: false,
       idleTimer: 0,
       rafId: 0,
+      introPlaying: false,
+      introAbort: false,
+      introStarted: false,
+      shouldIntro,
     };
 
     renderFilters();
@@ -487,16 +750,18 @@
         : "چرخش خودکار: خاموش";
     }
 
+    const startView = shouldIntro ? INTRO_BEATS[0] : CONFIG.amenView;
+
     map = new maplibregl.Map({
       container,
       style: CONFIG.styleUrl,
-      center: CONFIG.squareView.center,
-      zoom: CONFIG.squareView.zoom,
-      pitch: CONFIG.squareView.pitch,
-      bearing: CONFIG.squareView.bearing,
-      minZoom: CONFIG.minZoom,
+      center: startView.center,
+      zoom: startView.zoom,
+      pitch: startView.pitch,
+      bearing: startView.bearing,
+      minZoom: shouldIntro ? 0 : CONFIG.minZoom,
       maxZoom: CONFIG.maxZoom,
-      maxBounds: CONFIG.maxBounds,
+      maxBounds: shouldIntro ? undefined : CONFIG.maxBounds,
       antialias: true,
       attributionControl: true,
       cooperativeGestures: false,
@@ -512,9 +777,14 @@
       } catch (err) {
         console.error("3D buildings error:", err);
       }
-      renderMarkers("all");
-      setStatus("");
-      if (runtime.autoRotateEnabled) startIdleRotate();
+
+      if (!shouldIntro) {
+        renderMarkers("all");
+        setStatus("");
+        if (runtime.autoRotateEnabled) startIdleRotate();
+      } else {
+        setStatus("برای شروع پرواز سینمایی کمی پایین‌تر اسکرول کنید…", "loading");
+      }
     });
 
     map.on("error", (e) => {
@@ -525,7 +795,9 @@
       (evt) => map.on(evt, pauseInteraction)
     );
 
-    map.on("click", () => closeModal());
+    map.on("click", () => {
+      if (!runtime?.introPlaying) closeModal();
+    });
 
     const refresh = () => {
       try {
@@ -543,16 +815,23 @@
       const io = new IntersectionObserver(
         (entries) => {
           const visible = entries.some((e) => e.isIntersecting);
-          if (visible) {
-            refresh();
-            if (runtime?.autoRotateEnabled) startIdleRotate();
-          } else {
-            stopIdleRotate();
+          if (!visible) {
+            if (!runtime?.introPlaying) stopIdleRotate();
+            return;
           }
+          refresh();
+          if (runtime?.shouldIntro && !runtime.introStarted && map.isStyleLoaded()) {
+            runtime.introStarted = true;
+            playCinematicIntro();
+            return;
+          }
+          if (runtime?.autoRotateEnabled && !runtime.introPlaying) startIdleRotate();
         },
-        { threshold: 0.2 }
+        { threshold: 0.35 }
       );
       io.observe(section);
+    } else if (shouldIntro) {
+      map.once("load", () => playCinematicIntro());
     }
 
     return map;

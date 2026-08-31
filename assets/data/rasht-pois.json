@@ -5,7 +5,8 @@
     { "id": "historical", "label": "تاریخی", "color": "#c9a56a" },
     { "id": "cafe_restaurant", "label": "خوراک و کافه", "color": "#e8b87a" },
     { "id": "shopping", "label": "بازار و خرید", "color": "#7dcb9e" },
-    { "id": "culture", "label": "فرهنگ و دیدنی", "color": "#8eb4e8" }
+    { "id": "culture", "label": "فرهنگ و دیدنی", "color": "#8eb4e8" },
+    { "id": "brand", "label": "AmenRoad", "color": "#9ed4b4" }
   ],
   "pois": [
     {
@@ -151,14 +152,15 @@
     {
       "id": "amenroad",
       "name": "مسیر امن | AmenRoad",
-      "category": "culture",
-      "lng": 49.5907,
-      "lat": 37.2758,
-      "address": "رشت، خیابان انقلاب (حاجی‌آباد) بن‌بست رز",
-      "blurb": "نقطهٔ شروع پیشنهادی برای کاوش شهر و مسیریابی.",
+      "category": "brand",
+      "lng": 49.59070186234632,
+      "lat": 37.27581843337589,
+      "address": "رشت، خیابان انقلاب (حاجی‌آباد) بن‌بست رز، ساختمان سبز، طبقه سوم",
+      "blurb": "دفتر AmenRoad — مقصد نهایی پرواز سینمایی نقشه و نقطهٔ شروع کاوش شهر.",
       "image": "https://rasht.city/assets/og-image.png",
       "link": "https://AmenRoad.com",
-      "linkLabel": "AmenRoad.com"
+      "linkLabel": "AmenRoad.com",
+      "primary": true
     }
   ]
 }
