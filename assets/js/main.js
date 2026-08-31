@@ -3,7 +3,7 @@
  * Works on GitHub Pages (no build step, no backend).
  *
  * APIs used:
- * - Weather: Open-Meteo (no key required)
+ * - Weather: Open-Meteo + WeatherAmbient (rain audio / CSS)
  * - Prayer times: Aladhan (no key required, Tehran method)
  * - Images: Unsplash API (optional key) + curated fallbacks
  * - Events: local JSON at assets/data/events.json
@@ -195,7 +195,18 @@ function updateLocalClock() {
 
 async function loadWeather() {
   const root = $("weather-content");
+  const panel = $("weather");
   if (!root) return;
+
+  if (typeof WeatherAmbient === "function") {
+    if (window.__weatherAmbient?.destroy) {
+      window.__weatherAmbient.destroy();
+    }
+    const ambient = new WeatherAmbient(root, { panelEl: panel || undefined });
+    window.__weatherAmbient = ambient;
+    await ambient.start();
+    return;
+  }
 
   try {
     let data;

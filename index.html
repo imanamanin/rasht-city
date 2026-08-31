@@ -29,7 +29,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
-  <link rel="stylesheet" href="assets/css/style.css?v=20260822c" />
+  <link rel="stylesheet" href="assets/css/style.css?v=20260831a" />
   <link rel="stylesheet" href="assets/css/calendar.css?v=20260822b" />
   <script type="application/ld+json">
   {
@@ -287,11 +287,15 @@
     <section class="panels" aria-label="City information">
       <!-- Weather -->
       <article class="panel weather-panel" id="weather">
+        <div class="weather-rain" aria-hidden="true">
+          <span class="weather-rain-layer"></span>
+          <span class="weather-rain-layer weather-rain-layer--soft"></span>
+        </div>
         <div class="panel-bg" data-bg-slot="weather" aria-hidden="true"></div>
         <div class="panel-body">
           <header class="panel-head">
             <h2>آب‌وهوای رشت</h2>
-            <p class="panel-sub">Live weather · Rasht</p>
+            <p class="panel-sub">Live weather · Ambient rain</p>
           </header>
           <div id="weather-content" class="weather-content" role="status" aria-live="polite">
             <p class="state loading">در حال دریافت آب‌وهوا…</p>
@@ -381,6 +385,7 @@
   <script src="assets/js/jalali.js" defer></script>
   <script src="assets/js/calendar.js?v=20260822a" defer></script>
   <script src="assets/js/map.js" defer></script>
-  <script src="assets/js/main.js?v=20260822d" defer></script>
+  <script src="assets/js/WeatherAmbient.js?v=20260831a" defer></script>
+  <script src="assets/js/main.js?v=20260831a" defer></script>
 </body>
 </html>
