@@ -8,7 +8,7 @@
  * - Images: Unsplash API (optional key) + curated fallbacks
  * - Events: local JSON at assets/data/events.json
  * - News: assets/data/gilan-news.json (hourly GitHub Action RSS aggregate)
- * - Map: Leaflet + OpenStreetMap tiles (free, no key) via assets/js/map.js
+ * - Map: Leaflet + Carto dark tiles + OSRM foot routing via assets/js/map.js
  * - مفاخر گیلان: assets/data/gilan-figures.json (Wikidata + fa.wikipedia)
  */
 
