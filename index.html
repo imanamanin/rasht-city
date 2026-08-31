@@ -29,9 +29,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
-  <link rel="stylesheet" href="assets/css/style.css?v=20260831c" />
+  <link rel="stylesheet" href="assets/css/style.css?v=20260831d" />
   <link rel="stylesheet" href="assets/css/calendar.css?v=20260822b" />
   <link rel="stylesheet" href="assets/css/gileh-khorak.css?v=20260831a" />
+  <link rel="stylesheet" href="assets/timeline/rasht-timeline.css?v=20260831d" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -94,6 +95,7 @@
       <a href="#weather">آب‌وهوا</a>
       <a href="#prayer">اوقات شرعی</a>
       <a href="#events">رویدادها</a>
+      <a href="#history">خط زمان</a>
       <a href="#map">نقشه</a>
       <a href="gilaki/">واژگان گیلکی</a>
       <a href="mafakher/">مفاخر گیلان</a>
@@ -368,7 +370,11 @@
       </article>
     </section>
 
-    <!-- Interactive map · Leaflet + Carto minimal tiles · OSRM walking routes -->
+    <!-- History timeline · React + Framer Motion (built assets) -->
+    <section class="history-section" id="history" aria-label="خط زمان تاریخ رشت">
+      <div id="rasht-timeline-root"></div>
+    </section>
+
     <section class="map-section" id="map" aria-labelledby="map-title">
       <article class="panel map-panel">
         <div class="panel-body map-panel-body">
@@ -430,6 +436,7 @@
   <script src="assets/js/map.js?v=20260831c" defer></script>
   <script src="assets/js/WeatherAmbient.js?v=20260831a" defer></script>
   <script src="assets/js/gileh-khorak.js?v=20260831a" defer></script>
+  <script src="assets/timeline/rasht-timeline.js?v=20260831d" defer></script>
   <script src="assets/js/main.js?v=20260831b" defer></script>
 </body>
 </html>

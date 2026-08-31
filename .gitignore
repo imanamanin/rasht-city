@@ -3,3 +3,6 @@ Thumbs.db
 *.log
 .idea/
 .vscode/
+node_modules/
+timeline-app/node_modules/
+_shell_check.txt

@@ -1,0 +1,290 @@
+/* Rasht history timeline — scoped under .rtl-root */
+
+.rtl-root {
+  --rtl-ink: #f2f7f4;
+  --rtl-soft: rgba(242, 247, 244, 0.78);
+  --rtl-muted: rgba(186, 210, 198, 0.72);
+  --rtl-line: rgba(200, 230, 216, 0.16);
+  --rtl-accent: #c9a56a;
+  --rtl-accent-strong: #e8b87a;
+  --rtl-good: #7dcb9e;
+  --rtl-panel: rgba(10, 22, 19, 0.55);
+  --rtl-font: "Vazirmatn", system-ui, sans-serif;
+  --rtl-display: "Instrument Serif", "Vazirmatn", Georgia, serif;
+  position: relative;
+  isolation: isolate;
+  width: min(100% - 2rem, 1120px);
+  margin: 0 auto 2.5rem;
+  padding: 1.75rem 0 0.5rem;
+  color: var(--rtl-ink);
+  font-family: var(--rtl-font);
+  overflow: hidden;
+}
+
+.rtl-parallax {
+  position: absolute;
+  inset: -10% -5% auto;
+  height: 120%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.rtl-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(2px);
+}
+
+.rtl-orb-a {
+  width: min(48vw, 28rem);
+  height: min(48vw, 28rem);
+  top: 8%;
+  inset-inline-end: -8%;
+  background: radial-gradient(circle, rgba(125, 203, 158, 0.22), transparent 68%);
+}
+
+.rtl-orb-b {
+  width: min(40vw, 22rem);
+  height: min(40vw, 22rem);
+  top: 35%;
+  inset-inline-start: -12%;
+  background: radial-gradient(circle, rgba(201, 165, 106, 0.2), transparent 70%);
+}
+
+.rtl-grid-fade {
+  position: absolute;
+  inset: 10% 0 20%;
+  background-image:
+    linear-gradient(rgba(200, 230, 216, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(200, 230, 216, 0.05) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 20%, transparent 75%);
+}
+
+.rtl-head,
+.rtl-track {
+  position: relative;
+  z-index: 1;
+}
+
+.rtl-head {
+  margin-bottom: 1.25rem;
+  padding-inline: 0.15rem;
+}
+
+.rtl-eyebrow {
+  margin: 0 0 0.35rem;
+  color: var(--rtl-accent);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.rtl-title {
+  margin: 0;
+  font-family: var(--rtl-display);
+  font-size: clamp(1.85rem, 4vw, 2.6rem);
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--rtl-ink);
+}
+
+.rtl-sub {
+  margin: 0.65rem 0 0;
+  max-width: 36rem;
+  color: var(--rtl-muted);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.rtl-progress {
+  margin-top: 1.1rem;
+  height: 2px;
+  width: min(100%, 18rem);
+  border-radius: 999px;
+  background: rgba(200, 230, 216, 0.12);
+  overflow: hidden;
+  transform-origin: right center;
+}
+
+.rtl-progress-fill {
+  display: block;
+  height: 100%;
+  width: 100%;
+  transform-origin: right center;
+  background: linear-gradient(90deg, transparent, var(--rtl-good) 30%, var(--rtl-accent));
+}
+
+.rtl-track {
+  position: relative;
+  display: flex;
+  gap: 1.25rem;
+  outline: none;
+}
+
+.rtl-axis-x .rtl-track {
+  flex-direction: row;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: 1rem;
+  padding: 0.75rem 0.15rem 1.5rem;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(201, 165, 106, 0.45) transparent;
+}
+
+.rtl-axis-x .rtl-track::-webkit-scrollbar {
+  height: 6px;
+}
+
+.rtl-axis-x .rtl-track::-webkit-scrollbar-thumb {
+  background: rgba(201, 165, 106, 0.4);
+  border-radius: 999px;
+}
+
+.rtl-axis-y .rtl-track {
+  flex-direction: column;
+  overflow: visible;
+  padding: 0.5rem 0 0.25rem;
+  gap: 1.1rem;
+}
+
+.rtl-rail {
+  position: absolute;
+  background: linear-gradient(
+    var(--rtl-axis-dir, to left),
+    rgba(125, 203, 158, 0.05),
+    rgba(201, 165, 106, 0.35),
+    rgba(125, 203, 158, 0.08)
+  );
+  pointer-events: none;
+}
+
+.rtl-axis-x .rtl-rail {
+  --rtl-axis-dir: to left;
+  inset-block-start: 1.35rem;
+  inset-inline: 0.5rem;
+  height: 1px;
+}
+
+.rtl-axis-y .rtl-rail {
+  --rtl-axis-dir: to bottom;
+  inset-block: 0.5rem 0.5rem;
+  inset-inline-start: 0.55rem;
+  width: 1px;
+}
+
+.rtl-item {
+  position: relative;
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+}
+
+.rtl-axis-x .rtl-item {
+  width: min(78vw, 280px);
+  padding-top: 1.75rem;
+}
+
+.rtl-axis-y .rtl-item {
+  width: 100%;
+  padding-inline-start: 1.75rem;
+}
+
+.rtl-node {
+  position: absolute;
+  width: 0.65rem;
+  height: 0.65rem;
+  border-radius: 50%;
+  background: var(--rtl-accent);
+  box-shadow: 0 0 0 4px rgba(201, 165, 106, 0.18);
+}
+
+.rtl-axis-x .rtl-node {
+  top: 1.1rem;
+  inset-inline-start: 1.1rem;
+}
+
+.rtl-axis-y .rtl-node {
+  top: 1.35rem;
+  inset-inline-start: 0.28rem;
+}
+
+.rtl-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  min-height: 100%;
+  padding: 1.15rem 1.15rem 1.25rem;
+  border: 1px solid var(--rtl-line);
+  border-radius: 1rem;
+  background:
+    linear-gradient(165deg, rgba(255, 255, 255, 0.04), transparent 42%),
+    var(--rtl-panel);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.22);
+  will-change: transform;
+}
+
+.rtl-card-index {
+  position: absolute;
+  top: 0.85rem;
+  inset-inline-end: 1rem;
+  font-family: var(--rtl-display);
+  font-size: 1.35rem;
+  line-height: 1;
+  color: rgba(201, 165, 106, 0.35);
+}
+
+.rtl-card-years {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.45rem 0.75rem;
+}
+
+.rtl-year-fa {
+  font-family: var(--rtl-display);
+  font-size: 1.55rem;
+  line-height: 1.1;
+  color: var(--rtl-accent-strong);
+}
+
+.rtl-year-en {
+  font-size: 0.78rem;
+  color: var(--rtl-muted);
+}
+
+.rtl-tag {
+  align-self: flex-start;
+  margin-top: 0.15rem;
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  border: 1px solid rgba(125, 203, 158, 0.35);
+  background: rgba(125, 203, 158, 0.1);
+  color: #9ed4b4;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.rtl-card-title {
+  margin: 0.2rem 0 0;
+  font-size: 1.08rem;
+  font-weight: 700;
+  line-height: 1.45;
+  color: var(--rtl-ink);
+}
+
+.rtl-card-summary {
+  margin: 0;
+  color: var(--rtl-soft);
+  font-size: 0.88rem;
+  line-height: 1.75;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rtl-card {
+    transition: none;
+  }
+}

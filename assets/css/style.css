@@ -716,6 +716,13 @@ a {
   overflow-x: hidden;
 }
 
+.history-section {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 0 2rem;
+  min-width: 0;
+}
+
 .maf-teaser-section {
   width: min(100% - 2rem, var(--max));
   max-width: 100%;
