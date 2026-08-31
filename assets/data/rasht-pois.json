@@ -1,0 +1,164 @@
+{
+  "updatedAt": "2026-08-31",
+  "center": [49.5832, 37.2808],
+  "categories": [
+    { "id": "historical", "label": "تاریخی", "color": "#c9a56a" },
+    { "id": "cafe_restaurant", "label": "خوراک و کافه", "color": "#e8b87a" },
+    { "id": "shopping", "label": "بازار و خرید", "color": "#7dcb9e" },
+    { "id": "culture", "label": "فرهنگ و دیدنی", "color": "#8eb4e8" }
+  ],
+  "pois": [
+    {
+      "id": "municipality",
+      "name": "عمارت شهرداری رشت",
+      "category": "historical",
+      "lng": 49.5832,
+      "lat": 37.2808,
+      "address": "میدان شهرداری",
+      "blurb": "نماد معماری اروپایی مرکز شهر؛ قلب پیاده‌مدار رشت.",
+      "image": "https://images.unsplash.com/photo-1565008576549-57569a49371d?auto=format&fit=crop&w=800&q=70"
+    },
+    {
+      "id": "post-museum",
+      "name": "موزه پست و تلگراف",
+      "category": "historical",
+      "lng": 49.58285,
+      "lat": 37.28105,
+      "address": "ضلع میدان شهرداری",
+      "blurb": "عمارت تاریخی مجموعهٔ میدان با نمای کلاسیک.",
+      "image": "https://images.unsplash.com/photo-1555881403-64992de560fe?auto=format&fit=crop&w=800&q=70"
+    },
+    {
+      "id": "iran-hotel",
+      "name": "هتل ایران",
+      "category": "historical",
+      "lng": 49.58365,
+      "lat": 37.28035,
+      "address": "ضلع جنوبی میدان شهرداری",
+      "blurb": "ساختمان تاریخی مشرف به میدان؛ بخشی از بافت فرهنگی مرکز.",
+      "image": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=70"
+    },
+    {
+      "id": "alamolhoda",
+      "name": "پیاده‌راه علم‌الهدی",
+      "category": "culture",
+      "lng": 49.58455,
+      "lat": 37.28155,
+      "address": "محور پیاده‌راه مرکز شهر",
+      "blurb": "خیابان پیاده‌مدار با کافه، ویترین و زندگی شبانهٔ شهری.",
+      "image": "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&w=800&q=70"
+    },
+    {
+      "id": "national-library",
+      "name": "کتابخانه ملی رشت",
+      "category": "culture",
+      "lng": 49.5819,
+      "lat": 37.2796,
+      "address": "نزدیک مرکز شهر",
+      "blurb": "از نخستین کتابخانه‌های عمومی/ملی بیرون از پایتخت.",
+      "image": "https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=800&q=70"
+    },
+    {
+      "id": "cinema-sepidrood",
+      "name": "سینما سپیدرود",
+      "category": "culture",
+      "lng": 49.5851,
+      "lat": 37.2799,
+      "address": "اطراف میدان و مرکز شهر",
+      "blurb": "یکی از سینماهای خاطره‌انگیز رشت در بافت مرکزی.",
+      "image": "https://images.unsplash.com/photo-1489599849927-2ee91cede3dd?auto=format&fit=crop&w=800&q=70"
+    },
+    {
+      "id": "bazaar",
+      "name": "بازار بزرگ رشت",
+      "category": "shopping",
+      "lng": 49.5882,
+      "lat": 37.2768,
+      "address": "بافت مرکزی شهر",
+      "blurb": "راسته‌های ادویه، برنج، پوشاک و زندگی روزمرهٔ بازار.",
+      "image": "https://images.unsplash.com/photo-1555529902-5261145633bf?auto=format&fit=crop&w=800&q=70"
+    },
+    {
+      "id": "fish-market",
+      "name": "راسته ماهی‌فروشان",
+      "category": "shopping",
+      "lng": 49.5891,
+      "lat": 37.2774,
+      "address": "نزدیک بازار بزرگ",
+      "blurb": "ماهی تازه خزر، اشپل و طعم‌های دریایی گیلان.",
+      "image": "https://images.unsplash.com/photo-1498654200940-4521ea959071?auto=format&fit=crop&w=800&q=70"
+    },
+    {
+      "id": "spice-lane",
+      "name": "راسته ادویه و عطاری",
+      "category": "shopping",
+      "lng": 49.5874,
+      "lat": 37.2764,
+      "address": "داخل بازار بزرگ",
+      "blurb": "عطر زعفران، فلفل و چاشنی‌های شمال.",
+      "image": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=800&q=70"
+    },
+    {
+      "id": "pasargad",
+      "name": "پاساژ پاسارگاد",
+      "category": "shopping",
+      "lng": 49.5842,
+      "lat": 37.2794,
+      "address": "نزدیک میدان شهرداری",
+      "blurb": "مرکز خرید شهری در فاصلهٔ کوتاه از میدان.",
+      "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=800&q=70"
+    },
+    {
+      "id": "cafe-square",
+      "name": "کافه‌های اطراف میدان",
+      "category": "cafe_restaurant",
+      "lng": 49.5839,
+      "lat": 37.2812,
+      "address": "پیاده‌راه میدان شهرداری",
+      "blurb": "نشستن با چای و تماشای میدان در فضای زندهٔ مرکز شهر.",
+      "image": "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=800&q=70"
+    },
+    {
+      "id": "cafe-alamolhoda",
+      "name": "کافه‌های علم‌الهدی",
+      "category": "cafe_restaurant",
+      "lng": 49.5850,
+      "lat": 37.2818,
+      "address": "پیاده‌راه علم‌الهدی",
+      "blurb": "محور کافه و خوراک سبک در قلب پیاده‌راه.",
+      "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=800&q=70"
+    },
+    {
+      "id": "cafe-photon",
+      "name": "کافه فوتون",
+      "category": "cafe_restaurant",
+      "lng": 49.5824,
+      "lat": 37.2802,
+      "address": "اطراف میدان شهرداری",
+      "blurb": "یکی از کافه‌های شناخته‌شدهٔ بافت مرکزی.",
+      "image": "https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=800&q=70"
+    },
+    {
+      "id": "mohtasham",
+      "name": "پارک محتشم (سبزه‌میدان)",
+      "category": "culture",
+      "lng": 49.5898,
+      "lat": 37.2749,
+      "address": "سبزه‌میدان",
+      "blurb": "فضای سبز شهری با درختان کهن؛ پیاده‌روی و استراحت.",
+      "image": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=800&q=70"
+    },
+    {
+      "id": "amenroad",
+      "name": "مسیر امن | AmenRoad",
+      "category": "culture",
+      "lng": 49.5907,
+      "lat": 37.2758,
+      "address": "رشت، خیابان انقلاب (حاجی‌آباد) بن‌بست رز",
+      "blurb": "نقطهٔ شروع پیشنهادی برای کاوش شهر و مسیریابی.",
+      "image": "https://rasht.city/assets/og-image.png",
+      "link": "https://AmenRoad.com",
+      "linkLabel": "AmenRoad.com"
+    }
+  ]
+}
