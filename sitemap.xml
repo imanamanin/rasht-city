@@ -6,6 +6,11 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://rasht.city/#gileh-khorak</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://rasht.city/mafakher/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
