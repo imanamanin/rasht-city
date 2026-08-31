@@ -356,6 +356,127 @@ a {
 }
 
 .weather-panel { animation-delay: 0.08s; }
+.weather-panel .panel-body {
+  position: relative;
+  z-index: 1;
+}
+
+.weather-rain {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  overflow: hidden;
+  border-radius: inherit;
+}
+
+.weather-panel.is-rainy .weather-rain {
+  opacity: 1;
+}
+
+.weather-rain-layer {
+  position: absolute;
+  inset: -20% 0 0;
+  background-image:
+    repeating-linear-gradient(
+      180deg,
+      transparent 0,
+      transparent 14px,
+      rgba(186, 220, 240, 0.14) 14px,
+      rgba(186, 220, 240, 0.14) 16px
+    ),
+    repeating-linear-gradient(
+      185deg,
+      transparent 0,
+      transparent 22px,
+      rgba(125, 203, 158, 0.08) 22px,
+      rgba(125, 203, 158, 0.08) 23px
+    );
+  background-size: 18px 120px, 28px 160px;
+  animation: weather-rain-fall 0.9s linear infinite;
+  opacity: 0.85;
+}
+
+.weather-rain-layer--soft {
+  animation-duration: 1.35s;
+  animation-direction: reverse;
+  opacity: 0.45;
+  filter: blur(0.4px);
+}
+
+@keyframes weather-rain-fall {
+  from { transform: translateY(-8%); }
+  to { transform: translateY(12%); }
+}
+
+.weather-ambient-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.65rem 1rem;
+  margin-top: 0.15rem;
+  padding-top: 0.85rem;
+  border-top: 1px solid var(--line);
+}
+
+.weather-ambient-toggle {
+  appearance: none;
+  border: 1px solid rgba(201, 165, 106, 0.4);
+  background: rgba(201, 165, 106, 0.1);
+  color: var(--accent-strong);
+  font: inherit;
+  font-size: 0.86rem;
+  font-weight: 700;
+  padding: 0.45rem 0.85rem;
+  border-radius: 0.65rem;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.weather-ambient-toggle:hover,
+.weather-ambient-toggle:focus-visible {
+  background: rgba(201, 165, 106, 0.18);
+  border-color: rgba(201, 165, 106, 0.65);
+  outline: none;
+}
+
+.weather-ambient-toggle[aria-pressed="true"] {
+  background: rgba(125, 203, 158, 0.16);
+  border-color: rgba(125, 203, 158, 0.45);
+  color: var(--good);
+}
+
+.weather-ambient-volume {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.78rem;
+  color: var(--ink-muted);
+}
+
+.weather-ambient-volume input[type="range"] {
+  width: 7rem;
+  accent-color: var(--good);
+  cursor: pointer;
+}
+
+.weather-ambient-hint {
+  flex: 1 1 100%;
+  margin: 0;
+  font-size: 0.78rem;
+  color: var(--ink-muted);
+  line-height: 1.5;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .weather-rain-layer,
+  .weather-rain-layer--soft {
+    animation: none;
+  }
+}
+
 .prayer-panel { animation-delay: 0.16s; }
 .events-panel { animation-delay: 0.24s; }
 
