@@ -712,6 +712,9 @@ function init() {
   loadEvents();
   loadGilanNews();
   loadGilanTeaser();
+  if (typeof initGilehKhorak === "function") {
+    initGilehKhorak();
+  }
 
   if (typeof initCalendarDashboard === "function") {
     initCalendarDashboard();

@@ -31,6 +31,7 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
   <link rel="stylesheet" href="assets/css/style.css?v=20260831a" />
   <link rel="stylesheet" href="assets/css/calendar.css?v=20260822b" />
+  <link rel="stylesheet" href="assets/css/gileh-khorak.css?v=20260831a" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -89,6 +90,7 @@
     <nav class="nav" aria-label="Primary">
       <a href="#calendar">تقویم</a>
       <a href="#news">اخبار</a>
+      <a href="#gileh-khorak">گیله خوراک</a>
       <a href="#weather">آب‌وهوا</a>
       <a href="#prayer">اوقات شرعی</a>
       <a href="#events">رویدادها</a>
@@ -284,6 +286,24 @@
       </div>
     </section>
 
+    <!-- گیله خوراک — interactive Gilan food quiz + roulette -->
+    <section class="gileh-section" id="gileh-khorak" aria-labelledby="gileh-title">
+      <article class="panel gileh-panel">
+        <div class="panel-body">
+          <header class="panel-head">
+            <h2 id="gileh-title">گیله خوراک</h2>
+            <p class="panel-sub">کوئیز سه‌مرحله‌ای · گردونهٔ غذای اصیل گیلان</p>
+          </header>
+          <div id="gileh-khorak-root" class="gileh-root">
+            <p class="state loading">در حال آماده‌سازی گیله خوراک…</p>
+          </div>
+          <p class="map-note">
+            پیشنهادها الهام‌گرفته از آشپزی سنتی گیلان است؛ راسته‌های بازار بر اساس بازار بزرگ رشت معرفی شده‌اند.
+          </p>
+        </div>
+      </article>
+    </section>
+
     <section class="panels" aria-label="City information">
       <!-- Weather -->
       <article class="panel weather-panel" id="weather">
@@ -386,6 +406,7 @@
   <script src="assets/js/calendar.js?v=20260822a" defer></script>
   <script src="assets/js/map.js" defer></script>
   <script src="assets/js/WeatherAmbient.js?v=20260831a" defer></script>
-  <script src="assets/js/main.js?v=20260831a" defer></script>
+  <script src="assets/js/gileh-khorak.js?v=20260831a" defer></script>
+  <script src="assets/js/main.js?v=20260831b" defer></script>
 </body>
 </html>
