@@ -38,7 +38,7 @@ node scripts/fetch-gilan-figure.mjs
 | رویدادها | `assets/data/events.json` |
 | ساعت و تقویم ایران | Jalali utility + live clock (`assets/js/calendar.js`) |
 | میدان شهرداری ۳بعدی | `/shahrdari/` — Three.js walkthrough + تابلوهای اطراف میدان |
-| نقشه رشت | [Leaflet](https://leafletjs.com/) + [OpenStreetMap](https://www.openstreetmap.org/copyright) (**no API key**) |
+| نقشه رشت | [Leaflet](https://leafletjs.com/) + تایل مینیمال [CARTO](https://carto.com/attributions) + مسیریابی پیاده OSRM (**بدون کلید API**) |
 | Hero / section photos | Unsplash API (optional key) + curated fallbacks |
 
 ## API keys (optional)
