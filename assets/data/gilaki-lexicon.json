@@ -1,0 +1,243 @@
+{
+  "updatedAt": "2026-08-31",
+  "title": "فرهنگ واژگان و ضرب‌المثل‌های گیلکی",
+  "categories": [
+    { "id": "humor", "label": "طنز" },
+    { "id": "daily", "label": "روزمره" },
+    { "id": "cooking", "label": "آشپزی" },
+    { "id": "proverb", "label": "ضرب‌المثل" }
+  ],
+  "entries": [
+    {
+      "id": "khore",
+      "term": "خؤره",
+      "phonetic": "khore",
+      "meaning": "خوب است؛ پسندیده است.",
+      "example": "ای کار خؤره.",
+      "category": "daily"
+    },
+    {
+      "id": "kui",
+      "term": "کویی؟",
+      "phonetic": "kuyi",
+      "meaning": "کجا؟",
+      "example": "کویی شونی؟",
+      "category": "daily"
+    },
+    {
+      "id": "chiche",
+      "term": "چیچه؟",
+      "phonetic": "chiche",
+      "meaning": "چیست؟ چه خبر؟",
+      "example": "چیچه گونی؟",
+      "category": "daily"
+    },
+    {
+      "id": "amare",
+      "term": "اَمره",
+      "phonetic": "amare",
+      "meaning": "ما؛ مال ما.",
+      "example": "امره خونه نزدیکه.",
+      "category": "daily"
+    },
+    {
+      "id": "shome",
+      "term": "شومه",
+      "phonetic": "shome",
+      "meaning": "شما.",
+      "example": "شومه خؤنین؟",
+      "category": "daily"
+    },
+    {
+      "id": "bazi",
+      "term": "بازی کؤنن",
+      "phonetic": "bazi konan",
+      "meaning": "شوخی می‌کنند؛ سر به سر می‌گذارند.",
+      "example": "ای بچه‌ئن هی بازی کؤنن.",
+      "category": "humor"
+    },
+    {
+      "id": "lal",
+      "term": "لال بؤو",
+      "phonetic": "lal bov",
+      "meaning": "ساکت شو (طنزآمیز / محکم).",
+      "example": "یه کم لال بؤو، دارم فک کؤنم!",
+      "category": "humor"
+    },
+    {
+      "id": "gush-pang",
+      "term": "گوش‌پنگ",
+      "phonetic": "gush-pang",
+      "meaning": "آدم پرحرف یا وراج (با لحن شوخی).",
+      "example": "ای همسایه گوش‌پنگه، همه چی ره می‌دؤنه!",
+      "category": "humor"
+    },
+    {
+      "id": "varaz",
+      "term": "وراز بکش",
+      "phonetic": "varaz bekes",
+      "meaning": "زیاد سخت نگیر؛ راحت باش (محاورهٔ شوخ).",
+      "example": "وراز بکَش، همه چی درست بونه.",
+      "category": "humor"
+    },
+    {
+      "id": "chuchagh",
+      "term": "چوچاق",
+      "phonetic": "chuchagh",
+      "meaning": "سبزی معطر مخصوص گیلان؛ پایهٔ خیلی از غذاها و پیش‌غذاها.",
+      "example": "کال‌کباب بی‌چوچاق نیمه‌کاره‌ست.",
+      "category": "cooking"
+    },
+    {
+      "id": "khalvash",
+      "term": "خالواش",
+      "phonetic": "khalvash",
+      "meaning": "سبزی معطر محلی که در ترش‌تره و خورش‌های گیلانی به کار می‌رود.",
+      "example": "ترش‌تره با خالواش بوی خونهٔ مادربزرگ ره داره.",
+      "category": "cooking"
+    },
+    {
+      "id": "nardon",
+      "term": "ناردون / انار ترش",
+      "phonetic": "nardon",
+      "meaning": "دانه‌ها یا رب انار ترش برای چاشنی خورش‌ها.",
+      "example": "اناربیج بی‌ناردون، اناربیج نی‌یه.",
+      "category": "cooking"
+    },
+    {
+      "id": "baghala",
+      "term": "باقلا قاتق",
+      "phonetic": "baghala qatoq",
+      "meaning": "خورش باقلا و شوید با تخم‌مرغ؛ از غذاهای شاخص گیلان.",
+      "example": "ناهار امروز باقلا قاتقِ با برنج محلی.",
+      "category": "cooking"
+    },
+    {
+      "id": "mirza",
+      "term": "میرزاقاسمی",
+      "phonetic": "mirza-ghasemi",
+      "meaning": "بادمجان دودی با سیر و گوجه‌فرنگی و تخم‌مرغ.",
+      "example": "شب جمعه میرزاقاسمی و نون تازه‌پزی.",
+      "category": "cooking"
+    },
+    {
+      "id": "torsh-tare",
+      "term": "ترش‌تره",
+      "phonetic": "torsh-tare",
+      "meaning": "خورش سبزی‌های ترش و معطر گیلان.",
+      "example": "ترش‌تره ره با تخم‌مرغ سرخ‌شده دوست دارم.",
+      "category": "cooking"
+    },
+    {
+      "id": "ashpel",
+      "term": "اشپل",
+      "phonetic": "ashpel",
+      "meaning": "خاویار ماهی سفید؛ صبحانه یا پیش‌غذای لوکس محلی.",
+      "example": "اشپل با نون و کره، صبحانهٔ خاص گیلان.",
+      "category": "cooking"
+    },
+    {
+      "id": "vabi-sabzi",
+      "term": "واوِج / قیمه‌واوِج",
+      "phonetic": "vavij",
+      "meaning": "خورش گوشت با طعم تند و خاص شمال.",
+      "example": "قیمه‌واوِج ره با برنج داغ بخور.",
+      "category": "cooking"
+    },
+    {
+      "id": "proverb-rain",
+      "term": "رشتِ باران، بی‌باران نی‌یه",
+      "meaning": "اشاره به بارانی بودن همیشگی رشت؛ گاهی کنایه از وضعیت ثابت و تکراری.",
+      "example": "هر چی چتر بخری، باز رشتِ باران، بی‌باران نی‌یه!",
+      "category": "proverb"
+    },
+    {
+      "id": "proverb-guest",
+      "term": "میهمانِ گیلان، گرسنه نمانه",
+      "meaning": "فرهنگ مهمان‌نوازی گیلانی‌ها؛ سفره همیشه باز است.",
+      "example": "هر چی تعارف کنی، میهمانِ گیلان گرسنه نمانه.",
+      "category": "proverb"
+    },
+    {
+      "id": "proverb-rice",
+      "term": "برنجِ خوش‌پخت، نشونِ خونهٔ مرتبه",
+      "meaning": "برنج خوب نماد نظم و سلیقهٔ خانه است.",
+      "example": "مادر می‌گفت: برنجِ خوش‌پخت، نشونِ خونهٔ مرتبه.",
+      "category": "proverb"
+    },
+    {
+      "id": "proverb-work",
+      "term": "کار امروز ره فردا ننه",
+      "meaning": "کار را به تعویق نینداز (نسخهٔ محلیِ ضرب‌المثل رایج).",
+      "example": "بابا گفت: کار امروز ره فردا ننه.",
+      "category": "proverb"
+    },
+    {
+      "id": "proverb-tongue",
+      "term": "زوانِ نرم، درِ سنگ ره وا کونه",
+      "meaning": "با زبان نرم حتی کار سخت هم پیش می‌رود.",
+      "example": "با مدیر نرم حرف بزن؛ زوانِ نرم درِ سنگ ره وا کونه.",
+      "category": "proverb"
+    },
+    {
+      "id": "proverb-neighbor",
+      "term": "همسایهٔ خوب، از فامیل دور بهتره",
+      "meaning": "اهمیت همسایگی در فرهنگ محلی.",
+      "example": "تو کوچه همه می‌گفتن: همسایهٔ خوب از فامیل دور بهتره.",
+      "category": "proverb"
+    },
+    {
+      "id": "sabah-bexeyr",
+      "term": "صباه به‌خیر",
+      "phonetic": "sabah bexeyr",
+      "meaning": "صبح بخیر.",
+      "example": "صباه به‌خیر، چایی آماده‌یه.",
+      "category": "daily"
+    },
+    {
+      "id": "shamo-bexeyr",
+      "term": "شمو به‌خیر",
+      "phonetic": "shamo bexeyr",
+      "meaning": "شب بخیر.",
+      "example": "شمو به‌خیر، فردا بینیم.",
+      "category": "daily"
+    },
+    {
+      "id": "dast-dard-nakone",
+      "term": "دست درد نَکُنه",
+      "meaning": "خسته نباشی؛ دستت درد نکند (قدردانی).",
+      "example": "چه میز زیبایی چیدی، دست درد نَکُنه.",
+      "category": "daily"
+    },
+    {
+      "id": "gol-bazi",
+      "term": "گل‌بازی درآوردن",
+      "meaning": "شاخ‌وشانه کشیدن یا خودنمایی خنده‌دار.",
+      "example": "باز شروع کرد به گل‌بازی درآوردن!",
+      "category": "humor"
+    },
+    {
+      "id": "abghure",
+      "term": "آب‌غوره",
+      "phonetic": "ab-ghure",
+      "meaning": "چاشنی ترش پرکاربرد در آشپزی گیلان.",
+      "example": "یه کم آب‌غوره به ترش‌تره بزن.",
+      "category": "cooking"
+    },
+    {
+      "id": "proverb-tea",
+      "term": "چاییِ داغ، حرفِ حساب ره نرم کونه",
+      "meaning": "با آرامش و پذیرایی، گفتگو بهتر پیش می‌رود.",
+      "example": "اول چایی بیار؛ چاییِ داغ حرفِ حساب ره نرم کونه.",
+      "category": "proverb"
+    },
+    {
+      "id": "kujash",
+      "term": "کوجا شونی؟",
+      "phonetic": "kuja shoni",
+      "meaning": "کجا می‌روی؟",
+      "example": "این ساعت کوجا شونی؟",
+      "category": "daily"
+    }
+  ]
+}
