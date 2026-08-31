@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>فرهنگ واژگان و ضرب‌المثل‌های گیلکی | rasht.city</title>
+  <meta name="description" content="جستجو و مرور واژگان، اصطلاحات و ضرب‌المثل‌های گیلکی با فیلتر دسته‌بندی، اصطلاح تصادفی و اشتراک‌گذاری کارت." />
+  <meta name="keywords" content="گیلکی, واژگان گیلکی, ضرب‌المثل گیلکی, فرهنگ لغت, رشت, گیلان, rasht.city" />
+  <meta name="author" content="AmenRoad Co." />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0b1a16" />
+  <link rel="canonical" href="https://rasht.city/gilaki/" />
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="fa_IR" />
+  <meta property="og:site_name" content="rasht.city" />
+  <meta property="og:url" content="https://rasht.city/gilaki/" />
+  <meta property="og:title" content="فرهنگ واژگان و ضرب‌المثل‌های گیلکی" />
+  <meta property="og:description" content="واژگان و ضرب‌المثل گیلکی با سرچ لایو، فیلتر و اشتراک‌گذاری." />
+  <meta property="og:image" content="https://rasht.city/assets/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="فرهنگ واژگان و ضرب‌المثل‌های گیلکی" />
+  <meta name="twitter:description" content="واژگان و ضرب‌المثل گیلکی با سرچ لایو، فیلتر و اشتراک‌گذاری." />
+  <meta name="twitter:image" content="https://rasht.city/assets/og-image.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="style.css?v=1" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "فرهنگ واژگان و ضرب‌المثل‌های گیلکی",
+    "url": "https://rasht.city/gilaki/",
+    "description": "واژگان، اصطلاحات و ضرب‌المثل‌های گیلکی.",
+    "isPartOf": { "@type": "WebSite", "name": "rasht.city", "url": "https://rasht.city/" },
+    "inLanguage": "fa-IR"
+  }
+  </script>
+</head>
+<body class="gilaki-body">
+  <div class="page-bg" aria-hidden="true"></div>
+  <div class="page-overlay" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="brand" href="../">rasht.city</a>
+    <nav class="nav" aria-label="Primary">
+      <a href="../">خانه</a>
+      <a href="./" aria-current="page">واژگان گیلکی</a>
+      <a href="../#gileh-khorak">گیله خوراک</a>
+      <a href="../mafakher/">مفاخر گیلان</a>
+      <a href="../shahrdari/" class="nav-square">میدان ۳بعدی</a>
+    </nav>
+  </header>
+
+  <main class="gilaki-main">
+    <header class="gilaki-hero">
+      <p class="gilaki-kicker">زبان و فرهنگ محلی</p>
+      <h1>فرهنگ واژگان و ضرب‌المثل‌های گیلکی</h1>
+      <p class="gilaki-lede">
+        سرچ لایو، فیلتر دسته‌بندی، یک اصطلاح تصادفی، و کپی یا اشتراک‌گذاری کارت برای شبکه‌های اجتماعی.
+      </p>
+    </header>
+
+    <div class="gilaki-toolbar">
+      <div class="gilaki-search-row">
+        <label class="visually-hidden" for="gilaki-search">جستجو</label>
+        <input
+          id="gilaki-search"
+          class="gilaki-search"
+          type="search"
+          placeholder="جستجو در واژه، معنی یا مثال…"
+          autocomplete="off"
+        />
+        <button type="button" class="gilaki-random" id="gilaki-random">اصطلاح تصادفی</button>
+      </div>
+      <div class="gilaki-filters" id="gilaki-filters" role="group" aria-label="دسته‌بندی"></div>
+    </div>
+
+    <div class="gilaki-meta">
+      <span id="gilaki-count">—</span>
+    </div>
+
+    <p id="gilaki-status" class="state loading">در حال بارگذاری واژگان…</p>
+    <div id="gilaki-list" class="gilaki-list" role="list"></div>
+    <p id="gilaki-empty" class="state gilaki-empty" hidden>موردی با این فیلتر پیدا نشد.</p>
+
+    <p class="gilaki-note">
+      این مجموعه برای آشنایی سریع با واژگان رایج تنظیم شده و به‌مرور گسترش می‌یابد.
+      املای گیلکی در مناطق مختلف ممکن است کمی فرق داشته باشد.
+    </p>
+  </main>
+
+  <footer class="site-footer">
+    <p>
+      © <span id="year"></span> <strong>rasht.city</strong> —
+      فرهنگ گیلکی · AmenRoad Co.
+    </p>
+    <p class="footer-owner" lang="en" dir="ltr">
+      This page belongs to
+      <a href="https://AmenRoad.com" target="_blank" rel="noopener noreferrer">AmenRoad</a>
+      Co.
+    </p>
+  </footer>
+
+  <script src="app.js?v=1" defer></script>
+</body>
+</html>
