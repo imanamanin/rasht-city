@@ -1,6 +1,51 @@
 {
   "entries": [
     {
+      "at": "2026-09-06T08:23:27.703Z",
+      "level": "success",
+      "message": "یادبود جدید منتشر شد: اصغر ابراهیمی",
+      "detail": {
+        "slug": "اصغر-ابراهیمی-q373078",
+        "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D8%A7%D8%B5%D8%BA%D8%B1_%D8%A7%D8%A8%D8%B1%D8%A7%D9%87%DB%8C%D9%85%DB%8C"
+      }
+    },
+    {
+      "at": "2026-09-06T08:23:27.701Z",
+      "level": "success",
+      "message": "یادبود جدید منتشر شد: علی حاکمی",
+      "detail": {
+        "slug": "علی-حاکمی-q5959262",
+        "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D8%B9%D9%84%DB%8C_%D8%AD%D8%A7%DA%A9%D9%85%DB%8C"
+      }
+    },
+    {
+      "at": "2026-09-06T08:23:27.700Z",
+      "level": "success",
+      "message": "یادبود جدید منتشر شد: داود حسن‌زادگان رودسری",
+      "detail": {
+        "slug": "داود-حسنزادگان-رودسری-q6470280",
+        "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D8%AF%D8%A7%D9%88%D8%AF_%D8%AD%D8%B3%D9%86%E2%80%8C%D8%B2%D8%A7%D8%AF%DA%AF%D8%A7%D9%86_%D8%B1%D9%88%D8%AF%D8%B3%D8%B1%DB%8C"
+      }
+    },
+    {
+      "at": "2026-09-06T08:23:27.700Z",
+      "level": "success",
+      "message": "یادبود جدید منتشر شد: سرور مه‌کامه محصص لاهیجانی",
+      "detail": {
+        "slug": "سرور-مهکامه-محصص-لاهیجانی-q6409793",
+        "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D8%B3%D8%B1%D9%88%D8%B1_%D9%85%D9%87%E2%80%8C%DA%A9%D8%A7%D9%85%D9%87_%D9%85%D8%AD%D8%B5%D8%B5_%D9%84%D8%A7%D9%87%DB%8C%D8%AC%D8%A7%D9%86%DB%8C"
+      }
+    },
+    {
+      "at": "2026-09-06T08:23:27.699Z",
+      "level": "success",
+      "message": "یادبود جدید منتشر شد: عباس امیری مقدم",
+      "detail": {
+        "slug": "عباس-امیری-مقدم-q6406659",
+        "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D8%B9%D8%A8%D8%A7%D8%B3_%D8%A7%D9%85%DB%8C%D8%B1%DB%8C_%D9%85%D9%82%D8%AF%D9%85"
+      }
+    },
+    {
       "at": "2026-08-30T09:45:54.702Z",
       "level": "success",
       "message": "یادبود جدید منتشر شد: امین اولیایی",
@@ -857,16 +902,6 @@
       "detail": {
         "slug": "خسرو-گلسرخی-q455770",
         "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D8%AE%D8%B3%D8%B1%D9%88_%DA%AF%D9%84%D8%B3%D8%B1%D8%AE%DB%8C",
-        "skippedTried": 0
-      }
-    },
-    {
-      "at": "2026-08-21T17:15:30.710Z",
-      "level": "success",
-      "message": "یادبود جدید منتشر شد: بهمن محصص",
-      "detail": {
-        "slug": "بهمن-محصص-q800248",
-        "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D8%A8%D9%87%D9%85%D9%86_%D9%85%D8%AD%D8%B5%D8%B5",
         "skippedTried": 0
       }
     }
