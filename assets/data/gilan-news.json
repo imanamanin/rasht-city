@@ -1,8 +1,17 @@
 {
-  "updatedAt": "2026-09-27T14:27:59.540Z",
+  "updatedAt": "2026-09-27T18:48:29.121Z",
   "sourceNote": "Aggregated from public RSS (Google News + available agency feeds). Summaries come from feed descriptions; open the source for the full article.",
   "errors": [],
   "items": [
+    {
+      "id": "7db97c1e2b08",
+      "title": "افزایش نوبت مرخصی سالانه خودرو‌های پلاک گذر موقت انزلی",
+      "summary": "استانداری گیلان اعلام کرد: در پی رایزنی‌های استاندار مرخصی خودرو‌های پلاک گذر موقت انزلی به ۴ نوبت سالانه افزایش یافته است.",
+      "source": "باشگاه خبرنگاران جوان · گیلان",
+      "url": "https://www.yjc.ir/fa/news/9133535/%D8%A7%D9%81%D8%B2%D8%A7%DB%8C%D8%B4-%D9%86%D9%88%D8%A8%D8%AA-%D9%85%D8%B1%D8%AE%D8%B5%DB%8C-%D8%B3%D8%A7%D9%84%D8%A7%D9%86%D9%87-%D8%AE%D9%88%D8%AF%D8%B1%D9%88%E2%80%8C%D9%87%D8%A7%DB%8C-%D9%BE%D9%84%D8%A7%DA%A9-%DA%AF%D8%B0%D8%B1-%D9%85%D9%88%D9%82%D8%AA-%D8%A7%D9%86%D8%B2%D9%84%DB%8C",
+      "publishedAt": "2026-09-27T14:52:07.000Z",
+      "fetchedAt": "2026-09-27T18:48:29.121Z"
+    },
     {
       "id": "dbe997fb5095",
       "title": "آغاز زودهنگام صادرات کیوی شمال",
@@ -10,7 +19,7 @@
       "source": "باشگاه خبرنگاران جوان · گیلان",
       "url": "https://www.yjc.ir/fa/news/9133528/%D8%A2%D8%BA%D8%A7%D8%B2-%D8%B2%D9%88%D8%AF%D9%87%D9%86%DA%AF%D8%A7%D9%85-%D8%B5%D8%A7%D8%AF%D8%B1%D8%A7%D8%AA-%DA%A9%DB%8C%D9%88%DB%8C-%D8%B4%D9%85%D8%A7%D9%84",
       "publishedAt": "2026-09-27T14:24:10.000Z",
-      "fetchedAt": "2026-09-27T14:27:59.540Z"
+      "fetchedAt": "2026-09-27T18:48:29.121Z"
     },
     {
       "id": "019e677c1098",
@@ -19,7 +28,7 @@
       "source": "باشگاه خبرنگاران جوان · گیلان",
       "url": "https://www.yjc.ir/fa/news/9133498/%DB%B2-%D8%B1%D9%85%D8%A7%D9%84-%D8%AF%D8%B1-%D8%AF%D8%A7%D9%85-%D9%BE%D9%84%DB%8C%D8%B3-%D8%B1%D8%B6%D9%88%D8%A7%D9%86%D8%B4%D9%87%D8%B1",
       "publishedAt": "2026-09-27T12:41:10.000Z",
-      "fetchedAt": "2026-09-27T14:27:59.540Z"
+      "fetchedAt": "2026-09-27T18:48:29.121Z"
     },
     {
       "id": "5b3c55bdc8a9",
@@ -28,7 +37,7 @@
       "source": "باشگاه خبرنگاران جوان · گیلان",
       "url": "https://www.yjc.ir/fa/news/9133478/%D9%85%D8%B9%D8%B1%D9%81%DB%8C-%D8%A8%D8%B1%DA%AF%D8%B2%DB%8C%D8%AF%DA%AF%D8%A7%D9%86-%D8%AC%D8%B4%D9%86%D9%88%D8%A7%D8%B1%D9%87-%D8%B9%DA%A9%D8%B3-%D9%84%D8%A7%D9%87%DB%8C%D8%AC%D8%A7%D9%86",
       "publishedAt": "2026-09-27T11:59:33.000Z",
-      "fetchedAt": "2026-09-27T14:27:59.540Z"
+      "fetchedAt": "2026-09-27T18:48:29.121Z"
     },
     {
       "id": "dfb78d3d44bf",
@@ -37,7 +46,7 @@
       "source": "باشگاه خبرنگاران جوان · گیلان",
       "url": "https://www.yjc.ir/fa/news/9133440/%D8%AA%D9%82%D9%88%DB%8C%D8%AA-%D9%86%D8%A7%D9%BE%D8%A7%DB%8C%D8%AF%D8%A7%D8%B1%DB%8C-%D9%87%D9%88%D8%A7-%D8%A7%D8%B2-%D8%B9%D8%B5%D8%B1-%D8%B3%D9%87-%D8%B4%D9%86%D8%A8%D9%87-%D8%AF%D8%B1-%DA%AF%DB%8C%D9%84%D8%A7%D9%86",
       "publishedAt": "2026-09-27T10:52:40.000Z",
-      "fetchedAt": "2026-09-27T14:27:59.540Z"
+      "fetchedAt": "2026-09-27T18:48:29.121Z"
     },
     {
       "id": "efb472988216",
@@ -46,7 +55,7 @@
       "source": "باشگاه خبرنگاران جوان · گیلان",
       "url": "https://www.yjc.ir/fa/news/9133372/%DA%AF%DB%8C%D9%84%D8%A7%D9%86-%D9%85%D9%82%D8%B5%D8%AF-%D9%BE%D8%B1%D8%B7%D8%B1%D9%81%D8%AF%D8%A7%D8%B1-%DA%AF%D8%B1%D8%AF%D8%B4%DA%AF%D8%B1%D8%A7%D9%86",
       "publishedAt": "2026-09-27T08:47:35.000Z",
-      "fetchedAt": "2026-09-27T14:27:59.540Z"
+      "fetchedAt": "2026-09-27T18:48:29.121Z"
     },
     {
       "id": "7c7f4ce47124",
@@ -55,7 +64,7 @@
       "source": "باشگاه خبرنگاران جوان · گیلان",
       "url": "https://www.yjc.ir/fa/news/9133279/%D8%AA%D9%88%D9%82%DB%8C%D9%81-%DA%A9%D9%85%D9%BE%D8%B1%D8%B3%DB%8C-%D9%85%D8%AA%D8%AE%D9%84%D9%81-%D8%AF%D8%B1-%D9%85%D9%86%D8%B7%D9%82%D9%87-%D8%AD%D9%81%D8%A7%D8%B8%D8%AA-%D8%B4%D8%AF%D9%87-%D8%B3%DB%8C%D8%A7%D9%87%D9%85%D8%B2%DA%AF%DB%8C-%D8%B4%D9%81%D8%AA",
       "publishedAt": "2026-09-27T06:03:17.000Z",
-      "fetchedAt": "2026-09-27T14:27:59.540Z"
+      "fetchedAt": "2026-09-27T18:48:29.121Z"
     },
     {
       "id": "773f95e9e151",
@@ -64,7 +73,7 @@
       "source": "باشگاه خبرنگاران جوان · گیلان",
       "url": "https://www.yjc.ir/fa/news/9133114/%D8%B8%D8%B1%D9%81%DB%8C%D8%AA-%D9%85%D9%88%D9%84%D8%AF%D8%B3%D8%A7%D8%B2%DB%8C-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%A7%D9%86%D8%AA%D9%82%D8%A7%D9%84-%D8%B2%D9%86%D8%AF%D8%A7%D9%86%E2%80%8C%D9%87%D8%A7%DB%8C-%DA%AF%DB%8C%D9%84%D8%A7%D9%86-%D8%A8%D9%87-%D8%AE%D8%A7%D8%B1%D8%AC-%D8%A7%D8%B2-%D8%A8%D8%A7%D9%81%D8%AA-%D8%B4%D9%87%D8%B1%DB%8C",
       "publishedAt": "2026-09-26T13:47:14.000Z",
-      "fetchedAt": "2026-09-27T14:27:59.540Z"
+      "fetchedAt": "2026-09-27T18:48:29.121Z"
     },
     {
       "id": "b85b5bd74331",
@@ -73,7 +82,7 @@
       "source": "باشگاه خبرنگاران جوان · گیلان",
       "url": "https://www.yjc.ir/fa/news/9133088/%D8%A7%D9%85%D9%86%DB%8C%D8%AA-%DA%A9%D8%B4%D9%88%D8%B1-%D9%85%D8%B1%D9%87%D9%88%D9%86-%D9%85%D8%AC%D8%A7%D9%87%D8%AF%D8%AA-%D9%88-%D9%81%D8%AF%D8%A7%DA%A9%D8%A7%D8%B1%DB%8C-%D8%B3%D8%B1%D8%A8%D8%A7%D8%B2%D8%A7%D9%86-%D8%A7%D8%B3%D8%AA",
       "publishedAt": "2026-09-26T12:07:22.000Z",
-      "fetchedAt": "2026-09-27T14:27:59.540Z"
+      "fetchedAt": "2026-09-27T18:48:29.121Z"
     },
     {
       "id": "b7141d7f1eb5",
@@ -82,7 +91,7 @@
       "source": "باشگاه خبرنگاران جوان · گیلان",
       "url": "https://www.yjc.ir/fa/news/9133066/%D9%82%D8%AF%D8%B1%D8%AF%D8%A7%D9%86%DB%8C-%D8%A7%D8%B2-%D9%82%D8%B6%D8%A7%D8%AA-%D9%88-%DA%A9%D8%A7%D8%B1%DA%A9%D9%86%D8%A7%D9%86-%D9%86%D9%85%D9%88%D9%86%D9%87-%D8%AF%D8%A7%D8%AF%DA%AF%D8%B3%D8%AA%D8%B1%DB%8C-%DA%AF%DB%8C%D9%84%D8%A7%D9%86",
       "publishedAt": "2026-09-26T11:27:05.000Z",
-      "fetchedAt": "2026-09-27T14:27:59.540Z"
+      "fetchedAt": "2026-09-27T18:48:29.121Z"
     },
     {
       "id": "9b5fe431808f",
@@ -91,7 +100,7 @@
       "source": "باشگاه خبرنگاران جوان · گیلان",
       "url": "https://www.yjc.ir/fa/news/9133062/%DA%A9%D8%B4%D9%81-%DB%B3%DB%B8-%D8%AA%D9%86-%D8%A8%D8%B1%D9%86%D8%AC-%D9%82%D8%A7%DA%86%D8%A7%D9%82-%D8%AF%D8%B1-%D8%A2%D8%B3%D8%AA%D8%A7%D9%86%D9%87-%D8%A7%D8%B4%D8%B1%D9%81%DB%8C%D9%87",
       "publishedAt": "2026-09-26T11:03:01.000Z",
-      "fetchedAt": "2026-09-27T14:27:59.540Z"
+      "fetchedAt": "2026-09-27T18:48:29.121Z"
     },
     {
       "id": "892914c7334f",
@@ -100,7 +109,7 @@
       "source": "باشگاه خبرنگاران جوان · گیلان",
       "url": "https://www.yjc.ir/fa/news/9133058/%DB%B6-%D8%A2%D9%85%D8%A8%D9%88%D9%84%D8%A7%D9%86%D8%B3-%D8%AC%D8%AF%DB%8C%D8%AF-%D9%88%D8%A7%D8%B1%D8%AF-%D9%86%D8%A7%D9%88%DA%AF%D8%A7%D9%86-%D8%A7%D9%88%D8%B1%DA%98%D8%A7%D9%86%D8%B3-%DA%AF%DB%8C%D9%84%D8%A7%D9%86-%D8%B4%D8%AF",
       "publishedAt": "2026-09-26T10:49:59.000Z",
-      "fetchedAt": "2026-09-27T14:27:59.540Z"
+      "fetchedAt": "2026-09-27T18:48:29.121Z"
     },
     {
       "id": "47a287d5ffff",
@@ -109,7 +118,7 @@
       "source": "باشگاه خبرنگاران جوان · گیلان",
       "url": "https://www.yjc.ir/fa/news/9133049/%D8%A2%DB%8C%DB%8C%D9%86-%D8%AA%D8%AC%D9%84%DB%8C%D9%84-%D8%A7%D8%B2-%D8%B3%D8%B1%D8%A8%D8%A7%D8%B2%D8%A7%D9%86-%D9%86%D9%85%D9%88%D9%86%D9%87-%DA%AF%DB%8C%D9%84%D8%A7%D9%86-%D8%AF%D8%B1-%D8%B1%D8%B4%D8%AA",
       "publishedAt": "2026-09-26T10:27:15.000Z",
-      "fetchedAt": "2026-09-27T14:27:59.540Z"
+      "fetchedAt": "2026-09-27T18:48:29.121Z"
     },
     {
       "id": "fc2d707349d3",
@@ -118,7 +127,7 @@
       "source": "باشگاه خبرنگاران جوان · گیلان",
       "url": "https://www.yjc.ir/fa/news/9132998/%DA%86%D9%86%D8%AF%DB%8C%D9%86-%D8%B3%D8%A7%D9%84%D9%86-%D8%AC%D8%AF%DB%8C%D8%AF-%D8%B3%DB%8C%D9%86%D9%85%D8%A7-%D8%A8%D9%87-%D8%B8%D8%B1%D9%81%DB%8C%D8%AA-%D9%81%D8%B1%D9%87%D9%86%DA%AF%DB%8C-%DA%AF%DB%8C%D9%84%D8%A7%D9%86-%D8%A7%D9%81%D8%B2%D9%88%D8%AF%D9%87-%D9%85%DB%8C%E2%80%8C%D8%B4%D9%88%D8%AF",
       "publishedAt": "2026-09-26T08:45:14.000Z",
-      "fetchedAt": "2026-09-27T14:27:59.540Z"
+      "fetchedAt": "2026-09-27T18:48:29.121Z"
     },
     {
       "id": "868d8da06bc7",
@@ -127,7 +136,7 @@
       "source": "باشگاه خبرنگاران جوان · گیلان",
       "url": "https://www.yjc.ir/fa/news/9132891/%D9%BE%D8%A7%DB%8C%D8%B4-%D8%AC%D9%85%D8%B9%DB%8C%D8%AA-%D9%88-%D8%AD%D9%81%D8%A7%D8%B8%D8%AA-%D9%85%DB%8C%D8%AF%D8%A7%D9%86%DB%8C-%D8%A7%D8%B2-%D9%85%D8%B1%D8%A7%D9%84-%D8%AF%D8%B1-%D8%AC%D9%86%DA%AF%D9%84%E2%80%8C%D9%87%D8%A7%DB%8C-%D9%87%DB%8C%D8%B1%DA%A9%D8%A7%D9%86%DB%8C-%D8%B3%DB%8C%D8%A7%D9%87%DA%A9%D9%84-%D9%81%DB%8C%D9%84%D9%85",
       "publishedAt": "2026-09-26T06:26:38.000Z",
-      "fetchedAt": "2026-09-27T14:27:59.540Z"
+      "fetchedAt": "2026-09-27T18:48:29.121Z"
     },
     {
       "id": "4861eca8bf9d",
@@ -136,7 +145,7 @@
       "source": "باشگاه خبرنگاران جوان · گیلان",
       "url": "https://www.yjc.ir/fa/news/9132764/%D8%A2%D8%AA%D8%B4%E2%80%8C%D8%B3%D9%88%D8%B2%DB%8C-%DB%8C%DA%A9-%D9%87%DA%A9%D8%AA%D8%A7%D8%B1-%D8%A7%D8%B2-%D8%AC%D9%86%DA%AF%D9%84%E2%80%8C%D9%87%D8%A7%DB%8C-%D8%AA%D8%A7%D9%84%D8%B4-%D9%85%D9%87%D8%A7%D8%B1-%D8%B4%D8%AF",
       "publishedAt": "2026-09-25T14:02:30.000Z",
-      "fetchedAt": "2026-09-27T14:27:59.540Z"
+      "fetchedAt": "2026-09-27T18:48:29.121Z"
     },
     {
       "id": "314b336dfe0a",
@@ -145,7 +154,7 @@
       "source": "باشگاه خبرنگاران جوان · گیلان",
       "url": "https://www.yjc.ir/fa/news/9132743/%D8%B6%D8%B1%D9%88%D8%B1%D8%AA-%D8%AA%D9%88%D9%84%DB%8C%D8%AF%D9%81%DB%8C%D9%84%D9%85-%D9%82%D9%87%D8%B1%D9%85%D8%A7%D9%86-%D9%87%D8%A7%DB%8C-%D8%AF%D9%81%D8%A7%D8%B9-%D9%85%D9%82%D8%AF%D8%B3",
       "publishedAt": "2026-09-25T11:26:57.000Z",
-      "fetchedAt": "2026-09-27T14:27:59.540Z"
+      "fetchedAt": "2026-09-27T18:48:29.121Z"
     },
     {
       "id": "af6d33b3fe41",
@@ -154,7 +163,7 @@
       "source": "باشگاه خبرنگاران جوان · گیلان",
       "url": "https://www.yjc.ir/fa/news/9132620/%D8%A7%D9%81%D8%AA%D8%AA%D8%A7%D8%AD-%D9%86%D9%85%D8%A7%DB%8C%D8%B4%DA%AF%D8%A7%D9%87-%D8%A7%D8%B3%D9%80%D9%88%D9%87-%D8%A8%D8%B3%D9%80%DB%8C%D8%AC-%D8%AF%D8%B1-%D9%85%DB%8C%D8%AF%D8%A7%D9%86-%D8%B4%D9%87%D8%AF%D8%A7%DB%8C-%D8%B0%D9%87%D8%A7%D8%A8-%D8%B1%D8%B4%D8%AA-%D9%81%DB%8C%D9%84%D9%85-%D9%88-%D8%B9%DA%A9%D8%B3",
       "publishedAt": "2026-09-25T04:52:38.000Z",
-      "fetchedAt": "2026-09-27T14:27:59.540Z"
+      "fetchedAt": "2026-09-27T18:48:29.121Z"
     },
     {
       "id": "f512fa5567a2",
@@ -163,7 +172,7 @@
       "source": "باشگاه خبرنگاران جوان · گیلان",
       "url": "https://www.yjc.ir/fa/news/9132593/%D8%A2%D8%BA%D8%A7%D8%B2-%D8%B3%D8%A7%D9%84-%D8%AA%D8%AD%D8%B5%DB%8C%D9%84%DB%8C-%D8%B6%D8%B1%D9%88%D8%B1%D8%AA-%D8%A7%D8%AD%D8%AA%DB%8C%D8%A7%D8%B7-%D8%AF%D8%B1-%D9%85%D8%AD%D8%AF%D9%88%D8%AF%D9%87-%D9%85%D8%AF%D8%A7%D8%B1%D8%B3-%D8%AD%D8%A7%D8%B4%DB%8C%D9%87-%D8%B1%D8%A7%D9%87",
       "publishedAt": "2026-09-24T18:50:44.000Z",
-      "fetchedAt": "2026-09-27T14:27:59.540Z"
+      "fetchedAt": "2026-09-27T18:48:29.121Z"
     },
     {
       "id": "fcc83d375a05",
@@ -172,16 +181,7 @@
       "source": "باشگاه خبرنگاران جوان · گیلان",
       "url": "https://www.yjc.ir/fa/news/9132511/%D9%85%D8%B1%D8%A7%D8%B3%D9%85-%D8%AA%D8%AD%D9%84%DB%8C%D9%81-%D9%88%DA%A9%D9%84%D8%A7%DB%8C-%D8%A7%D8%B3%D8%AA%D8%A7%D9%86-%DA%AF%DB%8C%D9%84%D8%A7%D9%86-%D8%A8%D8%A7-%D8%AD%D8%B6%D9%88%D8%B1-%D8%AE%D8%A7%D9%86%D9%88%D8%A7%D8%AF%D9%87-%D8%B4%D9%87%D8%AF%D8%A7%DB%8C-%D9%86%D8%A7%D9%88-%D8%AF%D9%86%D8%A7",
       "publishedAt": "2026-09-24T10:58:49.000Z",
-      "fetchedAt": "2026-09-27T14:27:59.540Z"
-    },
-    {
-      "id": "bdfbd1ba18a1",
-      "title": "یکسان سازی فرایند بازرسی آسانسور‌ها در گیلان",
-      "summary": "مدیرکل استاندارد گیلان بر یکسان‌سازی فرایند بازرسی آسانسورها، رفع موانع اجرایی و تسریع در صدور تأییدیه‌های ایمنی با هدف حفظ ایمنی شهروندان و حمایت از فعالیت‌های قانونی شرکت‌های این حوزه تأکید کرد.",
-      "source": "باشگاه خبرنگاران جوان · گیلان",
-      "url": "https://www.yjc.ir/fa/news/9132459/%DB%8C%DA%A9%D8%B3%D8%A7%D9%86-%D8%B3%D8%A7%D8%B2%DB%8C-%D9%81%D8%B1%D8%A7%DB%8C%D9%86%D8%AF-%D8%A8%D8%A7%D8%B2%D8%B1%D8%B3%DB%8C-%D8%A2%D8%B3%D8%A7%D9%86%D8%B3%D9%88%D8%B1%E2%80%8C%D9%87%D8%A7-%D8%AF%D8%B1-%DA%AF%DB%8C%D9%84%D8%A7%D9%86",
-      "publishedAt": "2026-09-24T06:52:25.000Z",
-      "fetchedAt": "2026-09-27T14:27:59.540Z"
+      "fetchedAt": "2026-09-27T18:48:29.121Z"
     }
   ]
 }
