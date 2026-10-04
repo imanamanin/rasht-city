@@ -1,6 +1,51 @@
 {
   "entries": [
     {
+      "at": "2026-10-04T10:25:40.361Z",
+      "level": "success",
+      "message": "یادبود جدید منتشر شد: ابوالحسن ابتهاج",
+      "detail": {
+        "slug": "ابوالحسن-ابتهاج-q5961040",
+        "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D8%A7%D8%A8%D9%88%D8%A7%D9%84%D8%AD%D8%B3%D9%86_%D8%A7%D8%A8%D8%AA%D9%87%D8%A7%D8%AC"
+      }
+    },
+    {
+      "at": "2026-10-04T10:25:40.361Z",
+      "level": "success",
+      "message": "یادبود جدید منتشر شد: فتح‌الله خان اکبر",
+      "detail": {
+        "slug": "فتحالله-خان-اکبر-q1398054",
+        "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D9%81%D8%AA%D8%AD%E2%80%8C%D8%A7%D9%84%D9%84%D9%87_%D8%AE%D8%A7%D9%86_%D8%A7%DA%A9%D8%A8%D8%B1"
+      }
+    },
+    {
+      "at": "2026-10-04T10:25:40.360Z",
+      "level": "success",
+      "message": "یادبود جدید منتشر شد: پژمان نوری",
+      "detail": {
+        "slug": "پژمان-نوری-q7161010",
+        "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D9%BE%DA%98%D9%85%D8%A7%D9%86_%D9%86%D9%88%D8%B1%DB%8C"
+      }
+    },
+    {
+      "at": "2026-10-04T10:25:40.359Z",
+      "level": "success",
+      "message": "یادبود جدید منتشر شد: محمدرضا اصلانی",
+      "detail": {
+        "slug": "محمدرضا-اصلانی-q5964329",
+        "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D9%85%D8%AD%D9%85%D8%AF%D8%B1%D8%B6%D8%A7_%D8%A7%D8%B5%D9%84%D8%A7%D9%86%DB%8C"
+      }
+    },
+    {
+      "at": "2026-10-04T10:25:40.359Z",
+      "level": "success",
+      "message": "یادبود جدید منتشر شد: انوشیروان روحانی",
+      "detail": {
+        "slug": "انوشیروان-روحانی-q183060",
+        "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D8%A7%D9%86%D9%88%D8%B4%DB%8C%D8%B1%D9%88%D8%A7%D9%86_%D8%B1%D9%88%D8%AD%D8%A7%D9%86%DB%8C"
+      }
+    },
+    {
       "at": "2026-09-27T09:50:51.751Z",
       "level": "success",
       "message": "یادبود جدید منتشر شد: هژیر داریوش",
@@ -853,51 +898,6 @@
       "detail": {
         "slug": "حسن-یوسفی-اشکوری-q1588592",
         "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D8%AD%D8%B3%D9%86_%DB%8C%D9%88%D8%B3%D9%81%DB%8C_%D8%A7%D8%B4%DA%A9%D9%88%D8%B1%DB%8C"
-      }
-    },
-    {
-      "at": "2026-08-22T15:31:15.177Z",
-      "level": "success",
-      "message": "یادبود جدید منتشر شد: امیر کیای ملاطی",
-      "detail": {
-        "slug": "امیر-کیای-ملاطی-q5689069",
-        "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D8%A7%D9%85%DB%8C%D8%B1_%DA%A9%DB%8C%D8%A7%DB%8C_%D9%85%D9%84%D8%A7%D8%B7%DB%8C"
-      }
-    },
-    {
-      "at": "2026-08-22T15:31:15.176Z",
-      "level": "success",
-      "message": "یادبود جدید منتشر شد: مینا وحید",
-      "detail": {
-        "slug": "مینا-وحید-q23893957",
-        "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D9%85%DB%8C%D9%86%D8%A7_%D9%88%D8%AD%DB%8C%D8%AF"
-      }
-    },
-    {
-      "at": "2026-08-22T15:31:15.175Z",
-      "level": "success",
-      "message": "یادبود جدید منتشر شد: محمد آبشک",
-      "detail": {
-        "slug": "محمد-آبشک-q6891675",
-        "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D9%85%D8%AD%D9%85%D8%AF_%D8%A2%D8%A8%D8%B4%DA%A9"
-      }
-    },
-    {
-      "at": "2026-08-22T15:31:15.173Z",
-      "level": "success",
-      "message": "یادبود جدید منتشر شد: رضا نیک‌نظر",
-      "detail": {
-        "slug": "رضا-نیکنظر-q7319772",
-        "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D8%B1%D8%B6%D8%A7_%D9%86%DB%8C%DA%A9%E2%80%8C%D9%86%D8%B8%D8%B1"
-      }
-    },
-    {
-      "at": "2026-08-22T15:31:15.171Z",
-      "level": "success",
-      "message": "یادبود جدید منتشر شد: پالیز خوشدل",
-      "detail": {
-        "slug": "پالیز-خوشدل-q27050757",
-        "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D9%BE%D8%A7%D9%84%DB%8C%D8%B2_%D8%AE%D9%88%D8%B4%D8%AF%D9%84"
       }
     }
   ]

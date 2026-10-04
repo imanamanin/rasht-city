@@ -1,6 +1,178 @@
 {
-  "updatedAt": "2026-09-27T09:50:51.744Z",
+  "updatedAt": "2026-10-04T10:25:40.357Z",
   "figures": [
+    {
+      "id": "5b8e2a4dd7f0",
+      "slug": "انوشیروان-روحانی-q183060",
+      "wikidataId": "Q183060",
+      "fullName": "انوشیروان روحانی",
+      "title": "آهنگساز و موسیقی‌دان ایرانی",
+      "shortDescription": "آهنگساز و موسیقی‌دان ایرانی",
+      "category": "موسیقی",
+      "birthDate": "1939-07-24",
+      "birthPlace": "رشت",
+      "isBornInGilan": true,
+      "city": "رشت",
+      "biography": "انوشیروان روحانی (زادهٔ 1939-07-24)، آهنگساز و موسیقی‌دان ایرانی، از چهره‌های شناخته‌شدهٔ مرتبط با استان گیلان است.\n\nبر پایهٔ داده‌های ویکی‌داده و مقالهٔ ویکی‌پدیای فارسی، محل تولد او رشت (در محدودهٔ استان گیلان) گزارش شده است.\n\nحوزهٔ فعالیت او در این یادبود زیر عنوان «موسیقی» آمده است.\n\nمنابع عمومی به جزئیات زادگاه و زمینهٔ زندگی او اشاره کرده‌اند.\n\nاین صفحه یک یادبود خلاصه‌شده است و جایگزین مطالعهٔ مقالهٔ کامل منبع نیست.",
+      "achievements": [
+        "شناخته‌شده به‌عنوان: آهنگساز و موسیقی‌دان ایرانی",
+        "ثبت در حوزهٔ «موسیقی» در یادبود مفاخر گیلان",
+        "وجود مقالهٔ مستقل در ویکی‌پدیای فارسی"
+      ],
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Anoushiravan_Rohani_from_Zan-e_Rooz%2C_Issue_700_-_7_October_1978.jpg?utm_source=fa.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+        "alt": "تصویر انوشیروان روحانی",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Anoushiravan_Rohani_from_Zan-e_Rooz,_Issue_700_-_7_October_1978.jpg",
+        "license": "Public domain"
+      },
+      "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D8%A7%D9%86%D9%88%D8%B4%DB%8C%D8%B1%D9%88%D8%A7%D9%86_%D8%B1%D9%88%D8%AD%D8%A7%D9%86%DB%8C",
+      "fetchedAt": "2026-10-04T10:25:38.036Z",
+      "publishedAt": "2026-10-04T10:25:38.036Z",
+      "status": "published",
+      "sourceNotes": [
+        "محل تولد از طریق Wikidata P19 و سلسله‌مراتب P131 استان گیلان تأیید شد.",
+        "متن یادبود بازنویسی مستقل بر اساس فکت‌های ساختاریافته است؛ متن ویکی‌پدیا عیناً کپی نشده.",
+        "مقاله منبع: https://fa.wikipedia.org/wiki/%D8%A7%D9%86%D9%88%D8%B4%DB%8C%D8%B1%D9%88%D8%A7%D9%86_%D8%B1%D9%88%D8%AD%D8%A7%D9%86%DB%8C"
+      ]
+    },
+    {
+      "id": "878a073e9994",
+      "slug": "محمدرضا-اصلانی-q5964329",
+      "wikidataId": "Q5964329",
+      "fullName": "محمدرضا اصلانی",
+      "title": "فیلمنامه‌نویس، نویسنده، شاعر، و کارگردان ایرانی",
+      "shortDescription": "فیلمنامه‌نویس، نویسنده، شاعر، و کارگردان ایرانی",
+      "category": "هنر",
+      "birthDate": "1943-12-18",
+      "birthPlace": "رشت",
+      "isBornInGilan": true,
+      "city": "رشت",
+      "biography": "محمدرضا اصلانی (زادهٔ 1943-12-18)، فیلمنامه‌نویس، نویسنده، شاعر، و کارگردان ایرانی، از چهره‌های شناخته‌شدهٔ مرتبط با استان گیلان است.\n\nبر پایهٔ داده‌های ویکی‌داده و مقالهٔ ویکی‌پدیای فارسی، محل تولد او رشت (در محدودهٔ استان گیلان) گزارش شده است.\n\nحوزهٔ فعالیت او در این یادبود زیر عنوان «هنر» آمده است.\n\nمنابع عمومی به جزئیات زادگاه و زمینهٔ زندگی او اشاره کرده‌اند.\n\nاین صفحه یک یادبود خلاصه‌شده است و جایگزین مطالعهٔ مقالهٔ کامل منبع نیست.",
+      "achievements": [
+        "شناخته‌شده به‌عنوان: فیلمنامه‌نویس، نویسنده، شاعر، و کارگردان ایرانی",
+        "ثبت در حوزهٔ «هنر» در یادبود مفاخر گیلان",
+        "وجود مقالهٔ مستقل در ویکی‌پدیای فارسی"
+      ],
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/0/06/Mohammad_reza_aslani_%28cropped%29-2.jpg?utm_source=fa.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+        "alt": "تصویر محمدرضا اصلانی",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mohammad_reza_aslani_(cropped)-2.jpg",
+        "license": "CC BY-SA 4.0"
+      },
+      "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D9%85%D8%AD%D9%85%D8%AF%D8%B1%D8%B6%D8%A7_%D8%A7%D8%B5%D9%84%D8%A7%D9%86%DB%8C",
+      "fetchedAt": "2026-10-04T10:25:38.671Z",
+      "publishedAt": "2026-10-04T10:25:38.671Z",
+      "status": "published",
+      "sourceNotes": [
+        "محل تولد از طریق Wikidata P19 و سلسله‌مراتب P131 استان گیلان تأیید شد.",
+        "متن یادبود بازنویسی مستقل بر اساس فکت‌های ساختاریافته است؛ متن ویکی‌پدیا عیناً کپی نشده.",
+        "مقاله منبع: https://fa.wikipedia.org/wiki/%D9%85%D8%AD%D9%85%D8%AF%D8%B1%D8%B6%D8%A7_%D8%A7%D8%B5%D9%84%D8%A7%D9%86%DB%8C"
+      ]
+    },
+    {
+      "id": "2396641d140c",
+      "slug": "پژمان-نوری-q7161010",
+      "wikidataId": "Q7161010",
+      "fullName": "پژمان نوری",
+      "title": "بازیکن فوتبال ایرانی",
+      "shortDescription": "بازیکن فوتبال ایرانی",
+      "category": "ورزش",
+      "birthDate": "1980-07-13",
+      "birthPlace": "شهرستان رضوانشهر",
+      "isBornInGilan": true,
+      "city": "شهرستان رضوانشهر",
+      "biography": "پژمان نوری (زادهٔ 1980-07-13)، بازیکن فوتبال ایرانی، از چهره‌های شناخته‌شدهٔ مرتبط با استان گیلان است.\n\nبر پایهٔ داده‌های ویکی‌داده و مقالهٔ ویکی‌پدیای فارسی، محل تولد او شهرستان رضوانشهر (در محدودهٔ استان گیلان) گزارش شده است.\n\nحوزهٔ فعالیت او در این یادبود زیر عنوان «ورزش» آمده است.\n\nمنابع عمومی به جزئیات زادگاه و زمینهٔ زندگی او اشاره کرده‌اند.\n\nاین صفحه یک یادبود خلاصه‌شده است و جایگزین مطالعهٔ مقالهٔ کامل منبع نیست.",
+      "achievements": [
+        "شناخته‌شده به‌عنوان: بازیکن فوتبال ایرانی",
+        "ثبت در حوزهٔ «ورزش» در یادبود مفاخر گیلان",
+        "وجود مقالهٔ مستقل در ویکی‌پدیای فارسی"
+      ],
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/1/16/Pejman_Nouri_-_Saba_Qom_vs._Malavan.jpg?utm_source=fa.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+        "alt": "تصویر پژمان نوری",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pejman_Nouri_-_Saba_Qom_vs._Malavan.jpg",
+        "license": "CC BY 4.0"
+      },
+      "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D9%BE%DA%98%D9%85%D8%A7%D9%86_%D9%86%D9%88%D8%B1%DB%8C",
+      "fetchedAt": "2026-10-04T10:25:39.378Z",
+      "publishedAt": "2026-10-04T10:25:39.378Z",
+      "status": "published",
+      "sourceNotes": [
+        "محل تولد از طریق Wikidata P19 و سلسله‌مراتب P131 استان گیلان تأیید شد.",
+        "متن یادبود بازنویسی مستقل بر اساس فکت‌های ساختاریافته است؛ متن ویکی‌پدیا عیناً کپی نشده.",
+        "مقاله منبع: https://fa.wikipedia.org/wiki/%D9%BE%DA%98%D9%85%D8%A7%D9%86_%D9%86%D9%88%D8%B1%DB%8C"
+      ]
+    },
+    {
+      "id": "dc713847a3a1",
+      "slug": "فتحالله-خان-اکبر-q1398054",
+      "wikidataId": "Q1398054",
+      "fullName": "فتح‌الله خان اکبر",
+      "title": "سیاست‌مدار ایرانی",
+      "shortDescription": "سیاست‌مدار ایرانی",
+      "category": "سیاست",
+      "birthDate": "1878-01-01",
+      "deathDate": "1947-01-01",
+      "birthPlace": "رشت",
+      "isBornInGilan": true,
+      "city": "رشت",
+      "biography": "فتح‌الله خان اکبر (زادهٔ 1878-01-01 — درگذشتهٔ 1947-01-01)، سیاست‌مدار ایرانی، از چهره‌های شناخته‌شدهٔ مرتبط با استان گیلان است.\n\nبر پایهٔ داده‌های ویکی‌داده و مقالهٔ ویکی‌پدیای فارسی، محل تولد او رشت (در محدودهٔ استان گیلان) گزارش شده است.\n\nحوزهٔ فعالیت او در این یادبود زیر عنوان «سیاست» آمده است.\n\nاین صفحه یک یادبود خلاصه‌شده است و جایگزین مطالعهٔ مقالهٔ کامل منبع نیست.",
+      "achievements": [
+        "شناخته‌شده به‌عنوان: سیاست‌مدار ایرانی",
+        "ثبت در حوزهٔ «سیاست» در یادبود مفاخر گیلان",
+        "وجود مقالهٔ مستقل در ویکی‌پدیای فارسی"
+      ],
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Fathollah_Khan_Akbar_73028349.jpg?utm_source=fa.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+        "alt": "تصویر فتح‌الله خان اکبر",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Fathollah_Khan_Akbar_73028349.jpg",
+        "license": "Public domain"
+      },
+      "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D9%81%D8%AA%D8%AD%E2%80%8C%D8%A7%D9%84%D9%84%D9%87_%D8%AE%D8%A7%D9%86_%D8%A7%DA%A9%D8%A8%D8%B1",
+      "fetchedAt": "2026-10-04T10:25:40.022Z",
+      "publishedAt": "2026-10-04T10:25:40.022Z",
+      "status": "published",
+      "sourceNotes": [
+        "محل تولد از طریق Wikidata P19 و سلسله‌مراتب P131 استان گیلان تأیید شد.",
+        "متن یادبود بازنویسی مستقل بر اساس فکت‌های ساختاریافته است؛ متن ویکی‌پدیا عیناً کپی نشده.",
+        "مقاله منبع: https://fa.wikipedia.org/wiki/%D9%81%D8%AA%D8%AD%E2%80%8C%D8%A7%D9%84%D9%84%D9%87_%D8%AE%D8%A7%D9%86_%D8%A7%DA%A9%D8%A8%D8%B1"
+      ]
+    },
+    {
+      "id": "72890be0d091",
+      "slug": "ابوالحسن-ابتهاج-q5961040",
+      "wikidataId": "Q5961040",
+      "fullName": "ابوالحسن ابتهاج",
+      "title": "سیاست‌مدار ایرانی",
+      "shortDescription": "سیاست‌مدار ایرانی",
+      "category": "سیاست",
+      "birthDate": "1899-11-29",
+      "deathDate": "1999-02-25",
+      "birthPlace": "رشت",
+      "isBornInGilan": true,
+      "city": "رشت",
+      "biography": "ابوالحسن ابتهاج (زادهٔ 1899-11-29 — درگذشتهٔ 1999-02-25)، سیاست‌مدار ایرانی، از چهره‌های شناخته‌شدهٔ مرتبط با استان گیلان است.\n\nبر پایهٔ داده‌های ویکی‌داده و مقالهٔ ویکی‌پدیای فارسی، محل تولد او رشت (در محدودهٔ استان گیلان) گزارش شده است.\n\nحوزهٔ فعالیت او در این یادبود زیر عنوان «سیاست» آمده است.\n\nاین صفحه یک یادبود خلاصه‌شده است و جایگزین مطالعهٔ مقالهٔ کامل منبع نیست.",
+      "achievements": [
+        "شناخته‌شده به‌عنوان: سیاست‌مدار ایرانی",
+        "ثبت در حوزهٔ «سیاست» در یادبود مفاخر گیلان",
+        "وجود مقالهٔ مستقل در ویکی‌پدیای فارسی"
+      ],
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/d/dc/Abulhassan_Ebtehaj.jpg?utm_source=fa.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+        "alt": "تصویر ابوالحسن ابتهاج",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Abulhassan_Ebtehaj.jpg",
+        "license": "Public domain"
+      },
+      "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D8%A7%D8%A8%D9%88%D8%A7%D9%84%D8%AD%D8%B3%D9%86_%D8%A7%D8%A8%D8%AA%D9%87%D8%A7%D8%AC",
+      "fetchedAt": "2026-10-04T10:25:40.356Z",
+      "publishedAt": "2026-10-04T10:25:40.356Z",
+      "status": "published",
+      "sourceNotes": [
+        "محل تولد از طریق Wikidata P19 و سلسله‌مراتب P131 استان گیلان تأیید شد.",
+        "متن یادبود بازنویسی مستقل بر اساس فکت‌های ساختاریافته است؛ متن ویکی‌پدیا عیناً کپی نشده.",
+        "مقاله منبع: https://fa.wikipedia.org/wiki/%D8%A7%D8%A8%D9%88%D8%A7%D9%84%D8%AD%D8%B3%D9%86_%D8%A7%D8%A8%D8%AA%D9%87%D8%A7%D8%AC"
+      ]
+    },
     {
       "id": "035b67ba2216",
       "slug": "سید-اشرفالدین-گیلانی-q6408685",
