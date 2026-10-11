@@ -1,6 +1,51 @@
 {
   "entries": [
     {
+      "at": "2026-10-11T10:37:25.989Z",
+      "level": "success",
+      "message": "یادبود جدید منتشر شد: حسن تامینی لیچائی",
+      "detail": {
+        "slug": "حسن-تامینی-لیچائی-q16050405",
+        "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D8%AD%D8%B3%D9%86_%D8%AA%D8%A3%D9%85%DB%8C%D9%86%DB%8C"
+      }
+    },
+    {
+      "at": "2026-10-11T10:37:25.988Z",
+      "level": "success",
+      "message": "یادبود جدید منتشر شد: مجتبی مودب‌پور",
+      "detail": {
+        "slug": "مجتبی-مودبپور-q17175563",
+        "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D9%85%D8%AC%D8%AA%D8%A8%DB%8C_%D9%85%D8%A4%D8%AF%D8%A8%E2%80%8C%D9%BE%D9%88%D8%B1"
+      }
+    },
+    {
+      "at": "2026-10-11T10:37:25.984Z",
+      "level": "success",
+      "message": "یادبود جدید منتشر شد: حسن محدثی",
+      "detail": {
+        "slug": "حسن-محدثی-q16052229",
+        "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D8%AD%D8%B3%D9%86_%D9%85%D8%AD%D8%AF%D8%AB%DB%8C"
+      }
+    },
+    {
+      "at": "2026-10-11T10:37:25.983Z",
+      "level": "success",
+      "message": "یادبود جدید منتشر شد: الکساندر قاسمویچ کاظم بک",
+      "detail": {
+        "slug": "الکساندر-قاسمویچ-کاظم-بک-q2477810",
+        "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D9%85%DB%8C%D8%B1%D8%B2%D8%A7_%DA%A9%D8%A7%D8%B8%D9%85_%D8%A8%DB%8C%DA%AF"
+      }
+    },
+    {
+      "at": "2026-10-11T10:37:25.982Z",
+      "level": "success",
+      "message": "یادبود جدید منتشر شد: محمود نامجوی",
+      "detail": {
+        "slug": "محمود-نامجوی-q1361670",
+        "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D9%85%D8%AD%D9%85%D9%88%D8%AF_%D9%86%D8%A7%D9%85%D8%AC%D9%88%DB%8C"
+      }
+    },
+    {
       "at": "2026-10-04T10:25:40.361Z",
       "level": "success",
       "message": "یادبود جدید منتشر شد: ابوالحسن ابتهاج",
@@ -853,51 +898,6 @@
       "detail": {
         "slug": "حبیب-محمدی-q5961354",
         "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D8%AD%D8%A8%DB%8C%D8%A8_%D9%85%D8%AD%D9%85%D8%AF%DB%8C"
-      }
-    },
-    {
-      "at": "2026-08-22T15:31:15.184Z",
-      "level": "success",
-      "message": "یادبود جدید منتشر شد: سید کاظم رشتی",
-      "detail": {
-        "slug": "سید-کاظم-رشتی-q936019",
-        "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D8%B3%DB%8C%D8%AF_%DA%A9%D8%A7%D8%B8%D9%85_%D8%B1%D8%B4%D8%AA%DB%8C"
-      }
-    },
-    {
-      "at": "2026-08-22T15:31:15.183Z",
-      "level": "success",
-      "message": "یادبود جدید منتشر شد: پروین صوفی",
-      "detail": {
-        "slug": "پروین-صوفی-q5718512",
-        "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D9%BE%D8%B1%D9%88%DB%8C%D9%86_%D8%B5%D9%88%D9%81%DB%8C"
-      }
-    },
-    {
-      "at": "2026-08-22T15:31:15.181Z",
-      "level": "success",
-      "message": "یادبود جدید منتشر شد: میرزا حسن لاهیجی",
-      "detail": {
-        "slug": "میرزا-حسن-لاهیجی-q6400382",
-        "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D9%85%DB%8C%D8%B1%D8%B2%D8%A7_%D8%AD%D8%B3%D9%86_%D9%84%D8%A7%D9%87%DB%8C%D8%AC%DB%8C"
-      }
-    },
-    {
-      "at": "2026-08-22T15:31:15.180Z",
-      "level": "success",
-      "message": "یادبود جدید منتشر شد: آرمان رمضانی",
-      "detail": {
-        "slug": "آرمان-رمضانی-q17523931",
-        "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D8%A2%D8%B1%D9%85%D8%A7%D9%86_%D8%B1%D9%85%D8%B6%D8%A7%D9%86%DB%8C"
-      }
-    },
-    {
-      "at": "2026-08-22T15:31:15.179Z",
-      "level": "success",
-      "message": "یادبود جدید منتشر شد: حسن یوسفی اشکوری",
-      "detail": {
-        "slug": "حسن-یوسفی-اشکوری-q1588592",
-        "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D8%AD%D8%B3%D9%86_%DB%8C%D9%88%D8%B3%D9%81%DB%8C_%D8%A7%D8%B4%DA%A9%D9%88%D8%B1%DB%8C"
       }
     }
   ]
