@@ -1,6 +1,51 @@
 {
   "entries": [
     {
+      "at": "2026-10-18T08:34:25.869Z",
+      "level": "success",
+      "message": "یادبود جدید منتشر شد: جمشید عزیزی",
+      "detail": {
+        "slug": "جمشید-عزیزی-q136359934",
+        "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D8%AC%D9%85%D8%B4%DB%8C%D8%AF_%D8%B9%D8%B2%DB%8C%D8%B2%DB%8C"
+      }
+    },
+    {
+      "at": "2026-10-18T08:34:25.869Z",
+      "level": "success",
+      "message": "یادبود جدید منتشر شد: آیدین آغداشلو",
+      "detail": {
+        "slug": "آیدین-آغداشلو-q3944029",
+        "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D8%A2%DB%8C%D8%AF%DB%8C%D9%86_%D8%A2%D8%BA%D8%AF%D8%A7%D8%B4%D9%84%D9%88"
+      }
+    },
+    {
+      "at": "2026-10-18T08:34:25.868Z",
+      "level": "success",
+      "message": "یادبود جدید منتشر شد: محمدتقی پوراحمد جکتاجی",
+      "detail": {
+        "slug": "محمدتقی-پوراحمد-جکتاجی-q6402091",
+        "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D9%85%D8%AD%D9%85%D8%AF%D8%AA%D9%82%DB%8C_%D9%BE%D9%88%D8%B1%D8%A7%D8%AD%D9%85%D8%AF_%D8%AC%DA%A9%D8%AA%D8%A7%D8%AC%DB%8C"
+      }
+    },
+    {
+      "at": "2026-10-18T08:34:25.867Z",
+      "level": "success",
+      "message": "یادبود جدید منتشر شد: کامبیز حسینی",
+      "detail": {
+        "slug": "کامبیز-حسینی-q6356357",
+        "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%DA%A9%D8%A7%D9%85%D8%A8%DB%8C%D8%B2_%D8%AD%D8%B3%DB%8C%D9%86%DB%8C"
+      }
+    },
+    {
+      "at": "2026-10-18T08:34:25.866Z",
+      "level": "success",
+      "message": "یادبود جدید منتشر شد: پرویز صیاد",
+      "detail": {
+        "slug": "پرویز-صیاد-q3367084",
+        "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D9%BE%D8%B1%D9%88%DB%8C%D8%B2_%D8%B5%DB%8C%D8%A7%D8%AF"
+      }
+    },
+    {
       "at": "2026-10-11T10:37:25.989Z",
       "level": "success",
       "message": "یادبود جدید منتشر شد: حسن تامینی لیچائی",
@@ -853,51 +898,6 @@
       "detail": {
         "slug": "قاسم-حاجیزاده-q5964658",
         "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D9%82%D8%A7%D8%B3%D9%85_%D8%AD%D8%A7%D8%AC%DB%8C%E2%80%8C%D8%B2%D8%A7%D8%AF%D9%87"
-      }
-    },
-    {
-      "at": "2026-08-22T15:31:15.190Z",
-      "level": "success",
-      "message": "یادبود جدید منتشر شد: سهراب طاهر",
-      "detail": {
-        "slug": "سهراب-طاهر-q8033592",
-        "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D8%B3%D9%87%D8%B1%D8%A7%D8%A8_%D8%B7%D8%A7%D9%87%D8%B1"
-      }
-    },
-    {
-      "at": "2026-08-22T15:31:15.188Z",
-      "level": "success",
-      "message": "یادبود جدید منتشر شد: کمال‌الدین میرحبیب‌اللهی",
-      "detail": {
-        "slug": "کمالالدین-میرحبیباللهی-q4674501",
-        "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%DA%A9%D9%85%D8%A7%D9%84_%D8%AD%D8%A8%DB%8C%D8%A8%E2%80%8C%D8%A7%D9%84%D9%84%D9%87%DB%8C"
-      }
-    },
-    {
-      "at": "2026-08-22T15:31:15.187Z",
-      "level": "success",
-      "message": "یادبود جدید منتشر شد: جلال حسینی",
-      "detail": {
-        "slug": "جلال-حسینی-q1189661",
-        "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D8%B3%DB%8C%D8%AF_%D8%AC%D9%84%D8%A7%D9%84_%D8%AD%D8%B3%DB%8C%D9%86%DB%8C"
-      }
-    },
-    {
-      "at": "2026-08-22T15:31:15.186Z",
-      "level": "success",
-      "message": "یادبود جدید منتشر شد: مظفر سلطانی",
-      "detail": {
-        "slug": "مظفر-سلطانی-q17992606",
-        "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D9%85%D8%B8%D9%81%D8%B1_%D8%B3%D9%84%D8%B7%D8%A7%D9%86%DB%8C"
-      }
-    },
-    {
-      "at": "2026-08-22T15:31:15.185Z",
-      "level": "success",
-      "message": "یادبود جدید منتشر شد: حبیب محمدی",
-      "detail": {
-        "slug": "حبیب-محمدی-q5961354",
-        "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D8%AD%D8%A8%DB%8C%D8%A8_%D9%85%D8%AD%D9%85%D8%AF%DB%8C"
       }
     }
   ]
