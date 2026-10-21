@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-21T00:16:30.220Z",
+  "updatedAt": "2026-10-21T05:35:47.799Z",
   "sourceNote": "Aggregated from public RSS (Google News + available agency feeds). Summaries come from feed descriptions; open the source for the full article.",
   "errors": [
     {
@@ -7,5 +7,15 @@
       "error": "fetch failed"
     }
   ],
-  "items": []
+  "items": [
+    {
+      "id": "55839b93b07a",
+      "title": "بابلسر میزبان مسابقات قهرمانی کراس‌فیت کشور شد",
+      "summary": "رئیس انجمن کراس‌فیت ایران از برگزاری مسابقات قهرمانی کشور این رشته با حضور حدود ۱۵۰ ورزشکار در بابلسر خبر داد و مازندران را یکی از قطب‌های کراس‌فیت کشور دانست.",
+      "source": "بدون منبع",
+      "url": "https://www.khabaronline.ir/news/2291107/%D8%A8%D8%A7%D8%A8%D9%84%D8%B3%D8%B1-%D9%85%DB%8C%D8%B2%D8%A8%D8%A7%D9%86-%D9%85%D8%B3%D8%A7%D8%A8%D9%82%D8%A7%D8%AA-%D9%82%D9%87%D8%B1%D9%85%D8%A7%D9%86%DB%8C-%DA%A9%D8%B1%D8%A7%D8%B3-%D9%81%DB%8C%D8%AA-%DA%A9%D8%B4%D9%88%D8%B1-%D8%B4%D8%AF",
+      "publishedAt": "2026-10-21T05:30:00.000Z",
+      "fetchedAt": "2026-10-21T05:35:47.799Z"
+    }
+  ]
 }
