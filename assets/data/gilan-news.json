@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-22T17:46:47.525Z",
+  "updatedAt": "2026-10-22T21:02:21.729Z",
   "sourceNote": "Aggregated from public RSS (Google News + available agency feeds). Summaries come from feed descriptions; open the source for the full article.",
   "errors": [
     {
@@ -7,15 +7,5 @@
       "error": "fetch failed"
     }
   ],
-  "items": [
-    {
-      "id": "8264ff65d8fd",
-      "title": "نکونام: ماجرای انزلی ذهن ما را بهم ریخت!",
-      "summary": "جواد نکونام میگوید تیمش نمایش بسیار خوبی برابر تیم صنعت نفت داشته است.",
-      "source": "بدون منبع",
-      "url": "https://www.khabaronline.ir/news/2291819/%D9%86%DA%A9%D9%88%D9%86%D8%A7%D9%85-%D9%85%D8%A7%D8%AC%D8%B1%D8%A7%DB%8C-%D8%A7%D9%86%D8%B2%D9%84%DB%8C-%D8%B0%D9%87%D9%86-%D9%85%D8%A7-%D8%B1%D8%A7-%D8%A8%D9%87%D9%85-%D8%B1%DB%8C%D8%AE%D8%AA",
-      "publishedAt": "2026-10-22T17:41:00.000Z",
-      "fetchedAt": "2026-10-22T17:46:47.525Z"
-    }
-  ]
+  "items": []
 }
