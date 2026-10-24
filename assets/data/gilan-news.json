@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T01:16:29.936Z",
+  "updatedAt": "2026-10-24T06:43:34.682Z",
   "sourceNote": "Aggregated from public RSS (Google News + available agency feeds). Summaries come from feed descriptions; open the source for the full article.",
   "errors": [
     {
@@ -7,5 +7,15 @@
       "error": "fetch failed"
     }
   ],
-  "items": []
+  "items": [
+    {
+      "id": "aec568e99cf6",
+      "title": "درگیری دوچرخه‌سوار و راننده خودروی سواری در برزیل؛ دوچرخه‌سوار برای فرار تلاش کرد، راننده انتقام گرفت + فیلم",
+      "summary": "در حادثه‌ای که در برزیل رخ داد یک دوچرخه‌سوار در اثر بی احتیاطی، آینه یک خودروی سواری را شکست. در ادامه دوچرخه‌سوار قصد داشت از محل فرار کند که این امر به درگیری در خیابان انجامید. راننده خودروی سواری که به‌شدت برآشفته بود، با دوچرخه‌سوار درگیر شد و او را زیر گرفت. / ABC News",
+      "source": "بدون منبع",
+      "url": "https://www.khabaronline.ir/news/2292158/%D8%AF%D8%B1%DA%AF%DB%8C%D8%B1%DB%8C-%D8%AF%D9%88%DA%86%D8%B1%D8%AE%D9%87-%D8%B3%D9%88%D8%A7%D8%B1-%D9%88-%D8%B1%D8%A7%D9%86%D9%86%D8%AF%D9%87-%D8%AE%D9%88%D8%AF%D8%B1%D9%88%DB%8C-%D8%B3%D9%88%D8%A7%D8%B1%DB%8C-%D8%AF%D8%B1-%D8%A8%D8%B1%D8%B2%DB%8C%D9%84-%D8%AF%D9%88%DA%86%D8%B1%D8%AE%D9%87-%D8%B3%D9%88%D8%A7%D8%B1",
+      "publishedAt": "2026-10-24T06:00:00.000Z",
+      "fetchedAt": "2026-10-24T06:43:34.682Z"
+    }
+  ]
 }
