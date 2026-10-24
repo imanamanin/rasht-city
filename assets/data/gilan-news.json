@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T21:20:26.569Z",
+  "updatedAt": "2026-10-24T23:53:32.054Z",
   "sourceNote": "Aggregated from public RSS (Google News + available agency feeds). Summaries come from feed descriptions; open the source for the full article.",
   "errors": [
     {
@@ -7,5 +7,15 @@
       "error": "fetch failed"
     }
   ],
-  "items": []
+  "items": [
+    {
+      "id": "026e419343f8",
+      "title": "قبولی تضمینی دکتری با ۵۱۰ میلیون تومان؛ صندلی پزشکی را ۱۱ میلیارد می‌فروشند",
+      "summary": "هر سال با نزدیک شدن به زمان کنکور و اعلام نتایج آزمون‌های ورودی دانشگاه‌ها، رؤیای ورود به رشته‌های پرمتقاضی و نگرانی از پذیرفته نشدن، به یکی از دغدغه‌های جدی داوطلبان و خانواده‌هایشان تبدیل می‌شود. برای برخی، قبولی در رشته‌هایی مانند پزشکی، دندانپزشکی و داروسازی یا ورود به مقاطع کارشناسی ارشد و دکتری، آن‌قدر اهمیت دارد که حاضرند برای تحقق آن هزینه‌های سنگینی بپردازند.",
+      "source": "ایسنا",
+      "url": "https://www.khabaronline.ir/news/2292556/%D9%82%D8%A8%D9%88%D9%84%DB%8C-%D8%AA%D8%B6%D9%85%DB%8C%D9%86%DB%8C-%D8%AF%DA%A9%D8%AA%D8%B1%DB%8C-%D8%A8%D8%A7-%DB%B5%DB%B1%DB%B0-%D9%85%DB%8C%D9%84%DB%8C%D9%88%D9%86-%D8%AA%D9%88%D9%85%D8%A7%D9%86-%D8%B5%D9%86%D8%AF%D9%84%DB%8C-%D9%BE%D8%B2%D8%B4%DA%A9%DB%8C-%D8%B1%D8%A7-%DB%B1%DB%B1-%D9%85%DB%8C%D9%84%DB%8C%D8%A7%D8%B1%D8%AF",
+      "publishedAt": "2026-10-24T21:53:00.000Z",
+      "fetchedAt": "2026-10-24T23:53:32.054Z"
+    }
+  ]
 }
