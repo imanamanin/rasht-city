@@ -1,6 +1,51 @@
 {
   "entries": [
     {
+      "at": "2026-10-25T08:57:52.320Z",
+      "level": "success",
+      "message": "یادبود جدید منتشر شد: احمد زیبرم",
+      "detail": {
+        "slug": "احمد-زیبرم-q5935457",
+        "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D8%A7%D8%AD%D9%85%D8%AF_%D8%B2%DB%8C%D8%A8%D8%B1%D9%85"
+      }
+    },
+    {
+      "at": "2026-10-25T08:57:52.319Z",
+      "level": "success",
+      "message": "یادبود جدید منتشر شد: عبدالقادر گیلانی",
+      "detail": {
+        "slug": "عبدالقادر-گیلانی-q307365",
+        "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%82%D8%A7%D8%AF%D8%B1_%DA%AF%DB%8C%D9%84%D8%A7%D9%86%DB%8C"
+      }
+    },
+    {
+      "at": "2026-10-25T08:57:52.318Z",
+      "level": "success",
+      "message": "یادبود جدید منتشر شد: کوشیار گیلانی",
+      "detail": {
+        "slug": "کوشیار-گیلانی-q2474018",
+        "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%DA%A9%D9%88%D8%B4%DB%8C%D8%A7%D8%B1_%DA%AF%DB%8C%D9%84%D8%A7%D9%86%DB%8C"
+      }
+    },
+    {
+      "at": "2026-10-25T08:57:52.316Z",
+      "level": "success",
+      "message": "یادبود جدید منتشر شد: مارتیروس خاچاطوریان",
+      "detail": {
+        "slug": "مارتیروس-خاچاطوریان-q5731266",
+        "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D9%85%D8%A7%D8%B1%D8%AA%DB%8C%D8%B1%D9%88%D8%B3_%D8%AE%D8%A7%DA%86%D8%A7%D8%B7%D9%88%D8%B1%DB%8C%D8%A7%D9%86"
+      }
+    },
+    {
+      "at": "2026-10-25T08:57:52.315Z",
+      "level": "success",
+      "message": "یادبود جدید منتشر شد: احمد عاشورپور",
+      "detail": {
+        "slug": "احمد-عاشورپور-q5391064",
+        "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D8%A7%D8%AD%D9%85%D8%AF_%D8%B9%D8%A7%D8%B4%D9%88%D8%B1%D9%BE%D9%88%D8%B1"
+      }
+    },
+    {
       "at": "2026-10-18T08:34:25.869Z",
       "level": "success",
       "message": "یادبود جدید منتشر شد: جمشید عزیزی",
@@ -853,51 +898,6 @@
       "detail": {
         "slug": "رامین-پرچمی-q6411343",
         "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D8%B1%D8%A7%D9%85%DB%8C%D9%86_%D9%BE%D8%B1%DA%86%D9%85%DB%8C"
-      }
-    },
-    {
-      "at": "2026-08-22T15:31:15.196Z",
-      "level": "success",
-      "message": "یادبود جدید منتشر شد: کریم مولاوردیخانی",
-      "detail": {
-        "slug": "کریم-مولاوردیخانی-q5962631",
-        "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%DA%A9%D8%B1%DB%8C%D9%85_%D9%85%D9%88%D9%84%D8%A7%D9%88%D8%B1%D8%AF%DB%8C%D8%AE%D8%A7%D9%86%DB%8C"
-      }
-    },
-    {
-      "at": "2026-08-22T15:31:15.195Z",
-      "level": "success",
-      "message": "یادبود جدید منتشر شد: جلیل بزرگ‌مهر",
-      "detail": {
-        "slug": "جلیل-بزرگمهر-q5946828",
-        "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D8%AC%D9%84%DB%8C%D9%84_%D8%A8%D8%B2%D8%B1%DA%AF%E2%80%8C%D9%85%D9%87%D8%B1"
-      }
-    },
-    {
-      "at": "2026-08-22T15:31:15.194Z",
-      "level": "success",
-      "message": "یادبود جدید منتشر شد: مجتبی پوربخش",
-      "detail": {
-        "slug": "مجتبی-پوربخش-q85974250",
-        "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D9%85%D8%AC%D8%AA%D8%A8%DB%8C_%D9%BE%D9%88%D8%B1%D8%A8%D8%AE%D8%B4"
-      }
-    },
-    {
-      "at": "2026-08-22T15:31:15.193Z",
-      "level": "success",
-      "message": "یادبود جدید منتشر شد: مرتضی ویشکایی",
-      "detail": {
-        "slug": "مرتضی-ویشکایی-q5725732",
-        "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D9%85%D8%B1%D8%AA%D8%B6%DB%8C_%D9%88%DB%8C%D8%B4%DA%A9%D8%A7%DB%8C%DB%8C"
-      }
-    },
-    {
-      "at": "2026-08-22T15:31:15.191Z",
-      "level": "success",
-      "message": "یادبود جدید منتشر شد: قاسم حاجی‌زاده",
-      "detail": {
-        "slug": "قاسم-حاجیزاده-q5964658",
-        "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D9%82%D8%A7%D8%B3%D9%85_%D8%AD%D8%A7%D8%AC%DB%8C%E2%80%8C%D8%B2%D8%A7%D8%AF%D9%87"
       }
     }
   ]
