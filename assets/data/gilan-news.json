@@ -1,27 +1,21 @@
 {
-  "updatedAt": "2026-10-25T12:58:54.434Z",
+  "updatedAt": "2026-10-25T16:59:35.233Z",
   "sourceNote": "Aggregated from public RSS (Google News + available agency feeds). Summaries come from feed descriptions; open the source for the full article.",
   "errors": [
     {
       "feed": "yjc-gilan",
       "error": "fetch failed"
-    },
-    {
-      "feed": "google-site-mehr",
-      "error": "HTTP 503 for https://news.google.com/rss/search?q=site:mehrnews.com+%DA%AF%DB%8C%D9%84%D8%A7%D9%86%20OR%20%D8%B1%D8%B4%D8%AA&hl=fa&gl=IR&ceid=IR:fa"
-    },
-    {
-      "feed": "google-site-irna",
-      "error": "HTTP 503 for https://news.google.com/rss/search?q=site:irna.ir+%DA%AF%DB%8C%D9%84%D8%A7%D9%86%20OR%20%D8%B1%D8%B4%D8%AA&hl=fa&gl=IR&ceid=IR:fa"
-    },
-    {
-      "feed": "google-site-isna",
-      "error": "HTTP 503 for https://news.google.com/rss/search?q=site:isna.ir+%DA%AF%DB%8C%D9%84%D8%A7%D9%86%20OR%20%D8%B1%D8%B4%D8%AA&hl=fa&gl=IR&ceid=IR:fa"
-    },
-    {
-      "feed": "google-site-fars",
-      "error": "HTTP 503 for https://news.google.com/rss/search?q=site:farsnews.ir+%DA%AF%DB%8C%D9%84%D8%A7%D9%86%20OR%20%D8%B1%D8%B4%D8%AA&hl=fa&gl=IR&ceid=IR:fa"
     }
   ],
-  "items": []
+  "items": [
+    {
+      "id": "5e59efbe9839",
+      "title": "امام جمعه املش: خدمت به مردم از هزاران سال عبادت ارزشمندتر است",
+      "summary": "حجت‌الاسلام والمسلمین رنجبر، امام جمعه شهرستان املش، با تأکید بر ضرورت خدمت صادقانه به مردم گفت: مسئولیت‌ها ماندگار نیستند و آنچه از مدیران در ذهن مردم باقی می‌ماند، عملکرد، اخلاص و خدماتی است که برای رفع مشکلات جامعه انجام می‌دهند.",
+      "source": "بدون منبع",
+      "url": "https://www.khabaronline.ir/news/2292868/%D8%A7%D9%85%D8%A7%D9%85-%D8%AC%D9%85%D8%B9%D9%87-%D8%A7%D9%85%D9%84%D8%B4-%D8%AE%D8%AF%D9%85%D8%AA-%D8%A8%D9%87-%D9%85%D8%B1%D8%AF%D9%85-%D8%A7%D8%B2-%D9%87%D8%B2%D8%A7%D8%B1%D8%A7%D9%86-%D8%B3%D8%A7%D9%84-%D8%B9%D8%A8%D8%A7%D8%AF%D8%AA-%D8%A7%D8%B1%D8%B2%D8%B4%D9%85%D9%86%D8%AF%D8%AA%D8%B1-%D8%A7%D8%B3%D8%AA",
+      "publishedAt": "2026-10-25T16:11:00.000Z",
+      "fetchedAt": "2026-10-25T16:59:35.233Z"
+    }
+  ]
 }
