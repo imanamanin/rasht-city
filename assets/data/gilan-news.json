@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-27T13:49:50.351Z",
+  "updatedAt": "2026-10-27T19:08:45.349Z",
   "sourceNote": "Aggregated from public RSS (Google News + available agency feeds). Summaries come from feed descriptions; open the source for the full article.",
   "errors": [
     {
@@ -9,22 +9,13 @@
   ],
   "items": [
     {
-      "id": "f74bb2e73e42",
-      "title": "بازدید فرماندار صومعه‌سرا از از واحدهای تولیدی و بررسی مسائل و مشکلات واحدهای صنعتی",
-      "summary": "فرماندار صومعه‌سرا، در راستای تحقق سیاست‌های دولت در حمایت از بخش تولید و تقویت زیرساخت‌های اقتصادی منطقه، از یک واحد تولیدی در منطقه اشترکام بازدید و در جریان روند فعالیت‌ها و چالش‌های این واحد صنعتی قرار گرفت.",
-      "source": "بدون منبع",
-      "url": "https://www.khabaronline.ir/news/2293866/%D8%A8%D8%A7%D8%B2%D8%AF%DB%8C%D8%AF-%D9%81%D8%B1%D9%85%D8%A7%D9%86%D8%AF%D8%A7%D8%B1-%D8%B5%D9%88%D9%85%D8%B9%D9%87-%D8%B3%D8%B1%D8%A7-%D8%A7%D8%B2-%D8%A7%D8%B2-%D9%88%D8%A7%D8%AD%D8%AF%D9%87%D8%A7%DB%8C-%D8%AA%D9%88%D9%84%DB%8C%D8%AF%DB%8C-%D9%88-%D8%A8%D8%B1%D8%B1%D8%B3%DB%8C-%D9%85%D8%B3%D8%A7%D8%A6%D9%84",
-      "publishedAt": "2026-10-27T13:15:00.000Z",
-      "fetchedAt": "2026-10-27T13:49:50.351Z"
-    },
-    {
       "id": "b542ffc0bbab",
       "title": "fars — فیلم| گیلان فدای ایران",
       "summary": "fars | فیلم| گیلان فدای ایران &nbsp;&nbsp; خبرگزاری فارس",
       "source": "خبرگزاری فارس",
       "url": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxOUlU2aUl5Q3psYTFhRTZseDNjeUt5LVdtYktBZHNFYnMwbjVSdGtKM2FtUDFxS3JSQjZKZXlINHR0SE51VlBjNlMtNlRGSTRva3VyWlRYaHV2THRtVU5lRENUZGNfNTFGZEE2bWxCekxkdEVhQ3VYTHlGSFliUmxSQ244UTNxMURkbENteE11UXRqMGQ0WmlnYnFLamNtREhmclhDTXhocU5LcnpMOUpLUS12Y1A4TlhQbXpYZU90WkQtTUIxd1RVbXV0RlViTTNWdDhKSC1YQ0FoZTFjTEFjZnRfbkpRQnRnR0ZqTzlUcXFsRDRpWTJoTEJIaw?oc=5",
       "publishedAt": "2026-10-15T15:57:32.000Z",
-      "fetchedAt": "2026-10-27T13:49:50.351Z"
+      "fetchedAt": "2026-10-27T19:08:45.349Z"
     }
   ]
 }
