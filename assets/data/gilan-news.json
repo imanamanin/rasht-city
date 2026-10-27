@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-26T22:57:31.304Z",
+  "updatedAt": "2026-10-27T01:49:27.975Z",
   "sourceNote": "Aggregated from public RSS (Google News + available agency feeds). Summaries come from feed descriptions; open the source for the full article.",
   "errors": [
     {
@@ -15,7 +15,7 @@
       "source": "خبرگزاری فارس",
       "url": "https://news.google.com/rss/articles/CBMilAJBVV95cUxNVzZDV2NPSjA5SVE2ZjRicDJsNjhWU3EtbU50akFVb1dzMnVvbkc0WFVScG1pcGpBTm9ZRlRDZ0FyZ2FJV2lOTE5tdjNySllCWUZEZ0NObTR6dllOaUt0WGwwemhoMzE5ZUZzRVhkbV9kbUxROU96MlNVSklNWVN2aVNIOGhwX2hIdTk0Tms0Z0QyTjNCdFVyTWVFT2N6QUlEWFRHNXp2alJRaElmaDRCaFJrOG9IOGFndG5maE9fc0JoUlhMSGhJSEFqSEZqUjFHSl9NenFIWXEyZWtkMHlLYTc0OEgxX1k0WlJYZElUMGpjRGVqUk1GYzBfWlc3SllBS1VocGlncWdNUmdWRkNldUNRRi0?oc=5",
       "publishedAt": "2026-10-26T19:57:52.000Z",
-      "fetchedAt": "2026-10-26T22:57:31.304Z"
+      "fetchedAt": "2026-10-27T01:49:27.975Z"
     },
     {
       "id": "b542ffc0bbab",
@@ -24,7 +24,7 @@
       "source": "خبرگزاری فارس",
       "url": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxOUlU2aUl5Q3psYTFhRTZseDNjeUt5LVdtYktBZHNFYnMwbjVSdGtKM2FtUDFxS3JSQjZKZXlINHR0SE51VlBjNlMtNlRGSTRva3VyWlRYaHV2THRtVU5lRENUZGNfNTFGZEE2bWxCekxkdEVhQ3VYTHlGSFliUmxSQ244UTNxMURkbENteE11UXRqMGQ0WmlnYnFLamNtREhmclhDTXhocU5LcnpMOUpLUS12Y1A4TlhQbXpYZU90WkQtTUIxd1RVbXV0RlViTTNWdDhKSC1YQ0FoZTFjTEFjZnRfbkpRQnRnR0ZqTzlUcXFsRDRpWTJoTEJIaw?oc=5",
       "publishedAt": "2026-10-15T15:57:32.000Z",
-      "fetchedAt": "2026-10-26T22:57:31.304Z"
+      "fetchedAt": "2026-10-27T01:49:27.975Z"
     }
   ]
 }
