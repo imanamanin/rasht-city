@@ -1,6 +1,51 @@
 {
   "entries": [
     {
+      "at": "2026-11-01T11:02:55.678Z",
+      "level": "success",
+      "message": "یادبود جدید منتشر شد: محمود بهزاد",
+      "detail": {
+        "slug": "محمود-بهزاد-q6734325",
+        "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D9%85%D8%AD%D9%85%D9%88%D8%AF_%D8%A8%D9%87%D8%B2%D8%A7%D8%AF"
+      }
+    },
+    {
+      "at": "2026-11-01T11:02:55.678Z",
+      "level": "success",
+      "message": "یادبود جدید منتشر شد: محمدرضا اخلاق‌پسند",
+      "detail": {
+        "slug": "محمدرضا-اخلاقپسند-q16148361",
+        "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D9%85%D8%AD%D9%85%D8%AF%D8%B1%D8%B6%D8%A7_%D8%A7%D8%AE%D9%84%D8%A7%D9%82%E2%80%8C%D9%BE%D8%B3%D9%86%D8%AF"
+      }
+    },
+    {
+      "at": "2026-11-01T11:02:55.677Z",
+      "level": "success",
+      "message": "یادبود جدید منتشر شد: عباس محبوب",
+      "detail": {
+        "slug": "عباس-محبوب-q16052736",
+        "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D8%B9%D8%A8%D8%A7%D8%B3_%D9%85%D8%AD%D8%A8%D9%88%D8%A8"
+      }
+    },
+    {
+      "at": "2026-11-01T11:02:55.676Z",
+      "level": "success",
+      "message": "یادبود جدید منتشر شد: میرزا کریم‌خان رشتی",
+      "detail": {
+        "slug": "میرزا-کریمخان-رشتی-q6400286",
+        "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D9%85%DB%8C%D8%B1%D8%B2%D8%A7_%DA%A9%D8%B1%DB%8C%D9%85%E2%80%8C%D8%AE%D8%A7%D9%86_%D8%B1%D8%B4%D8%AA%DB%8C"
+      }
+    },
+    {
+      "at": "2026-11-01T11:02:55.675Z",
+      "level": "success",
+      "message": "یادبود جدید منتشر شد: نیره ابتهاج سمیعی",
+      "detail": {
+        "slug": "نیره-ابتهاج-سمیعی-q16053469",
+        "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D9%86%DB%8C%D8%B1%D9%87_%D8%A7%D8%A8%D8%AA%D9%87%D8%A7%D8%AC_%D8%B3%D9%85%DB%8C%D8%B9%DB%8C"
+      }
+    },
+    {
       "at": "2026-10-25T08:57:52.320Z",
       "level": "success",
       "message": "یادبود جدید منتشر شد: احمد زیبرم",
@@ -853,51 +898,6 @@
       "detail": {
         "slug": "شورانگیز-طباطبایی-q5948362",
         "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D8%B4%D9%88%D8%B1%D8%A7%D9%86%DA%AF%DB%8C%D8%B2_%D8%B7%D8%A8%D8%A7%D8%B7%D8%A8%D8%A7%DB%8C%DB%8C"
-      }
-    },
-    {
-      "at": "2026-08-22T15:31:15.203Z",
-      "level": "success",
-      "message": "یادبود جدید منتشر شد: عماد میرجوان",
-      "detail": {
-        "slug": "عماد-میرجوان-q24287390",
-        "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D8%B9%D9%85%D8%A7%D8%AF_%D9%85%DB%8C%D8%B1%D8%AC%D9%88%D8%A7%D9%86"
-      }
-    },
-    {
-      "at": "2026-08-22T15:31:15.201Z",
-      "level": "success",
-      "message": "یادبود جدید منتشر شد: علی عشوری‌زاد",
-      "detail": {
-        "slug": "علی-عشوریزاد-q4724681",
-        "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D8%B9%D9%84%DB%8C_%D8%B9%D8%B4%D9%88%D8%B1%DB%8C%E2%80%8C%D8%B2%D8%A7%D8%AF"
-      }
-    },
-    {
-      "at": "2026-08-22T15:31:15.200Z",
-      "level": "success",
-      "message": "یادبود جدید منتشر شد: مصطفی سلیمی",
-      "detail": {
-        "slug": "مصطفی-سلیمی-q6916878",
-        "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D9%85%D8%B5%D8%B7%D9%81%DB%8C_%D8%B3%D9%84%DB%8C%D9%85%DB%8C"
-      }
-    },
-    {
-      "at": "2026-08-22T15:31:15.199Z",
-      "level": "success",
-      "message": "یادبود جدید منتشر شد: محمدعلی صفاری",
-      "detail": {
-        "slug": "محمدعلی-صفاری-q6401978",
-        "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D9%85%D8%AD%D9%85%D8%AF%D8%B9%D9%84%DB%8C_%D8%B5%D9%81%D8%A7%D8%B1%DB%8C"
-      }
-    },
-    {
-      "at": "2026-08-22T15:31:15.197Z",
-      "level": "success",
-      "message": "یادبود جدید منتشر شد: رامین پرچمی",
-      "detail": {
-        "slug": "رامین-پرچمی-q6411343",
-        "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D8%B1%D8%A7%D9%85%DB%8C%D9%86_%D9%BE%D8%B1%DA%86%D9%85%DB%8C"
       }
     }
   ]
