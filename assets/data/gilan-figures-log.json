@@ -1,6 +1,51 @@
 {
   "entries": [
     {
+      "at": "2026-11-08T11:03:38.229Z",
+      "level": "success",
+      "message": "یادبود جدید منتشر شد: رکن‌الدوله دیلمی",
+      "detail": {
+        "slug": "رکنالدوله-دیلمی-q846349",
+        "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D8%B1%DA%A9%D9%86%E2%80%8C%D8%A7%D9%84%D8%AF%D9%88%D9%84%D9%87_%D8%AF%DB%8C%D9%84%D9%85%DB%8C"
+      }
+    },
+    {
+      "at": "2026-11-08T11:03:38.228Z",
+      "level": "success",
+      "message": "یادبود جدید منتشر شد: میرزا محمدعلی خان رحمت‌آبادی",
+      "detail": {
+        "slug": "میرزا-محمدعلی-خان-رحمتآبادی-q6400304",
+        "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D9%85%DB%8C%D8%B1%D8%B2%D8%A7_%D9%85%D8%AD%D9%85%D8%AF%D8%B9%D9%84%DB%8C_%D8%AE%D8%A7%D9%86_%D8%B1%D8%AD%D9%85%D8%AA%E2%80%8C%D8%A2%D8%A8%D8%A7%D8%AF%DB%8C"
+      }
+    },
+    {
+      "at": "2026-11-08T11:03:38.227Z",
+      "level": "success",
+      "message": "یادبود جدید منتشر شد: هنگامه",
+      "detail": {
+        "slug": "هنگامه-q5829611",
+        "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D9%87%D9%86%DA%AF%D8%A7%D9%85%D9%87_(%D8%AE%D9%88%D8%A7%D9%86%D9%86%D8%AF%D9%87_%D8%A7%DB%8C%D8%B1%D8%A7%D9%86%DB%8C)"
+      }
+    },
+    {
+      "at": "2026-11-08T11:03:38.225Z",
+      "level": "success",
+      "message": "یادبود جدید منتشر شد: علیرضا نظیف‌کار",
+      "detail": {
+        "slug": "علیرضا-نظیفکار-q4725093",
+        "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D8%B9%D9%84%DB%8C%D8%B1%D8%B6%D8%A7_%D9%86%D8%B8%DB%8C%D9%81%E2%80%8C%DA%A9%D8%A7%D8%B1"
+      }
+    },
+    {
+      "at": "2026-11-08T11:03:38.225Z",
+      "level": "success",
+      "message": "یادبود جدید منتشر شد: ایوب حسین‌نژادی",
+      "detail": {
+        "slug": "ایوب-حسیننژادی-q5945628",
+        "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D8%A7%DB%8C%D9%88%D8%A8_%D8%AD%D8%B3%DB%8C%D9%86%E2%80%8C%D9%86%DA%98%D8%A7%D8%AF%DB%8C"
+      }
+    },
+    {
       "at": "2026-11-01T11:02:55.678Z",
       "level": "success",
       "message": "یادبود جدید منتشر شد: محمود بهزاد",
@@ -853,51 +898,6 @@
       "detail": {
         "slug": "فریبرز-بصارتی-q5435223",
         "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D9%81%D8%B1%DB%8C%D8%A8%D8%B1%D8%B2_%D8%A8%D8%B5%D8%A7%D8%B1%D8%AA%DB%8C"
-      }
-    },
-    {
-      "at": "2026-08-22T15:31:15.209Z",
-      "level": "success",
-      "message": "یادبود جدید منتشر شد: مسیو نیکلا",
-      "detail": {
-        "slug": "مسیو-نیکلا-q17993835",
-        "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D9%85%D8%B3%DB%8C%D9%88_%D9%86%DB%8C%DA%A9%D9%84%D8%A7"
-      }
-    },
-    {
-      "at": "2026-08-22T15:31:15.208Z",
-      "level": "success",
-      "message": "یادبود جدید منتشر شد: رمضان‌علی صادق‌زاده",
-      "detail": {
-        "slug": "رمضانعلی-صادقزاده-q16046853",
-        "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D8%B1%D9%85%D8%B6%D8%A7%D9%86%D8%B9%D9%84%DB%8C_%D8%B5%D8%A7%D8%AF%D9%82%E2%80%8C%D8%B2%D8%A7%D8%AF%D9%87"
-      }
-    },
-    {
-      "at": "2026-08-22T15:31:15.206Z",
-      "level": "success",
-      "message": "یادبود جدید منتشر شد: توران فتح‌الله‌زاده",
-      "detail": {
-        "slug": "توران-فتحاللهزاده-q6449730",
-        "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D8%AA%D9%88%D8%B1%D8%A7%D9%86_%D9%81%D8%AA%D8%AD%E2%80%8C%D8%A7%D9%84%D9%84%D9%87%E2%80%8C%D8%B2%D8%A7%D8%AF%D9%87"
-      }
-    },
-    {
-      "at": "2026-08-22T15:31:15.205Z",
-      "level": "success",
-      "message": "یادبود جدید منتشر شد: ساقی زینتی",
-      "detail": {
-        "slug": "ساقی-زینتی-q52442486",
-        "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D8%B3%D8%A7%D9%82%DB%8C_%D8%B2%DB%8C%D9%86%D8%AA%DB%8C"
-      }
-    },
-    {
-      "at": "2026-08-22T15:31:15.204Z",
-      "level": "success",
-      "message": "یادبود جدید منتشر شد: شورانگیز طباطبایی",
-      "detail": {
-        "slug": "شورانگیز-طباطبایی-q5948362",
-        "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D8%B4%D9%88%D8%B1%D8%A7%D9%86%DA%AF%DB%8C%D8%B2_%D8%B7%D8%A8%D8%A7%D8%B7%D8%A8%D8%A7%DB%8C%DB%8C"
       }
     }
   ]

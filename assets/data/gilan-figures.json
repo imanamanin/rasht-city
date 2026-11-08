@@ -1,6 +1,163 @@
 {
-  "updatedAt": "2026-11-01T11:02:55.673Z",
+  "updatedAt": "2026-11-08T11:03:38.222Z",
   "figures": [
+    {
+      "id": "21761b65f9fc",
+      "slug": "ایوب-حسیننژادی-q5945628",
+      "wikidataId": "Q5945628",
+      "fullName": "ایوب حسین‌نژادی",
+      "title": "خلبان ایرانی",
+      "shortDescription": "خلبان ایرانی",
+      "category": "دین",
+      "birthDate": "1954-01-31",
+      "deathDate": "2004-09-11",
+      "birthPlace": "آستارا",
+      "isBornInGilan": true,
+      "city": "آستارا",
+      "biography": "ایوب حسین‌نژادی (زادهٔ 1954-01-31 — درگذشتهٔ 2004-09-11)، خلبان ایرانی، از چهره‌های شناخته‌شدهٔ مرتبط با استان گیلان است.\n\nبر پایهٔ داده‌های ویکی‌داده و مقالهٔ ویکی‌پدیای فارسی، محل تولد او آستارا (در محدودهٔ استان گیلان) گزارش شده است.\n\nحوزهٔ فعالیت او در این یادبود زیر عنوان «دین» آمده است.\n\nمنابع عمومی به جزئیات زادگاه و زمینهٔ زندگی او اشاره کرده‌اند.\n\nسال‌های پایانی زندگی او نیز در همان منابع عمومی ثبت شده است.\n\nاین صفحه یک یادبود خلاصه‌شده است و جایگزین مطالعهٔ مقالهٔ کامل منبع نیست.",
+      "achievements": [
+        "شناخته‌شده به‌عنوان: خلبان ایرانی",
+        "ثبت در حوزهٔ «دین» در یادبود مفاخر گیلان",
+        "وجود مقالهٔ مستقل در ویکی‌پدیای فارسی"
+      ],
+      "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D8%A7%DB%8C%D9%88%D8%A8_%D8%AD%D8%B3%DB%8C%D9%86%E2%80%8C%D9%86%DA%98%D8%A7%D8%AF%DB%8C",
+      "fetchedAt": "2026-11-08T11:03:33.354Z",
+      "publishedAt": "2026-11-08T11:03:33.354Z",
+      "status": "published",
+      "sourceNotes": [
+        "محل تولد از طریق Wikidata P19 و سلسله‌مراتب P131 استان گیلان تأیید شد.",
+        "متن یادبود بازنویسی مستقل بر اساس فکت‌های ساختاریافته است؛ متن ویکی‌پدیا عیناً کپی نشده.",
+        "مقاله منبع: https://fa.wikipedia.org/wiki/%D8%A7%DB%8C%D9%88%D8%A8_%D8%AD%D8%B3%DB%8C%D9%86%E2%80%8C%D9%86%DA%98%D8%A7%D8%AF%DB%8C"
+      ]
+    },
+    {
+      "id": "ad93aa3223a1",
+      "slug": "علیرضا-نظیفکار-q4725093",
+      "wikidataId": "Q4725093",
+      "fullName": "علیرضا نظیف‌کار",
+      "title": "بازیکن فوتبال ایرانی",
+      "shortDescription": "بازیکن فوتبال ایرانی",
+      "category": "ادبیات",
+      "birthDate": "1984-02-02",
+      "birthPlace": "رشت",
+      "isBornInGilan": true,
+      "city": "رشت",
+      "biography": "علیرضا نظیف‌کار (زادهٔ 1984-02-02)، بازیکن فوتبال ایرانی، از چهره‌های شناخته‌شدهٔ مرتبط با استان گیلان است.\n\nبر پایهٔ داده‌های ویکی‌داده و مقالهٔ ویکی‌پدیای فارسی، محل تولد او رشت (در محدودهٔ استان گیلان) گزارش شده است.\n\nحوزهٔ فعالیت او در این یادبود زیر عنوان «ادبیات» آمده است.\n\nاین صفحه یک یادبود خلاصه‌شده است و جایگزین مطالعهٔ مقالهٔ کامل منبع نیست.",
+      "achievements": [
+        "شناخته‌شده به‌عنوان: بازیکن فوتبال ایرانی",
+        "ثبت در حوزهٔ «ادبیات» در یادبود مفاخر گیلان",
+        "وجود مقالهٔ مستقل در ویکی‌پدیای فارسی"
+      ],
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/5/59/Alireza_Nazifkar.jpg?utm_source=fa.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+        "alt": "تصویر علیرضا نظیف‌کار",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Alireza_Nazifkar.jpg",
+        "license": "CC BY-SA 3.0"
+      },
+      "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D8%B9%D9%84%DB%8C%D8%B1%D8%B6%D8%A7_%D9%86%D8%B8%DB%8C%D9%81%E2%80%8C%DA%A9%D8%A7%D8%B1",
+      "fetchedAt": "2026-11-08T11:03:34.992Z",
+      "publishedAt": "2026-11-08T11:03:34.992Z",
+      "status": "published",
+      "sourceNotes": [
+        "محل تولد از طریق Wikidata P19 و سلسله‌مراتب P131 استان گیلان تأیید شد.",
+        "متن یادبود بازنویسی مستقل بر اساس فکت‌های ساختاریافته است؛ متن ویکی‌پدیا عیناً کپی نشده.",
+        "مقاله منبع: https://fa.wikipedia.org/wiki/%D8%B9%D9%84%DB%8C%D8%B1%D8%B6%D8%A7_%D9%86%D8%B8%DB%8C%D9%81%E2%80%8C%DA%A9%D8%A7%D8%B1"
+      ]
+    },
+    {
+      "id": "0ebb835c55ce",
+      "slug": "هنگامه-q5829611",
+      "wikidataId": "Q5829611",
+      "fullName": "هنگامه",
+      "title": "خواننده پاپ ایرانی",
+      "shortDescription": "خواننده پاپ ایرانی",
+      "category": "موسیقی",
+      "birthDate": "1961-08-05",
+      "birthPlace": "لاهیجان",
+      "isBornInGilan": true,
+      "city": "لاهیجان",
+      "biography": "هنگامه (زادهٔ 1961-08-05)، خواننده پاپ ایرانی، از چهره‌های شناخته‌شدهٔ مرتبط با استان گیلان است.\n\nبر پایهٔ داده‌های ویکی‌داده و مقالهٔ ویکی‌پدیای فارسی، محل تولد او لاهیجان (در محدودهٔ استان گیلان) گزارش شده است.\n\nحوزهٔ فعالیت او در این یادبود زیر عنوان «موسیقی» آمده است.\n\nمنابع عمومی به جزئیات زادگاه و زمینهٔ زندگی او اشاره کرده‌اند.\n\nاین صفحه یک یادبود خلاصه‌شده است و جایگزین مطالعهٔ مقالهٔ کامل منبع نیست.",
+      "achievements": [
+        "شناخته‌شده به‌عنوان: خواننده پاپ ایرانی",
+        "ثبت در حوزهٔ «موسیقی» در یادبود مفاخر گیلان",
+        "وجود مقالهٔ مستقل در ویکی‌پدیای فارسی"
+      ],
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/1/12/Hengameh_in_Las_Vegas.JPG?utm_source=fa.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+        "alt": "تصویر هنگامه",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hengameh_in_Las_Vegas.JPG",
+        "license": "CC BY-SA 3.0"
+      },
+      "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D9%87%D9%86%DA%AF%D8%A7%D9%85%D9%87_(%D8%AE%D9%88%D8%A7%D9%86%D9%86%D8%AF%D9%87_%D8%A7%DB%8C%D8%B1%D8%A7%D9%86%DB%8C)",
+      "fetchedAt": "2026-11-08T11:03:36.593Z",
+      "publishedAt": "2026-11-08T11:03:36.593Z",
+      "status": "published",
+      "sourceNotes": [
+        "محل تولد از طریق Wikidata P19 و سلسله‌مراتب P131 استان گیلان تأیید شد.",
+        "متن یادبود بازنویسی مستقل بر اساس فکت‌های ساختاریافته است؛ متن ویکی‌پدیا عیناً کپی نشده.",
+        "مقاله منبع: https://fa.wikipedia.org/wiki/%D9%87%D9%86%DA%AF%D8%A7%D9%85%D9%87_(%D8%AE%D9%88%D8%A7%D9%86%D9%86%D8%AF%D9%87_%D8%A7%DB%8C%D8%B1%D8%A7%D9%86%DB%8C)"
+      ]
+    },
+    {
+      "id": "7f760ce2bd65",
+      "slug": "میرزا-محمدعلی-خان-رحمتآبادی-q6400304",
+      "wikidataId": "Q6400304",
+      "fullName": "میرزا محمدعلی خان رحمت‌آبادی",
+      "shortDescription": "چهره‌ای از استان گیلان که در منابع عمومی ثبت شده است.",
+      "category": "سیاست",
+      "birthPlace": "استان گیلان",
+      "isBornInGilan": true,
+      "city": "استان گیلان",
+      "biography": "میرزا محمدعلی خان رحمت‌آبادی از چهره‌های ثبت‌شده در منابع عمومی است که زادگاهش در استان گیلان تأیید شده است.\n\nبر پایهٔ داده‌های ویکی‌داده و مقالهٔ ویکی‌پدیای فارسی، محل تولد او استان گیلان (در محدودهٔ استان گیلان) گزارش شده است.\n\nحوزهٔ فعالیت او در این یادبود زیر عنوان «سیاست» آمده است.\n\nاین صفحه یک یادبود خلاصه‌شده است و جایگزین مطالعهٔ مقالهٔ کامل منبع نیست.",
+      "achievements": [
+        "ثبت در حوزهٔ «سیاست» در یادبود مفاخر گیلان",
+        "وجود مقالهٔ مستقل در ویکی‌پدیای فارسی"
+      ],
+      "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D9%85%DB%8C%D8%B1%D8%B2%D8%A7_%D9%85%D8%AD%D9%85%D8%AF%D8%B9%D9%84%DB%8C_%D8%AE%D8%A7%D9%86_%D8%B1%D8%AD%D9%85%D8%AA%E2%80%8C%D8%A2%D8%A8%D8%A7%D8%AF%DB%8C",
+      "fetchedAt": "2026-11-08T11:03:37.547Z",
+      "publishedAt": "2026-11-08T11:03:37.547Z",
+      "status": "published",
+      "sourceNotes": [
+        "محل تولد از طریق Wikidata P19 و سلسله‌مراتب P131 استان گیلان تأیید شد.",
+        "متن یادبود بازنویسی مستقل بر اساس فکت‌های ساختاریافته است؛ متن ویکی‌پدیا عیناً کپی نشده.",
+        "مقاله منبع: https://fa.wikipedia.org/wiki/%D9%85%DB%8C%D8%B1%D8%B2%D8%A7_%D9%85%D8%AD%D9%85%D8%AF%D8%B9%D9%84%DB%8C_%D8%AE%D8%A7%D9%86_%D8%B1%D8%AD%D9%85%D8%AA%E2%80%8C%D8%A2%D8%A8%D8%A7%D8%AF%DB%8C"
+      ]
+    },
+    {
+      "id": "3cf285052898",
+      "slug": "رکنالدوله-دیلمی-q846349",
+      "wikidataId": "Q846349",
+      "fullName": "رکن‌الدوله دیلمی",
+      "title": "10th century Buyid Amir of northern and central Iran",
+      "shortDescription": "10th century Buyid Amir of northern and central Iran",
+      "category": "فرهنگ",
+      "birthDate": "898",
+      "deathDate": "976-09-01",
+      "birthPlace": "لاهیجان",
+      "isBornInGilan": true,
+      "city": "لاهیجان",
+      "biography": "رکن‌الدوله دیلمی (زادهٔ 898 — درگذشتهٔ 976-09-01)، 10th century Buyid Amir of northern and central Iran، از چهره‌های شناخته‌شدهٔ مرتبط با استان گیلان است.\n\nبر پایهٔ داده‌های ویکی‌داده و مقالهٔ ویکی‌پدیای فارسی، محل تولد او لاهیجان (در محدودهٔ استان گیلان) گزارش شده است.\n\nحوزهٔ فعالیت او در این یادبود زیر عنوان «فرهنگ» آمده است.\n\nسال‌های پایانی زندگی او نیز در همان منابع عمومی ثبت شده است.\n\nاین صفحه یک یادبود خلاصه‌شده است و جایگزین مطالعهٔ مقالهٔ کامل منبع نیست.",
+      "achievements": [
+        "شناخته‌شده به‌عنوان: 10th century Buyid Amir of northern and central Iran",
+        "ثبت در حوزهٔ «فرهنگ» در یادبود مفاخر گیلان",
+        "وجود مقالهٔ مستقل در ویکی‌پدیای فارسی"
+      ],
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Rukn_al-Dawla_%28cropped%29.jpg?utm_source=fa.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+        "alt": "تصویر رکن‌الدوله دیلمی",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rukn_al-Dawla_(cropped).jpg",
+        "license": "CC0"
+      },
+      "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D8%B1%DA%A9%D9%86%E2%80%8C%D8%A7%D9%84%D8%AF%D9%88%D9%84%D9%87_%D8%AF%DB%8C%D9%84%D9%85%DB%8C",
+      "fetchedAt": "2026-11-08T11:03:38.222Z",
+      "publishedAt": "2026-11-08T11:03:38.222Z",
+      "status": "published",
+      "sourceNotes": [
+        "محل تولد از طریق Wikidata P19 و سلسله‌مراتب P131 استان گیلان تأیید شد.",
+        "متن یادبود بازنویسی مستقل بر اساس فکت‌های ساختاریافته است؛ متن ویکی‌پدیا عیناً کپی نشده.",
+        "مقاله منبع: https://fa.wikipedia.org/wiki/%D8%B1%DA%A9%D9%86%E2%80%8C%D8%A7%D9%84%D8%AF%D9%88%D9%84%D9%87_%D8%AF%DB%8C%D9%84%D9%85%DB%8C"
+      ]
+    },
     {
       "id": "e68e132b3efc",
       "slug": "نیره-ابتهاج-سمیعی-q16053469",
