@@ -1,6 +1,51 @@
 {
   "entries": [
     {
+      "at": "2026-11-15T11:46:17.009Z",
+      "level": "success",
+      "message": "یادبود جدید منتشر شد: شمسای گیلانی",
+      "detail": {
+        "slug": "شمسای-گیلانی-q28933641",
+        "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D8%B4%D9%85%D8%B3%D8%A7%DB%8C_%DA%AF%DB%8C%D9%84%D8%A7%D9%86%DB%8C"
+      }
+    },
+    {
+      "at": "2026-11-15T11:46:17.009Z",
+      "level": "success",
+      "message": "یادبود جدید منتشر شد: محمد خاتمی (خلبان)",
+      "detail": {
+        "slug": "محمد-خاتمی-خلبان-q5958272",
+        "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D9%85%D8%AD%D9%85%D8%AF_%D8%AE%D8%A7%D8%AA%D9%85%DB%8C_(%D9%86%D8%B8%D8%A7%D9%85%DB%8C)"
+      }
+    },
+    {
+      "at": "2026-11-15T11:46:17.008Z",
+      "level": "success",
+      "message": "یادبود جدید منتشر شد: علی صوفی",
+      "detail": {
+        "slug": "علی-صوفی-q5728749",
+        "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D8%B9%D9%84%DB%8C_%D8%B5%D9%88%D9%81%DB%8C"
+      }
+    },
+    {
+      "at": "2026-11-15T11:46:17.007Z",
+      "level": "success",
+      "message": "یادبود جدید منتشر شد: عسکر اسلام دوست کاربندی",
+      "detail": {
+        "slug": "عسکر-اسلام-دوست-کاربندی-q25424669",
+        "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D8%B9%D8%B3%DA%A9%D8%B1_%D8%A7%D8%B3%D9%84%D8%A7%D9%85%E2%80%8C%D8%AF%D9%88%D8%B3%D8%AA"
+      }
+    },
+    {
+      "at": "2026-11-15T11:46:17.007Z",
+      "level": "success",
+      "message": "یادبود جدید منتشر شد: رومینا اشرفی",
+      "detail": {
+        "slug": "رومینا-اشرفی-q95594501",
+        "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D9%82%D8%AA%D9%84_%D8%B1%D9%88%D9%85%DB%8C%D9%86%D8%A7_%D8%A7%D8%B4%D8%B1%D9%81%DB%8C"
+      }
+    },
+    {
       "at": "2026-11-08T11:03:38.229Z",
       "level": "success",
       "message": "یادبود جدید منتشر شد: رکن‌الدوله دیلمی",
@@ -853,51 +898,6 @@
       "detail": {
         "slug": "داریوش-علیزاده-q25667331",
         "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D8%AF%D8%A7%D8%B1%DB%8C%D9%88%D8%B4_%D8%B9%D9%84%DB%8C%D8%B2%D8%A7%D8%AF%D9%87"
-      }
-    },
-    {
-      "at": "2026-08-22T15:31:15.215Z",
-      "level": "success",
-      "message": "یادبود جدید منتشر شد: مسعود مرادی",
-      "detail": {
-        "slug": "مسعود-مرادی-q785158",
-        "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D9%85%D8%B3%D8%B9%D9%88%D8%AF_%D9%85%D8%B1%D8%A7%D8%AF%DB%8C"
-      }
-    },
-    {
-      "at": "2026-08-22T15:31:15.214Z",
-      "level": "success",
-      "message": "یادبود جدید منتشر شد: امیرعلی قلی‌زاده",
-      "detail": {
-        "slug": "امیرعلی-قلیزاده-q100795036",
-        "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D8%A7%D9%85%DB%8C%D8%B1%D8%B9%D9%84%DB%8C_%D9%82%D9%84%DB%8C%E2%80%8C%D8%B2%D8%A7%D8%AF%D9%87"
-      }
-    },
-    {
-      "at": "2026-08-22T15:31:15.213Z",
-      "level": "success",
-      "message": "یادبود جدید منتشر شد: اسفار بن شیرویه",
-      "detail": {
-        "slug": "اسفار-بن-شیرویه-q6418485",
-        "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D8%A7%D8%B3%D9%81%D8%A7%D8%B1_%D8%A8%D9%86_%D8%B4%DB%8C%D8%B1%D9%88%DB%8C%D9%87"
-      }
-    },
-    {
-      "at": "2026-08-22T15:31:15.212Z",
-      "level": "success",
-      "message": "یادبود جدید منتشر شد: شمس‌الدین لاهیجی",
-      "detail": {
-        "slug": "شمسالدین-لاهیجی-q6566303",
-        "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D8%B4%D9%85%D8%B3%E2%80%8C%D8%A7%D9%84%D8%AF%DB%8C%D9%86_%D9%84%D8%A7%D9%87%DB%8C%D8%AC%DB%8C"
-      }
-    },
-    {
-      "at": "2026-08-22T15:31:15.211Z",
-      "level": "success",
-      "message": "یادبود جدید منتشر شد: فریبرز بصارتی",
-      "detail": {
-        "slug": "فریبرز-بصارتی-q5435223",
-        "wikipediaFaUrl": "https://fa.wikipedia.org/wiki/%D9%81%D8%B1%DB%8C%D8%A8%D8%B1%D8%B2_%D8%A8%D8%B5%D8%A7%D8%B1%D8%AA%DB%8C"
       }
     }
   ]
