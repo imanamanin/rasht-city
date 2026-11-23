@@ -1,17 +1,80 @@
 {
-  "updatedAt": "2026-11-23T01:16:56.608Z",
+  "updatedAt": "2026-11-23T10:03:27.334Z",
   "sourceNote": "Aggregated from public RSS (Google News + available agency feeds). Summaries come from feed descriptions; open the source for the full article.",
-  "errors": [
+  "errors": [],
+  "items": [
     {
-      "feed": "google-site-irna",
-      "error": "HTTP 429 for https://news.google.com/rss/search?q=site:irna.ir+%DA%AF%DB%8C%D9%84%D8%A7%D9%86%20OR%20%D8%B1%D8%B4%D8%AA&hl=fa&gl=IR&ceid=IR:fa"
+      "id": "131f84f2b183",
+      "title": "کشف ۶۰ کیسه آرد بدون مجوز از یک نیسان در رودبار",
+      "summary": "مأموران ایستگاه بازرسی رودبار ۲ تن و ۴۰۰ کیلوگرم آرد بدون مجوز و خارج از شبکه توزیع را از یک خودروی نیسان کشف کردند.",
+      "source": "باشگاه خبرنگاران جوان · گیلان",
+      "url": "https://www.yjc.ir/fa/news/9151824/%DA%A9%D8%B4%D9%81-%DB%B6%DB%B0-%DA%A9%DB%8C%D8%B3%D9%87-%D8%A2%D8%B1%D8%AF-%D8%A8%D8%AF%D9%88%D9%86-%D9%85%D8%AC%D9%88%D8%B2-%D8%A7%D8%B2-%DB%8C%DA%A9-%D9%86%DB%8C%D8%B3%D8%A7%D9%86-%D8%AF%D8%B1-%D8%B1%D9%88%D8%AF%D8%A8%D8%A7%D8%B1",
+      "publishedAt": "2026-11-23T09:56:18.000Z",
+      "fetchedAt": "2026-11-23T10:03:27.334Z"
     },
     {
-      "feed": "google-site-isna",
-      "error": "HTTP 429 for https://news.google.com/rss/search?q=site:isna.ir+%DA%AF%DB%8C%D9%84%D8%A7%D9%86%20OR%20%D8%B1%D8%B4%D8%AA&hl=fa&gl=IR&ceid=IR:fa"
-    }
-  ],
-  "items": [
+      "id": "2324818512f1",
+      "title": "فرماندار لنگرود: مفاخر فرهنگی و ادبی شهرستان، گنجینه‌های پنهانی هستند که هنوز شناخته نشده‌اند",
+      "summary": "یوسف گلشن، فرماندار لنگرود، شامگاه یکشنبه در آیین تجلیل از فرامرز محمدی‌پور، نویسنده، پژوهشگر و پیشکسوت برجسته عرصه ادب، با تأکید بر ظرفیت‌های گسترده فرهنگی، ادبی و علمی این شهرستان اظهار کرد: لنگرود از سرمایه‌های ارزشمند انسانی و فرهنگی عظیمی برخوردار است و چهره‌ها و مفاخر برجسته‌ای در حوزه‌های مختلف ادبی، فرهنگی و علمی در این شهرستان حضور دارند که بسیاری از آنان همچنان برای جامعه ناشناخته مانده‌اند.",
+      "source": "بدون منبع",
+      "url": "https://www.khabaronline.ir/news/2306004/%D9%81%D8%B1%D9%85%D8%A7%D9%86%D8%AF%D8%A7%D8%B1-%D9%84%D9%86%DA%AF%D8%B1%D9%88%D8%AF-%D9%85%D9%81%D8%A7%D8%AE%D8%B1-%D9%81%D8%B1%D9%87%D9%86%DA%AF%DB%8C-%D9%88-%D8%A7%D8%AF%D8%A8%DB%8C-%D8%B4%D9%87%D8%B1%D8%B3%D8%AA%D8%A7%D9%86-%DA%AF%D9%86%D8%AC%DB%8C%D9%86%D9%87-%D9%87%D8%A7%DB%8C-%D9%BE%D9%86%D9%87%D8%A7%D9%86%DB%8C",
+      "publishedAt": "2026-11-23T09:40:58.000Z",
+      "fetchedAt": "2026-11-23T10:03:27.334Z"
+    },
+    {
+      "id": "b9fa18a28693",
+      "title": "شناسایی حدود ۴۱ پهنه و منطقه محروم در گیلان",
+      "summary": "استاندار گیلان گفت: حدود ۴۱ پهنه و منطقه محروم در استان شناسایی شده که اقدامات مختلفی برای خدمت‌رسانی به این مناطق انجام شده است.",
+      "source": "باشگاه خبرنگاران جوان · گیلان",
+      "url": "https://www.yjc.ir/fa/news/9151812/%D8%B4%D9%86%D8%A7%D8%B3%D8%A7%DB%8C%DB%8C-%D8%AD%D8%AF%D9%88%D8%AF-%DB%B4%DB%B1-%D9%BE%D9%87%D9%86%D9%87-%D9%88-%D9%85%D9%86%D8%B7%D9%82%D9%87-%D9%85%D8%AD%D8%B1%D9%88%D9%85-%D8%AF%D8%B1-%DA%AF%DB%8C%D9%84%D8%A7%D9%86",
+      "publishedAt": "2026-11-23T09:37:11.000Z",
+      "fetchedAt": "2026-11-23T10:03:27.334Z"
+    },
+    {
+      "id": "c6362cbfbf62",
+      "title": "حضور میدانی گروه‌های جهادی در کسبخ رشت",
+      "summary": "فرمانده سپاه ناحیه مرکزی رشت از اجرای برنامه جهادی «قرار خدمت در مسیر بعثت» در محله کسبخ این شهر با جمعیت حدود یک‌هزار و ۸۰۰ نفر خبر داد.",
+      "source": "باشگاه خبرنگاران جوان · گیلان",
+      "url": "https://www.yjc.ir/fa/news/9151792/%D8%AD%D8%B6%D9%88%D8%B1-%D9%85%DB%8C%D8%AF%D8%A7%D9%86%DB%8C-%DA%AF%D8%B1%D9%88%D9%87%E2%80%8C%D9%87%D8%A7%DB%8C-%D8%AC%D9%87%D8%A7%D8%AF%DB%8C-%D8%AF%D8%B1-%DA%A9%D8%B3%D8%A8%D8%AE-%D8%B1%D8%B4%D8%AA",
+      "publishedAt": "2026-11-23T08:57:54.000Z",
+      "fetchedAt": "2026-11-23T10:03:27.334Z"
+    },
+    {
+      "id": "b8de8c6e8f83",
+      "title": "دستگیری عامل تشویش اذهان عمومی در صومعه‌سرا",
+      "summary": "مأموران پلیس امنیت عمومی عامل انتشار مطالب خلاف واقع در فضای مجازی و تشویش اذهان عمومی را در صومعه‌سرا شناسایی و دستگیر کردند.",
+      "source": "باشگاه خبرنگاران جوان · گیلان",
+      "url": "https://www.yjc.ir/fa/news/9151777/%D8%AF%D8%B3%D8%AA%DA%AF%DB%8C%D8%B1%DB%8C-%D8%B9%D8%A7%D9%85%D9%84-%D8%AA%D8%B4%D9%88%DB%8C%D8%B4-%D8%A7%D8%B0%D9%87%D8%A7%D9%86-%D8%B9%D9%85%D9%88%D9%85%DB%8C-%D8%AF%D8%B1-%D8%B5%D9%88%D9%85%D8%B9%D9%87%E2%80%8C%D8%B3%D8%B1%D8%A7",
+      "publishedAt": "2026-11-23T08:41:30.000Z",
+      "fetchedAt": "2026-11-23T10:03:27.334Z"
+    },
+    {
+      "id": "d845ec8d58b2",
+      "title": "آغاز مرحله سوم طرح ملی سامان با هدف کاهش خاموشی‌ها در گیلان",
+      "summary": "مرحله سوم طرح ملی «سامان» با هدف ساماندهی اقدامات نگهداشت، ارتقای قابلیت اطمینان شبکه برق و کاهش خاموشی‌ها در گیلان آغاز شده است.",
+      "source": "باشگاه خبرنگاران جوان · گیلان",
+      "url": "https://www.yjc.ir/fa/news/9151765/%D8%A2%D8%BA%D8%A7%D8%B2-%D9%85%D8%B1%D8%AD%D9%84%D9%87-%D8%B3%D9%88%D9%85-%D8%B7%D8%B1%D8%AD-%D9%85%D9%84%DB%8C-%D8%B3%D8%A7%D9%85%D8%A7%D9%86-%D8%A8%D8%A7-%D9%87%D8%AF%D9%81-%DA%A9%D8%A7%D9%87%D8%B4-%D8%AE%D8%A7%D9%85%D9%88%D8%B4%DB%8C%E2%80%8C%D9%87%D8%A7-%D8%AF%D8%B1-%DA%AF%DB%8C%D9%84%D8%A7%D9%86",
+      "publishedAt": "2026-11-23T08:16:10.000Z",
+      "fetchedAt": "2026-11-23T10:03:27.334Z"
+    },
+    {
+      "id": "03e8949936f6",
+      "title": "نجات هوبره، پرنده مهاجر در شهرستان رودبار",
+      "summary": "معاون محیط زیست گیلان از تیمار پرنده هوبره و بازگردندان آن به مسیر مهاجرت در شهرستان رودبار خبر داد.",
+      "source": "باشگاه خبرنگاران جوان · گیلان",
+      "url": "https://www.yjc.ir/fa/news/9151741/%D9%86%D8%AC%D8%A7%D8%AA-%D9%87%D9%88%D8%A8%D8%B1%D9%87-%D9%BE%D8%B1%D9%86%D8%AF%D9%87-%D9%85%D9%87%D8%A7%D8%AC%D8%B1-%D8%AF%D8%B1-%D8%B4%D9%87%D8%B1%D8%B3%D8%AA%D8%A7%D9%86-%D8%B1%D9%88%D8%AF%D8%A8%D8%A7%D8%B1",
+      "publishedAt": "2026-11-23T07:35:10.000Z",
+      "fetchedAt": "2026-11-23T10:03:27.334Z"
+    },
+    {
+      "id": "2c80f62e6972",
+      "title": "زیتون، سرمایه سبز رودبار",
+      "summary": "رودبار با نام زیتون شناخته می‌شود و این محصول یکی از ظرفیت‌های راهبردی و محور‌های مهم سرمایه‌گذاری شهرستان به شمار می‌رود.",
+      "source": "باشگاه خبرنگاران جوان · گیلان",
+      "url": "https://www.yjc.ir/fa/news/9151721/%D8%B2%DB%8C%D8%AA%D9%88%D9%86-%D8%B3%D8%B1%D9%85%D8%A7%DB%8C%D9%87-%D8%B3%D8%A8%D8%B2-%D8%B1%D9%88%D8%AF%D8%A8%D8%A7%D8%B1",
+      "publishedAt": "2026-11-23T07:06:38.000Z",
+      "fetchedAt": "2026-11-23T10:03:27.334Z"
+    },
     {
       "id": "d74e7481f82e",
       "title": "پیگیری موضوع بیمه بازاریان آسیب دیده رشت",
@@ -19,7 +82,7 @@
       "source": "باشگاه خبرنگاران جوان · گیلان",
       "url": "https://www.yjc.ir/fa/news/9151625/%D9%BE%DB%8C%DA%AF%DB%8C%D8%B1%DB%8C-%D9%85%D9%88%D8%B6%D9%88%D8%B9-%D8%A8%DB%8C%D9%85%D9%87-%D8%A8%D8%A7%D8%B2%D8%A7%D8%B1%DB%8C%D8%A7%D9%86-%D8%A2%D8%B3%DB%8C%D8%A8-%D8%AF%DB%8C%D8%AF%D9%87-%D8%B1%D8%B4%D8%AA",
       "publishedAt": "2026-11-22T18:39:14.000Z",
-      "fetchedAt": "2026-11-23T01:16:56.608Z"
+      "fetchedAt": "2026-11-23T10:03:27.334Z"
     },
     {
       "id": "7d6fee829281",
@@ -28,7 +91,7 @@
       "source": "باشگاه خبرنگاران جوان · گیلان",
       "url": "https://www.yjc.ir/fa/news/9151606/%D8%AF%D8%B1%DA%AF%D8%B0%D8%B4%D8%AA-%D8%AF%D8%B1%D9%88%D8%A7%D8%B2%D9%87%E2%80%8C%D8%A8%D8%A7%D9%86-%D9%BE%DB%8C%D8%B4%DB%8C%D9%86-%D8%AF%D8%A7%D9%85%D8%A7%D8%B4-%DA%AF%DB%8C%D9%84%D8%A7%D9%86-%D8%A8%D8%B1-%D8%A7%D8%AB%D8%B1-%D8%B3%D8%A7%D9%86%D8%AD%D9%87-%D8%B1%D8%A7%D9%86%D9%86%D8%AF%DA%AF%DB%8C",
       "publishedAt": "2026-11-22T17:00:33.000Z",
-      "fetchedAt": "2026-11-23T01:16:56.608Z"
+      "fetchedAt": "2026-11-23T10:03:27.334Z"
     },
     {
       "id": "e2ca12c2c4c3",
@@ -37,7 +100,7 @@
       "source": "باشگاه خبرنگاران جوان · گیلان",
       "url": "https://www.yjc.ir/fa/news/9151570/%D8%A2%D9%85%D8%A7%D8%AF%DA%AF%DB%8C-%D8%AD%D8%AF%D8%A7%DA%A9%D8%AB%D8%B1%DB%8C-%D9%86%DB%8C%D8%B1%D9%88%DB%8C-%D8%A7%D9%86%D8%AA%D8%B8%D8%A7%D9%85%DB%8C-%D8%A8%D8%B1%D8%A7%DB%8C-%D9%85%D9%82%D8%A7%D8%A8%D9%84%D9%87-%D8%A8%D8%A7-%D8%AA%D9%87%D8%AF%DB%8C%D8%AF%D8%A7%D8%AA-%D8%A7%D8%B2-%D8%AC%D8%B1%D8%A7%D8%A6%D9%85-%D8%B3%D8%A7%D8%B2%D9%85%D8%A7%D9%86%E2%80%8C%DB%8C%D8%A7%D9%81%D8%AA%D9%87-%D8%AA%D8%A7-%D8%A7%D9%85%D9%86%DB%8C%D8%AA-%D9%85%D8%B1%D8%B2%E2%80%8C%D9%87%D8%A7",
       "publishedAt": "2026-11-22T15:11:04.000Z",
-      "fetchedAt": "2026-11-23T01:16:56.608Z"
+      "fetchedAt": "2026-11-23T10:03:27.334Z"
     },
     {
       "id": "2911ace4eed9",
@@ -46,7 +109,7 @@
       "source": "باشگاه خبرنگاران جوان · گیلان",
       "url": "https://www.yjc.ir/fa/news/9151538/%D9%86%D8%AC%D8%A7%D8%AA-%DA%A9%D9%88%D8%AF%DA%A9-%DB%B8-%D8%B3%D8%A7%D9%84%D9%87-%D8%A7%D8%B2-%D8%A2%D8%AA%D8%B4%E2%80%8C%D8%B3%D9%88%D8%B2%DB%8C-%D8%AF%D8%B1-%D8%B1%D8%B4%D8%AA",
       "publishedAt": "2026-11-22T13:12:01.000Z",
-      "fetchedAt": "2026-11-23T01:16:56.608Z"
+      "fetchedAt": "2026-11-23T10:03:27.334Z"
     },
     {
       "id": "a952b001323c",
@@ -55,7 +118,7 @@
       "source": "باشگاه خبرنگاران جوان · گیلان",
       "url": "https://www.yjc.ir/fa/news/9151531/%D9%87%D8%B4%D8%AF%D8%A7%D8%B1-%D8%B3%D8%B7%D8%AD-%D8%B2%D8%B1%D8%AF-%D8%A8%D8%B1%D8%A7%DB%8C-%D9%88%D8%B2%D8%B4-%D8%A8%D8%A7%D8%AF-%D9%88-%DA%A9%D8%A7%D9%87%D8%B4-%D8%AF%D9%85%D8%A7-%D8%AF%D8%B1-%DA%AF%DB%8C%D9%84%D8%A7%D9%86",
       "publishedAt": "2026-11-22T12:50:19.000Z",
-      "fetchedAt": "2026-11-23T01:16:56.608Z"
+      "fetchedAt": "2026-11-23T10:03:27.334Z"
     },
     {
       "id": "86b157eb7bfe",
@@ -64,7 +127,7 @@
       "source": "باشگاه خبرنگاران جوان · گیلان",
       "url": "https://www.yjc.ir/fa/news/9151490/%D8%B6%D8%B1%D9%88%D8%B1%D8%AA-%D8%AA%D8%BA%DB%8C%DB%8C%D8%B1-%D8%B1%D9%88%DB%8C%DA%A9%D8%B1%D8%AF-%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA-%D9%BE%D8%B3%D9%85%D8%A7%D9%86%D8%AF-%D8%AF%D8%B1-%DA%AF%DB%8C%D9%84%D8%A7%D9%86",
       "publishedAt": "2026-11-22T11:13:23.000Z",
-      "fetchedAt": "2026-11-23T01:16:56.608Z"
+      "fetchedAt": "2026-11-23T10:03:27.334Z"
     },
     {
       "id": "73224b7f882d",
@@ -73,7 +136,7 @@
       "source": "باشگاه خبرنگاران جوان · گیلان",
       "url": "https://www.yjc.ir/fa/news/9151454/%D8%A7%D8%B2-%D8%AF%D8%B3%D8%AA%DA%AF%DB%8C%D8%B1%DB%8C-%D8%B9%D8%A7%D9%85%D9%84%D8%A7%D9%86-%D8%A7%D9%86%D8%AA%D8%B4%D8%A7%D8%B1-%D9%85%D8%B7%D8%A7%D9%84%D8%A8-%DA%A9%D8%B0%D8%A8-%D8%AA%D8%A7-%D8%AF%D8%B3%D8%AA%DA%AF%DB%8C%D8%B1%DB%8C-%DB%B6-%D8%B9%D8%A7%D9%85%D9%84-%D9%86%D8%B2%D8%A7%D8%B9-%D8%A8%D8%A7-%D8%B3%D9%84%D8%A7%D8%AD-%D8%B3%D8%B1%D8%AF",
       "publishedAt": "2026-11-22T09:43:24.000Z",
-      "fetchedAt": "2026-11-23T01:16:56.608Z"
+      "fetchedAt": "2026-11-23T10:03:27.334Z"
     },
     {
       "id": "eb147947e5f6",
@@ -82,7 +145,7 @@
       "source": "باشگاه خبرنگاران جوان · گیلان",
       "url": "https://www.yjc.ir/fa/news/9151429/%DB%B7-%D9%81%D8%B1%D8%B5%D8%AA-%D9%88-%D8%B8%D8%B1%D9%81%DB%8C%D8%AA-%D8%AF%D8%B1-%D9%84%D9%86%DA%AF%D8%B1%D9%88%D8%AF-%D8%A2%D9%85%D8%A7%D8%AF%D9%87-%D8%AC%D8%B0%D8%A8-%D8%B3%D8%B1%D9%85%D8%A7%DB%8C%D9%87%E2%80%8C%DA%AF%D8%B0%D8%A7%D8%B1-%D8%A7%D8%B3%D8%AA",
       "publishedAt": "2026-11-22T09:06:55.000Z",
-      "fetchedAt": "2026-11-23T01:16:56.608Z"
+      "fetchedAt": "2026-11-23T10:03:27.334Z"
     },
     {
       "id": "2156e0d225df",
@@ -91,7 +154,7 @@
       "source": "باشگاه خبرنگاران جوان · گیلان",
       "url": "https://www.yjc.ir/fa/news/9151398/%DB%B5%DB%B0-%D8%B7%D8%B1%D8%AD-%D9%86%DB%8C%D9%85%D9%87-%D8%AA%D9%85%D8%A7%D9%85-%D9%88%D8%B1%D8%B2%D8%B4%DB%8C-%D8%AF%D8%B1-%DA%AF%DB%8C%D9%84%D8%A7%D9%86",
       "publishedAt": "2026-11-22T08:38:20.000Z",
-      "fetchedAt": "2026-11-23T01:16:56.608Z"
+      "fetchedAt": "2026-11-23T10:03:27.334Z"
     },
     {
       "id": "b1283d10a8fe",
@@ -100,7 +163,7 @@
       "source": "باشگاه خبرنگاران جوان · گیلان",
       "url": "https://www.yjc.ir/fa/news/9151411/%D8%AA%D9%82%D9%88%DB%8C%D8%AA-%D8%A2%D8%A8%E2%80%8C%D8%A8%D9%86%D8%AF%D8%A7%D9%86-%D9%85%D8%B1%D8%BA%D9%88%D8%A8-%D8%A7%D9%86%D8%B2%D9%84%DB%8C-%D8%AF%D8%B1-%D8%AF%D8%B3%D8%AA%D9%88%D8%B1-%DA%A9%D8%A7%D8%B1-%D8%A2%D8%A8-%D9%85%D9%86%D8%B7%D9%82%D9%87%E2%80%8C%D8%A7%DB%8C-%DA%AF%DB%8C%D9%84%D8%A7%D9%86",
       "publishedAt": "2026-11-22T08:28:11.000Z",
-      "fetchedAt": "2026-11-23T01:16:56.608Z"
+      "fetchedAt": "2026-11-23T10:03:27.334Z"
     },
     {
       "id": "20fdccc85c5f",
@@ -109,7 +172,7 @@
       "source": "باشگاه خبرنگاران جوان · گیلان",
       "url": "https://www.yjc.ir/fa/news/9151386/%D9%85%D8%B4%D8%A7%D9%87%D8%AF%D9%87-%D8%AE%D8%B1%D9%88%D8%B3-%DA%A9%D9%88%D9%84%DB%8C-%D8%A7%D8%A8%D8%B1%D9%88%D8%B3%D9%81%DB%8C%D8%AF-%D8%AF%D8%B1-%D8%AA%D8%A7%D9%84%D8%A7%D8%A8-%D8%A7%D9%86%D8%B2%D9%84%DB%8C",
       "publishedAt": "2026-11-22T07:49:58.000Z",
-      "fetchedAt": "2026-11-23T01:16:56.608Z"
+      "fetchedAt": "2026-11-23T10:03:27.334Z"
     },
     {
       "id": "787e2b57f9f2",
@@ -118,7 +181,7 @@
       "source": "باشگاه خبرنگاران جوان · گیلان",
       "url": "https://www.yjc.ir/fa/news/9151335/%D8%AF%D8%B3%D8%AA%DA%AF%DB%8C%D8%B1%DB%8C-%DB%8C%DA%A9-%D9%85%D8%AA%D9%87%D9%85-%D8%AF%D8%B1-%D8%A2%D8%B3%D8%AA%D8%A7%D8%B1%D8%A7-%D9%BE%D8%B3-%D8%A7%D8%B2-%DB%B1%DB%B0-%D9%85%D8%A7%D9%87-%D9%81%D8%B1%D8%A7%D8%B1",
       "publishedAt": "2026-11-22T06:23:05.000Z",
-      "fetchedAt": "2026-11-23T01:16:56.608Z"
+      "fetchedAt": "2026-11-23T10:03:27.334Z"
     },
     {
       "id": "f10d62e4cad5",
@@ -127,70 +190,16 @@
       "source": "باشگاه خبرنگاران جوان · گیلان",
       "url": "https://www.yjc.ir/fa/news/9151321/%D8%B1%D8%A7%D9%87-%D8%A7%D9%86%D8%AF%D8%A7%D8%B2%DB%8C-%D8%A8%DB%8C%D9%85%D8%A7%D8%B1%D8%B3%D8%AA%D8%A7%D9%86-%D8%B5%D8%AD%D8%B1%D8%A7%DB%8C%DB%8C-%D8%AF%D8%B1-%D9%85%D8%AD%D9%84%D9%87-%DA%A9%D9%85-%D8%A8%D8%B1%D8%AE%D9%88%D8%B1%D8%AF%D8%A7%D8%B1-%DA%A9%D8%B3%D8%A8%D8%AE-%D8%B1%D8%B4%D8%AA",
       "publishedAt": "2026-11-22T06:06:07.000Z",
-      "fetchedAt": "2026-11-23T01:16:56.608Z"
+      "fetchedAt": "2026-11-23T10:03:27.334Z"
     },
     {
-      "id": "d3a61afe95bc",
-      "title": "میزبانی تالاب جوکندان تالش از پرندگان بومی و مهاجر",
-      "summary": "معاون محیط زیست گیلان از مشاهده پرندگان آبزی چون عقاب دریایی دم‌سفید، باکلان کوچک و خروس کولی شمالی در محدوده تالاب جوکندان تالش خبر داد.",
-      "source": "باشگاه خبرنگاران جوان · گیلان",
-      "url": "https://www.yjc.ir/fa/news/9151310/%D9%85%DB%8C%D8%B2%D8%A8%D8%A7%D9%86%DB%8C-%D8%AA%D8%A7%D9%84%D8%A7%D8%A8-%D8%AC%D9%88%DA%A9%D9%86%D8%AF%D8%A7%D9%86-%D8%AA%D8%A7%D9%84%D8%B4-%D8%A7%D8%B2-%D9%BE%D8%B1%D9%86%D8%AF%DA%AF%D8%A7%D9%86-%D8%A8%D9%88%D9%85%DB%8C-%D9%88-%D9%85%D9%87%D8%A7%D8%AC%D8%B1",
-      "publishedAt": "2026-11-22T05:50:58.000Z",
-      "fetchedAt": "2026-11-23T01:16:56.608Z"
-    },
-    {
-      "id": "129aea223a0c",
-      "title": "تعرفه ۵۰بسته سرمایه گذاری در لاهیجان / از گردشگری چای تا روستای ملی بامبو",
-      "summary": "فرماندار لاهیجان با بیان اینکه ۵۰بسته سرمایه گذاری در رویداد سرمایه گذاری گیلان تعرفه شده است، گفت: گردشگری چای، سواحل و روستای بامبو از اهم ظرفیت‌های سرمایه گذاری در این شهرستان است.",
-      "source": "باشگاه خبرنگاران جوان · گیلان",
-      "url": "https://www.yjc.ir/fa/news/9151270/%D8%AA%D8%B9%D8%B1%D9%81%D9%87-%DB%B5%DB%B0%D8%A8%D8%B3%D8%AA%D9%87-%D8%B3%D8%B1%D9%85%D8%A7%DB%8C%D9%87-%DA%AF%D8%B0%D8%A7%D8%B1%DB%8C-%D8%AF%D8%B1-%D9%84%D8%A7%D9%87%DB%8C%D8%AC%D8%A7%D9%86-%D8%A7%D8%B2-%DA%AF%D8%B1%D8%AF%D8%B4%DA%AF%D8%B1%DB%8C-%DA%86%D8%A7%DB%8C-%D8%AA%D8%A7-%D8%B1%D9%88%D8%B3%D8%AA%D8%A7%DB%8C-%D9%85%D9%84%DB%8C-%D8%A8%D8%A7%D9%85%D8%A8%D9%88",
-      "publishedAt": "2026-11-22T05:00:45.000Z",
-      "fetchedAt": "2026-11-23T01:16:56.608Z"
-    },
-    {
-      "id": "066f8672d0fb",
-      "title": "فرمانداران گیلان تغییر نمی‌کنند",
-      "summary": "باقری شایعه تغییر فرمانداران استان را کذب دانست و اعلام کرد: وزارت کشور و استاندار گیلان در شرایط کنونی اعتقادی به تغییر ندارند.",
-      "source": "باشگاه خبرنگاران جوان · گیلان",
-      "url": "https://www.yjc.ir/fa/news/9151262/%D9%81%D8%B1%D9%85%D8%A7%D9%86%D8%AF%D8%A7%D8%B1%D8%A7%D9%86-%DA%AF%DB%8C%D9%84%D8%A7%D9%86-%D8%AA%D8%BA%DB%8C%DB%8C%D8%B1-%D9%86%D9%85%DB%8C%E2%80%8C%DA%A9%D9%86%D9%86%D8%AF",
-      "publishedAt": "2026-11-21T20:12:18.000Z",
-      "fetchedAt": "2026-11-23T01:16:56.608Z"
-    },
-    {
-      "id": "2f1d2aba3fb6",
-      "title": "توسعه زیر ساخت های درمانی درگیلان",
-      "summary": "استاندار گیلان با اشاره به نقش سپاه پاسداران و ارتش جمهوری اسلامی ایران در تقویت زیرساخت‌های حوزه سلامت، بر ضرورت بهره‌گیری از ظرفیت این مجموعه‌ها و مشارکت دستگاه‌های درمانی و بیمه‌گر برای توسعه امکانات درمانی و تسهیل دسترسی مردم به خدمات سلامت تأکید کرد.",
-      "source": "باشگاه خبرنگاران جوان · گیلان",
-      "url": "https://www.yjc.ir/fa/news/9151147/%D8%AA%D9%88%D8%B3%D8%B9%D9%87-%D8%B2%DB%8C%D8%B1-%D8%B3%D8%A7%D8%AE%D8%AA-%D9%87%D8%A7%DB%8C-%D8%AF%D8%B1%D9%85%D8%A7%D9%86%DB%8C-%D8%AF%D8%B1%DA%AF%DB%8C%D9%84%D8%A7%D9%86",
-      "publishedAt": "2026-11-21T14:19:56.000Z",
-      "fetchedAt": "2026-11-23T01:16:56.608Z"
-    },
-    {
-      "id": "3c8bee859055",
-      "title": "تداوم وزش باد گرم در گیلان",
-      "summary": "مدیرکل هواشناسی گیلان از تداوم وزش باد گرم، پایداری شرایط جوی و مه الودگی هوا در مناطق ساحلی و جلگه‌ای استان تا فردا خبر داد.",
-      "source": "باشگاه خبرنگاران جوان · گیلان",
-      "url": "https://www.yjc.ir/fa/news/9151035/%D8%AA%D8%AF%D8%A7%D9%88%D9%85-%D9%88%D8%B2%D8%B4-%D8%A8%D8%A7%D8%AF-%DA%AF%D8%B1%D9%85-%D8%AF%D8%B1-%DA%AF%DB%8C%D9%84%D8%A7%D9%86",
-      "publishedAt": "2026-11-21T09:07:30.000Z",
-      "fetchedAt": "2026-11-23T01:16:56.608Z"
-    },
-    {
-      "id": "28d97e1ef4b1",
-      "title": "توسعه زیر ساخت های هوشمند سازی مرسوله های پستی در گیلان",
-      "summary": "مدیرکل پست گیلان به توسعه زیر ساخت های هوشمند سازی مرسوله های پستی در گیلان اشاره کرد و گفت : طرح جی نف یکی از طرح‌های تسهیل در ارسال مرسوله های پستی است که تا کنون ۸۰ درصد در استان پیشرفت فیزیکی داشته است.",
-      "source": "باشگاه خبرنگاران جوان · گیلان",
-      "url": "https://www.yjc.ir/fa/news/9151006/%D8%AA%D9%88%D8%B3%D8%B9%D9%87-%D8%B2%DB%8C%D8%B1-%D8%B3%D8%A7%D8%AE%D8%AA-%D9%87%D8%A7%DB%8C-%D9%87%D9%88%D8%B4%D9%85%D9%86%D8%AF-%D8%B3%D8%A7%D8%B2%DB%8C-%D9%85%D8%B1%D8%B3%D9%88%D9%84%D9%87-%D9%87%D8%A7%DB%8C-%D9%BE%D8%B3%D8%AA%DB%8C-%D8%AF%D8%B1-%DA%AF%DB%8C%D9%84%D8%A7%D9%86",
-      "publishedAt": "2026-11-21T08:05:06.000Z",
-      "fetchedAt": "2026-11-23T01:16:56.608Z"
-    },
-    {
-      "id": "53e1c0165d1b",
-      "title": "توسعه زیرساخت‌های پایش تصویری روستا‌ها و شهر‌ها/ کسب رتبه برتر کشوری گیلان در مقابله با سرقت",
-      "summary": "فرمانده انتظامي گیلان با اشاره به پياده‌سازي موفق محورهاي دستورالعمل 50 بندي فراجا، از کاهش وقوع و افزايش کشفيات سرقت در استان خبر داد و بر لزوم هم‌افزايي دستگاه‌ها براي ارتقاي امنيت پايدار تأکيد کرد.",
-      "source": "باشگاه خبرنگاران جوان · گیلان",
-      "url": "https://www.yjc.ir/fa/news/9150959/%D8%AA%D9%88%D8%B3%D8%B9%D9%87-%D8%B2%DB%8C%D8%B1%D8%B3%D8%A7%D8%AE%D8%AA%E2%80%8C%D9%87%D8%A7%DB%8C-%D9%BE%D8%A7%DB%8C%D8%B4-%D8%AA%D8%B5%D9%88%DB%8C%D8%B1%DB%8C-%D8%B1%D9%88%D8%B3%D8%AA%D8%A7%E2%80%8C%D9%87%D8%A7-%D9%88-%D8%B4%D9%87%D8%B1%E2%80%8C%D9%87%D8%A7-%DA%A9%D8%B3%D8%A8-%D8%B1%D8%AA%D8%A8%D9%87-%D8%A8%D8%B1%D8%AA%D8%B1-%DA%A9%D8%B4%D9%88%D8%B1%DB%8C-%DA%AF%DB%8C%D9%84%D8%A7%D9%86-%D8%AF%D8%B1-%D9%85%D9%82%D8%A7%D8%A8%D9%84%D9%87-%D8%A8%D8%A7-%D8%B3%D8%B1%D9%82%D8%AA",
-      "publishedAt": "2026-11-21T06:20:44.000Z",
-      "fetchedAt": "2026-11-23T01:16:56.608Z"
+      "id": "01295065e779",
+      "title": "fars — ریشهٔ انصارالله یمن ، به مازندران و گیلان بازمی‌گردد",
+      "summary": "fars | ریشهٔ انصارالله یمن ، به مازندران و گیلان بازمی‌گردد &nbsp;&nbsp; Fars News Agency",
+      "source": "Fars News Agency",
+      "url": "https://news.google.com/rss/articles/CBMiugNBVV95cUxPZDlodmlOZ1RRU21USlVVdEp6bmFLQlFlaVNIakpSNXNZcG1TY2QzTU0yTThsaS0yNWRwYnhlbzlXYURCOGJFZ25vQVVtMUVna0tqNFlncmpfdWpteXNtOUljVzVnLUxDMXQ2VUpvNkdxaGFoT1R2YmdtYWU5aE9mT3hfelY4QVpSeTlRamxpQlNGSlYzUjdxUGk0c1RzRDFJbWxRU3dUV0xwRjVWZk5YZWtHQXFiRk1fLXlUcy1VWXFsUTFEOHVHakpJaXRqQUJYYnJtY1JscldoT1R5alhZTG5TYkVvVFUwOGpKR3pxY3FJYVFuUWtUNDJqdEtFb0xKcFFZV2JEa01XTTJCdGN6LXJZRHRDa2lqdk9oZF9HZ3VTWG5hSGc3ZnhsR29rbE5DQ0NCX2I4MVZYTFJPazFrbjZhUW02WFg4MjlfLXY3YkxsRU5jaVFhVHpESzlGNUZyZXZjaTF3OFJ6OTJKcUNwT0ZOMFJaNlZpeVFGNUk5VjJXYmhPeHYyTEt1QUhxLTBVZnNJVmtRQVdiYXMxQjlIYmZwTHZ0VTFJU2czSnlkTU1vZVo3ajI3eXZB?oc=5",
+      "publishedAt": "2026-09-15T03:20:57.000Z",
+      "fetchedAt": "2026-11-23T10:03:27.334Z"
     },
     {
       "id": "0d47ade43eac",
@@ -199,7 +208,7 @@
       "source": "Fars News Agency",
       "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1tVHN0M081bFJCNWVvakJMeHI2aUFabWlGMXFNOG54QnBYQVRablUxWTJKcXRKQ0lqVEVRRUVzaHloUXVRTXZQNTlMd3VOMWFoWDAwRjdhb2RsRW43ZFd6V0tGX3BlMktvQ2M4VUFXblo?oc=5",
       "publishedAt": "2026-05-21T17:23:02.000Z",
-      "fetchedAt": "2026-11-23T01:16:56.608Z"
+      "fetchedAt": "2026-11-23T10:03:27.334Z"
     }
   ]
 }
