@@ -1,197 +1,17 @@
 {
-  "updatedAt": "2026-11-27T04:40:34.623Z",
+  "updatedAt": "2026-11-27T14:32:41.038Z",
   "sourceNote": "Aggregated from public RSS (Google News + available agency feeds). Summaries come from feed descriptions; open the source for the full article.",
-  "errors": [],
+  "errors": [
+    {
+      "feed": "yjc-gilan",
+      "error": "HTTP 403 for https://www.yjc.ir/fa/rss/41"
+    },
+    {
+      "feed": "google-site-irna",
+      "error": "HTTP 429 for https://news.google.com/rss/search?q=site:irna.ir+%DA%AF%DB%8C%D9%84%D8%A7%D9%86%20OR%20%D8%B1%D8%B4%D8%AA&hl=fa&gl=IR&ceid=IR:fa"
+    }
+  ],
   "items": [
-    {
-      "id": "9da27436c1f0",
-      "title": "فعالیت ۱۰۰واحد فرآوری زیتون در رودبار",
-      "summary": "مدیر کل جهاد کشاورزی شهرستان رودبار از فعالیت ۱۰۰واحد فرآوری زیتون در رودبار خبر داد و گفت: سالانه از هر هکتار باغ زیتون ۲هزار و ۵۰۰تن فرآوری تولید می‌شود.",
-      "source": "باشگاه خبرنگاران جوان · گیلان",
-      "url": "https://www.yjc.ir/fa/news/9152841/%D9%81%D8%B9%D8%A7%D9%84%DB%8C%D8%AA-%DB%B1%DB%B0%DB%B0%D9%88%D8%A7%D8%AD%D8%AF-%D9%81%D8%B1%D8%A2%D9%88%D8%B1%DB%8C-%D8%B2%DB%8C%D8%AA%D9%88%D9%86-%D8%AF%D8%B1-%D8%B1%D9%88%D8%AF%D8%A8%D8%A7%D8%B1",
-      "publishedAt": "2026-11-26T12:19:17.000Z",
-      "fetchedAt": "2026-11-27T04:40:34.623Z"
-    },
-    {
-      "id": "8499ac83a578",
-      "title": "رئیس سازمان انرژی اتمی: دشمنان از پیشرفت ایران در هراسند",
-      "summary": "معاون رئیس جمهور و رئیس سازمان انرژی اتمی ایران گفت: دشمنان ما به دلیل پیشرفت ایران با ما مخالفند و از این پیشرفت در هراسند.",
-      "source": "باشگاه خبرنگاران جوان · گیلان",
-      "url": "https://www.yjc.ir/fa/news/9152838/%D8%B1%D8%A6%DB%8C%D8%B3-%D8%B3%D8%A7%D8%B2%D9%85%D8%A7%D9%86-%D8%A7%D9%86%D8%B1%DA%98%DB%8C-%D8%A7%D8%AA%D9%85%DB%8C-%D8%AF%D8%B4%D9%85%D9%86%D8%A7%D9%86-%D8%A7%D8%B2-%D9%BE%DB%8C%D8%B4%D8%B1%D9%81%D8%AA-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D8%AF%D8%B1-%D9%87%D8%B1%D8%A7%D8%B3%D9%86%D8%AF",
-      "publishedAt": "2026-11-26T11:46:27.000Z",
-      "fetchedAt": "2026-11-27T04:40:34.623Z"
-    },
-    {
-      "id": "a3ccc9ceadd8",
-      "title": "آیین گلباران مزار شهدای رشت + فیلم و عکس",
-      "summary": "آئین گلباران مزار شهدای رشت همزمان با روز بسیج مستضعفین با حضور جمعی از مسئولان و خانواده های شهدا و همچنین مردم ولایتمدار گیلان برگزار شد.",
-      "source": "باشگاه خبرنگاران جوان · گیلان",
-      "url": "https://www.yjc.ir/fa/news/9152795/%D8%A2%DB%8C%DB%8C%D9%86-%DA%AF%D9%84%D8%A8%D8%A7%D8%B1%D8%A7%D9%86-%D9%85%D8%B2%D8%A7%D8%B1-%D8%B4%D9%87%D8%AF%D8%A7%DB%8C-%D8%B1%D8%B4%D8%AA-%D9%81%DB%8C%D9%84%D9%85-%D9%88-%D8%B9%DA%A9%D8%B3",
-      "publishedAt": "2026-11-26T09:44:08.000Z",
-      "fetchedAt": "2026-11-27T04:40:34.623Z"
-    },
-    {
-      "id": "da52fc8b14fc",
-      "title": "هیچگونه کمبودی در ۲ جنگ تحمیلی اخیر نداشتیم",
-      "summary": "رئیس سازمان تحقیقات، آموزش و ترویج کشاورزی گفت: با تلاش همه تولیدکنندگان و مسئولان هیچگونه کمبودی در محصولات غذایی در ۲ جنگ تحمیلی اخیر نداشتیم.",
-      "source": "باشگاه خبرنگاران جوان · گیلان",
-      "url": "https://www.yjc.ir/fa/news/9152799/%D9%87%DB%8C%DA%86%DA%AF%D9%88%D9%86%D9%87-%DA%A9%D9%85%D8%A8%D9%88%D8%AF%DB%8C-%D8%AF%D8%B1-%DB%B2-%D8%AC%D9%86%DA%AF-%D8%AA%D8%AD%D9%85%DB%8C%D9%84%DB%8C-%D8%A7%D8%AE%DB%8C%D8%B1-%D9%86%D8%AF%D8%A7%D8%B4%D8%AA%DB%8C%D9%85",
-      "publishedAt": "2026-11-26T08:51:31.000Z",
-      "fetchedAt": "2026-11-27T04:40:34.623Z"
-    },
-    {
-      "id": "9c4041dc2d88",
-      "title": "۱۲ مرکز پرتودهی تا پایان سال در کشور افتتاح می‌شود",
-      "summary": "معاون سازمان انرژی اتمی اعلام کرد: ۱۲ مرکز پرتودهی تا پایان سال در نقاط مختلف ایران افتتاح می‌شود که سایت گیلان به عنوان یکی از آنها امروز پنجشنبه به بهره‌برداری رسید.",
-      "source": "باشگاه خبرنگاران جوان · گیلان",
-      "url": "https://www.yjc.ir/fa/news/9152767/%DB%B1%DB%B2-%D9%85%D8%B1%DA%A9%D8%B2-%D9%BE%D8%B1%D8%AA%D9%88%D8%AF%D9%87%DB%8C-%D8%AA%D8%A7-%D9%BE%D8%A7%DB%8C%D8%A7%D9%86-%D8%B3%D8%A7%D9%84-%D8%AF%D8%B1-%DA%A9%D8%B4%D9%88%D8%B1-%D8%A7%D9%81%D8%AA%D8%AA%D8%A7%D8%AD-%D9%85%DB%8C%E2%80%8C%D8%B4%D9%88%D8%AF",
-      "publishedAt": "2026-11-26T06:59:23.000Z",
-      "fetchedAt": "2026-11-27T04:40:34.623Z"
-    },
-    {
-      "id": "c87e5eb7287c",
-      "title": "کشف ۱۹ تن چوب قاچاق در صومعه سرا",
-      "summary": "فرمانده انتظامی صومعه‌سرا از کشف ۱۹ تن چوب قاچاق به ارزش ۴ میلیارد و ۵۰۰ میلیون ریال و توقیف پنج خودروی حامل آن در این شهرستان خبر داد.",
-      "source": "باشگاه خبرنگاران جوان · گیلان",
-      "url": "https://www.yjc.ir/fa/news/9152755/%DA%A9%D8%B4%D9%81-%DB%B1%DB%B9-%D8%AA%D9%86-%DA%86%D9%88%D8%A8-%D9%82%D8%A7%DA%86%D8%A7%D9%82-%D8%AF%D8%B1-%D8%B5%D9%88%D9%85%D8%B9%D9%87-%D8%B3%D8%B1%D8%A7",
-      "publishedAt": "2026-11-26T06:52:13.000Z",
-      "fetchedAt": "2026-11-27T04:40:34.623Z"
-    },
-    {
-      "id": "3661860d14aa",
-      "title": "بهره برداری از مرکز پرتوفرآیند گیلان با ظرفیت پرتودهی سالانه ۲۰ هزار تن",
-      "summary": "امروز با حضور رییس سازمان انرژی اتمی ایران؛\r\nمرکز پرتوفرآیند گیلان با ظرفیت پرتودهی سالانه ۲۰ هزار تن به بهره‌برداری رسید.",
-      "source": "باشگاه خبرنگاران جوان · گیلان",
-      "url": "https://www.yjc.ir/fa/news/9152743/%D8%A8%D9%87%D8%B1%D9%87-%D8%A8%D8%B1%D8%AF%D8%A7%D8%B1%DB%8C-%D8%A7%D8%B2-%D9%85%D8%B1%DA%A9%D8%B2-%D9%BE%D8%B1%D8%AA%D9%88%D9%81%D8%B1%D8%A2%DB%8C%D9%86%D8%AF-%DA%AF%DB%8C%D9%84%D8%A7%D9%86-%D8%A8%D8%A7-%D8%B8%D8%B1%D9%81%DB%8C%D8%AA-%D9%BE%D8%B1%D8%AA%D9%88%D8%AF%D9%87%DB%8C-%D8%B3%D8%A7%D9%84%D8%A7%D9%86%D9%87-%DB%B2%DB%B0-%D9%87%D8%B2%D8%A7%D8%B1-%D8%AA%D9%86",
-      "publishedAt": "2026-11-26T05:58:49.000Z",
-      "fetchedAt": "2026-11-27T04:40:34.623Z"
-    },
-    {
-      "id": "1b01261663a1",
-      "title": "صدور مجوز صادرات روغن زیتون/ بازار زیتون رودبار ثبت جهانی شود",
-      "summary": "معاون وزیر جهاد کشاورزی با بیان اینکه برای نخستین بار مجوز صادرات روغن زیتون صادر شده است، گفت: پیشنهاد می‌کنم که بازار زیتون رودبار ثبت جهانی شود.",
-      "source": "باشگاه خبرنگاران جوان · گیلان",
-      "url": "https://www.yjc.ir/fa/news/9152675/%D8%B5%D8%AF%D9%88%D8%B1-%D9%85%D8%AC%D9%88%D8%B2-%D8%B5%D8%A7%D8%AF%D8%B1%D8%A7%D8%AA-%D8%B1%D9%88%D8%BA%D9%86-%D8%B2%DB%8C%D8%AA%D9%88%D9%86-%D8%A8%D8%A7%D8%B2%D8%A7%D8%B1-%D8%B2%DB%8C%D8%AA%D9%88%D9%86-%D8%B1%D9%88%D8%AF%D8%A8%D8%A7%D8%B1-%D8%AB%D8%A8%D8%AA-%D8%AC%D9%87%D8%A7%D9%86%DB%8C-%D8%B4%D9%88%D8%AF",
-      "publishedAt": "2026-11-25T18:38:25.000Z",
-      "fetchedAt": "2026-11-27T04:40:34.623Z"
-    },
-    {
-      "id": "b53204e3b0a7",
-      "title": "آخرین وضعیت طرح‌های زیرساختی حوزه آب و فاضلاب رودبار",
-      "summary": "آخرین وضعیت اجرایی و روند پیشرفت طرح‌های حوزه آب و فاضلاب شهرستان رودبار امروز با حضور اعضای کمیسیون برنامه، بودجه و محاسبات مجلس بررسی شد.",
-      "source": "باشگاه خبرنگاران جوان · گیلان",
-      "url": "https://www.yjc.ir/fa/news/9152680/%D8%A2%D8%AE%D8%B1%DB%8C%D9%86-%D9%88%D8%B6%D8%B9%DB%8C%D8%AA-%D8%B7%D8%B1%D8%AD%E2%80%8C%D9%87%D8%A7%DB%8C-%D8%B2%DB%8C%D8%B1%D8%B3%D8%A7%D8%AE%D8%AA%DB%8C-%D8%AD%D9%88%D8%B2%D9%87-%D8%A2%D8%A8-%D9%88-%D9%81%D8%A7%D8%B6%D9%84%D8%A7%D8%A8-%D8%B1%D9%88%D8%AF%D8%A8%D8%A7%D8%B1",
-      "publishedAt": "2026-11-25T17:19:38.000Z",
-      "fetchedAt": "2026-11-27T04:40:34.623Z"
-    },
-    {
-      "id": "a1f9e8e63e5a",
-      "title": "رودبار پایتخت زیتون ایران/ رونمایی از نخستین تمبر زیتون در رودبار",
-      "summary": "استاندار گیلان با بیان اینکه رودبار پایتخت زیتون ایران است ، گفت : زیتون را در سراسر ایران به نام شهرستان رودبار می شناسند.‌",
-      "source": "باشگاه خبرنگاران جوان · گیلان",
-      "url": "https://www.yjc.ir/fa/news/9152652/%D8%B1%D9%88%D8%AF%D8%A8%D8%A7%D8%B1-%D9%BE%D8%A7%DB%8C%D8%AA%D8%AE%D8%AA-%D8%B2%DB%8C%D8%AA%D9%88%D9%86-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D8%B1%D9%88%D9%86%D9%85%D8%A7%DB%8C%DB%8C-%D8%A7%D8%B2-%D9%86%D8%AE%D8%B3%D8%AA%DB%8C%D9%86-%D8%AA%D9%85%D8%A8%D8%B1-%D8%B2%DB%8C%D8%AA%D9%88%D9%86-%D8%AF%D8%B1-%D8%B1%D9%88%D8%AF%D8%A8%D8%A7%D8%B1",
-      "publishedAt": "2026-11-25T16:25:23.000Z",
-      "fetchedAt": "2026-11-27T04:40:34.623Z"
-    },
-    {
-      "id": "4c22728c8e8a",
-      "title": "نمایشگاه مد و لباس گیلان افتتاح شد",
-      "summary": "نمایشگاه مد و لباس گیلان از امروز تا شنبه ۷ آذر ماه در تالار مرکزی رشت دائر شده است.",
-      "source": "باشگاه خبرنگاران جوان · گیلان",
-      "url": "https://www.yjc.ir/fa/news/9152661/%D9%86%D9%85%D8%A7%DB%8C%D8%B4%DA%AF%D8%A7%D9%87-%D9%85%D8%AF-%D9%88-%D9%84%D8%A8%D8%A7%D8%B3-%DA%AF%DB%8C%D9%84%D8%A7%D9%86-%D8%A7%D9%81%D8%AA%D8%AA%D8%A7%D8%AD-%D8%B4%D8%AF",
-      "publishedAt": "2026-11-25T15:57:44.000Z",
-      "fetchedAt": "2026-11-27T04:40:34.623Z"
-    },
-    {
-      "id": "2e4caffe53e8",
-      "title": "جشنواره ملی زیتون در رودبار + تصاویر",
-      "summary": "امروز به مناسبت ۵ آذر روز ملی زیتون، جشنواره ملی زیتون با حضور جمعی از مسئولان و عموم مردم با اجرای برنامه‌های شاد و فرهنگی در شهرستان رودبار برگزار شد.",
-      "source": "باشگاه خبرنگاران جوان · گیلان",
-      "url": "https://www.yjc.ir/fa/news/9152630/%D8%AC%D8%B4%D9%86%D9%88%D8%A7%D8%B1%D9%87-%D9%85%D9%84%DB%8C-%D8%B2%DB%8C%D8%AA%D9%88%D9%86-%D8%AF%D8%B1-%D8%B1%D9%88%D8%AF%D8%A8%D8%A7%D8%B1-%D8%AA%D8%B5%D8%A7%D9%88%DB%8C%D8%B1",
-      "publishedAt": "2026-11-25T14:24:28.000Z",
-      "fetchedAt": "2026-11-27T04:40:34.623Z"
-    },
-    {
-      "id": "0072fe2e3483",
-      "title": "هشدار سطح زرد بارندگی در گیلان",
-      "summary": "اداره کل هواشناسی گیلان هشدار سطح زرد برای وزش باد (پاره‌ای نواحی شدید) و بارندگی (بعضی مناطق رگباری و شدید) تا صبح فردا در این استان صادر کرد.",
-      "source": "باشگاه خبرنگاران جوان · گیلان",
-      "url": "https://www.yjc.ir/fa/news/9152607/%D9%87%D8%B4%D8%AF%D8%A7%D8%B1-%D8%B3%D8%B7%D8%AD-%D8%B2%D8%B1%D8%AF-%D8%A8%D8%A7%D8%B1%D9%86%D8%AF%DA%AF%DB%8C-%D8%AF%D8%B1-%DA%AF%DB%8C%D9%84%D8%A7%D9%86",
-      "publishedAt": "2026-11-25T12:13:09.000Z",
-      "fetchedAt": "2026-11-27T04:40:34.623Z"
-    },
-    {
-      "id": "9336c98d4416",
-      "title": "محکومیت نانوای گرانفروش در رشت",
-      "summary": "یک نانوا در رشت به علت گرانفروشی نان علاوه بر نصب پارچه تخلف به مدت یک ماه در نانوایی، به پرداخت ۲ میلیارد ریال جزای نقدی محکوم شد.",
-      "source": "باشگاه خبرنگاران جوان · گیلان",
-      "url": "https://www.yjc.ir/fa/news/9152596/%D9%85%D8%AD%DA%A9%D9%88%D9%85%DB%8C%D8%AA-%D9%86%D8%A7%D9%86%D9%88%D8%A7%DB%8C-%DA%AF%D8%B1%D8%A7%D9%86%D9%81%D8%B1%D9%88%D8%B4-%D8%AF%D8%B1-%D8%B1%D8%B4%D8%AA",
-      "publishedAt": "2026-11-25T11:18:58.000Z",
-      "fetchedAt": "2026-11-27T04:40:34.623Z"
-    },
-    {
-      "id": "bb6eb7dc2119",
-      "title": "ضرورت توجه به معضل و چالش های تالاب بین المللی انزلی",
-      "summary": "رییس کمیسیون برنامه و بودجه به طرح های ملی در دست اجرا در استان گیلان اشاره کرد و گفت: تالاب انزلی یکی از پروژه های مهم است و باید برای نجات این اکوسیستم طبیعی، پروژه های ساماندهی و تصفیه فاضلاب گیلان را جدی بگیریم.",
-      "source": "باشگاه خبرنگاران جوان · گیلان",
-      "url": "https://www.yjc.ir/fa/news/9152545/%D8%B6%D8%B1%D9%88%D8%B1%D8%AA-%D8%AA%D9%88%D8%AC%D9%87-%D8%A8%D9%87-%D9%85%D8%B9%D8%B6%D9%84-%D9%88-%DA%86%D8%A7%D9%84%D8%B4-%D9%87%D8%A7%DB%8C-%D8%AA%D8%A7%D9%84%D8%A7%D8%A8-%D8%A8%DB%8C%D9%86-%D8%A7%D9%84%D9%85%D9%84%D9%84%DB%8C-%D8%A7%D9%86%D8%B2%D9%84%DB%8C",
-      "publishedAt": "2026-11-25T10:46:12.000Z",
-      "fetchedAt": "2026-11-27T04:40:34.623Z"
-    },
-    {
-      "id": "23707df371b0",
-      "title": "تنش آب شرب در گیلان / تکمیل طرح های سدنیازمند اعتبارات ملی",
-      "summary": "استاندار گیلان با بیان اینکه گیلان با وجود بارش های بالا دچار تنش آبی است ، گفت: تکمیل طرح های سد پلرود، شفارود و دیورش استان نیازمند اعتبارات ملی است.",
-      "source": "باشگاه خبرنگاران جوان · گیلان",
-      "url": "https://www.yjc.ir/fa/news/9152559/%D8%AA%D9%86%D8%B4-%D8%A2%D8%A8-%D8%B4%D8%B1%D8%A8-%D8%AF%D8%B1-%DA%AF%DB%8C%D9%84%D8%A7%D9%86-%D8%AA%DA%A9%D9%85%DB%8C%D9%84-%D8%B7%D8%B1%D8%AD-%D9%87%D8%A7%DB%8C-%D8%B3%D8%AF%D9%86%DB%8C%D8%A7%D8%B2%D9%85%D9%86%D8%AF-%D8%A7%D8%B9%D8%AA%D8%A8%D8%A7%D8%B1%D8%A7%D8%AA-%D9%85%D9%84%DB%8C",
-      "publishedAt": "2026-11-25T10:43:26.000Z",
-      "fetchedAt": "2026-11-27T04:40:34.623Z"
-    },
-    {
-      "id": "2749dd8a89f5",
-      "title": "واکسیناسیون دام‌های سنگین گیلان تا پایان دی ماه",
-      "summary": "طرح واکسیناسیون بیش از ۳۴۷ هزار رأس دام سنگین گیلان علیه بیماری ویروسی لمپی‌اسکین تا پایان دی ماه در این استان اجرا می‌شود.",
-      "source": "باشگاه خبرنگاران جوان · گیلان",
-      "url": "https://www.yjc.ir/fa/news/9152575/%D9%88%D8%A7%DA%A9%D8%B3%DB%8C%D9%86%D8%A7%D8%B3%DB%8C%D9%88%D9%86-%D8%AF%D8%A7%D9%85%E2%80%8C%D9%87%D8%A7%DB%8C-%D8%B3%D9%86%DA%AF%DB%8C%D9%86-%DA%AF%DB%8C%D9%84%D8%A7%D9%86-%D8%AA%D8%A7-%D9%BE%D8%A7%DB%8C%D8%A7%D9%86-%D8%AF%DB%8C-%D9%85%D8%A7%D9%87",
-      "publishedAt": "2026-11-25T10:42:39.000Z",
-      "fetchedAt": "2026-11-27T04:40:34.623Z"
-    },
-    {
-      "id": "835a424e446d",
-      "title": "شناسایی و دستگیری ۱۱ متخلف شکار و صید در آستارا؛ ۳۰ پرنده آزاد شدند",
-      "summary": "رئیس اداره محیط زیست آستارا از شناسایی و دستگیری ۱۱ متخلف شکار و صید پرندگان و آزادسازی ۳۰ پرنده سهره طلایی و چکاوک در این شهرستان خبر داد.",
-      "source": "باشگاه خبرنگاران جوان · گیلان",
-      "url": "https://www.yjc.ir/fa/news/9152542/%D8%B4%D9%86%D8%A7%D8%B3%D8%A7%DB%8C%DB%8C-%D9%88-%D8%AF%D8%B3%D8%AA%DA%AF%DB%8C%D8%B1%DB%8C-%DB%B1%DB%B1-%D9%85%D8%AA%D8%AE%D9%84%D9%81-%D8%B4%DA%A9%D8%A7%D8%B1-%D9%88-%D8%B5%DB%8C%D8%AF-%D8%AF%D8%B1-%D8%A2%D8%B3%D8%AA%D8%A7%D8%B1%D8%A7-%DB%B3%DB%B0-%D9%BE%D8%B1%D9%86%D8%AF%D9%87-%D8%A2%D8%B2%D8%A7%D8%AF-%D8%B4%D8%AF%D9%86%D8%AF",
-      "publishedAt": "2026-11-25T09:20:03.000Z",
-      "fetchedAt": "2026-11-27T04:40:34.623Z"
-    },
-    {
-      "id": "09b83c6e0897",
-      "title": "اجرای ۳۲ طرح بیمارستانی در کشور",
-      "summary": "معاون وزیر راه و شهرسازی و مدیرعامل سازمان مجری ساختمان و تاسیسات عمومی و دولتی ۳۲ طرح از این مجموع پروژه های بیمارستانی است، افزود: سه طرح بیمارستانی مربوط به استان گیلان است که این طرح ها طی دو سال گذشته، پیشرفت خوبی داشته اند.",
-      "source": "باشگاه خبرنگاران جوان · گیلان",
-      "url": "https://www.yjc.ir/fa/news/9152502/%D8%A7%D8%AC%D8%B1%D8%A7%DB%8C-%DB%B3%DB%B2-%D8%B7%D8%B1%D8%AD-%D8%A8%DB%8C%D9%85%D8%A7%D8%B1%D8%B3%D8%AA%D8%A7%D9%86%DB%8C-%D8%AF%D8%B1-%DA%A9%D8%B4%D9%88%D8%B1",
-      "publishedAt": "2026-11-25T08:31:59.000Z",
-      "fetchedAt": "2026-11-27T04:40:34.623Z"
-    },
-    {
-      "id": "b8930ceed137",
-      "title": "پیشرفت فیزیکی ۲۳ درصدی ساخت بیمارستان جایگزین پورسینای رشت",
-      "summary": "طرح ساخت بیمارستان جایگزین پورسینای رشت با ظرفیت ۳۵۰ تخت درمانی، پس از گذشت ۵ سال از آغاز عملیات اجرایی، تنها ۲۳ درصد پیشرفت فیزیکی دارد.",
-      "source": "باشگاه خبرنگاران جوان · گیلان",
-      "url": "https://www.yjc.ir/fa/news/9152510/%D9%BE%DB%8C%D8%B4%D8%B1%D9%81%D8%AA-%D9%81%DB%8C%D8%B2%DB%8C%DA%A9%DB%8C-%DB%B2%DB%B3-%D8%AF%D8%B1%D8%B5%D8%AF%DB%8C-%D8%B3%D8%A7%D8%AE%D8%AA-%D8%A8%DB%8C%D9%85%D8%A7%D8%B1%D8%B3%D8%AA%D8%A7%D9%86-%D8%AC%D8%A7%DB%8C%DA%AF%D8%B2%DB%8C%D9%86-%D9%BE%D9%88%D8%B1%D8%B3%DB%8C%D9%86%D8%A7%DB%8C-%D8%B1%D8%B4%D8%AA",
-      "publishedAt": "2026-11-25T08:23:51.000Z",
-      "fetchedAt": "2026-11-27T04:40:34.623Z"
-    },
-    {
-      "id": "a5c6563f039f",
-      "title": "«سرزمین فرشته‌ها» و «غذای نیمروز» در فهرست فیلم‌های دارای شرایط اسکار ۲۰۲۷",
-      "summary": "«سرزمین فرشته‌ها» و «غذای نیمروز» در فهرست فیلم‌های دارای شرایط اسکار ۲۰۲۷ &nbsp;&nbsp; ایرنا",
-      "source": "ایرنا",
-      "url": "https://news.google.com/rss/articles/CBMi2ANBVV95cUxPaEFKOFdoWF9wS2JtMGpLQTU4bnZsSzJDX2NFSFZNMF9RTjNVQUVHSEdfYndqUUJZVlNnbjE0QUxBamRVX1ZqMFhtNHhhSFQ0NFhVTXlrVEZkVlVDbGFyWjdkelU1aTU2OC1tZHZRUTlrQ1NhWEg3c05XbEFObW9rSkc2dEs4QkRKTk1uU1lCS2RfVGxEOEZNSVFPMHMtQ2FteDlueEYzbVlCSUV4RjdIWTVfOW5fcjBXejZaVS1LektFWGl1WU9oeEhHREhnYk1aYVlYQlRmZnkwSWt0UlMzRGdkMGU5Znl6WlBZWVRzbVVSSmFxdk5oUUdBQVZVZ1lOX2x1NS1jaWpjZzlVUHpyYm5WVXBrTVlsS25nZ2V4aWdiRUNsQTRJb1NKTzBNajVrcUU0V1VsYjhDajFIeUV4aHRRTTRpVi0tN3BNRTFQUldpN0FMWmFQckp4YlNiMmU5a01KdlV5TGlPSTFJeTBpbnVfYmRyWjVjREFiR3VnRmN2SnF0d0FoOEVDZHZRcktLRFZ1aFlabzM0V0RrUThSTUM0TlN2dWh6SFBxSnItVEFEUEtQZ0lqRHhqVG4tcFhRbXJ6ZWppZXRzd1BXQWJlUjlIZ1psSnA30gFIQVVfeXFMTkFDZmlwOGFpZENkcG9FanBWYWxXMWxBVDdQckVzQjRXUXBQWVMtNnh1UTVvcGxVVXVCYmtva0dsM2FhbkpyR01N?oc=5",
-      "publishedAt": "2026-11-24T10:42:00.000Z",
-      "fetchedAt": "2026-11-27T04:40:34.623Z"
-    },
     {
       "id": "01295065e779",
       "title": "fars — ریشهٔ انصارالله یمن ، به مازندران و گیلان بازمی‌گردد",
@@ -199,7 +19,7 @@
       "source": "Fars News Agency",
       "url": "https://news.google.com/rss/articles/CBMiugNBVV95cUxPZDlodmlOZ1RRU21USlVVdEp6bmFLQlFlaVNIakpSNXNZcG1TY2QzTU0yTThsaS0yNWRwYnhlbzlXYURCOGJFZ25vQVVtMUVna0tqNFlncmpfdWpteXNtOUljVzVnLUxDMXQ2VUpvNkdxaGFoT1R2YmdtYWU5aE9mT3hfelY4QVpSeTlRamxpQlNGSlYzUjdxUGk0c1RzRDFJbWxRU3dUV0xwRjVWZk5YZWtHQXFiRk1fLXlUcy1VWXFsUTFEOHVHakpJaXRqQUJYYnJtY1JscldoT1R5alhZTG5TYkVvVFUwOGpKR3pxY3FJYVFuUWtUNDJqdEtFb0xKcFFZV2JEa01XTTJCdGN6LXJZRHRDa2lqdk9oZF9HZ3VTWG5hSGc3ZnhsR29rbE5DQ0NCX2I4MVZYTFJPazFrbjZhUW02WFg4MjlfLXY3YkxsRU5jaVFhVHpESzlGNUZyZXZjaTF3OFJ6OTJKcUNwT0ZOMFJaNlZpeVFGNUk5VjJXYmhPeHYyTEt1QUhxLTBVZnNJVmtRQVdiYXMxQjlIYmZwTHZ0VTFJU2czSnlkTU1vZVo3ajI3eXZB?oc=5",
       "publishedAt": "2026-09-15T03:20:57.000Z",
-      "fetchedAt": "2026-11-27T04:40:34.623Z"
+      "fetchedAt": "2026-11-27T14:32:41.038Z"
     },
     {
       "id": "0d47ade43eac",
@@ -208,7 +28,7 @@
       "source": "Fars News Agency",
       "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1tVHN0M081bFJCNWVvakJMeHI2aUFabWlGMXFNOG54QnBYQVRablUxWTJKcXRKQ0lqVEVRRUVzaHloUXVRTXZQNTlMd3VOMWFoWDAwRjdhb2RsRW43ZFd6V0tGX3BlMktvQ2M4VUFXblo?oc=5",
       "publishedAt": "2026-05-21T17:23:02.000Z",
-      "fetchedAt": "2026-11-27T04:40:34.623Z"
+      "fetchedAt": "2026-11-27T14:32:41.038Z"
     }
   ]
 }
